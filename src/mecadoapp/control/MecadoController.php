@@ -27,7 +27,7 @@ class MecadoController extends \mf\control\AbstractController {
 
     public function signUp(){
 
-        $v = new \mecadorapp\view\MecadoView(null);
+        $v = new \mecadoapp\view\MecadoView(null);
         $v ->render('signUp');
 
     }
@@ -39,7 +39,7 @@ class MecadoController extends \mf\control\AbstractController {
         $email = $this->request->post['email'];
         $pass = $this->request->post['password'];
         
-        $v = new \tweeterapp\auth\MecadoAuthentification();
+        $v = new \mecadoapp\auth\MecadoAuthentification();
         try {
             $v->createUser($nom, $prenom, $email, $pass);
             $this->viewHome();

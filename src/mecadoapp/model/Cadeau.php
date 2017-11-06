@@ -1,6 +1,6 @@
 <?php
 
-	namespace tweeterapp\model;
+	namespace mecadoapp\model;
 
 	class Tweet extends \Illuminate\Database\Eloquent\Model {
 

@@ -34,7 +34,7 @@ class MecadoAuthentification extends \mf\auth\Authentification {
      * @param : $username : le nom d'utilisateur choisi 
      * @param : $pass : le mot de passe choisi 
      * @param : $fullname : le nom complet 
-     * @param : $level : le niveaux d'accés (par dÃ©faut ACCESS_LEVEL_USER)
+     * @param : $level : le niveaux d'accés (par défaut ACCESS_LEVEL_USER)
      * 
      * Algorithme :
      *
@@ -46,23 +46,22 @@ class MecadoAuthentification extends \mf\auth\Authentification {
      * 
      */
     
-    public function createUser($username, $pass, $fullname,
+    public function createUser($nom, $prenom, $email, $pass,
                                $level=self::ACCESS_LEVEL_USER) {
 
-        $requete = \tweeterapp\model\User::where('username', '=', $username);
+        $requete = \mecadoapp\model\User::where('email', '=', $email);
         $usertest = $requete->first();
         if($usertest!=null)
         {
-            throw new \mf\auth\exception\AuthentificationException('Nom déjà utilisé');
+            throw new \mf\auth\exception\AuthentificationException('Email déjà utilisé');
         }
         else
         {
-            $user = new \tweeterapp\model\User();
-            $user->username = $username;
+            $user = new \mecadoapp\model\User();
+            $user->nom = $nom;
+            $user->prenom = $prenom;
+            $user->mail = $email;
             $user->password = $this->hashPassword($pass);
-            $user->fullname = $fullname;
-            $user->level = $level;
-            $user->followers = 0;
             $user->save();
         }
     }
@@ -100,7 +99,7 @@ class MecadoAuthentification extends \mf\auth\Authentification {
         {
             if($this->verifyPassword($password, $usertest->password))
             {
-                $this->updateSession($username, $usertest->level);
+                $this->updateSession($username, ACCESS_LEVEL_USER);
             }
             else
             {

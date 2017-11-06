@@ -1,6 +1,6 @@
 <?php
 
-	namespace tweeterapp\model;
+	namespace mecadoapp\model;
 
 	class User extends \Illuminate\Database\Eloquent\Model {
 

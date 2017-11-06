@@ -22,7 +22,7 @@
 		public function run() {
 		    if(isset(self::$routes[$this->http_req->path_info]))
 		    {	
-		    	$v = new \tweeterapp\auth\TweeterAuthentification();
+		    	$v = new \mecadoapp\auth\MecadoAuthentification();
 		    	if($v->checkAccessRight(self::$routes[$this->http_req->path_info][2]))
 		    	{
 			    	$class = self::$routes[$this->http_req->path_info][0];
@@ -32,13 +32,13 @@
 			    }
 			    else
 			    {
-		    		$test = new \tweeterapp\control\TweeterController();
+		    		$test = new \mecadoapp\control\MecadoController();
 		    		$test->viewHome();
 			    }
 		    }
 		    else
 		    {
-		    	$test = new \tweeterapp\control\TweeterController();
+		    	$test = new \mecadoapp\control\MecadoController();
 		    	$test->viewHome();
 		    }
 		}

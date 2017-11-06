@@ -1,8 +1,8 @@
 <?php
 
-namespace tweeterapp\auth;
+namespace mecadoapp\auth;
 
-class TweeterAuthentification extends \mf\auth\Authentification {
+class MecadoAuthentification extends \mf\auth\Authentification {
 
     /*
      * Classe TweeterAuthentification qui définie les méthodes qui dépendent

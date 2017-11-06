@@ -46,14 +46,22 @@ class MecadoAuthentification extends \mf\auth\Authentification {
      * 
      */
     
-    public function createUser($nom, $prenom, $email, $pass,
+    public function createUser($nom, $prenom, $email, $pass, $pass_verif,
                                $level=self::ACCESS_LEVEL_USER) {
 
-        $requete = \mecadoapp\model\User::where('email', '=', $email);
+        $requete = \mecadoapp\model\User::where('mail', '=', $email);
         $usertest = $requete->first();
         if($usertest!=null)
         {
             throw new \mf\auth\exception\AuthentificationException('Email déjà utilisé');
+        }
+        else if(filter_var($email, FILTER_VALIDATE_EMAIL))
+        {
+            throw new \mf\auth\exception\AuthentificationException('Mauvais format d\'adresse email');   
+        }
+        else if($pass == $pass_verif)
+        {
+            throw new \mf\auth\exception\AuthentificationException('Les deux mots de passe ne correspondent pas');       
         }
         else
         {
@@ -86,24 +94,24 @@ class MecadoAuthentification extends \mf\auth\Authentification {
      *
      */
     
-    public function login($username, $password) {
+    public function login($email, $password) {
         
-        $requete = \tweeterapp\model\User::where('username', '=', $username);
+        $requete = \mecadoapp\model\User::where('mail', '=', $email);
         $usertest = $requete->first();
 
         if($usertest==null)
         {
-            throw new \mf\auth\exception\AuthentificationException('Nom déjà utilisé');
+            throw new \mf\auth\exception\AuthentificationException('Mauvaise combinaison email/password');
         }
         else
         {
             if($this->verifyPassword($password, $usertest->password))
             {
-                $this->updateSession($username, ACCESS_LEVEL_USER);
+                $this->updateSession($email, self::ACCESS_LEVEL_USER);
             }
             else
             {
-                throw new \mf\auth\exception\AuthentificationException('Mauvais password');
+                throw new \mf\auth\exception\AuthentificationException('Mauvaise combinaison email/password');
             }
         }
     }

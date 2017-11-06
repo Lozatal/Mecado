@@ -8,5 +8,7 @@
 		protected $primaryKey = 'id';
 		public $timestamps = false;
 
-
+		public function listes(){
+			return $this->hasMany( 'mecadoapp\model\Liste', 'id_user');
+		}
 	}

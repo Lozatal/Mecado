@@ -51,17 +51,20 @@ class MecadoAuthentification extends \mf\auth\Authentification {
 
         $requete = \mecadoapp\model\User::where('mail', '=', $email);
         $usertest = $requete->first();
+
         if($usertest!=null)
         {
             throw new \mf\auth\exception\AuthentificationException('Email déjà utilisé');
         }
-        else if(filter_var($email, FILTER_VALIDATE_EMAIL))
+        elseif(!filter_var($email, FILTER_VALIDATE_EMAIL))
         {
-            throw new \mf\auth\exception\AuthentificationException('Mauvais format d\'adresse email');   
+            throw new \mf\auth\exception\AuthentificationException('Mauvais format d\'adresse email');
+            echo '2';
         }
-        else if($pass == $pass_verif)
+        elseif($pass != $pass_verif)
         {
-            throw new \mf\auth\exception\AuthentificationException('Les deux mots de passe ne correspondent pas');       
+            throw new \mf\auth\exception\AuthentificationException('Les deux mots de passe ne correspondent pas');
+            echo '1';  
         }
         else
         {

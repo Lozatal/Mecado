@@ -31,11 +31,13 @@ class LoginController extends \mf\control\AbstractController {
         $prenom = $this->request->post['prenom'];
         $email = $this->request->post['email'];
         $pass = $this->request->post['password'];
-        
+        $pass_verify = $this->request->post['password_verify'];
+
         $v = new \mecadoapp\auth\MecadoAuthentification();
         try {
-            $v->createUser($nom, $prenom, $email, $pass);
-            $this->viewHome();
+            $v->createUser($nom, $prenom, $email, $pass, $pass_verify);
+            $v = new \mecadoapp\view\MecadoView(null);
+            $v ->render('home');
         }
         catch(\mf\auth\exception\AuthentificationException $e)
         {
@@ -59,7 +61,8 @@ class LoginController extends \mf\control\AbstractController {
         $v = new \mecadoapp\auth\MecadoAuthentification();
         try {
             $v->login($email, $password);
-            $this->viewHome();
+            $v = new \mecadoapp\view\MecadoView(null);
+            $v ->render('home');
         }
         catch(\mf\auth\exception\AuthentificationException $e)
         {
@@ -72,7 +75,6 @@ class LoginController extends \mf\control\AbstractController {
     public function logout(){
         $v = new \mecadoapp\auth\MecadoAuthentification();
         $v->logout();
-        $this->viewHome();
     }
 
 }

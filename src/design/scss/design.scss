@@ -1,4 +1,11 @@
 @import 'frameworkCSS';
+@import 'sign_up'; //Inscription
+@import 'login'; //Page de loggin (no kidding)
+@import 'home'; //Page d'accueil
+@import 'cadeau'; //Tout les cadeaux d'une liste
+@import 'liste'; //Toute les listes d'un utilisateur
+@import 'add_liste'; //formulaire
+@import 'add_cadeau'; //formulaire
 
 $nbCol:8;
 $Lcol:10%;
@@ -9,55 +16,80 @@ $Lgou:(100-($nbCol*$Lcol))/$nbgou;
 body{
 	display: flex;
 	flex-wrap: wrap;
-	font-size: 12pt;
-}
-
-
-#grille{
-	position: absolute;
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-}
-
-#grille div{
-	margin-left: $Lgou;
-	width: $Lcol;
-	height: 2000px;
-	background-color: grey;
-	opacity: 0.3;
+	font-size: 8pt;
 }
 
 header{
-	width: 100%;
+	@include header(8pt);
+	& #accueil{
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		& a{
+			margin: auto;
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+	& nav{
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		& a{
+			margin-top: 0.3em;
+			@include grille(8,10%,0,4);
+			text-align: center;
+			@include bouton(black,2,aqua,10px);
+		}
+	}
+}
+
+section{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+article{
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+	padding: 0.3em;
+	background-color: #DCDCDC;
+	text-align: justify;
+	border: 2px solid black;
 	box-sizing: border-box;
+	border-radius: 5px;
+}
+
+footer{
+	width: 100%;
+	height: 5em;
+	background-color: black;
+	opacity: 0.8;
+	color: white;
 	display: flex;
 	flex-wrap: wrap;
+
+	& div{
+		@include grille(8,10%,0,4);
+		display: flex;
+		flex-wrap: wrap;
+		& ul{
+			list-style-type: none;
+			margin: auto;
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			& li{
+				width: 100%;
+				padding: 0.5em;
+				text-align: center;
+				margin: auto;
+			}
+		}
+	}
 }
 
-header #accueil{
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-}
-
-header #accueil a{
-	margin: auto;
-	height: 50px;
-	width: 100%;
-	background-image: url("images/accueil.jpg");
-}
-
-header nav{
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-}
-
-header nav a{
-	@include grille(8,10%,0,4);
-	text-align: center;
-	@include bouton(black,2,aqua,10px);
-}
 
 

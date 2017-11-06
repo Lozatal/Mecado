@@ -38,9 +38,9 @@ header{
 		width: 100%;
 		& a{
 			margin-top: 0.3em;
+			@include bouton(black,1,aqua,10px);
 			@include grille(8,10%,0,4);
 			text-align: center;
-			@include bouton(black,2,aqua,10px);
 		}
 	}
 }
@@ -92,4 +92,38 @@ footer{
 }
 
 
+@media screen and (min-width: 280px){
+	body{
+		font-size: 8pt;
+	}
+}
 
+@media screen and (min-width: 480px){
+	body{
+		font-size: 8.5pt;
+	}
+}
+
+@media screen and (min-width: 600px){
+	body{
+		font-size: 9pt;
+	}
+}
+
+@media screen and (min-width: 801px){
+	body{
+		font-size: 10pt;
+	}
+}
+
+@media screen and (min-width: 1025px){
+	body{
+		font-size: 11pt;
+	}
+}
+
+@media screen and (min-width: 1281px){
+	body{
+		font-size: 12pt;
+	}
+}

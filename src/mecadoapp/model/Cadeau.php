@@ -2,10 +2,13 @@
 
 	namespace mecadoapp\model;
 
-	class Tweet extends \Illuminate\Database\Eloquent\Model {
+	class Cadeau extends \Illuminate\Database\Eloquent\Model {
 
-		protected $table = 'cadeaux';
+		protected $table = 'cadeau';
 		protected $primaryKey = 'id';
 		public $timestamps = true;
-
+		
+		public function liste(){
+			return $this->belongsTo('mecadoapp\model\Liste', 'id_liste');
+		}
 	}

@@ -2,10 +2,13 @@
 
 	namespace mecadoapp\model;
 
-	class Follow extends \Illuminate\Database\Eloquent\Model {
+	class Message extends \Illuminate\Database\Eloquent\Model {
 
-		protected $table = 'messages';
+		protected $table = 'message';
 		protected $primaryKey = 'id';
 		public $timestamps = true;
 
+		public function liste(){
+			return $this->belongsTo('mecadoapp\model\Liste', 'id_liste');
+		}
 	}

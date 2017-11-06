@@ -3,7 +3,7 @@
 namespace mecadoapp\control;
 
 
-class MecadoController extends \mf\control\AbstractController {
+class MessageController extends \mf\control\AbstractController {
 
 
     /* Constructeur :

@@ -1,0 +1,24 @@
+#home{
+	& article:nth-child(1){
+	@include grille(8,10%,0,8);
+	}
+
+	& article:nth-child(2){
+		@include grille(8,10%,0,4);
+	
+		& ul{
+			list-style-type: none;
+			& li{
+				margin-top: 0.3em;
+			}
+		}
+	}
+
+	& article:nth-child(3){
+		@include grille(8,10%,0,4);
+	}
+
+	& article:nth-child(4){
+		@include grille(8,10%,0,8);
+	}	
+}

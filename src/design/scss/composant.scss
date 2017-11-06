@@ -1,0 +1,139 @@
+/*****************************/
+
+
+@mixin navbar($color){
+	color: $color;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	list-style: none;
+	width: 100%;
+	margin: auto;
+	text-decoration: none;
+	& li{
+		margin: auto;
+	}
+	& li:hover{
+		color: lighten($color,50);
+	}
+
+	& a{
+		color: $color;
+		text-decoration: none;
+	}
+
+	& a:hover{
+		color: lighten($color,50);;
+		text-decoration: none;
+	}
+}
+
+@mixin breadcrumb($taille,$color,$background){
+	padding: 1em 2em;
+	list-style: none;
+	background-color: $background;
+	& li{
+		display: inline;
+		font-size: $taille;
+	}
+	& li+li:before {
+		padding: 1em;
+		color: black;
+		content: "/\00a0";
+	}
+	& li a {
+		color: $color;
+		text-decoration: none;
+	}
+	& li a:hover {
+		color: lighten($color,50);
+		text-decoration: underline;
+	}
+}
+
+@mixin header($taille){
+	margin:auto;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: $taille;
+	box-sizing: border-box;
+	width: 100%;
+
+	& img{
+		margin: auto;
+	}
+}
+
+@mixin jumbotron($taille){
+	background-color: #DCDCDC;
+	text-align: center;
+	font-size: $taille;
+}
+/****************************/
+
+$colorNavBar:rgba(0,0,0,0);
+
+.navbar{
+	display: inline-block;
+	color: $colorNavBar;
+}
+
+.narbar li:hover{
+	color: lighten($colorNavBar,50);
+}
+
+.disable{
+	opacity:0.6;
+	text-decoration: line-through;
+}
+
+.active{
+	opacity: 1;
+	text-decoration: inherit;
+}
+
+ul.breadcrumb {
+	padding: 1em 2em;
+	list-style: none;
+	background-color: #eee;
+}
+ul.breadcrumb li {
+	display: inline;
+	font-size: 0.8rem;
+}
+ul.breadcrumb li+li:before {
+	padding: 8px;
+	color: black;
+	content: "/\00a0";
+}
+ul.breadcrumb li a {
+	color: #0275d8;
+	text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+	color: #01447e;
+	text-decoration: underline;
+}
+
+.pagination{
+	display: inline-block;
+}
+
+.pagination a{
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+header{
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.jumbotron{
+	background-color: #DCDCDC;
+	text-align: center;
+	font-size: 1.2rem;
+}

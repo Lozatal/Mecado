@@ -1,0 +1,18 @@
+@mixin grille($nbCol,$Lcol,$offset,$Lbox){
+	margin-left: marginCol($nbCol,$Lcol,$offset);
+	width: largeurCol($nbCol,$Lcol,$Lbox);
+}
+
+@function largeurCol($nbCol,$Lcol,$Lbox){
+	$nbgou:$nbCol+1;
+	$Lgou:(100-($nbCol*$Lcol))/$nbgou;
+	$Lboxgou:$Lbox - 1;
+	@return $Lbox*$Lcol+$Lboxgou*$Lgou;
+}
+
+@function marginCol($nbCol,$Lcol,$offset){
+	$nbgou:$nbCol+1;
+	$Lgou:(100-($nbCol*$Lcol))/$nbgou;
+	$Nbgoumarg:$offset + 1;
+	@return $offset*$Lcol+$Nbgoumarg*$Lgou;
+}

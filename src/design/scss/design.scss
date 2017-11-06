@@ -1,0 +1,63 @@
+@import 'frameworkCSS';
+
+$nbCol:8;
+$Lcol:10%;
+
+$nbgou:9;
+$Lgou:(100-($nbCol*$Lcol))/$nbgou;
+
+body{
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 12pt;
+}
+
+
+#grille{
+	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+#grille div{
+	margin-left: $Lgou;
+	width: $Lcol;
+	height: 2000px;
+	background-color: grey;
+	opacity: 0.3;
+}
+
+header{
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+header #accueil{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+header #accueil a{
+	margin: auto;
+	height: 50px;
+	width: 100%;
+	background-image: url("images/accueil.jpg");
+}
+
+header nav{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+header nav a{
+	@include grille(8,10%,0,4);
+	text-align: center;
+	@include bouton(black,2,aqua,10px);
+}
+
+

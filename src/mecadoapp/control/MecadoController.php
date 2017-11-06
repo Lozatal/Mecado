@@ -63,7 +63,7 @@ class MecadoController extends \mf\control\AbstractController {
         $email = $this->request->post['email'];
         $password = $this->request->post['password'];
 
-        $v = new \tweeterapp\auth\MecadoAuthentification();
+        $v = new \mecadoapp\auth\MecadoAuthentification();
         try {
             $v->login($email, $password);
             $this->viewHome();

@@ -8,8 +8,8 @@
 		protected $primaryKey = 'id';
 		public $timestamps = true;
 
-		public function cadeaux(){
-			return $this->hasMany( 'mecadoapp\model\Cadeau', 'id_liste');
+		public function items(){
+			return $this->hasMany( 'mecadoapp\model\Item', 'id_liste');
 		}
 		
 		public function messages(){

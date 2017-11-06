@@ -2,7 +2,7 @@
 
 	namespace mecadoapp\model;
 
-	class Cadeau extends \Illuminate\Database\Eloquent\Model {
+	class Item extends \Illuminate\Database\Eloquent\Model {
 
 		protected $table = 'cadeau';
 		protected $primaryKey = 'id';

@@ -9,7 +9,7 @@
 		& form{
 			display:flex;
 			flex-wrap: wrap;
-			width: 100%;
+			width: 90%;
 			margin:auto;
 		
 			& label{
@@ -38,36 +38,36 @@
 	}
 
 	@media screen and (min-width: 280px){
-		& form{
+		& article form{
 			width: 90%;
 		}
 	}
 
 	@media screen and (min-width: 480px){
-		& form{
+		& article form{
 			width: 80%;
 		}
 	}
 
 	@media screen and (min-width: 600px){
-		& form{
+		& article form{
 			width: 70%;
 		}
 	}
 
 	@media screen and (min-width: 801px){
-		& form{
+		& article form{
 			width: 60%;
 		}
 	}
 
 	@media screen and (min-width: 1025px){
-		& form{
+		& article form{
 			width: 50%;
 		}
 	}
 	@media screen and (min-width: 1281px){
-		& form{
+		& article form{
 			width: 40%;
 		}
 	}

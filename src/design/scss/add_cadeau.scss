@@ -1,1 +1,3 @@
-@import 'formulaire';
+#add_cadeau{
+	@include formulaire();
+}

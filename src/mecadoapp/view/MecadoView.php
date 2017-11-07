@@ -151,19 +151,19 @@ EOT;
 
         foreach ($this->data as $key => $value) {
             $date = date_create($value->date_limite);
+            if(date("Y-m-d H:i:s") >= $value->date_limite)
+                $close = 'y';
+            else
+                $close = 'n';
             $retour = $retour.'
-                        <article close="n">
-                            <p>'.$value->nom.'</p>
+                        <article close="'.$close.'">
+                            <p><a href="'.$this->app_root.'/main.php/item.php/?id='.$value->id.'">'.$value->nom.'</a></p>
                             <a href="#">Modifier</a><a href="#">Supprimer</a>
                             <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
                             <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>
                         </article>
                         ';
         }
-        $retour .= <<<EOT
-       
-
-EOT;
 
         return $retour.'</section>';
     }

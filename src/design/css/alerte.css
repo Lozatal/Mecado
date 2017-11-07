@@ -1,23 +1,51 @@
 /*****************************/
 /****************************/
-.alerte-succes {
-  color: green;
-  border: 1px solid green;
-  width: 100%; }
+.alerte-success {
+  color: #3c763d;
+  border: 1px solid #67b168;
+  background-color: #aad4ab;
+  font-size: 1.2em;
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1em;
+  font-weight: bold; }
 
 .alerte-info {
-  border: 1px solid blue;
-  color: blue;
-  width: 100%; }
+  color: #31708f;
+  border: 1px solid #5ea5c8;
+  background-color: #aad0e2;
+  font-size: 1.2em;
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1em;
+  font-weight: bold; }
 
 .alerte-avertissement {
-  border: 1px solid orange;
-  color: orange;
-  width: 100%; }
+  color: #8a6d3b;
+  border: 1px solid #c0a16b;
+  background-color: #deceb3;
+  font-size: 1.2em;
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1em;
+  font-weight: bold; }
 
-.alerte-avertissement {
-  border: 1px solid red;
-  color: red;
-  width: 100%; }
+.alerte-danger {
+  color: #a94442;
+  border: 1px solid #ce8483;
+  background-color: #ebcdcc;
+  font-size: 1.2em;
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1em;
+  font-weight: bold; }
 
 /*# sourceMappingURL=alerte.css.map */

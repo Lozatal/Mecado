@@ -183,20 +183,35 @@ EOT;
     	$listeMessage = $this->data[0]->liste->messages;
     	
     	foreach($listeMessage as $message){
-    		
+    		$date = date_format($message->created_at, 'd:m:Y');
     		$retour .= '
-		    		<p>'.$message->auteur.' : '.$message->texte.'</p>
+		    		<p>
+						<span>'.$date.'-'.$message->auteur.' :</span>
+						 '.$message->texte.'
+					</p>
 				';
     		
     	}
     		
     	$retour .= '
 					<form>
-		    			<textarea name="text"></textarea><input value="Go!" type="submit">
+		    			<label for="text">Message:</label><textarea name="text"></textarea>
+				    	<label for="name">Nom:</label><input type="text" name="nom"/>
+				    	<input type="submit" value="Envoyer"/>
 		    		</form>
 				</aside>
 				<div>
 		';
+    	
+    	//Si le créateur est destinataire, on va afficher le nom/prénom du créateur, sinon on récupère les champs non et prenom dans liste
+    	$destinataire = '';
+    	
+    	if (isset($this->data[0]->liste->destinataire) && $this->data[0]->liste->destinataire = 1){
+    		$destinataire = $this->data[0]->liste->user->prenom.' '.$this->data[0]->liste->user->nom;
+    	}
+    	else{
+    		$destinataire = $this->data[0]->liste->prenom_dest.' '.$this->data[0]->liste->nom_dest;
+    	}
     	
     	//Puis on affiche la liste des items de la liste
     	foreach($this->data as $item){
@@ -216,11 +231,11 @@ EOT;
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
 						<a href="#"><img src="'.$img.'" alt="lien vers le site marchand" ></a>
-						<aside><h2>Cadeau 1</h2><p>Prix : 20€</p></aside>
+						<aside><h2>'.$item->nom.'</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
 						<label>Nom</label><input type="text"/>
-						<label>Message pour XXXXXXX</label><textarea></textarea>
+						<label>Message pour '.$destinataire.'</label><textarea></textarea>
 						<input type="submit" value="Réserver" />
 					</form>
 				</article>

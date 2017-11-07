@@ -201,8 +201,8 @@ EOT;
     private function renderItem() {
     	
     	$get= new \mf\utils\HttpRequest();
-    	
-    	if(isset($this->data['erreur']) && $this->data[0] != null){
+    	echo $this->data['erreur'];
+    	if(isset($this->data['erreur']) && $this->data['erreur'] != null){
     		$retour = '<div class="alerte-danger">'.$this->data['erreur'].'.</div>
     		';
 			
@@ -215,7 +215,7 @@ EOT;
 		';
     	
     	//Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
-    	$listeMessage = $this->data['listeItem']->liste->messages;
+    	$listeMessage = $this->data['listeItem'][0]->liste->messages;
     	
     	foreach($listeMessage as $message){
     		$date = date_format($message->created_at, 'd:m:Y');
@@ -249,15 +249,15 @@ EOT;
     	//Si le créateur est destinataire, on va afficher le nom/prénom du créateur, sinon on récupère les champs non et prenom dans liste
     	$destinataire = '';
     	
-    	if (isset($this->data[0]->liste->destinataire) && $this->data[0]->liste->destinataire = 1){
-    		$destinataire = $this->data[0]->liste->user->prenom.' '.$this->data[0]->liste->user->nom;
+    	if (isset($this->data['listeItem'][0]->liste->destinataire) && $this->data['listeItem'][0]->liste->destinataire = 1){
+    		$destinataire = $this->data['listeItem'][0]->liste->user->prenom.' '.$this->data['listeItem'][0]->liste->user->nom;
     	}
     	else{
-    		$destinataire = $this->data[0]->liste->prenom_dest.' '.$this->data[0]->liste->nom_dest;
+    		$destinataire = $this->data['listeItem'][0]->liste->prenom_dest.' '.$this->data['listeItem'][0]->liste->nom_dest;
     	}
     	
     	//Puis on affiche la liste des items de la liste
-    	foreach($this->data as $item){
+    	foreach($this->data['listeItem']as $item){
     		
     		$url = '#';
     		if (isset($item->url_article) && $item->url_article != null){

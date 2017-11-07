@@ -3,7 +3,6 @@
 namespace mecadoapp\control;
 
 use mecadoapp\model\Message as message;
-use mecadoapp\model\Item as item;
 
 class MessageController extends \mf\control\AbstractController {
 
@@ -29,17 +28,17 @@ class MessageController extends \mf\control\AbstractController {
     		$form=$this->request->post;
     	}
     	else{
-    		throw new Exception("L'identifiant de la liste de cadeaux est vide");
+    		throw new \mf\auth\exception\AuthentificationException("L'identifiant de la liste de cadeaux est vide");
     	}
     	
     	if(isset($form) ){
     		$message = new message();
     		echo $form['nom'];
     		if($form['nom'] == null){
-    			throw new Exception("Le nom est vide");
+    			throw new \mf\auth\exception\AuthentificationException("Le nom est vide");
     		}
     		if($form['text'] == null){
-    			throw new Exception("Le contenu du message est vide");
+    			throw new \mf\auth\exception\AuthentificationException("Le contenu du message est vide");
     		}
     		$message->auteur = $form['nom'];
     		$message->texte = $form['text'];
@@ -50,7 +49,7 @@ class MessageController extends \mf\control\AbstractController {
     		$controleur->viewItem();
     	}
     	else{
-    		throw new Exception("Le formulaire est vide");
+    		throw new \mf\auth\exception\AuthentificationException("Le formulaire est vide");
     	}
     	
     	} catch (\mf\auth\exception\AuthentificationException $e) {

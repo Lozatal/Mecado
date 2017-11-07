@@ -27,7 +27,7 @@ class ItemController extends \mf\control\AbstractController {
     }
     
     public function viewItem(){
-    	$get=$this->request->get;
+    	$get = $this->request->get;
     	$listeItem= null;
     	
     	if(isset($get['id'])){

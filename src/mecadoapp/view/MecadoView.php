@@ -173,6 +173,8 @@ EOT;
     //retourne la liste des items
     private function renderItem() {
     	
+    	$get= new \mf\utils\HttpRequest();
+    	
     	//Lien pour ajouter un Item
     	$retour = '<section id="item">
 			<a href="#" id="lienAjout">Ajouter un cadeau</a>
@@ -192,11 +194,19 @@ EOT;
 				';
     		
     	}
-    		
+    	
+    	$id = null;
+    	if(isset($get->get['id'])){
+    		$id = $get->get['id'];
+    	}
+    	$linkformMessage = $this->script_name."/message_add/?id=".$id;
+    	
+    	//formulaire d'ajour de message
     	$retour .= '
-					<form>
-		    			<label for="text">Message:</label><textarea name="text"></textarea>
-				    	<label for="name">Nom:</label><input type="text" name="nom"/>
+					<form id="addMessage" action="'.$linkformMessage.'" method="POST">
+		    			<label for="text">Message:</label><textarea id="text" name="text"></textarea>
+				    	<label for="name">Nom:</label><input type="text" id="nom" name="nom"/>
+						<input type="hidden" name="id_liste" id="id_liste" value="'.$id.'"/>
 				    	<input type="submit" value="Envoyer"/>
 		    		</form>
 				</aside>

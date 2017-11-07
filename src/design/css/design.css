@@ -889,7 +889,8 @@ header {
 body {
   display: flex;
   flex-wrap: wrap;
-  font-size: 8pt; }
+  font-size: 8pt;
+  background-color: #87CEEB; }
 
 header {
   margin: auto;
@@ -903,40 +904,46 @@ header {
   header #accueil {
     display: flex;
     flex-wrap: wrap;
-    width: 100%; }
+    width: 100%;
+    opacity: 0.8; }
     header #accueil a {
       margin: auto;
       width: 100%;
       display: flex;
       flex-wrap: wrap; }
+      header #accueil a img {
+        margin: auto;
+        border-radius: 0 0 10px 10px; }
   header nav {
     display: flex;
     flex-wrap: wrap;
     width: 100%; }
     header nav a {
-      margin-top: 0.3em;
+      margin-top: 0.5em;
       border-radius: 10px;
       font-size: 1rem;
       padding: 0.5em;
-      color: black;
+      color: white;
       box-sizing: border-box;
-      background-color: aqua;
+      background-color: #000000;
       text-decoration: none;
+      opacity: 0.8;
       margin-left: 2.2222222222%;
       width: 46.6666666667%;
       text-align: center; }
       header nav a:hover {
         cursor: pointer;
-        background-color: #33ffff; }
+        background-color: #1a1a1a; }
       header nav a a {
         text-decoration: none;
-        color: black; }
+        color: white; }
       header nav a a:hover {
-        color: #1a1a1a; }
+        color: white; }
 
 section {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  min-height: 50em; }
 
 article {
   margin-bottom: 0.5em;

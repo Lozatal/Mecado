@@ -1,43 +1,38 @@
-/*
-Error: Invalid CSS after "	}": expected selector or at-rule, was "}"
-        on line 30 of scss/formulaire.scss
+#formulaire form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto; }
+  #formulaire form label {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 1em; }
+  #formulaire form input {
+    width: 80%;
+    margin: auto;
+    text-align: center; }
+  #formulaire form input:last-child {
+    margin-top: 1em;
+    margin-bottom: 1em; }
 
-25: 			background-color: blue;
-26: 			text-align: center;
-27: 			@include grille(8,10%,0,8);
-28: 		}
-29: 	}
-30: }
-31: @media screen and (min-width: 280px){
-32: 	form{
-33: 		width: 90%;
-34: 	}
-35: }
+@media screen and (min-width: 280px) {
+  #formulaire form {
+    width: 90%; } }
+@media screen and (min-width: 480px) {
+  #formulaire form {
+    width: 80%; } }
+@media screen and (min-width: 600px) {
+  #formulaire form {
+    width: 70%; } }
+@media screen and (min-width: 801px) {
+  #formulaire form {
+    width: 60%; } }
+@media screen and (min-width: 1025px) {
+  #formulaire form {
+    width: 50%; } }
+@media screen and (min-width: 1281px) {
+  #formulaire form {
+    width: 40%; } }
 
-Backtrace:
-scss/formulaire.scss:30
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1278:in `expected'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1208:in `expected'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:42:in `parse'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:414:in `_to_tree'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `each'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:320:in `block in watch'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"	}\": expected selector or at-rule, was \"}\"\A         on line 30 of scss/formulaire.scss\A \A 25: 			background-color: blue;\A 26: 			text-align: center;\A 27: 			@include grille(8,10%,0,8);\A 28: 		}\A 29: 	}\A 30: }\A 31: @media screen and (min-width: 280px){\A 32: 	form{\A 33: 		width: 90%;\A 34: 	}\A 35: }"; }
+/*# sourceMappingURL=formulaire.css.map */

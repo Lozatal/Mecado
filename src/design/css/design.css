@@ -454,11 +454,11 @@ header {
     display: flex;
     flex-wrap: wrap;
     margin-left: 2.2222222222%;
-    width: 95.5555555556%;
-    margin-top: 0;
-    margin-bottom: 0; }
+    width: 95.5555555556%; }
   #item #lienAjout {
     margin: auto;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
     border-radius: 10px;
     font-size: 1rem;
     padding: 0.5em;
@@ -469,8 +469,7 @@ header {
     text-align: center;
     margin-left: 2.2222222222%;
     width: 95.5555555556%;
-    margin-top: 0;
-    margin-bottom: 0; }
+    max-height: 2em; }
     #item #lienAjout:hover {
       cursor: pointer;
       background-color: #00b300; }
@@ -483,7 +482,8 @@ header {
     display: flex;
     flex-wrap: wrap;
     margin-left: 2.2222222222%;
-    width: 95.5555555556%; }
+    width: 95.5555555556%;
+    max-height: 35em; }
     #item div article div:first-child {
       width: 100%;
       padding: 0.5em;
@@ -857,8 +857,7 @@ header {
 
 section {
   display: flex;
-  flex-wrap: wrap;
-  min-height: 50em; }
+  flex-wrap: wrap; }
 
 article {
   margin-bottom: 0.5em;

@@ -42,7 +42,7 @@ class LoginController extends \mf\control\AbstractController {
         catch(\mf\auth\exception\AuthentificationException $e)
         {
             $v = new \mecadoapp\view\MecadoView($e->getMessage());
-            $v ->render('signup');
+            $v ->render('signUp');
         }
 
     }

@@ -1013,8 +1013,7 @@ header {
 
 section {
   display: flex;
-  flex-wrap: wrap;
-  min-height: 50em; }
+  flex-wrap: wrap; }
 
 article {
   margin-bottom: 0.5em;
@@ -1033,7 +1032,9 @@ footer {
   opacity: 0.8;
   color: white;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 0; }
   footer div {
     margin-left: 2.2222222222%;
     width: 46.6666666667%;

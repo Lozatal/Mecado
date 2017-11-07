@@ -50,7 +50,6 @@ header{
 section{
 	display: flex;
 	flex-wrap: wrap;
-	min-height: 50em;
 }
 
 
@@ -73,6 +72,8 @@ footer{
 	color: white;
 	display: flex;
 	flex-wrap: wrap;
+	position:absolute;
+	bottom:0;
 	& div{
 		@include grille(8,10%,0,4);
 		display: flex;

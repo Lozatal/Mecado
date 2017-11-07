@@ -78,12 +78,25 @@
 		</section>-->
 
 		<section id="cadeau">
+			<aside>
+				<article>
+					<p>Premier message</p>
+					<p>rhsesjh</p>
+					<p>ersejsjj</p>
+					<p>stjsrjsrjsrj</p>
+					<p>sjsrjsrtjtrjstjqej</p>
+				</article>
+				<form>
+					<textarea name="text"></textarea><input type="submit" value="Go!"/>
+				</form>
+			</aside>
 			<a href="#">Ajouter un cadeau</a>
+			<div>
 			<article>
 				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 				<div>
 					<a href="#"><img src="src/design/css/images/cado.jpeg" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 1</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
+					<aside><h2>Cadeau 1</h2><p>Prix : 20€</p></aside>
 				</div>
 				<form>
 					<label>Nom</label><input type="text"/>
@@ -95,7 +108,7 @@
 				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 				<div>
 					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 2</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
+					<aside><h2>Cadeau 2</h2><p>Prix : 20€</p></aside>
 				</div>
 				<form>
 					<label>Nom</label><input type="text"/>
@@ -107,7 +120,7 @@
 				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 				<div>
 					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 3</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
+					<aside><h2>Cadeau 3</h2><p>Prix : 20€</p></aside>
 				</div>
 				<form>
 					<label>Nom</label><input type="text"/>
@@ -119,7 +132,7 @@
 				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 				<div>
 					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 4</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
+					<aside><h2>Cadeau 4</h2><p>Prix : 20€</p></aside>
 				</div>
 				<form>
 					<label>Nom</label><input type="text"/>
@@ -131,7 +144,7 @@
 				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 				<div>
 					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 5</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
+					<aside><h2>Cadeau 5</h2><p>Prix : 20€</p></aside>
 				</div>
 				<form>
 					<label>Nom</label><input type="text"/>
@@ -143,7 +156,7 @@
 				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 				<div>
 					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 6</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
+					<aside><h2>Cadeau 6</h2><p>Prix : 20€</p></aside>
 				</div>
 				<form>
 					<label>Nom</label><input type="text"/>
@@ -151,91 +164,8 @@
 					<input type='submit' value="Réserver" />
 				</form>
 			</article>
-			<article>
-				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
-				<div>
-					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 7</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
-				</div>
-				<form>
-					<label>Nom</label><input type="text"/>
-					<label>Message pour XXXXXXX</label><textarea></textarea>
-					<input type='submit' value="Réserver" />
-				</form>
-			</article>
-			<article>
-				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
-				<div>
-					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 8</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
-				</div>
-				<form>
-					<label>Nom</label><input type="text"/>
-					<label>Message pour XXXXXXX</label><textarea></textarea>
-					<input type='submit' value="Réserver" />
-				</form>
-			</article>
-			<article>
-				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
-				<div>
-					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 9</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
-				</div>
-				<form>
-					<label>Nom</label><input type="text"/>
-					<label>Message pour XXXXXXX</label><textarea></textarea>
-					<input type='submit' value="Réserver" />
-				</form>
-			</article>
-			<article>
-				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
-				<div>
-					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 10</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
-				</div>
-				<form>
-					<label>Nom</label><input type="text"/>
-					<label>Message pour XXXXXXX</label><textarea></textarea>
-					<input type='submit' value="Réserver" />
-				</form>
-			</article>
-			<article>
-				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
-				<div>
-					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 11</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
-				</div>
-				<form>
-					<label>Nom</label><input type="text"/>
-					<label>Message pour XXXXXXX</label><textarea></textarea>
-					<input type='submit' value="Réserver" />
-				</form>
-			</article>
-			<article>
-				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
-				<div>
-					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 12</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
-				</div>
-				<form>
-					<label>Nom</label><input type="text"/>
-					<label>Message pour XXXXXXX</label><textarea></textarea>
-					<input type='submit' value="Réserver" />
-				</form>
-			</article>
-			<article>
-				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
-				<div>
-					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 13</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
-				</div>
-				<form>
-					<label>Nom</label><input type="text"/>
-					<label>Message pour XXXXXXX</label><textarea></textarea>
-					<input type='submit' value="Réserver" />
-				</form>
-			</article>
-		</section>-->
+			</div>
+		</section>
 		<footer>
 			<div>
 				<ul>

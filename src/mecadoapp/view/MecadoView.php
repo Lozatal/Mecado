@@ -20,11 +20,7 @@ class MecadoView extends \mf\view\AbstractView {
 
     private function renderHeader(){
         return '
-            <div id="accueil"><a href="'.$this->app_root.'/main.php"><img src="'.$this->app_root.'/src/design/css/images/accueil.jpg"/></a></div>
-            <nav>
-                <a href="'.$this->app_root.'/main.php/login/">Connexion</a>
-                <a href="'.$this->app_root.'/main.php/signup/">Inscription</a>
-            </nav>';
+            <div id="accueil"><a href="'.$this->app_root.'/main.php"><img src="'.$this->app_root.'/src/design/css/images/accueil.jpg"/></a></div>';
     }
     
     /* MÃ©thode renderFooter
@@ -52,11 +48,30 @@ class MecadoView extends \mf\view\AbstractView {
     private function renderMenu(){
 
         $racine =  $this->app_root;
-        $retour = <<<EOT
-            <nav></nav>
+
+        $v = new \mecadoapp\auth\MecadoAuthentification();
+        if($v->logged_in == true)
+        {
+            $retour = <<<EOT
+                <nav>
+                    <a href="${racine}/main.php/listes/">Listes</a>
+                    <a href="${racine}/main.php/logout/">Deconnexion</a>
+                </nav>
 
 EOT;
+        }
+        else
+        {
+            $retour = <<<EOT
+                <nav>
+                    <a href="${racine}/main.php/login/">Connexion</a>
+                    <a href="${racine}/main.php/signup/">Inscription</a>
+                </nav>
 
+EOT;
+        }
+
+        return $retour;
     }
     
     private function renderHome(){  
@@ -95,8 +110,9 @@ EOT;
     private function renderSignUp() {
 
         $retour = '
-        <section id="sign_up">
-            <form action="'.$this->app_root.'/main.php/check_signup/" method=post>
+        <section id="sign_up"> 
+
+                <form action="'.$this->app_root.'/main.php/check_signup/" method=post>
                 <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom"/>
                 <label for="prenom">PrÃ©nom</label><input type="text"  name="prenom" placeholder="Prenom"/>
                 <label for="email">Mail</label><input type="text" name="mail" placeholder="Email"/>

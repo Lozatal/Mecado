@@ -1,9 +1,67 @@
+#liste{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	& article{
+		display: flex;
+		flex-wrap: wrap;
+		text-overflow: ellipsis;
+		@include grille(8,10%,0,8);
+		& p:nth-child(1){
+			@include grille(8,10%,0,8);
+			text-align: center;
+			font-size: 1.5rem;
+			font-weight: bold;
+			margin-top: auto;
+			margin-bottom: auto;
+			order: 3;
+		}
+		& a:nth-child(2){
+			margin-top: auto;
+			margin-bottom: auto;
+			@include grille(8,10%,0,4);
+			@include bouton(black,0.5,#679F5A,10px);
+			text-align: center;
+			order: 1;
+		}
+		& a:nth-child(3){
+			margin-top: auto;
+			margin-bottom: auto;
+			@include grille(8,10%,0,4);
+			@include bouton(black,0.5,#B82010,10px);
+			text-align: center;
+			order: 2;
+		}
+		& p:nth-child(4){
+			@include grille(8,10%,0,6);
+			margin-top: auto;
+			margin-bottom: auto;
+			order: 4;
+		}
+		& p:nth-child(5){
+			@include grille(8,10%,0,2);
+			text-align: center;
+			margin-top: auto;
+			margin-bottom: auto;
+			order: 5;
+		}
+	}
+	& article[close=y]{
+		background-color: grey;
+	}
+	& article:hover{
+		background-color: white;
+	}
+}
+
 @media screen and (min-width: 280px){
 
 }
 
 @media screen and (min-width: 480px){
-
+	#liste article{
+		@include grille(8,10%,0,4);
+	}
 }
 
 @media screen and (min-width: 600px){
@@ -19,5 +77,62 @@
 }
 
 @media screen and (min-width: 1281px){
+	#liste article{
+		& p:nth-child(1){
+			@include grille(8,10%,0,4);
+			text-align: center;
+			font-size: 1.5rem;
+			font-weight: bold;
+			margin-top: auto;
+			margin-bottom: auto;
+			order: 1;
+		}
+		& a:nth-child(2){
+			margin-top: auto;
+			margin-bottom: auto;
+			@include grille(8,10%,0,2);
+			@include bouton(black,0.5,#679F5A,10px);
+			text-align: center;
+			order: 2;
+		}
+		& a:nth-child(3){
+			margin-top: auto;
+			margin-bottom: auto;
+			@include grille(8,10%,0,2);
+			@include bouton(black,0.5,#B82010,10px);
+			text-align: center;
+			order: 3;
+		}
+	}
+}
 
+@media screen and (min-width: 1750px){
+	#liste article{
+		@include grille(8,10%,0,2);
+		& p:nth-child(1){
+			@include grille(8,10%,0,4);
+			text-align: center;
+			font-size: 1.5rem;
+			font-weight: bold;
+			margin-top: auto;
+			margin-bottom: auto;
+			order: 1;
+		}
+		& a:nth-child(2){
+			margin-top: auto;
+			margin-bottom: auto;
+			@include grille(8,10%,0,2);
+			@include bouton(black,0.5,#679F5A,10px);
+			text-align: center;
+			order: 2;
+		}
+		& a:nth-child(3){
+			margin-top: auto;
+			margin-bottom: auto;
+			@include grille(8,10%,0,2);
+			@include bouton(black,0.5,#B82010,10px);
+			text-align: center;
+			order: 3;
+		}
+	}
 }

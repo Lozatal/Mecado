@@ -116,7 +116,7 @@ EOT;
         $retour = '
         <section id="login">
             <form action="'.$this->app_root.'/main.php/check_login/" method=post>
-                <label for="email">Mail</label><input type="text" name="mail" placeholder="Email"/>
+                <label for="email">Mail</label><input type="text" name="email" placeholder="Email"/>
                 <label for="password">Mot de passe</label><input type="password" name="password" placeholder="Mot de passe"/>
                 <input type="submit" value="Connexion" />
             </form>
@@ -129,12 +129,7 @@ EOT;
 
     private function renderListe() {
 
-        $retour = '
-        <form class="forms" action="'.$this->app_root.'/main.php/check_login/" method=post>
-            <input class="forms-text" type=text name=email placeholder="email">
-            <input class="forms-text" type=password name=password placeholder="password">
-            <button class="forms-button" name=login_button type="submit">Login</button>
-        </form>';
+        $retour = '';
 
         return $retour;
     }
@@ -154,6 +149,9 @@ EOT;
                 break;
             case "login":
                 $contenu = $this->renderLogin();
+                break;
+            case "listes":
+                $contenu = $this->renderListe();
                 break;
         }
 

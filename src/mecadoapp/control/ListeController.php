@@ -34,7 +34,7 @@ class ListeController extends \mf\control\AbstractController {
         }
 
         $v = new \mecadoapp\view\MecadoView($ctrl);
-        $v ->render('login');
+        $v ->render('listes');
 
     }
 

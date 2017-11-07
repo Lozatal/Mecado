@@ -100,11 +100,12 @@ class MecadoAuthentification extends \mf\auth\Authentification {
     public function login($email, $password) {
         
         $requete = \mecadoapp\model\User::where('mail', '=', $email);
+
         $usertest = $requete->first();
 
         if($usertest==null)
         {
-            throw new \mf\auth\exception\AuthentificationException('Mauvaise combinaison email/password');
+            throw new \mf\auth\exception\AuthentificationException('Cette email n\'existe pas');
         }
         else
         {

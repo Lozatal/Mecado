@@ -20,17 +20,13 @@
 			margin-top: 1em;
 			margin-bottom: 1em;
 		}
-<<<<<<< HEAD
-	}
-=======
 		& textarea{	
 			margin:auto;
 			background-color: blue;
 			text-align: center;
 			@include grille(8,10%,0,8);
 		}
-	
->>>>>>> ded1fcc1ba0f7b4a4aedc730e0a035e5e6db3935
+	}
 }
 
 @media screen and (min-width: 280px){

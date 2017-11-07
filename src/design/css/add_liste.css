@@ -1,43 +1,60 @@
 /*
-Error: Invalid CSS after "<<<<<<< HEAD": expected "{", was "}"
-        on line 24 of scss/formulaire.scss
+Error: Undefined mixin 'grille'.
+        on line 27 of scss/formulaire.scss, in `grille'
+        from line 27 of scss/formulaire.scss
         from line 1 of scss/add_liste.scss
 
-19: 		& input:last-child{
-20: 			margin-top: 1em;
-21: 			margin-bottom: 1em;
-22: 		}
-23: <<<<<<< HEAD
-24: 	}
-25: =======
-26: 		& textarea{	
-27: 			margin:auto;
-28: 			background-color: blue;
-29: 			text-align: center;
-
 Backtrace:
-scss/formulaire.scss:24
+scss/formulaire.scss:27:in `grille'
+scss/formulaire.scss:27
 scss/add_liste.scss:1
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1278:in `expected'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1208:in `expected'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1203:in `tok!'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:677:in `block'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:686:in `block_contents'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:670:in `ruleset'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:696:in `block_child'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:686:in `block_contents'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:137:in `stylesheet'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:41:in `parse'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:414:in `_to_tree'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:321:in `to_tree'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:327:in `block in visit_import'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:98:in `with_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:350:in `visit_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
 /var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:88:in `block in with_import'
 /var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
 /var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:88:in `with_import'
@@ -81,4 +98,4 @@ scss/add_liste.scss:1
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"<<<<<<< HEAD\": expected \"{\", was \"}\"\A         on line 24 of scss/formulaire.scss\A         from line 1 of scss/add_liste.scss\A \A 19: 		& input:last-child{\A 20: 			margin-top: 1em;\A 21: 			margin-bottom: 1em;\A 22: 		}\A 23: <<<<<<< HEAD\A 24: 	}\A 25: =======\A 26: 		& textarea{	\A 27: 			margin:auto;\A 28: 			background-color: blue;\A 29: 			text-align: center;"; }
+  content: "Error: Undefined mixin 'grille'.\A         on line 27 of scss/formulaire.scss, in `grille'\A         from line 27 of scss/formulaire.scss\A         from line 1 of scss/add_liste.scss"; }

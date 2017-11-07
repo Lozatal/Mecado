@@ -17,7 +17,7 @@
 		<div></div>
 	</div>
 		<header>
-			<div id="accueil"><a href="#"><img src="src/design/css/images/accueil.jpg"/></a></div>
+			<div id="accueil"><a href="#"><img src="src/design/css/images/banniere.png"/></a></div>
 			<nav>
 				<a href="#">Connexion</a>
 				<a href="#">Inscription</a>

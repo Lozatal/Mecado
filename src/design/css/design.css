@@ -1,99 +1,1052 @@
-/*
-Error: Invalid CSS after "<<<<<<< HEAD": expected "{", was "}"
-        on line 24 of scss/formulaire.scss
-        from line 1 of scss/sign_up.scss
-        from line 2 of scss/design.scss
-
-19: 		& input:last-child{
-20: 			margin-top: 1em;
-21: 			margin-bottom: 1em;
-22: 		}
-23: <<<<<<< HEAD
-24: 	}
-25: =======
-26: 		& textarea{	
-27: 			margin:auto;
-28: 			background-color: blue;
-29: 			text-align: center;
-
-Backtrace:
-scss/formulaire.scss:24
-scss/sign_up.scss:1
-scss/design.scss:2
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1278:in `expected'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1208:in `expected'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1203:in `tok!'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:677:in `block'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:686:in `block_contents'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:670:in `ruleset'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:696:in `block_child'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:686:in `block_contents'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:137:in `stylesheet'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:41:in `parse'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:414:in `_to_tree'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:321:in `to_tree'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:327:in `block in visit_import'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:88:in `block in with_import'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:88:in `with_import'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `map'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:88:in `block in with_import'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:88:in `with_import'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `map'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:161:in `visit'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/root_node.rb:36:in `css_tree'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `each'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:320:in `block in watch'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"<<<<<<< HEAD\": expected \"{\", was \"}\"\A         on line 24 of scss/formulaire.scss\A         from line 1 of scss/sign_up.scss\A         from line 2 of scss/design.scss\A \A 19: 		& input:last-child{\A 20: 			margin-top: 1em;\A 21: 			margin-bottom: 1em;\A 22: 		}\A 23: <<<<<<< HEAD\A 24: 	}\A 25: =======\A 26: 		& textarea{	\A 27: 			margin:auto;\A 28: 			background-color: blue;\A 29: 			text-align: center;"; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*****************************/
+/****************************/
+.btn {
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
+  color: black;
+  border: 1px solid black; }
+
+.btn:hover {
+  cursor: pointer; }
+
+.btn-blue {
+  background-color: #B0E0E6; }
+
+.btn-red {
+  background-color: #FFA07A; }
+
+.btn-green {
+  background-color: #98FB98; }
+
+.btn-sl {
+  padding: 0.5rem;
+  font-size: 0.5rem;
+  border-radius: 5px; }
+
+.btn-lg {
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 15px; }
+
+.btn-fat {
+  border-radius: 0px;
+  border: 0px solid black; }
+
+.btn-ex-lg {
+  width: 100%; }
+
+.btn-fancy {
+  background-image: linear-gradient(white, black);
+  color: white;
+  box-shadow: 5px 5px; }
+
+body {
+  font-size: 12pt;
+  margin: auto;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: black;
+  text-align: justify; }
+
+h1 {
+  margin: auto;
+  font-size: 2em;
+  font-weight: bold;
+  color: black;
+  text-align: center; }
+
+h2 {
+  margin: auto;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: black;
+  text-align: center; }
+
+h3 {
+  margin: auto;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: black;
+  text-align: center; }
+
+h4 {
+  margin: auto;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: black;
+  text-align: center; }
+
+h5 {
+  margin: auto;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: black;
+  text-align: center; }
+
+h6 {
+  margin: auto;
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+  text-align: center; }
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  color: grey;
+  font-size: 0.8em;
+  text-align: center; }
+
+p {
+  margin-bottom: 0.5em; }
+
+mark {
+  background-color: yellow;
+  color: black; }
+
+del {
+  text-decoration: line-through;
+  font-style: italic; }
+
+ins {
+  text-decoration: underline;
+  font-style: italic; }
+
+u {
+  text-decoration: underline; }
+
+strong {
+  font-weight: bold; }
+
+em {
+  font-style: italic; }
+
+abbr {
+  text-decoration: dashed underline; }
+
+blockquote {
+  background-color: black;
+  width: 75%;
+  margin: auto; }
+
+quote::before, quote::after {
+  content: '"'; }
+
+code {
+  background-color: black;
+  color: white;
+  font-family: "Courier New", Courier, "Liberation Mono", monospace; }
+
+pre {
+  font-family: "Courier New", Courier, "Liberation Mono", monospace; }
+
+kbd {
+  font-family: "Courier New", Courier, "Liberation Mono", monospace; }
+
+kbd::before, kbd::after {
+  content: '"'; }
+
+ul {
+  list-style-type: disc;
+  text-decoration: none; }
+
+li {
+  text-decoration: none; }
+
+/*****************************/
+/****************************/
+.navbar {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0); }
+
+.narbar li:hover {
+  color: rgba(128, 128, 128, 0); }
+
+.disable {
+  opacity: 0.6;
+  text-decoration: line-through; }
+
+.active {
+  opacity: 1;
+  text-decoration: inherit; }
+
+ul.breadcrumb {
+  padding: 1em 2em;
+  list-style: none;
+  background-color: #eee; }
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 0.8rem; }
+
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0"; }
+
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none; }
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline; }
+
+.pagination {
+  display: inline-block; }
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none; }
+
+header {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap; }
+
+.jumbotron {
+  background-color: #DCDCDC;
+  text-align: center;
+  font-size: 1.2rem; }
+
+/*****************************/
+/****************************/
+.alerte-success {
+  color: #3c763d;
+  border: 1px solid #67b168;
+  background-color: #aad4ab;
+  font-size: 1.2em;
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1em;
+  font-weight: bold; }
+
+.alerte-info {
+  color: #31708f;
+  border: 1px solid #5ea5c8;
+  background-color: #aad0e2;
+  font-size: 1.2em;
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1em;
+  font-weight: bold; }
+
+.alerte-avertissement {
+  color: #8a6d3b;
+  border: 1px solid #c0a16b;
+  background-color: #deceb3;
+  font-size: 1.2em;
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1em;
+  font-weight: bold; }
+
+.alerte-danger {
+  color: #a94442;
+  border: 1px solid #ce8483;
+  background-color: #ebcdcc;
+  font-size: 1.2em;
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1em;
+  font-weight: bold; }
+
+#formulaire form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto; }
+  #formulaire form label {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 1em; }
+  #formulaire form input {
+    width: 80%;
+    margin: auto;
+    text-align: center; }
+  #formulaire form input:last-child {
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  #formulaire form textarea {
+    margin: auto;
+    background-color: blue;
+    text-align: center;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%; }
+
+@media screen and (min-width: 280px) {
+  #formulaire form {
+    width: 90%; } }
+@media screen and (min-width: 480px) {
+  #formulaire form {
+    width: 80%; } }
+@media screen and (min-width: 600px) {
+  #formulaire form {
+    width: 70%; } }
+@media screen and (min-width: 801px) {
+  #formulaire form {
+    width: 60%; } }
+@media screen and (min-width: 1025px) {
+  #formulaire form {
+    width: 50%; } }
+@media screen and (min-width: 1281px) {
+  #formulaire form {
+    width: 40%; } }
+#formulaire form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto; }
+  #formulaire form label {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 1em; }
+  #formulaire form input {
+    width: 80%;
+    margin: auto;
+    text-align: center; }
+  #formulaire form input:last-child {
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  #formulaire form textarea {
+    margin: auto;
+    background-color: blue;
+    text-align: center;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%; }
+
+@media screen and (min-width: 280px) {
+  #formulaire form {
+    width: 90%; } }
+@media screen and (min-width: 480px) {
+  #formulaire form {
+    width: 80%; } }
+@media screen and (min-width: 600px) {
+  #formulaire form {
+    width: 70%; } }
+@media screen and (min-width: 801px) {
+  #formulaire form {
+    width: 60%; } }
+@media screen and (min-width: 1025px) {
+  #formulaire form {
+    width: 50%; } }
+@media screen and (min-width: 1281px) {
+  #formulaire form {
+    width: 40%; } }
+#home article:nth-child(1) {
+  margin-left: 2.2222222222%;
+  width: 95.5555555556%; }
+#home article:nth-child(2) {
+  margin-left: 2.2222222222%;
+  width: 95.5555555556%; }
+  #home article:nth-child(2) ul {
+    list-style-type: none; }
+    #home article:nth-child(2) ul li {
+      margin-top: 0.3em; }
+#home article:nth-child(3) {
+  margin-left: 2.2222222222%;
+  width: 95.5555555556%; }
+#home article:nth-child(4) {
+  margin-left: 2.2222222222%;
+  width: 95.5555555556%; }
+
+@media screen and (min-width: 480px) {
+  #home article:nth-child(1) {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%; }
+  #home article:nth-child(2) {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%; }
+    #home article:nth-child(2) ul {
+      list-style-type: none; }
+      #home article:nth-child(2) ul li {
+        margin-top: 0.3em; }
+  #home article:nth-child(3) {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%; }
+  #home article:nth-child(4) {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%; } }
+@media screen and (min-width: 1025px) {
+  #home article:nth-child(1) {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; }
+  #home article:nth-child(2) {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; }
+    #home article:nth-child(2) ul {
+      list-style-type: none; }
+      #home article:nth-child(2) ul li {
+        margin-top: 0.3em; }
+  #home article:nth-child(3) {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; }
+  #home article:nth-child(4) {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; } }
+#item {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+  #item aside {
+    margin-bottom: auto;
+    padding: 1em 0 1em 0;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%;
+    background-color: #DCDCDC;
+    border: 2px solid black;
+    border-radius: 5px; }
+    #item aside p {
+      border: 1px solid black;
+      border-radius: 5px;
+      font-size: 1em;
+      padding: 0.2em;
+      text-align: left;
+      width: 80%;
+      margin: auto;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em; }
+    #item aside form {
+      width: 80%;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap; }
+      #item aside form textarea {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
+      #item aside form label {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%;
+        text-align: center;
+        font-size: 1.2em; }
+      #item aside form input[type=text] {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
+      #item aside form input[type=submit] {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
+  #item div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%; }
+  #item #lienAjout {
+    margin: auto;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.5em;
+    color: black;
+    box-sizing: border-box;
+    background-color: green;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em; }
+    #item #lienAjout:hover {
+      cursor: pointer;
+      background-color: #00b300; }
+    #item #lienAjout a {
+      text-decoration: none;
+      color: black; }
+    #item #lienAjout a:hover {
+      color: #1a1a1a; }
+  #item div article {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%; }
+    #item div article div:first-child {
+      width: 100%;
+      padding: 0.5em;
+      display: flex;
+      flex-wrap: wrap; }
+      #item div article div:first-child a:first-child {
+        border-radius: 10px;
+        font-size: 1rem;
+        padding: 0.35em;
+        color: white;
+        box-sizing: border-box;
+        background-color: blue;
+        text-decoration: none;
+        margin: auto; }
+        #item div article div:first-child a:first-child:hover {
+          cursor: pointer;
+          background-color: #3333ff; }
+        #item div article div:first-child a:first-child a {
+          text-decoration: none;
+          color: white; }
+        #item div article div:first-child a:first-child a:hover {
+          color: white; }
+      #item div article div:first-child a:last-child {
+        border-radius: 10px;
+        font-size: 1rem;
+        padding: 0.35em;
+        color: white;
+        box-sizing: border-box;
+        background-color: red;
+        text-decoration: none;
+        margin: auto; }
+        #item div article div:first-child a:last-child:hover {
+          cursor: pointer;
+          background-color: #ff3333; }
+        #item div article div:first-child a:last-child a {
+          text-decoration: none;
+          color: white; }
+        #item div article div:first-child a:last-child a:hover {
+          color: white; }
+    #item div article div:nth-child(2) {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap; }
+      #item div article div:nth-child(2) a {
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap; }
+      #item div article div:nth-child(2) a img {
+        margin: auto; }
+      #item div article div:nth-child(2) aside {
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
+    #item div article form {
+      width: 100%;
+      flex-wrap: wrap;
+      display: flex; }
+      #item div article form label {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        margin-top: 1em; }
+      #item div article form input {
+        width: 80%;
+        margin: auto;
+        text-align: center; }
+      #item div article form textarea {
+        width: 80%;
+        height: 3em;
+        margin: auto; }
+      #item div article form input:last-child {
+        margin-top: 1em;
+        margin-bottom: 1em; }
+
+@media screen and (min-width: 600px) {
+  #item aside {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; }
+  #item div {
+    margin-left: 2.2222222222%;
+    width: 71.1111111111%; }
+    #item div article {
+      margin-left: 2.2222222222%;
+      width: 46.6666666667%; } }
+@media screen and (min-width: 1750px) {
+  #item div article {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; } }
+#liste {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  #liste #lienAjout {
+    margin: auto;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.5em;
+    color: black;
+    box-sizing: border-box;
+    background-color: green;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em; }
+    #liste #lienAjout:hover {
+      cursor: pointer;
+      background-color: #00b300; }
+    #liste #lienAjout a {
+      text-decoration: none;
+      color: black; }
+    #liste #lienAjout a:hover {
+      color: #1a1a1a; }
+  #liste article {
+    display: flex;
+    flex-wrap: wrap;
+    text-overflow: ellipsis;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%; }
+    #liste article p:nth-child(1) {
+      margin-left: 2.2222222222%;
+      width: 95.5555555556%;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: auto;
+      margin-bottom: auto;
+      order: 3; }
+      #liste article p:nth-child(1) a {
+        color: black;
+        text-decoration: none; }
+    #liste article a:nth-child(2) {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 2.2222222222%;
+      width: 46.6666666667%;
+      border-radius: 10px;
+      font-size: 1rem;
+      padding: 0.25em;
+      color: black;
+      box-sizing: border-box;
+      background-color: #679F5A;
+      text-decoration: none;
+      text-align: center;
+      order: 1; }
+      #liste article a:nth-child(2):hover {
+        cursor: pointer;
+        background-color: #84b379; }
+      #liste article a:nth-child(2) a {
+        text-decoration: none;
+        color: black; }
+      #liste article a:nth-child(2) a:hover {
+        color: #1a1a1a; }
+    #liste article a:nth-child(3) {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 2.2222222222%;
+      width: 46.6666666667%;
+      border-radius: 10px;
+      font-size: 1rem;
+      padding: 0.25em;
+      color: black;
+      box-sizing: border-box;
+      background-color: #B82010;
+      text-decoration: none;
+      text-align: center;
+      order: 2; }
+      #liste article a:nth-child(3):hover {
+        cursor: pointer;
+        background-color: #e72814; }
+      #liste article a:nth-child(3) a {
+        text-decoration: none;
+        color: black; }
+      #liste article a:nth-child(3) a:hover {
+        color: #1a1a1a; }
+    #liste article p:nth-child(4) {
+      margin-left: 2.2222222222%;
+      width: 71.1111111111%;
+      margin-top: auto;
+      margin-bottom: auto;
+      order: 4; }
+    #liste article p:nth-child(5) {
+      margin-left: 2.2222222222%;
+      width: 22.2222222222%;
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: auto;
+      order: 5; }
+  #liste article[close=y] {
+    background-color: grey; }
+  #liste article:hover {
+    background-color: white; }
+
+@media screen and (min-width: 480px) {
+  #liste article {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%; } }
+@media screen and (min-width: 1281px) {
+  #liste article p:nth-child(1) {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+    order: 1; }
+  #liste article a:nth-child(2) {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.25em;
+    color: black;
+    box-sizing: border-box;
+    background-color: #679F5A;
+    text-decoration: none;
+    text-align: center;
+    order: 2; }
+    #liste article a:nth-child(2):hover {
+      cursor: pointer;
+      background-color: #84b379; }
+    #liste article a:nth-child(2) a {
+      text-decoration: none;
+      color: black; }
+    #liste article a:nth-child(2) a:hover {
+      color: #1a1a1a; }
+  #liste article a:nth-child(3) {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.25em;
+    color: black;
+    box-sizing: border-box;
+    background-color: #B82010;
+    text-decoration: none;
+    text-align: center;
+    order: 3; }
+    #liste article a:nth-child(3):hover {
+      cursor: pointer;
+      background-color: #e72814; }
+    #liste article a:nth-child(3) a {
+      text-decoration: none;
+      color: black; }
+    #liste article a:nth-child(3) a:hover {
+      color: #1a1a1a; } }
+@media screen and (min-width: 1750px) {
+  #liste article {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; }
+    #liste article p:nth-child(1) {
+      margin-left: 2.2222222222%;
+      width: 46.6666666667%;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: auto;
+      margin-bottom: auto;
+      order: 1; }
+    #liste article a:nth-child(2) {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 2.2222222222%;
+      width: 22.2222222222%;
+      border-radius: 10px;
+      font-size: 1rem;
+      padding: 0.25em;
+      color: black;
+      box-sizing: border-box;
+      background-color: #679F5A;
+      text-decoration: none;
+      text-align: center;
+      order: 2; }
+      #liste article a:nth-child(2):hover {
+        cursor: pointer;
+        background-color: #84b379; }
+      #liste article a:nth-child(2) a {
+        text-decoration: none;
+        color: black; }
+      #liste article a:nth-child(2) a:hover {
+        color: #1a1a1a; }
+    #liste article a:nth-child(3) {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 2.2222222222%;
+      width: 22.2222222222%;
+      border-radius: 10px;
+      font-size: 1rem;
+      padding: 0.25em;
+      color: black;
+      box-sizing: border-box;
+      background-color: #B82010;
+      text-decoration: none;
+      text-align: center;
+      order: 3; }
+      #liste article a:nth-child(3):hover {
+        cursor: pointer;
+        background-color: #e72814; }
+      #liste article a:nth-child(3) a {
+        text-decoration: none;
+        color: black; }
+      #liste article a:nth-child(3) a:hover {
+        color: #1a1a1a; } }
+#formulaire form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto; }
+  #formulaire form label {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 1em; }
+  #formulaire form input {
+    width: 80%;
+    margin: auto;
+    text-align: center; }
+  #formulaire form input:last-child {
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  #formulaire form textarea {
+    margin: auto;
+    background-color: blue;
+    text-align: center;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%; }
+
+@media screen and (min-width: 280px) {
+  #formulaire form {
+    width: 90%; } }
+@media screen and (min-width: 480px) {
+  #formulaire form {
+    width: 80%; } }
+@media screen and (min-width: 600px) {
+  #formulaire form {
+    width: 70%; } }
+@media screen and (min-width: 801px) {
+  #formulaire form {
+    width: 60%; } }
+@media screen and (min-width: 1025px) {
+  #formulaire form {
+    width: 50%; } }
+@media screen and (min-width: 1281px) {
+  #formulaire form {
+    width: 40%; } }
+#formulaire form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto; }
+  #formulaire form label {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 1em; }
+  #formulaire form input {
+    width: 80%;
+    margin: auto;
+    text-align: center; }
+  #formulaire form input:last-child {
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  #formulaire form textarea {
+    margin: auto;
+    background-color: blue;
+    text-align: center;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%; }
+
+@media screen and (min-width: 280px) {
+  #formulaire form {
+    width: 90%; } }
+@media screen and (min-width: 480px) {
+  #formulaire form {
+    width: 80%; } }
+@media screen and (min-width: 600px) {
+  #formulaire form {
+    width: 70%; } }
+@media screen and (min-width: 801px) {
+  #formulaire form {
+    width: 60%; } }
+@media screen and (min-width: 1025px) {
+  #formulaire form {
+    width: 50%; } }
+@media screen and (min-width: 1281px) {
+  #formulaire form {
+    width: 40%; } }
+#formulaire form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto; }
+  #formulaire form label {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 1em; }
+  #formulaire form input {
+    width: 80%;
+    margin: auto;
+    text-align: center; }
+  #formulaire form input:last-child {
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  #formulaire form textarea {
+    margin: auto;
+    background-color: blue;
+    text-align: center;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%; }
+
+@media screen and (min-width: 280px) {
+  #formulaire form {
+    width: 90%; } }
+@media screen and (min-width: 480px) {
+  #formulaire form {
+    width: 80%; } }
+@media screen and (min-width: 600px) {
+  #formulaire form {
+    width: 70%; } }
+@media screen and (min-width: 801px) {
+  #formulaire form {
+    width: 60%; } }
+@media screen and (min-width: 1025px) {
+  #formulaire form {
+    width: 50%; } }
+@media screen and (min-width: 1281px) {
+  #formulaire form {
+    width: 40%; } }
+body {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 8pt; }
+
+header {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 8pt;
+  box-sizing: border-box;
+  width: 100%; }
+  header img {
+    margin: auto; }
+  header #accueil {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; }
+    header #accueil a {
+      margin: auto;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap; }
+  header nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; }
+    header nav a {
+      margin-top: 0.3em;
+      border-radius: 10px;
+      font-size: 1rem;
+      padding: 0.5em;
+      color: black;
+      box-sizing: border-box;
+      background-color: aqua;
+      text-decoration: none;
+      margin-left: 2.2222222222%;
+      width: 46.6666666667%;
+      text-align: center; }
+      header nav a:hover {
+        cursor: pointer;
+        background-color: #33ffff; }
+      header nav a a {
+        text-decoration: none;
+        color: black; }
+      header nav a a:hover {
+        color: #1a1a1a; }
+
+section {
+  display: flex;
+  flex-wrap: wrap; }
+
+article {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  padding: 0.3em;
+  background-color: #DCDCDC;
+  text-align: justify;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 5px; }
+
+footer {
+  width: 100%;
+  height: 5em;
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  display: flex;
+  flex-wrap: wrap; }
+  footer div {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%;
+    display: flex;
+    flex-wrap: wrap; }
+    footer div ul {
+      list-style-type: none;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%; }
+      footer div ul li {
+        width: 100%;
+        padding: 0.5em;
+        text-align: center;
+        margin: auto; }
+
+@media screen and (min-width: 280px) {
+  body {
+    font-size: 8pt; } }
+@media screen and (min-width: 480px) {
+  body {
+    font-size: 8.5pt; } }
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 9pt; } }
+@media screen and (min-width: 801px) {
+  body {
+    font-size: 10pt; } }
+@media screen and (min-width: 1025px) {
+  body {
+    font-size: 11pt; } }
+@media screen and (min-width: 1281px) {
+  body {
+    font-size: 12pt; } }
+
+/*# sourceMappingURL=design.css.map */

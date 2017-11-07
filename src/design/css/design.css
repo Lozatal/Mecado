@@ -469,44 +469,195 @@ header {
   #liste article {
     display: flex;
     flex-wrap: wrap;
+    text-overflow: ellipsis;
     margin-left: 2.2222222222%;
     width: 95.5555555556%; }
-    #liste article h2 {
+    #liste article p:nth-child(1) {
       margin-left: 2.2222222222%;
-      width: 71.1111111111%;
-      background-color: blue; }
-    #liste article a {
+      width: 95.5555555556%;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: auto;
+      margin-bottom: auto;
+      order: 3; }
+    #liste article a:nth-child(2) {
+      margin-top: auto;
+      margin-bottom: auto;
       margin-left: 2.2222222222%;
-      width: 10%;
+      width: 46.6666666667%;
       border-radius: 10px;
       font-size: 1rem;
       padding: 0.25em;
       color: black;
       box-sizing: border-box;
-      background-color: green;
+      background-color: #679F5A;
       text-decoration: none;
       text-align: center;
-      margin-bottom: 2em; }
-      #liste article a:hover {
+      order: 1; }
+      #liste article a:nth-child(2):hover {
         cursor: pointer;
-        background-color: #00b300; }
-      #liste article a a {
+        background-color: #84b379; }
+      #liste article a:nth-child(2) a {
         text-decoration: none;
         color: black; }
-      #liste article a a:hover {
+      #liste article a:nth-child(2) a:hover {
         color: #1a1a1a; }
-    #liste article p {
+    #liste article a:nth-child(3) {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 2.2222222222%;
+      width: 46.6666666667%;
+      border-radius: 10px;
+      font-size: 1rem;
+      padding: 0.25em;
+      color: black;
+      box-sizing: border-box;
+      background-color: #B82010;
+      text-decoration: none;
+      text-align: center;
+      order: 2; }
+      #liste article a:nth-child(3):hover {
+        cursor: pointer;
+        background-color: #e72814; }
+      #liste article a:nth-child(3) a {
+        text-decoration: none;
+        color: black; }
+      #liste article a:nth-child(3) a:hover {
+        color: #1a1a1a; }
+    #liste article p:nth-child(4) {
       margin-left: 2.2222222222%;
       width: 71.1111111111%;
-      background-color: yellow; }
-    #liste article h3 {
+      margin-top: auto;
+      margin-bottom: auto;
+      order: 4; }
+    #liste article p:nth-child(5) {
       margin-left: 2.2222222222%;
       width: 22.2222222222%;
       text-align: center;
-      background-color: pink; }
+      margin-top: auto;
+      margin-bottom: auto;
+      order: 5; }
   #liste article[close=y] {
     background-color: grey; }
+  #liste article:hover {
+    background-color: white; }
 
+@media screen and (min-width: 480px) {
+  #liste article {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%; } }
+@media screen and (min-width: 1281px) {
+  #liste article p:nth-child(1) {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+    order: 1; }
+  #liste article a:nth-child(2) {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.25em;
+    color: black;
+    box-sizing: border-box;
+    background-color: #679F5A;
+    text-decoration: none;
+    text-align: center;
+    order: 2; }
+    #liste article a:nth-child(2):hover {
+      cursor: pointer;
+      background-color: #84b379; }
+    #liste article a:nth-child(2) a {
+      text-decoration: none;
+      color: black; }
+    #liste article a:nth-child(2) a:hover {
+      color: #1a1a1a; }
+  #liste article a:nth-child(3) {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.25em;
+    color: black;
+    box-sizing: border-box;
+    background-color: #B82010;
+    text-decoration: none;
+    text-align: center;
+    order: 3; }
+    #liste article a:nth-child(3):hover {
+      cursor: pointer;
+      background-color: #e72814; }
+    #liste article a:nth-child(3) a {
+      text-decoration: none;
+      color: black; }
+    #liste article a:nth-child(3) a:hover {
+      color: #1a1a1a; } }
+@media screen and (min-width: 1750px) {
+  #liste article {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; }
+    #liste article p:nth-child(1) {
+      margin-left: 2.2222222222%;
+      width: 46.6666666667%;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: auto;
+      margin-bottom: auto;
+      order: 1; }
+    #liste article a:nth-child(2) {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 2.2222222222%;
+      width: 22.2222222222%;
+      border-radius: 10px;
+      font-size: 1rem;
+      padding: 0.25em;
+      color: black;
+      box-sizing: border-box;
+      background-color: #679F5A;
+      text-decoration: none;
+      text-align: center;
+      order: 2; }
+      #liste article a:nth-child(2):hover {
+        cursor: pointer;
+        background-color: #84b379; }
+      #liste article a:nth-child(2) a {
+        text-decoration: none;
+        color: black; }
+      #liste article a:nth-child(2) a:hover {
+        color: #1a1a1a; }
+    #liste article a:nth-child(3) {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 2.2222222222%;
+      width: 22.2222222222%;
+      border-radius: 10px;
+      font-size: 1rem;
+      padding: 0.25em;
+      color: black;
+      box-sizing: border-box;
+      background-color: #B82010;
+      text-decoration: none;
+      text-align: center;
+      order: 3; }
+      #liste article a:nth-child(3):hover {
+        cursor: pointer;
+        background-color: #e72814; }
+      #liste article a:nth-child(3) a {
+        text-decoration: none;
+        color: black; }
+      #liste article a:nth-child(3) a:hover {
+        color: #1a1a1a; } }
 body {
   display: flex;
   flex-wrap: wrap;

@@ -1,23 +1,23 @@
 /*
 Error: Undefined mixin 'grille'.
-        on line 8 of scss/liste.scss, in `grille'
-        from line 8 of scss/liste.scss
+        on line 9 of scss/liste.scss, in `grille'
+        from line 9 of scss/liste.scss
 
-3: 	display: flex;
 4: 	flex-wrap: wrap;
 5: 	& article{
 6: 		display: flex;
 7: 		flex-wrap: wrap;
-8: 		@include grille(8,10%,0,8);
-9: 		& h2{
-10: 			@include grille(8,10%,0,6);
-11: 			background-color: blue;
-12: 		}
-13: 		& a{
+8: 		text-overflow: ellipsis;
+9: 		@include grille(8,10%,0,8);
+10: 		& p:nth-child(1){
+11: 			@include grille(8,10%,0,8);
+12: 			text-align: center;
+13: 			font-size: 1.5rem;
+14: 			font-weight: bold;
 
 Backtrace:
-scss/liste.scss:8:in `grille'
-scss/liste.scss:8
+scss/liste.scss:9:in `grille'
+scss/liste.scss:9
 /var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 /var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/stack.rb:98:in `block in with_mixin'
 /var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
@@ -84,4 +84,4 @@ scss/liste.scss:8
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'grille'.\A         on line 8 of scss/liste.scss, in `grille'\A         from line 8 of scss/liste.scss\A \A 3: 	display: flex;\A 4: 	flex-wrap: wrap;\A 5: 	& article{\A 6: 		display: flex;\A 7: 		flex-wrap: wrap;\A 8: 		@include grille(8,10%,0,8);\A 9: 		& h2{\A 10: 			@include grille(8,10%,0,6);\A 11: 			background-color: blue;\A 12: 		}\A 13: 		& a{"; }
+  content: "Error: Undefined mixin 'grille'.\A         on line 9 of scss/liste.scss, in `grille'\A         from line 9 of scss/liste.scss\A \A 4: 	flex-wrap: wrap;\A 5: 	& article{\A 6: 		display: flex;\A 7: 		flex-wrap: wrap;\A 8: 		text-overflow: ellipsis;\A 9: 		@include grille(8,10%,0,8);\A 10: 		& p:nth-child(1){\A 11: 			@include grille(8,10%,0,8);\A 12: 			text-align: center;\A 13: 			font-size: 1.5rem;\A 14: 			font-weight: bold;"; }

@@ -45,21 +45,21 @@
 		display: flex;
 		flex-wrap: wrap;
 		@include grille(8,10%,0,8);
-		margin-top: 0;
-		margin-bottom: 0;
 	}
 	& #lienAjout{
 		margin: auto;
+		margin-bottom: 0.5em;
+		margin-top: 0.5em;
 		@include bouton(black,1,green,10px);
 		text-align: center;
 		@include grille(8,10%,0,8);
-		margin-top: 0;
-		margin-bottom: 0;
+		max-height: 2em;
 	}
 	& div article{
 		display: flex;
 		flex-wrap: wrap;
 		@include grille(8,10%,0,8);
+		max-height: 35em;
 		& div:first-child{
 			width: 100%;
 			padding: 0.5em;

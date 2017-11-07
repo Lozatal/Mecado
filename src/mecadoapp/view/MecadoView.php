@@ -23,7 +23,7 @@ class MecadoView extends \mf\view\AbstractView {
             <div id="accueil"><a href="'.$this->app_root.'/main.php"><img src="'.$this->app_root.'/src/design/css/images/accueil.jpg"/></a></div>';
     }
     
-    /* MÃ©thode renderFooter
+    /* Méthode renderFooter
      *
      * Retourne  le fragment HTML du bas de la page (unique pour toutes les vues)
      */
@@ -38,7 +38,7 @@ class MecadoView extends \mf\view\AbstractView {
             </div>
             <div>
                 <ul>
-                    <li>PublicitÃ©</li>
+                    <li>Publicité</li>
                     <li>Autre truc</li>
                 </ul>
             </div>
@@ -113,11 +113,11 @@ EOT;
         <section id="sign_up"> 
 
                 <form action="'.$this->app_root.'/main.php/check_signup/" method=post>
-                <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom"/>
-                <label for="prenom">PrÃ©nom</label><input type="text"  name="prenom" placeholder="Prenom"/>
-                <label for="email">Mail</label><input type="text" name="mail" placeholder="Email"/>
-                <label for="password">Mot de passe</label><input type="password" name="password"/>
-                <label for="password_verify">Confirmation du mot de passe</label><input type="password"  name="password_verify"/><br/>
+                <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom">
+                <label for="prenom">Prénom</label><input type="text"  name="prenom" placeholder="Prenom">
+                <label for="email">Mail</label><input type="text" name="email" placeholder="Email">
+                <label for="password">Mot de passe</label><input type="password" name="password">
+                <label for="password_verify">Confirmation du mot de passe</label><input type="password"  name="password_verify"><br/>
                 <input type="submit" value="S\'inscrire" />
             </form>
         </section>
@@ -132,8 +132,8 @@ EOT;
         $retour = '
         <section id="login">
             <form action="'.$this->app_root.'/main.php/check_login/" method=post>
-                <label for="email">Mail</label><input type="text" name="email" placeholder="Email"/>
-                <label for="password">Mot de passe</label><input type="password" name="password" placeholder="Mot de passe"/>
+                <label for="email">Mail</label><input type="text" name="email" placeholder="Email">
+                <label for="password">Mot de passe</label><input type="password" name="password" placeholder="Mot de passe">
                 <input type="submit" value="Connexion" />
             </form>
         </section>
@@ -145,9 +145,7 @@ EOT;
 
     private function renderListe() {
 
-        $retour = '<section id="liste">';
-
-        
+        $retour = '<section id="liste"><a id="lienAjout" href="'.$this->app_root.'/main.php/add_liste/">Ajouter une liste</a>';     
 
         foreach ($this->data as $key => $value) {
             $date = date_create($value->date_limite);
@@ -157,8 +155,9 @@ EOT;
                 $close = 'n';
             $retour = $retour.'
                         <article close="'.$close.'">
-                            <p><a href="'.$this->app_root.'/main.php/item.php/?id='.$value->id.'">'.$value->nom.'</a></p>
+                            <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
                             <a href="#">Modifier</a><a href="#">Supprimer</a>
+                            <p>'.$value->description.'</p>
                             <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
                             <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>
                         </article>
@@ -167,6 +166,25 @@ EOT;
 
         return $retour.'</section>';
     }
+
+    private function renderAddListe() {
+
+        $retour =<<< EOT
+
+        <section>
+            <article>
+                <form>
+                    <input>
+                </form>
+            </article>
+        </section>
+
+EOT;
+
+
+        return $retour;
+    }
+
     
     ///////////////// ITEM /////////////////////
     
@@ -267,6 +285,9 @@ EOT;
                 break;
             case "listes":
                 $contenu = $this->renderListe();
+                break;
+            case "addListe":
+                $contenu = $this->renderAddListe();
                 break;
             case "item":
             	$contenu = $this->renderItem();

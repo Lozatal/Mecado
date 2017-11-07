@@ -1,9 +1,9 @@
-form{
+#formulaire{
+	form{
 		display:flex;
 		flex-wrap: wrap;
 		width: 100%;
-		background-color: red;
-		margin :auto;
+		margin: auto;
 		& label{
 			width: 80%;
 			margin: auto;
@@ -26,38 +26,40 @@ form{
 			text-align: center;
 			@include grille(8,10%,0,8);
 		}
-	
+	}
 }
+
 @media screen and (min-width: 280px){
-	form{
+	#formulaire form{
 		width: 90%;
 	}
 }
 
 @media screen and (min-width: 480px){
-	form{
+	#formulaire form{
 		width: 80%;
 	}
 }
 
 @media screen and (min-width: 600px){
-	form{
+	#formulaire form{
 		width: 70%;
 	}
 }
 
 @media screen and (min-width: 801px){
-	form{
+	#formulaire form{
 		width: 60%;
 	}
 }
+
 @media screen and (min-width: 1025px){
-	form{
+	#formulaire form{
 		width: 50%;
 	}
 }
 @media screen and (min-width: 1281px){
-	form{
+	#formulaire form{
 		width: 40%;
 	}
 }

@@ -19,7 +19,12 @@ class MecadoView extends \mf\view\AbstractView {
      */
 
     private function renderHeader(){
-        return '<h1>Titre</h1>';
+        return '
+            <div id="accueil"><a href="'.$this->app_root.'/main.php"><img src="'.$this->app_root.'/src/design/css/images/accueil.jpg"/></a></div>
+            <nav>
+                <a href="'.$this->app_root.'/main.php/login/">Connexion</a>
+                <a href="'.$this->app_root.'/main.php/signup/">Inscription</a>
+            </nav>';
     }
     
     /* Méthode renderFooter
@@ -28,7 +33,20 @@ class MecadoView extends \mf\view\AbstractView {
      */
 
     private function renderFooter(){
-        return 'La super app créée en Licence Pro &copy;2017';
+        return '    <footer>
+            <div>
+                <ul>
+                    <li>Partenaire</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Publicité</li>
+                    <li>Autre truc</li>
+                </ul>
+            </div>
+        </footer>';
     }
 
     private function renderMenu(){
@@ -43,7 +61,32 @@ EOT;
     
     private function renderHome(){  
 
-        $retour = '';
+        $retour = <<<EOT
+
+<section id="home">
+            <article>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at purus ut lorem egestas sagittis. Fusce sit amet nisl mauris. Cras eget dolor ut purus varius fermentum. Vestibulum placerat eros neque, sed viverra dui mollis a. Praesent nec enim a eros bibendum luctus. Maecenas vel mattis lectus, non euismod dui. Etiam scelerisque nisl ut auctor finibus. Praesent tempus mollis elit et rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante nisl, id fringilla nulla ultricies sit amet. Nulla molestie nisl quis dui pharetra commodo. In convallis turpis ac consequat rutrum. Donec bibendum non justo auctor malesuada. Nam et egestas nisi, quis imperdiet ex.
+            </article>
+            <article>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                </ul>
+            </article>
+            <article>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at purus ut lorem egestas sagittis. Fusce sit amet nisl mauris. Cras eget dolor ut purus varius fermentum. Vestibulum placerat eros neque, sed viverra dui mollis a.
+            </article>
+            <article>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at purus ut lorem egestas sagittis. Fusce sit amet nisl mauris. Cras eget dolor ut purus varius fermentum. Vestibulum placerat eros neque, sed viverra dui mollis a. Praesent nec enim a eros bibendum luctus. Maecenas vel mattis lectus, non euismod dui. Etiam scelerisque nisl ut auctor finibus. Praesent tempus mollis elit et rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante nisl, id fringilla nulla ultricies sit amet. Nulla molestie nisl quis dui pharetra commodo. In convallis turpis ac consequat rutrum. Donec bibendum non justo auctor malesuada. Nam et egestas nisi, quis imperdiet ex.
+
+    Donec mollis tincidunt ullamcorper. Mauris quis odio consectetur, laoreet metus in, rutrum tellus. Integer suscipit justo non mi pharetra rhoncus. Nullam eget sollicitudin eros. Mauris dictum nisi at dignissim porta. Praesent ullamcorper viverra felis, ac ullamcorper dolor pellentesque ac. Etiam molestie magna magna, ac fermentum elit efficitur non. Fusce convallis ipsum ut erat aliquam suscipit. Fusce quis nulla ligula. Curabitur ac tortor at ex feugiat condimentum nec sed lorem. Proin diam erat, interdum vitae pretium pellentesque, eleifend eget mauris. Quisque posuere neque nibh, placerat consequat orci mattis sed. Aenean sodales, lectus ac feugiat dapibus, nulla tellus aliquam urna, vel imperdiet eros elit ac mauris. Sed sagittis felis vitae velit aliquam vestibulum. Duis libero nulla, suscipit a risus sed, sodales scelerisque urna. 
+            </article>
+    </section>
+
+EOT;
         return $retour;
 
 
@@ -52,20 +95,39 @@ EOT;
     private function renderSignUp() {
 
         $retour = '
-        <form class="forms" action="'.$this->app_root.'/main.php/check_signup/" method=post>
-            <input class="forms-text" type=text name=nom placeholder="Nom">
-            <input class="forms-text" type=text name=prenom placeholder="Prenom">
-            <input class="forms-text" type=text name=email placeholder="Email">
-            <input class="forms-text" type=password name=password placeholder="password">
-            <input class="forms-text" type=password name=password_verify placeholder="retype password">
+        <section id="sign_up">
+            <form action="'.$this->app_root.'/main.php/check_signup/" method=post>
+                <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom"/>
+                <label for="prenom">Prénom</label><input type="text"  name="prenom" placeholder="Prenom"/>
+                <label for="email">Mail</label><input type="text" name="mail" placeholder="Email"/>
+                <label for="password">Mot de passe</label><input type="password" name="password"/>
+                <label for="password_verify">Confirmation du mot de passe</label><input type="password"  name="password_verify"/><br/>
+                <input type="submit" value="S\'inscrire" />
+            </form>
+        </section>
 
-            <button class="forms-button" name=login_button type="submit">Inscription</button>
-        </form> ';
+        ';
         return $retour;
 
     }
 
     private function renderLogin() {
+
+        $retour = '
+        <section id="login">
+            <form action="'.$this->app_root.'/main.php/check_login/" method=post>
+                <label for="email">Mail</label><input type="text" name="mail" placeholder="Email"/>
+                <label for="password">Mot de passe</label><input type="password" name="password" placeholder="Mot de passe"/>
+                <input type="submit" value="Connexion" />
+            </form>
+        </section>
+
+        ';
+
+        return $retour;
+    }
+
+    private function renderListe() {
 
         $retour = '
         <form class="forms" action="'.$this->app_root.'/main.php/check_login/" method=post>

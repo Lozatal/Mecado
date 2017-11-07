@@ -396,14 +396,26 @@ header {
     width: 22.2222222222%; } }
 #cadeau {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  width: 100%; }
   #cadeau aside {
     margin-left: 2.2222222222%;
-    width: 22.2222222222%; }
+    width: 22.2222222222%;
+    background-color: red; }
+    #cadeau aside p {
+      border: 1px solid black;
+      border-radius: 5px;
+      font-size: 1em;
+      padding: 0.2em;
+      text-align: justify;
+      width: 80%;
+      margin: auto;
+      margin-top: 0.2em; }
   #cadeau div {
     margin-left: 2.2222222222%;
-    width: 71.1111111111%; }
-  #cadeau a {
+    width: 71.1111111111%;
+    background-color: blue; }
+  #cadeau #lienAjout {
     margin: auto;
     border-radius: 10px;
     font-size: 1rem;
@@ -415,13 +427,13 @@ header {
     text-align: center;
     margin-left: 2.2222222222%;
     width: 95.5555555556%; }
-    #cadeau a:hover {
+    #cadeau #lienAjout:hover {
       cursor: pointer;
       background-color: #00b300; }
-    #cadeau a a {
+    #cadeau #lienAjout a {
       text-decoration: none;
       color: black; }
-    #cadeau a a:hover {
+    #cadeau #lienAjout a:hover {
       color: #1a1a1a; }
   #cadeau div article {
     display: flex;

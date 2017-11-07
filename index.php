@@ -82,7 +82,7 @@
 			<article>
 				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 				<div>
-					<a href="src/design/css/images/cado.jpeg"><img src="src/design/css/images/cado.jpeg" alt="lien vers le site marchand"/></a>
+					<a href="#"><img src="src/design/css/images/cado.jpeg" alt="lien vers le site marchand"/></a>
 					<aside><h2>Cadeau 1</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
 				</div>
 				<form>

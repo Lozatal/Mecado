@@ -7,12 +7,6 @@
 @import 'add_liste'; //formulaire
 @import 'add_cadeau'; //formulaire
 
-$nbCol:8;
-$Lcol:10%;
-
-$nbgou:9;
-$Lgou:(100-($nbCol*$Lcol))/$nbgou;
-
 body{
 	display: flex;
 	flex-wrap: wrap;

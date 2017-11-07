@@ -1,3 +1,36 @@
+#liste{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	& article{
+		display: flex;
+		flex-wrap: wrap;
+		@include grille(8,10%,0,8);
+		& h2{
+			@include grille(8,10%,0,6);
+			background-color: blue;
+		}
+		& a{
+			@include grille(8,10%,0,1);
+			@include bouton(black,0.5,green,10px);
+			text-align: center;
+			margin-bottom: 2em;
+		}
+		& p{
+			@include grille(8,10%,0,6);
+			background-color: yellow;
+		}
+		& h3{
+			@include grille(8,10%,0,2);
+			text-align: center;
+			background-color: pink;
+		}
+	}
+	& article[close=y]{
+		background-color: grey;
+	}
+}
+
 @media screen and (min-width: 280px){
 
 }

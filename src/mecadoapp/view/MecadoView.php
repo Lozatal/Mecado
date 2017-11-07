@@ -129,9 +129,27 @@ EOT;
 
     private function renderListe() {
 
-        $retour = '';
+        $retour = '<section id="liste">';
 
-        return $retour;
+        
+
+        foreach ($this->data as $key => $value) {
+            $date = date_create($value->date_limite);
+            $retour = $retour.'
+                        <article close="n">
+                            <p>'.$value->nom.'</p>
+                            <a href="#">Modifier</a><a href="#">Supprimer</a>
+                            <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
+                            <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>
+                        </article>
+                        ';
+        }
+        $retour .= <<<EOT
+       
+
+EOT;
+
+        return $retour.'</section>';
     }
     
     protected function renderBody($selector=null){
@@ -158,21 +176,17 @@ EOT;
         $racine =  $this->app_root;
 
         $html = <<<EOT
-            <header class="theme-backcolor1">
+            <header>
                 ${header}
                 ${menu}
             </header>
 
-            <section class="theme-backcolor2">
-                <article>
+
                     ${contenu}
-                </article>
-            </section>
 
 
-            <footer class="theme-backcolor1">
+
                 ${footer}
-            </footer>
 
 EOT;
 

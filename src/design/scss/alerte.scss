@@ -3,32 +3,71 @@
 
 @mixin alerte($color){
 	color: $color;
-	border: 1px solid $color;
-	width: 100%;
+	border: 1px solid lighten($color, 20);
+	background-color: lighten($color, 40);
+	font-size: 1.2em;
+	width: 80%;
+	margin: auto;
+	border-radius: 10px;
+	text-align: center;
+	padding: 1em;
+	font-weight: bold;
 }
 
 /****************************/
 
-.alerte-succes{
-	color: green;
-	border: 1px solid green;
-	width: 100%;
+.alerte-success{
+	$color:#3c763d;
+	color: $color;
+	border: 1px solid lighten($color, 20);
+	background-color: lighten($color, 40);
+	font-size: 1.2em;
+	width: 80%;
+	margin: auto;
+	border-radius: 10px;
+	text-align: center;
+	padding: 1em;
+	font-weight: bold;
 }
 
 .alerte-info{
-	border: 1px solid blue;
-	color: blue;
-	width: 100%;
+	$color:#31708f;
+	color: $color;
+	border: 1px solid lighten($color, 20);
+	background-color: lighten($color, 40);
+	font-size: 1.2em;
+	width: 80%;
+	margin: auto;
+	border-radius: 10px;
+	text-align: center;
+	padding: 1em;
+	font-weight: bold;
 }
 
 .alerte-avertissement{
-	border: 1px solid orange;
-	color: orange;
-	width: 100%;
+	$color:#8a6d3b;
+	color: $color;
+	border: 1px solid lighten($color, 20);
+	background-color: lighten($color, 40);
+	font-size: 1.2em;
+	width: 80%;
+	margin: auto;
+	border-radius: 10px;
+	text-align: center;
+	padding: 1em;
+	font-weight: bold;
 }
 
-.alerte-avertissement{
-	border: 1px solid red;
-	color: red;
-	width: 100%;
+.alerte-danger{
+	$color:#a94442;
+	color: $color;
+	border: 1px solid lighten($color, 20);
+	background-color: lighten($color, 40);
+	font-size: 1.2em;
+	width: 80%;
+	margin: auto;
+	border-radius: 10px;
+	text-align: center;
+	padding: 1em;
+	font-weight: bold;
 }

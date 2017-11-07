@@ -58,7 +58,7 @@
 					<input type='submit' value="S'inscrire" />
 				</form>
 			<article>
-		</section>-->
+		</section>
 		
 		<section id="login">
 				<form>
@@ -66,7 +66,7 @@
 					<label for="mdp">Mot de passe</label><input type='password' name="mdp" placeholder="Entrez votre mot de passe"/>
 					<input type="submit" value="Connexion" />
 				</form>
-		</section>
+		</section>--><!--
 		<section id="add_cadeau">
 				<form>
 					<label for="nom">Nom</label><input type='text' name="nom" placeholder="Entrez un nom"/>
@@ -75,7 +75,7 @@
 					<label for="prix">Prix</label><input type='text' name="prix" placeholder="Entrez le prix du cadeau"/>
 					<input type="submit" value="Ajouter cadeau" />
 				</form>
-		</section><!--
+		</section>-->
 
 		<section id="cadeau">
 			<a href="#">Ajouter un cadeau</a>

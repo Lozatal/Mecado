@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 06 Novembre 2017 à 17:38
+-- Généré le :  Mar 07 Novembre 2017 à 16:02
 -- Version du serveur :  5.7.20-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `acheteur` (
   `id` int(11) NOT NULL,
-  `nom` varchar(25) DEFAULT NULL,
-  `prenom` varchar(25) DEFAULT NULL,
+  `nom` varchar(50) NOT NULL,
+  `prenom` varchar(50) NOT NULL,
   `participation` int(11) DEFAULT NULL,
   `message` longtext,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -45,17 +45,25 @@ CREATE TABLE `acheteur` (
 
 CREATE TABLE `item` (
   `id` int(11) NOT NULL,
-  `nom` varchar(25) NOT NULL,
-  `url_article` varchar(255) NOT NULL,
+  `nom` varchar(50) NOT NULL,
+  `url_article` varchar(255) DEFAULT NULL,
   `url_image` varchar(255) DEFAULT NULL,
-  `tarif` int(11) DEFAULT NULL,
-  `groupe` tinyint(1) DEFAULT NULL,
-  `cagnote` tinyint(1) DEFAULT NULL,
+  `tarif` int(11) NOT NULL,
+  `groupe` tinyint(1) NOT NULL DEFAULT '0',
+  `cagnote` tinyint(1) NOT NULL DEFAULT '0',
   `appartient_a` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_liste` int(11) DEFAULT NULL
+  `id_liste` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `item`
+--
+
+INSERT INTO `item` (`id`, `nom`, `url_article`, `url_image`, `tarif`, `groupe`, `cagnote`, `appartient_a`, `created_at`, `updated_at`, `id_liste`) VALUES
+(1, 'Voiture', NULL, NULL, 25, 0, 0, NULL, '2017-11-07 14:55:49', '2017-11-07 14:55:49', 1),
+(2, '4 Mariages et 1 mort', NULL, NULL, 80, 0, 0, NULL, '2017-11-07 14:58:34', '2017-11-07 14:58:34', 1);
 
 -- --------------------------------------------------------
 
@@ -65,17 +73,25 @@ CREATE TABLE `item` (
 
 CREATE TABLE `liste` (
   `id` int(11) NOT NULL,
-  `nom` varchar(25) DEFAULT NULL,
-  `description` varchar(25) DEFAULT NULL,
-  `token` varchar(255) DEFAULT NULL,
-  `date_limite` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `destinataire` tinyint(1) DEFAULT NULL,
-  `nom_dest` varchar(25) DEFAULT NULL,
-  `prenom_dest` varchar(25) DEFAULT NULL,
+  `nom` varchar(25) NOT NULL,
+  `description` longtext,
+  `token` varchar(255) NOT NULL,
+  `date_limite` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `destinataire` tinyint(1) NOT NULL,
+  `nom_dest` varchar(25) NOT NULL,
+  `prenom_dest` varchar(25) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_user` int(11) DEFAULT NULL
+  `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `liste`
+--
+
+INSERT INTO `liste` (`id`, `nom`, `description`, `token`, `date_limite`, `destinataire`, `nom_dest`, `prenom_dest`, `created_at`, `updated_at`, `id_user`) VALUES
+(1, 'Anniversaire Thor', 'La mort aux mort', '', '2017-11-29 23:00:00', 1, 'Luc', 'Jean', '2017-11-07 14:50:44', '2017-11-07 14:50:44', 1),
+(2, 'Anniversaire Loki', 'qzfsbyuroij<nmoheughuielsghliuhiehuhbbeslksbuebvusebvluisebvliusbeliusbevlisev', '', '2017-11-07 15:00:51', 1, 'Luc', 'Le', '2017-11-07 15:00:51', '2017-11-07 15:00:51', 1);
 
 -- --------------------------------------------------------
 
@@ -86,10 +102,10 @@ CREATE TABLE `liste` (
 CREATE TABLE `message` (
   `id` int(11) NOT NULL,
   `texte` longtext,
-  `auteur` varchar(25) DEFAULT NULL,
+  `auteur` varchar(50) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_liste` int(11) DEFAULT NULL
+  `id_liste` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -100,11 +116,18 @@ CREATE TABLE `message` (
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `nom` varchar(25) DEFAULT NULL,
-  `prenom` varchar(25) DEFAULT NULL,
-  `mail` varchar(25) DEFAULT NULL,
-  `password` varchar(40) DEFAULT NULL
+  `nom` varchar(50) NOT NULL,
+  `prenom` varchar(50) NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `user`
+--
+
+INSERT INTO `user` (`id`, `nom`, `prenom`, `mail`, `password`) VALUES
+(1, 'test', 'test', 'test@test.fr', '$2y$10$cTiHpkpj3liY8F0mz2Gz7utTOf2DLB6xDnY9vNIjpOGF8MWe4Swbq');
 
 --
 -- Index pour les tables exportées
@@ -115,7 +138,7 @@ CREATE TABLE `user` (
 --
 ALTER TABLE `acheteur`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_Acheteur_id_item` (`id_item`);
+  ADD KEY `FK_acheteur_id_item` (`id_item`);
 
 --
 -- Index pour la table `item`
@@ -157,12 +180,12 @@ ALTER TABLE `acheteur`
 -- AUTO_INCREMENT pour la table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `liste`
 --
 ALTER TABLE `liste`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `message`
 --
@@ -172,7 +195,7 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Contraintes pour les tables exportées
 --
@@ -181,7 +204,7 @@ ALTER TABLE `user`
 -- Contraintes pour la table `acheteur`
 --
 ALTER TABLE `acheteur`
-  ADD CONSTRAINT `FK_Acheteur_id_item` FOREIGN KEY (`id_item`) REFERENCES `item` (`id`);
+  ADD CONSTRAINT `FK_acheteur_id_item` FOREIGN KEY (`id_item`) REFERENCES `item` (`id`);
 
 --
 -- Contraintes pour la table `item`

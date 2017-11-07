@@ -20,7 +20,7 @@ class MecadoView extends \mf\view\AbstractView {
 
     private function renderHeader(){
         return '
-            <div id="accueil"><a href="'.$this->app_root.'/main.php"><img src="'.$this->app_root.'/src/design/css/images/accueil.jpg"/></a></div>';
+            <div id="accueil"><a href="'.$this->app_root.'/main.php"><img src="'.$this->app_root.'/src/design/css/images/banniere.png"/></a></div>';
     }
     
     /* Méthode renderFooter
@@ -110,16 +110,17 @@ EOT;
     private function renderSignUp() {
 
         $retour = '
-        <section id="sign_up"> 
-
+        <section id="formulaire"> 
+            <article>
                 <form action="'.$this->app_root.'/main.php/check_signup/" method=post>
-                <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom">
-                <label for="prenom">Prénom</label><input type="text"  name="prenom" placeholder="Prenom">
-                <label for="email">Mail</label><input type="text" name="email" placeholder="Email">
-                <label for="password">Mot de passe</label><input type="password" name="password">
-                <label for="password_verify">Confirmation du mot de passe</label><input type="password"  name="password_verify"><br/>
-                <input type="submit" value="S\'inscrire" />
-            </form>
+                    <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom">
+                    <label for="prenom">Prénom</label><input type="text"  name="prenom" placeholder="Prenom">
+                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email">
+                    <label for="password">Mot de passe</label><input type="password" name="password">
+                    <label for="password_verify">Confirmation du mot de passe</label><input type="password"  name="password_verify"><br/>
+                    <input type="submit" value="S\'inscrire" />
+                </form>
+            </article>
         </section>
 
         ';
@@ -129,13 +130,21 @@ EOT;
 
     private function renderLogin() {
 
+        $alert= '';
+
+        if(isset($this->data))
+            $alert = '<div class="alerte-danger">'.$this->data.'</div>';
+
         $retour = '
-        <section id="login">
-            <form action="'.$this->app_root.'/main.php/check_login/" method=post>
-                <label for="email">Mail</label><input type="text" name="email" placeholder="Email">
-                <label for="password">Mot de passe</label><input type="password" name="password" placeholder="Mot de passe">
-                <input type="submit" value="Connexion" />
-            </form>
+        <section id="formulaire">
+            <article>  
+                '.$alert.'
+                <form action="'.$this->app_root.'/main.php/check_login/" method=post>
+                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email">
+                    <label for="password">Mot de passe</label><input type="password" name="password" placeholder="Mot de passe">
+                    <input type="submit" value="Connexion" />
+                </form>
+            </article>
         </section>
 
         ';

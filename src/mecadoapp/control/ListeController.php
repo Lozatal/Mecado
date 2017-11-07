@@ -69,6 +69,7 @@ class ListeController extends \mf\control\AbstractController {
         }
         catch(\mf\auth\exception\AuthentificationException $e)
         {
+            $v = new \mecadoapp\view\MecadoView(null);
             $this->signUp();
         }
 

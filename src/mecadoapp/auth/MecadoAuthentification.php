@@ -105,7 +105,7 @@ class MecadoAuthentification extends \mf\auth\Authentification {
 
         if($usertest==null)
         {
-            throw new \mf\auth\exception\AuthentificationException('Cette email n\'existe pas');
+            throw new \mf\auth\exception\AuthentificationException('Mauvaise combinaison email/password');
         }
         else
         {

@@ -139,34 +139,59 @@ EOT;
     //retourne la liste des items
     private function renderItem() {
     	
-    	$retour = '<section id="item">';
+    	$retour = '<section id="item">
+			<a href="#" id="lienAjout">Ajouter un cadeau</a>
+				<aside>
+		';
+    	
+    	$listeMessage = $this->data[0]->liste->messages;
+    	
+    	foreach($listeMessage as $message){
+    		
+    		$retour .= '
+		    		<p>'.$message->auteur.' : '.$message->texte.'</p>
+				';
+    		
+    	}
+    		
+    	$retour .= '
+					<form>
+		    			<textarea name="text"></textarea><input value="Go!" type="submit">
+		    		</form>
+				</aside>
+				<div>
+		';
     	
     	foreach($this->data as $item){
     		
     		$url = '#';
-    		if (isset($item->url_article)){
+    		if (isset($item->url_article) && $item->url_article != null){
     			$url = $item->url_article;
     		}
-    		$img = '';
+    		$img = 'src/design/css/images/cado.jpeg';
     		if (isset($item->url_image)){
     			$img = $item->url_image;
     		}
     		
     		$retour .= '
-				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
-				<div>
-					<a href="'.$url.'"><img src="" alt="'.$img.'"></a>
-					<aside><h2>'.$item->nom.'</h2><p>Prix : '.$item->tarif.'€</p><p>Jaime vraiment beaucoup ça</p></aside>
-				</div>
-				<form>
-					<label>Nom</label><input type="text">
-					<label>Message pour XXXXXXX</label><textarea></textarea>
-					<input value="Réserver" type="submit">
-				</form>
+				<article>
+					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
+					<div>
+						<a href="'.$url.'"><img src="src/design/css/images/cado.jpeg" alt="Lien vers le site marchand"></a>
+						<aside><h2>'.$item->nom.'</h2><p>Prix : '.$item->tarif.'€</p><p>Jaime vraiment beaucoup ça</p></aside>
+					</div>
+					<form>
+						<label>Nom</label><input type="text">
+						<label>Message pour XXXXXXX</label><textarea></textarea>
+						<input value="Réserver" type="submit">
+					</form>
+				</article>
 			';
     	}
     	
-    	$retour .= '</section>';
+    	$retour .= '
+				</div>
+			</section>';
     	
     	return $retour;
     }
@@ -203,12 +228,7 @@ EOT;
                 ${menu}
             </header>
 
-            <section class="theme-backcolor2">
-                <article>
-                    ${contenu}
-                </article>
-            </section>
-
+            ${contenu}
 
             <footer class="theme-backcolor1">
                 ${footer}

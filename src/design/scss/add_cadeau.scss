@@ -1,25 +1,66 @@
-
-
+#add_cadeau{
+	form{
+		display:flex;
+		flex-wrap: wrap;
+		width: 100%;
+		background-color: red;
+		margin :auto;
+		& label{
+			width: 80%;
+			margin: auto;
+			text-align: center;
+			margin-top: 1em;
+		}
+		& input{
+			width: 80%;
+			margin: auto;
+			text-align: center;
+			
+		}
+		& input:last-child{
+			margin-top: 1em;
+			margin-bottom: 1em;
+		}
+		& textarea{	
+			margin:auto;
+			background-color: blue;
+			text-align: center;
+			@include grille(8,10%,0,8);
+			margi
+		}
+	}
+}
 @media screen and (min-width: 280px){
-
+	#add_cadeau form{
+		width: 90%;
+	}
 }
 
 @media screen and (min-width: 480px){
-
+	#add_cadeau form{
+		width: 80%;
+	}
 }
 
 @media screen and (min-width: 600px){
-
+	#add_cadeau form{
+		width: 70%;
+	}
 }
 
 @media screen and (min-width: 801px){
-
+	#add_cadeau form{
+		width: 60%;
+	}
 }
-
 @media screen and (min-width: 1025px){
-
+	#add_cadeau form{
+		width: 50%;
+	}
 }
-
 @media screen and (min-width: 1281px){
-
+	#add_cadeau form{
+		width: 40%;
+		@include grille(8,30%,3,4);
+	}
 }

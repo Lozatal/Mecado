@@ -1,25 +1,39 @@
 /*
 Error: Undefined mixin 'grille'.
-        on line 3 of scss/home.scss, in `grille'
-        from line 3 of scss/home.scss
+        on line 28 of scss/formulaire.scss, in `grille'
+        from line 28 of scss/formulaire.scss
 
-1: #home{
-2: 	& article:nth-child(1){
-3: 	@include grille(8,10%,0,8);
-4: 	}
-5: 
-6: 	& article:nth-child(2){
-7: 		@include grille(8,10%,0,8);
-8: 	
+23: 		}
+24: 		& textarea{	
+25: 			margin:auto;
+26: 			background-color: blue;
+27: 			text-align: center;
+28: 			@include grille(8,10%,0,8);
+29: 		}
+30: 	}
+31: }
+32: @media screen and (min-width: 280px){
+33: 	#add_cadeau form{
 
 Backtrace:
-scss/home.scss:3:in `grille'
-scss/home.scss:3
+scss/formulaire.scss:28:in `grille'
+scss/formulaire.scss:28
 /var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 /var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 /var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
 /var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:98:in `with_mixin'
 /var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:350:in `visit_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
 /var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
 /var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 /var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
@@ -81,4 +95,4 @@ scss/home.scss:3
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'grille'.\A         on line 3 of scss/home.scss, in `grille'\A         from line 3 of scss/home.scss\A \A 1: #home{\A 2: 	& article:nth-child(1){\A 3: 	@include grille(8,10%,0,8);\A 4: 	}\A 5: \A 6: 	& article:nth-child(2){\A 7: 		@include grille(8,10%,0,8);\A 8: 	"; }
+  content: "Error: Undefined mixin 'grille'.\A         on line 28 of scss/formulaire.scss, in `grille'\A         from line 28 of scss/formulaire.scss\A \A 23: 		}\A 24: 		& textarea{	\A 25: 			margin:auto;\A 26: 			background-color: blue;\A 27: 			text-align: center;\A 28: 			@include grille(8,10%,0,8);\A 29: 		}\A 30: 	}\A 31: }\A 32: @media screen and (min-width: 280px){\A 33: 	#add_cadeau form{"; }

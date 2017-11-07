@@ -46,24 +46,48 @@
 	Donec mollis tincidunt ullamcorper. Mauris quis odio consectetur, laoreet metus in, rutrum tellus. Integer suscipit justo non mi pharetra rhoncus. Nullam eget sollicitudin eros. Mauris dictum nisi at dignissim porta. Praesent ullamcorper viverra felis, ac ullamcorper dolor pellentesque ac. Etiam molestie magna magna, ac fermentum elit efficitur non. Fusce convallis ipsum ut erat aliquam suscipit. Fusce quis nulla ligula. Curabitur ac tortor at ex feugiat condimentum nec sed lorem. Proin diam erat, interdum vitae pretium pellentesque, eleifend eget mauris. Quisque posuere neque nibh, placerat consequat orci mattis sed. Aenean sodales, lectus ac feugiat dapibus, nulla tellus aliquam urna, vel imperdiet eros elit ac mauris. Sed sagittis felis vitae velit aliquam vestibulum. Duis libero nulla, suscipit a risus sed, sodales scelerisque urna. 
 			</article>
 		</section>-->
-
-		<!--<section id="sign_up">
-			<form>
-				<label for="nom">Nom</label><input type='text' name="nom"/>
-				<label for="prenom">Prénom</label><input type='text'  name="prenom"/>
-				<label for="mail">Mail</label><input type='text' name="mail"/>
-				<label for="mdp">Mot de passe</label><input type='password' name="mdp"/>
-				<label for="cmdp">Confirmation du mot de passe</label><input type='password'  name="cmdp"/><br/>
-				<input type='submit' value="S'inscrire" />
-			</form>
+		<!--
+		<section id="sign_up">
+			<article>
+				<form>
+					<label for="nom">Nom</label><input type='text' name="nom"/>
+					<label for="prenom">Prénom</label><input type='text'  name="prenom"/>
+					<label for="mail">Mail</label><input type='text' name="mail"/>
+					<label for="mdp">Mot de passe</label><input type='password' name="mdp"/>
+					<label for="cmdp">Confirmation du mot de passe</label><input type='password'  name="cmdp"/><br/>
+					<input type='submit' value="S'inscrire" />
+				</form>
+			<article>
 		</section>-->
+		<!--
+		<section id="login">
+			<article>
+				<form>
+					<label for="mail">Mail</label><input type="text" name="mail" placeholder="Entrez votre mail"/>
+					<label for="mdp">Mot de passe</label><input type='password' name="mdp" placeholder="Entrez votre mot de passe"/>
+					<input type="submit" value="Connexion" />
+				</form>
+			</article>
+		</section>
+		-->
+		<section id="add_cadeau">
+			<article>
+				<form>
+					<label for="nom">Nom</label><input type='text' name="nom" placeholder="Entrez un nom"/>
+					<label for="lien">Lien image</label><input type='text'  name="lien" placeholder="Entrez le lien d'une image"/>
+					<label for="descr">Description</label><textarea name="descr" placeholder="Entrez une description"></textarea>
+					<label for="prix">Prix</label><input type='text' name="prix" placeholder="Entrez le prix du cadeau"/>
+					<input type="submit" value="Ajouter cadeau" />
+				</form>
+			</article>
+		</section><!--
 
 		<section id="cadeau">
 			<a href="#">Ajouter un cadeau</a>
 			<article>
 				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 				<div>
-					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
+					<a href="src/design/css/images/cado.jpeg"><img src="src/design/css/images/cado.jpeg" alt="lien vers le site marchand"/></a>
 					<aside><h2>Cadeau 1</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
 				</div>
 				<form>
@@ -216,8 +240,7 @@
 					<input type='submit' value="Réserver" />
 				</form>
 			</article>
-		</section>
-
+		</section>-->
 		<footer>
 			<div>
 				<ul>

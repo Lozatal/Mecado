@@ -80,20 +80,23 @@
 		<section id="item">
 			<a href="#" id="lienAjout">Ajouter un cadeau</a>
 			<aside>
-				<p>Premier message</p>
-				<p>rhsesjh</p>
-				<p>ersejsjj</p>
-				<p>stjsrjsrjsrj</p>
-				<p>sjsrjsrtjtrjstjqej</p>
+				<h2></h2>
+				<p><span>10:12:18-Lozatal: </span>Premier message</p>
+				<p><span>10:12:18-Lozatal: </span>rhs es jh</p>
+				<p><span>10:12:18-Lozatal: </span>ers ejs jj</p>
+				<p><span>10:12:18-Lozatal: </span>stj sr jsrj srj</p>
+				<p><span>10:12:18-Lozatal: </span>sjsrj srtjt rjst jqej</p>
 				<form>
-					<textarea name="text"></textarea><input type="submit" value="Go!"/>
+					<label for="text">Message:</label><textarea name="text"></textarea>
+					<label for="name">Nom:</label><input type="text" name="nom"/>
+					<input type="submit" value="Envoyer"/>
 				</form>
 			</aside>
 			<div>
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="#"><img src="src/design/css/images/cado.jpeg" alt="lien vers le site marchand"/></a>
+						<a href="#"><img src="src/design/css/images/cadeauDefault.png" alt="lien vers le site marchand"/></a>
 						<aside><h2>Cadeau 1</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
@@ -105,7 +108,7 @@
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="#"><img src="" alt="lien vers le site marchand"/></a>
+						<a href="#"><img src="src/design/css/images/cadeauDefault.png" alt="lien vers le site marchand"/></a>
 						<aside><h2>Cadeau 2</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
@@ -117,7 +120,7 @@
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="#"><img src="" alt="lien vers le site marchand"/></a>
+						<a href="#"><img src="src/design/css/images/cadeauDefault.png" alt="lien vers le site marchand"/></a>
 						<aside><h2>Cadeau 3</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
@@ -129,7 +132,7 @@
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="#"><img src="" alt="lien vers le site marchand"/></a>
+						<a href="#"><img src="src/design/css/images/cadeauDefault.png" alt="lien vers le site marchand"/></a>
 						<aside><h2>Cadeau 4</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
@@ -141,7 +144,7 @@
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="#"><img src="" alt="lien vers le site marchand"/></a>
+						<a href="#"><img src="src/design/css/images/cadeauDefault.png" alt="lien vers le site marchand"/></a>
 						<aside><h2>Cadeau 5</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
@@ -153,7 +156,7 @@
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="#"><img src="" alt="lien vers le site marchand"/></a>
+						<a href="#"><img src="src/design/css/images/cadeauDefault.png" alt="lien vers le site marchand"/></a>
 						<aside><h2>Cadeau 6</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>

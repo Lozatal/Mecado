@@ -398,11 +398,12 @@ header {
   display: flex;
   flex-wrap: wrap;
   width: 100%; }
-  #item aside:nth-child(2) {
+  #item aside {
     margin-left: 2.2222222222%;
     width: 22.2222222222%;
-    background-color: red; }
-    #item aside:nth-child(2) p {
+    background-color: red;
+    padding-top: 1em; }
+    #item aside p {
       border: 1px solid black;
       border-radius: 5px;
       font-size: 1em;
@@ -412,18 +413,20 @@ header {
       margin: auto;
       margin-top: 0.2em;
       margin-bottom: 0.2em; }
-    #item aside:nth-child(2) form {
+    #item aside form {
       width: 80%;
       margin: auto;
       display: flex;
       flex-wrap: wrap; }
-      #item aside:nth-child(2) form textarea {
+      #item aside form textarea {
         margin-left: 2.2222222222%;
         width: 71.1111111111%; }
-      #item aside:nth-child(2) form input {
+      #item aside form input {
         margin-left: 2.2222222222%;
         width: 22.2222222222%; }
   #item div {
+    display: flex;
+    flex-wrap: wrap;
     margin-left: 2.2222222222%;
     width: 71.1111111111%;
     background-color: blue; }

@@ -33,7 +33,8 @@ class ListeController extends \mf\control\AbstractController {
             $ctrl[] = $tab;
         }
 
-        return $ctrl;
+        $v = new \mecadoapp\view\MecadoView($ctrl);
+        $v ->render('listes');
 
     }
 

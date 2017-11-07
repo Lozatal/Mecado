@@ -1,11 +1,60 @@
-#cadeau{
-	& a{
+#item{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	& aside{
+		margin-bottom: auto;
+		padding: 1em 0 1em 0;
+		@include grille(8,10%,0,8);
+		background-color: #DCDCDC;
+		border: 2px solid black;
+		border-radius: 5px;
+		& p{
+			border: 1px solid black;
+			border-radius: 5px;
+			font-size: 1em;
+			padding: 0.2em;
+			text-align: left;
+			width: 80%;
+			margin: auto;
+			margin-top: 0.2em;
+			margin-bottom: 0.2em;
+		}
+		& form{
+			width: 80%;
+			margin: auto;
+			display: flex;
+			flex-wrap: wrap;
+			& textarea{
+				@include grille(8,10%,0,8);
+			}
+			& label{
+				@include grille(8,10%,0,8);
+				text-align: center;
+				font-size: 1.2em;
+			}
+			& input[type=text]{
+				@include grille(8,10%,0,8);
+			}
+			& input[type=submit]{
+				@include grille(8,10%,0,8);
+			}
+		}
+	}
+	& div{
+		display: flex;
+		flex-wrap: wrap;
+		@include grille(8,10%,0,8);
+	}
+	& #lienAjout{
 		margin: auto;
 		@include bouton(black,1,green,10px);
 		text-align: center;
 		@include grille(8,10%,0,8);
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
 	}
-	& article{
+	& div article{
 		display: flex;
 		flex-wrap: wrap;
 		@include grille(8,10%,0,8);
@@ -30,6 +79,11 @@
 			& a{
 				@include grille(8,10%,0,4);
 				text-align: center;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			& a img{
+				margin: auto;
 			}
 			& aside{
 				@include grille(8,10%,0,4);
@@ -40,7 +94,7 @@
 			flex-wrap: wrap;
 			display: flex;
 			& label{
-				width: 80%;
+				width: 90%;
 				margin: auto;
 				text-align: center;
 				margin-top: 1em;
@@ -69,15 +123,21 @@
 }
 
 @media screen and (min-width: 480px){
-	#cadeau{
-		& article{
-			@include grille(8,10%,0,4);
-		}
-	}
+
 }
 
 @media screen and (min-width: 600px){
-
+	#item{
+		& aside{
+			@include grille(8,10%,0,2);
+		}
+		& div{
+			@include grille(8,10%,0,6);
+			& article{
+			@include grille(8,10%,0,4);
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 801px){
@@ -85,13 +145,17 @@
 }
 
 @media screen and (min-width: 1025px){
-	#cadeau{
-		& article{
-			@include grille(8,10%,0,2);
-		}
-	}
+
 }
 
 @media screen and (min-width: 1281px){
+	
+}
 
+@media screen and (min-width: 1750px){
+	#item{
+		& div article{
+			@include grille(8,10%,0,2);
+		}
+	}
 }

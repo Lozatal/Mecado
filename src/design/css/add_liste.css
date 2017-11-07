@@ -1,38 +1,84 @@
-#formulaire form {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: auto; }
-  #formulaire form label {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    margin-top: 1em; }
-  #formulaire form input {
-    width: 80%;
-    margin: auto;
-    text-align: center; }
-  #formulaire form input:last-child {
-    margin-top: 1em;
-    margin-bottom: 1em; }
+/*
+Error: Invalid CSS after "<<<<<<< HEAD": expected "{", was "}"
+        on line 24 of scss/formulaire.scss
+        from line 1 of scss/add_liste.scss
 
-@media screen and (min-width: 280px) {
-  #formulaire form {
-    width: 90%; } }
-@media screen and (min-width: 480px) {
-  #formulaire form {
-    width: 80%; } }
-@media screen and (min-width: 600px) {
-  #formulaire form {
-    width: 70%; } }
-@media screen and (min-width: 801px) {
-  #formulaire form {
-    width: 60%; } }
-@media screen and (min-width: 1025px) {
-  #formulaire form {
-    width: 50%; } }
-@media screen and (min-width: 1281px) {
-  #formulaire form {
-    width: 40%; } }
+19: 		& input:last-child{
+20: 			margin-top: 1em;
+21: 			margin-bottom: 1em;
+22: 		}
+23: <<<<<<< HEAD
+24: 	}
+25: =======
+26: 		& textarea{	
+27: 			margin:auto;
+28: 			background-color: blue;
+29: 			text-align: center;
 
-/*# sourceMappingURL=add_liste.css.map */
+Backtrace:
+scss/formulaire.scss:24
+scss/add_liste.scss:1
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1278:in `expected'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1208:in `expected'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1203:in `tok!'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:677:in `block'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:686:in `block_contents'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:670:in `ruleset'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:696:in `block_child'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:686:in `block_contents'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:137:in `stylesheet'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:41:in `parse'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:414:in `_to_tree'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:321:in `to_tree'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:327:in `block in visit_import'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:88:in `block in with_import'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:88:in `with_import'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `each'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/var/lib/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/var/lib/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"<<<<<<< HEAD\": expected \"{\", was \"}\"\A         on line 24 of scss/formulaire.scss\A         from line 1 of scss/add_liste.scss\A \A 19: 		& input:last-child{\A 20: 			margin-top: 1em;\A 21: 			margin-bottom: 1em;\A 22: 		}\A 23: <<<<<<< HEAD\A 24: 	}\A 25: =======\A 26: 		& textarea{	\A 27: 			margin:auto;\A 28: 			background-color: blue;\A 29: 			text-align: center;"; }

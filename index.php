@@ -23,33 +23,11 @@
 				<a href="#">Inscription</a>
 			</nav>
 		</header>
-
-		<!--<section id="home">
-			<article>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at purus ut lorem egestas sagittis. Fusce sit amet nisl mauris. Cras eget dolor ut purus varius fermentum. Vestibulum placerat eros neque, sed viverra dui mollis a. Praesent nec enim a eros bibendum luctus. Maecenas vel mattis lectus, non euismod dui. Etiam scelerisque nisl ut auctor finibus. Praesent tempus mollis elit et rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante nisl, id fringilla nulla ultricies sit amet. Nulla molestie nisl quis dui pharetra commodo. In convallis turpis ac consequat rutrum. Donec bibendum non justo auctor malesuada. Nam et egestas nisi, quis imperdiet ex.
-			</article>
-			<article>
-				<ul>
-					<li>Lorem ipsum dolor sit amet</li>
-					<li>Lorem ipsum dolor sit amet</li>
-					<li>Lorem ipsum dolor sit amet</li>
-					<li>Lorem ipsum dolor sit amet</li>
-					<li>Lorem ipsum dolor sit amet</li>
-				</ul>
-			</article>
-			<article>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at purus ut lorem egestas sagittis. Fusce sit amet nisl mauris. Cras eget dolor ut purus varius fermentum. Vestibulum placerat eros neque, sed viverra dui mollis a.
-			</article>
-			<article>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at purus ut lorem egestas sagittis. Fusce sit amet nisl mauris. Cras eget dolor ut purus varius fermentum. Vestibulum placerat eros neque, sed viverra dui mollis a. Praesent nec enim a eros bibendum luctus. Maecenas vel mattis lectus, non euismod dui. Etiam scelerisque nisl ut auctor finibus. Praesent tempus mollis elit et rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante nisl, id fringilla nulla ultricies sit amet. Nulla molestie nisl quis dui pharetra commodo. In convallis turpis ac consequat rutrum. Donec bibendum non justo auctor malesuada. Nam et egestas nisi, quis imperdiet ex.
-
-	Donec mollis tincidunt ullamcorper. Mauris quis odio consectetur, laoreet metus in, rutrum tellus. Integer suscipit justo non mi pharetra rhoncus. Nullam eget sollicitudin eros. Mauris dictum nisi at dignissim porta. Praesent ullamcorper viverra felis, ac ullamcorper dolor pellentesque ac. Etiam molestie magna magna, ac fermentum elit efficitur non. Fusce convallis ipsum ut erat aliquam suscipit. Fusce quis nulla ligula. Curabitur ac tortor at ex feugiat condimentum nec sed lorem. Proin diam erat, interdum vitae pretium pellentesque, eleifend eget mauris. Quisque posuere neque nibh, placerat consequat orci mattis sed. Aenean sodales, lectus ac feugiat dapibus, nulla tellus aliquam urna, vel imperdiet eros elit ac mauris. Sed sagittis felis vitae velit aliquam vestibulum. Duis libero nulla, suscipit a risus sed, sodales scelerisque urna. 
-			</article>
-		</section>-->
-		<!--
 		<section id="sign_up">
 			<article>
+				<div class="alerte-danger">Nom d'utilisateur ou mot de passe incorrect.</div>
 				<form>
+<<<<<<< HEAD
 					<label for="nom">Nom</label><input type='text' name="nom"/>
 					<label for="prenom">Prénom</label><input type='text'  name="prenom"/>
 					<label for="mail">Mail</label><input type='text' name="mail"/>
@@ -185,57 +163,16 @@
 					<label>Nom</label><input type="text"/>
 					<label>Message pour XXXXXXX</label><textarea></textarea>
 					<input type='submit' value="Réserver" />
+=======
+					<label>rthserh</label><input type="text"/>
+					<label>sehr</label><input type="text"/>
+					<label>sh</label><input type="text"/>
+					<label>serh</label><input type="text"/>
+					<input type="submit"/>
+>>>>>>> ded1fcc1ba0f7b4a4aedc730e0a035e5e6db3935
 				</form>
 			</article>
-			<article>
-				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
-				<div>
-					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 10</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
-				</div>
-				<form>
-					<label>Nom</label><input type="text"/>
-					<label>Message pour XXXXXXX</label><textarea></textarea>
-					<input type='submit' value="Réserver" />
-				</form>
-			</article>
-			<article>
-				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
-				<div>
-					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 11</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
-				</div>
-				<form>
-					<label>Nom</label><input type="text"/>
-					<label>Message pour XXXXXXX</label><textarea></textarea>
-					<input type='submit' value="Réserver" />
-				</form>
-			</article>
-			<article>
-				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
-				<div>
-					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 12</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
-				</div>
-				<form>
-					<label>Nom</label><input type="text"/>
-					<label>Message pour XXXXXXX</label><textarea></textarea>
-					<input type='submit' value="Réserver" />
-				</form>
-			</article>
-			<article>
-				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
-				<div>
-					<a href="#"><img src="" alt="lien vers le site marchand"/></a>
-					<aside><h2>Cadeau 13</h2><p>Prix : 20€</p><p>J'aime vraiment beaucoup ça</p></aside>
-				</div>
-				<form>
-					<label>Nom</label><input type="text"/>
-					<label>Message pour XXXXXXX</label><textarea></textarea>
-					<input type='submit' value="Réserver" />
-				</form>
-			</article>
-		</section>-->
+		</section>
 		<footer>
 			<div>
 				<ul>

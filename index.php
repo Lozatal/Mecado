@@ -59,7 +59,7 @@
 				</form>
 			<article>
 		</section>-->
-		<!--
+		
 		<section id="login">
 			<article>
 				<form>
@@ -69,7 +69,7 @@
 				</form>
 			</article>
 		</section>
-		-->
+		
 		<section id="add_cadeau">
 			<article>
 				<form>

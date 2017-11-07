@@ -10,7 +10,9 @@
   border-radius: 10px;
   text-align: center;
   padding: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 .alerte-info {
   color: #31708f;
@@ -22,7 +24,9 @@
   border-radius: 10px;
   text-align: center;
   padding: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 .alerte-avertissement {
   color: #8a6d3b;
@@ -34,7 +38,9 @@
   border-radius: 10px;
   text-align: center;
   padding: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 .alerte-danger {
   color: #a94442;
@@ -46,6 +52,8 @@
   border-radius: 10px;
   text-align: center;
   padding: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 /*# sourceMappingURL=alerte.css.map */

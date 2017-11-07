@@ -261,7 +261,9 @@ header {
   border-radius: 10px;
   text-align: center;
   padding: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 .alerte-info {
   color: #31708f;
@@ -273,7 +275,9 @@ header {
   border-radius: 10px;
   text-align: center;
   padding: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 .alerte-avertissement {
   color: #8a6d3b;
@@ -285,7 +289,9 @@ header {
   border-radius: 10px;
   text-align: center;
   padding: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 .alerte-danger {
   color: #a94442;
@@ -297,7 +303,9 @@ header {
   border-radius: 10px;
   text-align: center;
   padding: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 #formulaire form {
   display: flex;
@@ -686,17 +694,23 @@ header {
         color: #1a1a1a; }
     #liste article p:nth-child(4) {
       margin-left: 2.2222222222%;
-      width: 71.1111111111%;
+      width: 95.5555555556%;
       margin-top: auto;
       margin-bottom: auto;
       order: 4; }
     #liste article p:nth-child(5) {
       margin-left: 2.2222222222%;
+      width: 71.1111111111%;
+      margin-top: auto;
+      margin-bottom: auto;
+      order: 5; }
+    #liste article p:nth-child(6) {
+      margin-left: 2.2222222222%;
       width: 22.2222222222%;
       text-align: center;
       margin-top: auto;
       margin-bottom: auto;
-      order: 5; }
+      order: 6; }
   #liste article[close=y] {
     background-color: grey; }
   #liste article:hover {

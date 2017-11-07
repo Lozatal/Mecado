@@ -45,17 +45,23 @@
 			order: 2;
 		}
 		& p:nth-child(4){
-			@include grille(8,10%,0,6);
+			@include grille(8,10%,0,8);
 			margin-top: auto;
 			margin-bottom: auto;
 			order: 4;
 		}
 		& p:nth-child(5){
+			@include grille(8,10%,0,6);
+			margin-top: auto;
+			margin-bottom: auto;
+			order: 5;
+		}
+		& p:nth-child(6){
 			@include grille(8,10%,0,2);
 			text-align: center;
 			margin-top: auto;
 			margin-bottom: auto;
-			order: 5;
+			order: 6;
 		}
 	}
 	& article[close=y]{

@@ -1,12 +1,12 @@
 @import 'frameworkCSS';
+@import 'formulaire'; //Formulaire générique
 @import 'sign_up'; //Inscription
 @import 'login'; //Page de loggin (no kidding)
 @import 'home'; //Page d'accueil
 @import 'cadeau'; //Tous les cadeaux d'une liste
 @import 'liste'; //Toutes les listes d'un utilisateur
-@import 'add_liste'; //Formulaire
-@import 'add_cadeau'; //Formulaire
-@import 'formulaire'; //Formulaire
+@import 'add_liste'; //Formulaire ajout liste
+@import 'add_cadeau'; //Formulaire ajout cadeau
 
 body{
 	display: flex;
@@ -50,6 +50,7 @@ header{
 section{
 	display: flex;
 	flex-wrap: wrap;
+	min-height: 50em;
 }
 
 
@@ -72,8 +73,6 @@ footer{
 	color: white;
 	display: flex;
 	flex-wrap: wrap;
-	position:absolute;
-	bottom:0;
 	& div{
 		@include grille(8,10%,0,4);
 		display: flex;

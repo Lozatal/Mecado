@@ -1,1 +1,5 @@
-@import 'formulaire';
+#sign_up{
+	@include formulaire();
+}
+
+

@@ -45,6 +45,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		@include grille(8,10%,0,8);
+		margin-top: auto;
+		margin-bottom: auto;
 	}
 	& #lienAjout{
 		margin: auto;

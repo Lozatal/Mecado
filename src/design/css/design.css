@@ -307,90 +307,57 @@ header {
   margin-top: 1em;
   margin-bottom: 1em; }
 
-#formulaire form {
-  display: flex;
-  flex-wrap: wrap;
+#sign_up {
   width: 100%;
-  margin: auto; }
-  #formulaire form label {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    margin-top: 1em; }
-  #formulaire form input {
-    width: 80%;
-    margin: auto;
-    text-align: center; }
-  #formulaire form input:last-child {
-    margin-top: 1em;
-    margin-bottom: 1em; }
-  #formulaire form textarea {
-    margin: auto;
-    background-color: blue;
-    text-align: center;
-    margin-left: 2.2222222222%;
-    width: 95.5555555556%; }
-
-@media screen and (min-width: 280px) {
-  #formulaire form {
-    width: 90%; } }
-@media screen and (min-width: 480px) {
-  #formulaire form {
-    width: 80%; } }
-@media screen and (min-width: 600px) {
-  #formulaire form {
-    width: 70%; } }
-@media screen and (min-width: 801px) {
-  #formulaire form {
-    width: 60%; } }
-@media screen and (min-width: 1025px) {
-  #formulaire form {
-    width: 50%; } }
-@media screen and (min-width: 1281px) {
-  #formulaire form {
-    width: 40%; } }
-#formulaire form {
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: auto; }
-  #formulaire form label {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    margin-top: 1em; }
-  #formulaire form input {
-    width: 80%;
-    margin: auto;
-    text-align: center; }
-  #formulaire form input:last-child {
-    margin-top: 1em;
-    margin-bottom: 1em; }
-  #formulaire form textarea {
-    margin: auto;
-    background-color: blue;
-    text-align: center;
+  flex-wrap: wrap; }
+  #sign_up article {
     margin-left: 2.2222222222%;
-    width: 95.5555555556%; }
+    width: 95.5555555556%;
+    display: flex;
+    flex-wrap: wrap; }
+    #sign_up article form {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: auto; }
+      #sign_up article form label {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        margin-top: 1em; }
+      #sign_up article form input {
+        width: 80%;
+        margin: auto;
+        text-align: center; }
+      #sign_up article form input:last-child {
+        margin-top: 1em;
+        margin-bottom: 1em; }
+      #sign_up article form textarea {
+        margin: auto;
+        background-color: blue;
+        text-align: center;
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
+  @media screen and (min-width: 280px) {
+    #sign_up form {
+      width: 90%; } }
+  @media screen and (min-width: 480px) {
+    #sign_up form {
+      width: 80%; } }
+  @media screen and (min-width: 600px) {
+    #sign_up form {
+      width: 70%; } }
+  @media screen and (min-width: 801px) {
+    #sign_up form {
+      width: 60%; } }
+  @media screen and (min-width: 1025px) {
+    #sign_up form {
+      width: 50%; } }
+  @media screen and (min-width: 1281px) {
+    #sign_up form {
+      width: 40%; } }
 
-@media screen and (min-width: 280px) {
-  #formulaire form {
-    width: 90%; } }
-@media screen and (min-width: 480px) {
-  #formulaire form {
-    width: 80%; } }
-@media screen and (min-width: 600px) {
-  #formulaire form {
-    width: 70%; } }
-@media screen and (min-width: 801px) {
-  #formulaire form {
-    width: 60%; } }
-@media screen and (min-width: 1025px) {
-  #formulaire form {
-    width: 50%; } }
-@media screen and (min-width: 1281px) {
-  #formulaire form {
-    width: 40%; } }
 #home article:nth-child(1) {
   margin-left: 2.2222222222%;
   width: 95.5555555556%; }
@@ -487,7 +454,9 @@ header {
     display: flex;
     flex-wrap: wrap;
     margin-left: 2.2222222222%;
-    width: 95.5555555556%; }
+    width: 95.5555555556%;
+    margin-top: auto;
+    margin-bottom: auto; }
   #item #lienAjout {
     margin: auto;
     border-radius: 10px;
@@ -832,132 +801,6 @@ header {
         color: black; }
       #liste article a:nth-child(3) a:hover {
         color: #1a1a1a; } }
-#formulaire form {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: auto; }
-  #formulaire form label {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    margin-top: 1em; }
-  #formulaire form input {
-    width: 80%;
-    margin: auto;
-    text-align: center; }
-  #formulaire form input:last-child {
-    margin-top: 1em;
-    margin-bottom: 1em; }
-  #formulaire form textarea {
-    margin: auto;
-    background-color: blue;
-    text-align: center;
-    margin-left: 2.2222222222%;
-    width: 95.5555555556%; }
-
-@media screen and (min-width: 280px) {
-  #formulaire form {
-    width: 90%; } }
-@media screen and (min-width: 480px) {
-  #formulaire form {
-    width: 80%; } }
-@media screen and (min-width: 600px) {
-  #formulaire form {
-    width: 70%; } }
-@media screen and (min-width: 801px) {
-  #formulaire form {
-    width: 60%; } }
-@media screen and (min-width: 1025px) {
-  #formulaire form {
-    width: 50%; } }
-@media screen and (min-width: 1281px) {
-  #formulaire form {
-    width: 40%; } }
-#formulaire form {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: auto; }
-  #formulaire form label {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    margin-top: 1em; }
-  #formulaire form input {
-    width: 80%;
-    margin: auto;
-    text-align: center; }
-  #formulaire form input:last-child {
-    margin-top: 1em;
-    margin-bottom: 1em; }
-  #formulaire form textarea {
-    margin: auto;
-    background-color: blue;
-    text-align: center;
-    margin-left: 2.2222222222%;
-    width: 95.5555555556%; }
-
-@media screen and (min-width: 280px) {
-  #formulaire form {
-    width: 90%; } }
-@media screen and (min-width: 480px) {
-  #formulaire form {
-    width: 80%; } }
-@media screen and (min-width: 600px) {
-  #formulaire form {
-    width: 70%; } }
-@media screen and (min-width: 801px) {
-  #formulaire form {
-    width: 60%; } }
-@media screen and (min-width: 1025px) {
-  #formulaire form {
-    width: 50%; } }
-@media screen and (min-width: 1281px) {
-  #formulaire form {
-    width: 40%; } }
-#formulaire form {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: auto; }
-  #formulaire form label {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    margin-top: 1em; }
-  #formulaire form input {
-    width: 80%;
-    margin: auto;
-    text-align: center; }
-  #formulaire form input:last-child {
-    margin-top: 1em;
-    margin-bottom: 1em; }
-  #formulaire form textarea {
-    margin: auto;
-    background-color: blue;
-    text-align: center;
-    margin-left: 2.2222222222%;
-    width: 95.5555555556%; }
-
-@media screen and (min-width: 280px) {
-  #formulaire form {
-    width: 90%; } }
-@media screen and (min-width: 480px) {
-  #formulaire form {
-    width: 80%; } }
-@media screen and (min-width: 600px) {
-  #formulaire form {
-    width: 70%; } }
-@media screen and (min-width: 801px) {
-  #formulaire form {
-    width: 60%; } }
-@media screen and (min-width: 1025px) {
-  #formulaire form {
-    width: 50%; } }
-@media screen and (min-width: 1281px) {
-  #formulaire form {
-    width: 40%; } }
 body {
   display: flex;
   flex-wrap: wrap;
@@ -1014,7 +857,8 @@ header {
 
 section {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  min-height: 50em; }
 
 article {
   margin-bottom: 0.5em;
@@ -1033,9 +877,7 @@ footer {
   opacity: 0.8;
   color: white;
   display: flex;
-  flex-wrap: wrap;
-  position: absolute;
-  bottom: 0; }
+  flex-wrap: wrap; }
   footer div {
     margin-left: 2.2222222222%;
     width: 46.6666666667%;

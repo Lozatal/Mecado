@@ -202,14 +202,20 @@ EOT;
     	
     	$get= new \mf\utils\HttpRequest();
     	
+    	if(isset($this->data['erreur']) && $this->data[0] != null){
+    		$retour = '<div class="alerte-danger">'.$this->data['erreur'].'.</div>
+    		';
+			
+    	}
+    	
     	//Lien pour ajouter un Item
-    	$retour = '<section id="item">
+    	$retour .= '<section id="item">
 			<a href="#" id="lienAjout">Ajouter un cadeau</a>
 				<aside>
 		';
     	
     	//Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
-    	$listeMessage = $this->data[0]->liste->messages;
+    	$listeMessage = $this->data['listeItem']->liste->messages;
     	
     	foreach($listeMessage as $message){
     		$date = date_format($message->created_at, 'd:m:Y');

@@ -26,16 +26,21 @@ class ItemController extends \mf\control\AbstractController {
 
     }
     
-    public function viewItem(){
+    //Gère l'affichage des cadeaux de la liste, le premier paramètre correspond au message d'erreur des messages
+    public function viewItem($e = null){
     	$get = $this->request->get;
-    	$listeItem= null;
+    	
+    	$resultat['erreur'] = $e;
+    	$resultat['listeItem'] = null;
     	
     	if(isset($get['id'])){
     		$listeItem = item::where('item.id_liste', '=', $get['id'])
     		->get();
     	}
     	
-    	$vue = new \mecadoapp\view\MecadoView($listeItem);
+    	$resultat['listeItem']= $listeItem;
+    	
+    	$vue = new \mecadoapp\view\MecadoView($resultat);
     	return $vue->render('item');
     	
     }

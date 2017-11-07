@@ -53,8 +53,8 @@
 		@include bouton(black,1,green,10px);
 		text-align: center;
 		@include grille(8,10%,0,8);
-		margin-top: 0.5em;
-		margin-bottom: 0.5em;
+		margin-top: auto;
+		margin-bottom: auto;
 	}
 	& div article{
 		display: flex;

@@ -61,17 +61,13 @@
 		</section>-->
 		
 		<section id="login">
-			<article>
 				<form>
 					<label for="mail">Mail</label><input type="text" name="mail" placeholder="Entrez votre mail"/>
 					<label for="mdp">Mot de passe</label><input type='password' name="mdp" placeholder="Entrez votre mot de passe"/>
 					<input type="submit" value="Connexion" />
 				</form>
-			</article>
 		</section>
-		
 		<section id="add_cadeau">
-			<article>
 				<form>
 					<label for="nom">Nom</label><input type='text' name="nom" placeholder="Entrez un nom"/>
 					<label for="lien">Lien image</label><input type='text'  name="lien" placeholder="Entrez le lien d'une image"/>
@@ -79,7 +75,6 @@
 					<label for="prix">Prix</label><input type='text' name="prix" placeholder="Entrez le prix du cadeau"/>
 					<input type="submit" value="Ajouter cadeau" />
 				</form>
-			</article>
 		</section><!--
 
 		<section id="cadeau">

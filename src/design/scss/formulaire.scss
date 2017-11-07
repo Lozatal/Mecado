@@ -1,5 +1,4 @@
-#add_cadeau{
-	form{
+form{
 		display:flex;
 		flex-wrap: wrap;
 		width: 100%;
@@ -30,36 +29,35 @@
 	}
 }
 @media screen and (min-width: 280px){
-	#add_cadeau form{
+	form{
 		width: 90%;
 	}
 }
 
 @media screen and (min-width: 480px){
-	#add_cadeau form{
+	form{
 		width: 80%;
 	}
 }
 
 @media screen and (min-width: 600px){
-	#add_cadeau form{
+	form{
 		width: 70%;
 	}
 }
 
 @media screen and (min-width: 801px){
-	#add_cadeau form{
+	form{
 		width: 60%;
 	}
 }
 @media screen and (min-width: 1025px){
-	#add_cadeau form{
+	form{
 		width: 50%;
 	}
 }
 @media screen and (min-width: 1281px){
-	#add_cadeau form{
+	form{
 		width: 40%;
-		@include grille(8,30%,3,4);
 	}
 }

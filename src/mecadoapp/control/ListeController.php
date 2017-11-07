@@ -20,8 +20,12 @@ class ListeController extends \mf\control\AbstractController {
 
     public function listes(){
 
+        $user = new \mecadoapp\auth\MecadoAuthentification();
+        $requete = \mecadoapp\model\User::where('mail', '=', $user->user_login);
+        $userreq = $requete->first();
+
         $ctrl=[];
-        $requete = \mecadoapp\model\Liste::select();
+        $requete = \mecadoapp\model\Liste::select()->where('id_user', '=', $userreq->id);
         $lignes = $requete  ->orderByDESC('created_at', 'DESC')
                             ->get();
 
@@ -34,6 +38,12 @@ class ListeController extends \mf\control\AbstractController {
         $v = new \mecadoapp\view\MecadoView($ctrl);
         $v ->render('listes');
 
+    }
+
+    public function addListe() {
+
+        $v = new \mecadoapp\view\MecadoView(null);
+        $v ->render('addListe');    
     }
 
     public function checkListe(){
@@ -59,6 +69,7 @@ class ListeController extends \mf\control\AbstractController {
         }
         catch(\mf\auth\exception\AuthentificationException $e)
         {
+            $v = new \mecadoapp\view\MecadoView(null);
             $this->signUp();
         }
 

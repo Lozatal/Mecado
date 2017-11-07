@@ -17,7 +17,7 @@
 		<div></div>
 	</div>
 		<header>
-			<div id="accueil"><a href="#"><img src="src/design/css/images/accueil.jpg"/></a></div>
+			<div id="accueil"><a href="#"><img src="src/design/css/images/banniere.png"/></a></div>
 			<nav>
 				<a href="#">Connexion</a>
 				<a href="#">Inscription</a>
@@ -27,11 +27,12 @@
 			<article>
 				<div class="alerte-danger">Nom d'utilisateur ou mot de passe incorrect.</div>
 				<form>
-					<label>rthserh</label><input type="text"/>
-					<label>sehr</label><input type="text"/>
-					<label>sh</label><input type="text"/>
-					<label>serh</label><input type="text"/>
-					<input type="submit"/>
+					<label for="nom">Nom</label><input type='text' name="nom"/>
+					<label for="prenom">Prénom</label><input type='text'  name="prenom"/>
+					<label for="mail">Mail</label><input type='text' name="mail"/>
+					<label for="mdp">Mot de passe</label><input type='password' name="mdp"/>
+					<label for="cmdp">Confirmation du mot de passe</label><input type='password'  name="cmdp"/><br/>
+					<input type='submit' value="S'inscrire" />
 				</form>
 			</article>
 		</section>

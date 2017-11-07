@@ -41,7 +41,8 @@ class LoginController extends \mf\control\AbstractController {
         }
         catch(\mf\auth\exception\AuthentificationException $e)
         {
-            $this->signUp();
+            $v = new \mecadoapp\view\MecadoView($e->getMessage());
+            $v ->render('signup');
         }
 
     }
@@ -66,8 +67,8 @@ class LoginController extends \mf\control\AbstractController {
         }
         catch(\mf\auth\exception\AuthentificationException $e)
         {
-            echo $e->getMessage();
-            $this->login();
+            $v = new \mecadoapp\view\MecadoView($e->getMessage());
+            $v ->render('login');
         }
 
     }
@@ -75,6 +76,8 @@ class LoginController extends \mf\control\AbstractController {
     public function logout(){
         $v = new \mecadoapp\auth\MecadoAuthentification();
         $v->logout();
+        $v = new \mecadoapp\view\MecadoView(null);
+        $v ->render('home');
     }
 
 }

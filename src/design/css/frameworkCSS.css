@@ -261,7 +261,9 @@ header {
   border-radius: 10px;
   text-align: center;
   padding: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 .alerte-info {
   color: #31708f;
@@ -273,7 +275,9 @@ header {
   border-radius: 10px;
   text-align: center;
   padding: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 .alerte-avertissement {
   color: #8a6d3b;
@@ -285,7 +289,9 @@ header {
   border-radius: 10px;
   text-align: center;
   padding: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 .alerte-danger {
   color: #a94442;
@@ -297,6 +303,8 @@ header {
   border-radius: 10px;
   text-align: center;
   padding: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 /*# sourceMappingURL=frameworkCSS.css.map */

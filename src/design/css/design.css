@@ -394,15 +394,16 @@ header {
   #home article:nth-child(4) {
     margin-left: 2.2222222222%;
     width: 22.2222222222%; } }
-#cadeau {
+#item {
   display: flex;
   flex-wrap: wrap;
   width: 100%; }
-  #cadeau aside {
+  #item aside {
     margin-left: 2.2222222222%;
     width: 22.2222222222%;
-    background-color: red; }
-    #cadeau aside p {
+    background-color: red;
+    padding-top: 1em; }
+    #item aside p {
       border: 1px solid black;
       border-radius: 5px;
       font-size: 1em;
@@ -410,12 +411,26 @@ header {
       text-align: justify;
       width: 80%;
       margin: auto;
-      margin-top: 0.2em; }
-  #cadeau div {
+      margin-top: 0.2em;
+      margin-bottom: 0.2em; }
+    #item aside form {
+      width: 80%;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap; }
+      #item aside form textarea {
+        margin-left: 2.2222222222%;
+        width: 71.1111111111%; }
+      #item aside form input {
+        margin-left: 2.2222222222%;
+        width: 22.2222222222%; }
+  #item div {
+    display: flex;
+    flex-wrap: wrap;
     margin-left: 2.2222222222%;
     width: 71.1111111111%;
     background-color: blue; }
-  #cadeau #lienAjout {
+  #item #lienAjout {
     margin: auto;
     border-radius: 10px;
     font-size: 1rem;
@@ -426,26 +441,28 @@ header {
     text-decoration: none;
     text-align: center;
     margin-left: 2.2222222222%;
-    width: 95.5555555556%; }
-    #cadeau #lienAjout:hover {
+    width: 95.5555555556%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em; }
+    #item #lienAjout:hover {
       cursor: pointer;
       background-color: #00b300; }
-    #cadeau #lienAjout a {
+    #item #lienAjout a {
       text-decoration: none;
       color: black; }
-    #cadeau #lienAjout a:hover {
+    #item #lienAjout a:hover {
       color: #1a1a1a; }
-  #cadeau div article {
+  #item div article {
     display: flex;
     flex-wrap: wrap;
     margin-left: 2.2222222222%;
     width: 95.5555555556%; }
-    #cadeau div article div:first-child {
+    #item div article div:first-child {
       width: 100%;
       padding: 0.5em;
       display: flex;
       flex-wrap: wrap; }
-      #cadeau div article div:first-child a:first-child {
+      #item div article div:first-child a:first-child {
         border-radius: 10px;
         font-size: 1rem;
         padding: 0.35em;
@@ -454,15 +471,15 @@ header {
         background-color: blue;
         text-decoration: none;
         margin: auto; }
-        #cadeau div article div:first-child a:first-child:hover {
+        #item div article div:first-child a:first-child:hover {
           cursor: pointer;
           background-color: #3333ff; }
-        #cadeau div article div:first-child a:first-child a {
+        #item div article div:first-child a:first-child a {
           text-decoration: none;
           color: white; }
-        #cadeau div article div:first-child a:first-child a:hover {
+        #item div article div:first-child a:first-child a:hover {
           color: white; }
-      #cadeau div article div:first-child a:last-child {
+      #item div article div:first-child a:last-child {
         border-radius: 10px;
         font-size: 1rem;
         padding: 0.35em;
@@ -471,52 +488,52 @@ header {
         background-color: red;
         text-decoration: none;
         margin: auto; }
-        #cadeau div article div:first-child a:last-child:hover {
+        #item div article div:first-child a:last-child:hover {
           cursor: pointer;
           background-color: #ff3333; }
-        #cadeau div article div:first-child a:last-child a {
+        #item div article div:first-child a:last-child a {
           text-decoration: none;
           color: white; }
-        #cadeau div article div:first-child a:last-child a:hover {
+        #item div article div:first-child a:last-child a:hover {
           color: white; }
-    #cadeau div article div:nth-child(2) {
+    #item div article div:nth-child(2) {
       width: 100%;
       display: flex;
       flex-wrap: wrap; }
-      #cadeau div article div:nth-child(2) a {
+      #item div article div:nth-child(2) a {
         margin-left: 2.2222222222%;
         width: 46.6666666667%;
         text-align: center; }
-      #cadeau div article div:nth-child(2) aside {
+      #item div article div:nth-child(2) aside {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
-    #cadeau div article form {
+    #item div article form {
       width: 100%;
       flex-wrap: wrap;
       display: flex; }
-      #cadeau div article form label {
+      #item div article form label {
         width: 80%;
         margin: auto;
         text-align: center;
         margin-top: 1em; }
-      #cadeau div article form input {
+      #item div article form input {
         width: 80%;
         margin: auto;
         text-align: center; }
-      #cadeau div article form textarea {
+      #item div article form textarea {
         width: 80%;
         height: 3em;
         margin: auto; }
-      #cadeau div article form input:last-child {
+      #item div article form input:last-child {
         margin-top: 1em;
         margin-bottom: 1em; }
 
 @media screen and (min-width: 480px) {
-  #cadeau div article {
+  #item div article {
     margin-left: 2.2222222222%;
     width: 46.6666666667%; } }
 @media screen and (min-width: 1025px) {
-  #cadeau div article {
+  #item div article {
     margin-left: 2.2222222222%;
     width: 22.2222222222%; } }
 #liste {

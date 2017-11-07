@@ -77,7 +77,7 @@
 				</form>
 		</section>-->
 
-		<section id="cadeau">
+		<section id="item">
 			<a href="#" id="lienAjout">Ajouter un cadeau</a>
 			<aside>
 				<p>Premier message</p>

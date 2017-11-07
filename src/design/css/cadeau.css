@@ -3,17 +3,17 @@ Error: Undefined mixin 'grille'.
         on line 6 of scss/cadeau.scss, in `grille'
         from line 6 of scss/cadeau.scss
 
-1: #cadeau{
+1: #item{
 2: 	display: flex;
 3: 	flex-wrap: wrap;
 4: 	width: 100%;
 5: 	& aside{
 6: 		@include grille(8,10%,0,2);
 7: 		background-color: red;
-8: 		& p{
-9: 			border: 1px solid black;
-10: 			border-radius: 5px;
-11: 			font-size: 1em;
+8: 		padding-top: 1em;
+9: 		& p{
+10: 			border: 1px solid black;
+11: 			border-radius: 5px;
 
 Backtrace:
 scss/cadeau.scss:6:in `grille'
@@ -84,4 +84,4 @@ scss/cadeau.scss:6
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'grille'.\A         on line 6 of scss/cadeau.scss, in `grille'\A         from line 6 of scss/cadeau.scss\A \A 1: #cadeau{\A 2: 	display: flex;\A 3: 	flex-wrap: wrap;\A 4: 	width: 100%;\A 5: 	& aside{\A 6: 		@include grille(8,10%,0,2);\A 7: 		background-color: red;\A 8: 		& p{\A 9: 			border: 1px solid black;\A 10: 			border-radius: 5px;\A 11: 			font-size: 1em;"; }
+  content: "Error: Undefined mixin 'grille'.\A         on line 6 of scss/cadeau.scss, in `grille'\A         from line 6 of scss/cadeau.scss\A \A 1: #item{\A 2: 	display: flex;\A 3: 	flex-wrap: wrap;\A 4: 	width: 100%;\A 5: 	& aside{\A 6: 		@include grille(8,10%,0,2);\A 7: 		background-color: red;\A 8: 		padding-top: 1em;\A 9: 		& p{\A 10: 			border: 1px solid black;\A 11: 			border-radius: 5px;"; }

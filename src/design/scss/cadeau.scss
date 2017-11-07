@@ -1,10 +1,11 @@
-#cadeau{
+#item{
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
 	& aside{
 		@include grille(8,10%,0,2);
 		background-color: red;
+		padding-top: 1em;
 		& p{
 			border: 1px solid black;
 			border-radius: 5px;
@@ -14,9 +15,24 @@
 			width: 80%;
 			margin: auto;
 			margin-top: 0.2em;
+			margin-bottom: 0.2em;
+		}
+		& form{
+			width: 80%;
+			margin: auto;
+			display: flex;
+			flex-wrap: wrap;
+			& textarea{
+				@include grille(8,10%,0,6);
+			}
+			& input{
+				@include grille(8,10%,0,2);
+			}
 		}
 	}
 	& div{
+		display: flex;
+		flex-wrap: wrap;
 		@include grille(8,10%,0,6);
 		background-color: blue;
 	}
@@ -25,6 +41,8 @@
 		@include bouton(black,1,green,10px);
 		text-align: center;
 		@include grille(8,10%,0,8);
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
 	}
 	& div article{
 		display: flex;
@@ -90,7 +108,7 @@
 }
 
 @media screen and (min-width: 480px){
-	#cadeau{
+	#item{
 		& div article{
 			@include grille(8,10%,0,4);
 		}
@@ -106,7 +124,7 @@
 }
 
 @media screen and (min-width: 1025px){
-	#cadeau{
+	#item{
 		& div article{
 			@include grille(8,10%,0,2);
 		}

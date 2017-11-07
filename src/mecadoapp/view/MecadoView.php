@@ -212,14 +212,22 @@ EOT;
     //retourne la liste des items
     private function renderItem() {
     	
+    	$get= new \mf\utils\HttpRequest();
+    	echo $this->data['erreur'];
+    	if(isset($this->data['erreur']) && $this->data['erreur'] != null){
+    		$retour = '<div class="alerte-danger">'.$this->data['erreur'].'.</div>
+    		';
+			
+    	}
+    	
     	//Lien pour ajouter un Item
-    	$retour = '<section id="item">
+    	$retour .= '<section id="item">
 			<a href="#" id="lienAjout">Ajouter un cadeau</a>
 				<aside>
 		';
     	
     	//Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
-    	$listeMessage = $this->data[0]->liste->messages;
+    	$listeMessage = $this->data['listeItem'][0]->liste->messages;
     	
     	foreach($listeMessage as $message){
     		$date = date_format($message->created_at, 'd:m:Y');
@@ -231,11 +239,19 @@ EOT;
 				';
     		
     	}
-    		
+    	
+    	$id = null;
+    	if(isset($get->get['id'])){
+    		$id = $get->get['id'];
+    	}
+    	$linkformMessage = $this->script_name."/message_add/?id=".$id;
+    	
+    	//formulaire d'ajout de message
     	$retour .= '
-					<form>
-		    			<label for="text">Message:</label><textarea name="text"></textarea>
-				    	<label for="name">Nom:</label><input type="text" name="nom" required>
+					<form id="addMessage" action="'.$linkformMessage.'" method="POST">
+		    			<label for="text">Message:</label><textarea id="text" name="text" required></textarea>
+				    	<label for="name">Nom:</label><input type="text" id="nom" name="nom" required>
+						<input type="hidden" name="id_liste" id="id_liste" value="'.$id.'" required>
 				    	<input type="submit" value="Envoyer">
 		    		</form>
 				</aside>
@@ -245,15 +261,15 @@ EOT;
     	//Si le créateur est destinataire, on va afficher le nom/prénom du créateur, sinon on récupère les champs non et prenom dans liste
     	$destinataire = '';
     	
-    	if (isset($this->data[0]->liste->destinataire) && $this->data[0]->liste->destinataire = 1){
-    		$destinataire = $this->data[0]->liste->user->prenom.' '.$this->data[0]->liste->user->nom;
+    	if (isset($this->data['listeItem'][0]->liste->destinataire) && $this->data['listeItem'][0]->liste->destinataire = 1){
+    		$destinataire = $this->data['listeItem'][0]->liste->user->prenom.' '.$this->data['listeItem'][0]->liste->user->nom;
     	}
     	else{
-    		$destinataire = $this->data[0]->liste->prenom_dest.' '.$this->data[0]->liste->nom_dest;
+    		$destinataire = $this->data['listeItem'][0]->liste->prenom_dest.' '.$this->data['listeItem'][0]->liste->nom_dest;
     	}
     	
     	//Puis on affiche la liste des items de la liste
-    	foreach($this->data as $item){
+    	foreach($this->data['listeItem']as $item){
     		
     		$url = '#';
     		if (isset($item->url_article) && $item->url_article != null){

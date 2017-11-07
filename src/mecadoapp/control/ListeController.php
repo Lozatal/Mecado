@@ -27,10 +27,8 @@ class ListeController extends \mf\control\AbstractController {
 
         foreach ($lignes as $v)
         {
-            $user = $v->user()->first();
 
-            $tab = [$v->id, $v->text, $v->created_at, $v->author, $user['fullname']];
-            $ctrl[] = $tab;
+            $ctrl[] = $v;
         }
 
         $v = new \mecadoapp\view\MecadoView($ctrl);

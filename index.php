@@ -80,7 +80,7 @@
 		<section id="item">
 			<a href="#" id="lienAjout">Ajouter un cadeau</a>
 			<aside>
-				<h2></h2>
+				<h2>Vos messages</h2>
 				<p><span>10:12:18-Lozatal: </span>Premier message</p>
 				<p><span>10:12:18-Lozatal: </span>rhs es jh</p>
 				<p><span>10:12:18-Lozatal: </span>ers ejs jj</p>

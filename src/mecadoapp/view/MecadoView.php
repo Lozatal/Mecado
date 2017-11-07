@@ -13,9 +13,9 @@ class MecadoView extends \mf\view\AbstractView {
         parent::__construct($data);
     }
 
-    /* Méthode renderHeader
+    /* MÃ©thode renderHeader
      *
-     *  Retourne le fragment HTML de l'entéte (unique pour toutes les vues)
+     *  Retourne le fragment HTML de l'entÃ©te (unique pour toutes les vues)
      */
 
     private function renderHeader(){
@@ -27,7 +27,7 @@ class MecadoView extends \mf\view\AbstractView {
             </nav>';
     }
     
-    /* Méthode renderFooter
+    /* MÃ©thode renderFooter
      *
      * Retourne  le fragment HTML du bas de la page (unique pour toutes les vues)
      */
@@ -42,7 +42,7 @@ class MecadoView extends \mf\view\AbstractView {
             </div>
             <div>
                 <ul>
-                    <li>Publicité</li>
+                    <li>PublicitÃ©</li>
                     <li>Autre truc</li>
                 </ul>
             </div>
@@ -98,7 +98,7 @@ EOT;
         <section id="sign_up">
             <form action="'.$this->app_root.'/main.php/check_signup/" method=post>
                 <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom"/>
-                <label for="prenom">Prénom</label><input type="text"  name="prenom" placeholder="Prenom"/>
+                <label for="prenom">PrÃ©nom</label><input type="text"  name="prenom" placeholder="Prenom"/>
                 <label for="email">Mail</label><input type="text" name="mail" placeholder="Email"/>
                 <label for="password">Mot de passe</label><input type="password" name="password"/>
                 <label for="password_verify">Confirmation du mot de passe</label><input type="password"  name="password_verify"/><br/>
@@ -139,11 +139,13 @@ EOT;
     //retourne la liste des items
     private function renderItem() {
     	
+    	//Lien pour ajouter un Item
     	$retour = '<section id="item">
 			<a href="#" id="lienAjout">Ajouter un cadeau</a>
 				<aside>
 		';
     	
+    	//Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
     	$listeMessage = $this->data[0]->liste->messages;
     	
     	foreach($listeMessage as $message){
@@ -162,14 +164,16 @@ EOT;
 				<div>
 		';
     	
+    	//Puis on affiche la liste des items de la liste
     	foreach($this->data as $item){
     		
     		$url = '#';
     		if (isset($item->url_article) && $item->url_article != null){
     			$url = $item->url_article;
     		}
-    		$img = 'src/design/css/images/cado.jpeg';
-    		if (isset($item->url_image)){
+    		
+    		$img = $this->app_root.'/'.'src/design/css/images/cadeauDefault.png';
+    		if (isset($item->url_image) && $item->url_image){
     			$img = $item->url_image;
     		}
     		
@@ -177,13 +181,13 @@ EOT;
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="'.$url.'"><img src="src/design/css/images/cado.jpeg" alt="Lien vers le site marchand"></a>
-						<aside><h2>'.$item->nom.'</h2><p>Prix : '.$item->tarif.'�</p><p>Jaime vraiment beaucoup �a</p></aside>
+						<a href="#"><img src="'.$img.'" alt="lien vers le site marchand" ></a>
+						<aside><h2>Cadeau 1</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
-						<label>Nom</label><input type="text">
+						<label>Nom</label><input type="text"/>
 						<label>Message pour XXXXXXX</label><textarea></textarea>
-						<input value="R�server" type="submit">
+						<input type="submit" value="Réserver" />
 					</form>
 				</article>
 			';

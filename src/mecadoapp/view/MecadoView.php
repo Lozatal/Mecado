@@ -134,6 +134,43 @@ EOT;
         return $retour;
     }
     
+    ///////////////// ITEM /////////////////////
+    
+    //retourne la liste des items
+    private function renderItem() {
+    	
+    	$retour = '<section id="item">';
+    	
+    	foreach($this->data as $item){
+    		
+    		$url = '#';
+    		if (isset($item->url_article)){
+    			$url = $item->url_article;
+    		}
+    		$img = '';
+    		if (isset($item->url_image)){
+    			$img = $item->url_image;
+    		}
+    		
+    		$retour .= '
+				<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
+				<div>
+					<a href="'.$url.'"><img src="" alt="'.$img.'"></a>
+					<aside><h2>'.$item->nom.'</h2><p>Prix : '.$item->tarif.'€</p><p>Jaime vraiment beaucoup ça</p></aside>
+				</div>
+				<form>
+					<label>Nom</label><input type="text">
+					<label>Message pour XXXXXXX</label><textarea></textarea>
+					<input value="Réserver" type="submit">
+				</form>
+			';
+    	}
+    	
+    	$retour .= '</section>';
+    	
+    	return $retour;
+    }
+    
     protected function renderBody($selector=null){
       
         $header = $this->renderHeader();
@@ -153,6 +190,9 @@ EOT;
             case "listes":
                 $contenu = $this->renderListe();
                 break;
+            case "item":
+            	$contenu = $this->renderItem();
+            	break;
         }
 
         $racine =  $this->app_root;

@@ -109,15 +109,21 @@ EOT;
 
     private function renderSignUp() {
 
+        $alert= '';
+
+        if(isset($this->data))
+            $alert = '<div class="alerte-danger">'.$this->data.'</div>';
+
         $retour = '
-        <section id="formulaire"> 
+        <section id="sign_up"> 
             <article>
+                '.$alert.'
                 <form action="'.$this->app_root.'/main.php/check_signup/" method=post>
-                    <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom">
-                    <label for="prenom">Prénom</label><input type="text"  name="prenom" placeholder="Prenom">
-                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email">
-                    <label for="password">Mot de passe</label><input type="password" name="password">
-                    <label for="password_verify">Confirmation du mot de passe</label><input type="password"  name="password_verify"><br/>
+                    <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom" required>
+                    <label for="prenom">Prénom</label><input type="text"  name="prenom" placeholder="Prenom" required>
+                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email" required>
+                    <label for="password">Mot de passe</label><input type="password" name="password" required>
+                    <label for="password_verify">Confirmation du mot de passe</label><input type="password"  name="password_verify" required>
                     <input type="submit" value="S\'inscrire" />
                 </form>
             </article>
@@ -131,17 +137,16 @@ EOT;
     private function renderLogin() {
 
         $alert= '';
-
         if(isset($this->data))
             $alert = '<div class="alerte-danger">'.$this->data.'</div>';
 
         $retour = '
-        <section id="formulaire">
+        <section id="login">
             <article>  
                 '.$alert.'
                 <form action="'.$this->app_root.'/main.php/check_login/" method=post>
-                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email">
-                    <label for="password">Mot de passe</label><input type="password" name="password" placeholder="Mot de passe">
+                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email" required>
+                    <label for="password">Mot de passe</label><input type="password" name="password" placeholder="Mot de passe" required>
                     <input type="submit" value="Connexion" />
                 </form>
             </article>
@@ -180,10 +185,17 @@ EOT;
 
         $retour =<<< EOT
 
-        <section>
+        <section id="add_liste">
             <article>
                 <form>
-                    <input>
+                    <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" required>
+                    <label for="nom">Description</label><textarea name="nom" required></textarea>
+                    <label for="destinataire">Destinataire</label>
+                    <input type="checkbox" id="destinataire" name="destinataire" value="destinataire" required>
+                    <label for="nomDest">Nom destinataire</label><input type="text" name="nomDest" placeholder="nom" required>
+                    <label for="prenomDest">Prénom destinataire</label><input type="text" name="prenomDest" placeholder="prenom" required>
+                    <label for="date_Limite">Date limite</label><input type="text" name="date_Limite" placeholder="date limite" required>
+                    <input type="submit" value="Ajouter liste" required>
                 </form>
             </article>
         </section>
@@ -223,8 +235,8 @@ EOT;
     	$retour .= '
 					<form>
 		    			<label for="text">Message:</label><textarea name="text"></textarea>
-				    	<label for="name">Nom:</label><input type="text" name="nom"/>
-				    	<input type="submit" value="Envoyer"/>
+				    	<label for="name">Nom:</label><input type="text" name="nom" required>
+				    	<input type="submit" value="Envoyer">
 		    		</form>
 				</aside>
 				<div>
@@ -261,8 +273,8 @@ EOT;
 						<aside><h2>'.$item->nom.'</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
-						<label>Nom</label><input type="text"/>
-						<label>Message pour '.$destinataire.'</label><textarea></textarea>
+						<label>Nom</label><input type="text"  required>
+						<label>Message pour '.$destinataire.'</label><textarea  required></textarea>
 						<input type="submit" value="Réserver" />
 					</form>
 				</article>

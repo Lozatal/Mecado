@@ -96,7 +96,7 @@
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="#"><img src="src/design/css/images/cado.jpeg" alt="lien vers le site marchand"/></a>
+						<a href="#"><img src="src/design/css/images/cadeauDefault.png" alt="lien vers le site marchand"/></a>
 						<aside><h2>Cadeau 1</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
@@ -108,7 +108,7 @@
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="#"><img src="" alt="lien vers le site marchand"/></a>
+						<a href="#"><img src="src/design/css/images/cadeauDefault.png" alt="lien vers le site marchand"/></a>
 						<aside><h2>Cadeau 2</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
@@ -120,7 +120,7 @@
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="#"><img src="" alt="lien vers le site marchand"/></a>
+						<a href="#"><img src="src/design/css/images/cadeauDefault.png" alt="lien vers le site marchand"/></a>
 						<aside><h2>Cadeau 3</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
@@ -132,7 +132,7 @@
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="#"><img src="" alt="lien vers le site marchand"/></a>
+						<a href="#"><img src="src/design/css/images/cadeauDefault.png" alt="lien vers le site marchand"/></a>
 						<aside><h2>Cadeau 4</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
@@ -144,7 +144,7 @@
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="#"><img src="" alt="lien vers le site marchand"/></a>
+						<a href="#"><img src="src/design/css/images/cadeauDefault.png" alt="lien vers le site marchand"/></a>
 						<aside><h2>Cadeau 5</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
@@ -156,7 +156,7 @@
 				<article>
 					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
 					<div>
-						<a href="#"><img src="" alt="lien vers le site marchand"/></a>
+						<a href="#"><img src="src/design/css/images/cadeauDefault.png" alt="lien vers le site marchand"/></a>
 						<aside><h2>Cadeau 6</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>

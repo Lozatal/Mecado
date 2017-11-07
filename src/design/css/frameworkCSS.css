@@ -90,49 +90,49 @@ body {
 
 h1 {
   margin: auto;
-  font-size: 2rem;
+  font-size: 2em;
   font-weight: bold;
   color: black;
   text-align: center; }
 
 h2 {
   margin: auto;
-  font-size: 1.8rem;
+  font-size: 1.8em;
   font-weight: bold;
   color: black;
   text-align: center; }
 
 h3 {
   margin: auto;
-  font-size: 1.6rem;
+  font-size: 1.6em;
   font-weight: bold;
   color: black;
   text-align: center; }
 
 h4 {
   margin: auto;
-  font-size: 1.4rem;
+  font-size: 1.4em;
   font-weight: bold;
   color: black;
   text-align: center; }
 
 h5 {
   margin: auto;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: bold;
   color: black;
   text-align: center; }
 
 h6 {
   margin: auto;
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: bold;
   color: black;
   text-align: center; }
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   color: grey;
-  font-size: 0.8rem;
+  font-size: 0.8em;
   text-align: center; }
 
 p {

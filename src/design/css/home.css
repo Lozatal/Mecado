@@ -9,7 +9,7 @@ Error: Undefined mixin 'grille'.
 4: 	}
 5: 
 6: 	& article:nth-child(2){
-7: 		@include grille(8,10%,0,4);
+7: 		@include grille(8,10%,0,8);
 8: 	
 
 Backtrace:
@@ -81,4 +81,4 @@ scss/home.scss:3
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'grille'.\A         on line 3 of scss/home.scss, in `grille'\A         from line 3 of scss/home.scss\A \A 1: #home{\A 2: 	& article:nth-child(1){\A 3: 	@include grille(8,10%,0,8);\A 4: 	}\A 5: \A 6: 	& article:nth-child(2){\A 7: 		@include grille(8,10%,0,4);\A 8: 	"; }
+  content: "Error: Undefined mixin 'grille'.\A         on line 3 of scss/home.scss, in `grille'\A         from line 3 of scss/home.scss\A \A 1: #home{\A 2: 	& article:nth-child(1){\A 3: 	@include grille(8,10%,0,8);\A 4: 	}\A 5: \A 6: 	& article:nth-child(2){\A 7: 		@include grille(8,10%,0,8);\A 8: 	"; }

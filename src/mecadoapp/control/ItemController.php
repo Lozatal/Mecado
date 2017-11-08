@@ -110,5 +110,54 @@ class ItemController extends \mf\control\AbstractController {
     		$this->viewItem($e->getmessage());
     	}
     }
+    
+    /**
+     * Fonction qui va supprimer un item, si l'item a été réservé, on ne le supprime pas
+     */
+    public function deleteItem(){
+    	$get = $this->request->get;
+    	
+    	try{
+    		if(isset($get['id'])){
+    			if(isset($get['item_id'])){
+    				
+    				//D'abord on récupère l'item
+    				$item= item::where('item.id', '=', $get['item_id'])
+    				->first();
+    				
+    				if(!isset($item)){
+    					throw new \mf\auth\exception\AuthentificationException("L'identifiant du cadeau est introuvable, peux-être a t'il déjà été supprimé");
+    				}
+    				
+    				//On va vérifier si l'id de l'item est bien relié a la liste en cours
+    				if($item->id_liste != $get['id']){
+    					throw new \mf\auth\exception\AuthentificationException("Le cadeau n'appartient pas à cette liste");
+    				}
+    				else{
+    					//On vérifie que l'item n'est pas été réservé
+    					if(isset($item->acheteurs[0]) && $item->acheteurs[0] != null){
+    						throw new \mf\auth\exception\AuthentificationException("Le cadeau est réservé, vous ne pouvez pas le supprimer");
+    					}
+    					else{
+    						//C'est bon, on supprime l'item
+    						$item->delete();
+    					}
+    				}
+    				
+    				$this->viewItem();
+    				
+    			}
+    			else{
+    				throw new \mf\auth\exception\AuthentificationException("L'identifiant du cadeau est introuvable");
+    			}
+    		}
+    		else{
+    			throw new \mf\auth\exception\AuthentificationException("L'identifiant de la liste est introuvable");
+    		}
+    	}
+    	catch(\mf\auth\exception\AuthentificationException $e){
+    		$this->viewItem($e->getmessage());
+    	}
+    }
 
 }

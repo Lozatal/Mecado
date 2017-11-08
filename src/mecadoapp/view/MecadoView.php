@@ -323,7 +323,9 @@ EOT;
 		$retour .= '
 				<div>';
 		
-		$destinataire = $dataListeItem [0]->liste->prenom_dest . ' ' . $dataListeItem [0]->liste->nom_dest;
+		if(isset($dataListeItem [0])){
+			$destinataire = $dataListeItem [0]->liste->prenom_dest . ' ' . $dataListeItem [0]->liste->nom_dest;
+		}
 		
 		// Puis on affiche la liste des items de la liste
 		foreach ( $dataListeItem as $item ) {
@@ -339,17 +341,22 @@ EOT;
 			}
 			
 			$disabled = '';
+			
+			//Si un acheteur est présent, on verrouille le formulaire
 			if(isset($item->acheteurs[0])){
 				$disabled = 'disabled';
 			}
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
+			$linkModify = "#";
+			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
 			
 			$retour .= '
 				<article>
-					<div><a href="#"></a><a href="#"></a></div>
+					<div><a href="'.$linkModify.'"></a><a href="'.$linkDelete.'"></a></div>
 					<div>
 						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
-						<aside><h2>' . $item->nom . '</h2><p>Prix : 20€</p></aside>
+						<aside><p>Prix : 20€</p></aside>
+						<h2>' . $item->nom . '</h2>
 					</div>
 					<form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="Nom" '.$disabled.' required>
@@ -376,24 +383,25 @@ EOT;
 	 */
 	private function afficheMessageItem($retour, $dataListeItem, $idListe) {
 		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
-
-		
-		$listeMessage = $dataListeItem [0]->liste->messages;
 		
 		$retour .= '
 				<aside>
 					<h2>Messages</h2>
 				';
 		
-		foreach ( $listeMessage as $message ) {
-			$date = date_format ( $message->created_at, 'd:m:Y à H:i' );
-			$retour .= '
-		    		<p>
-						<span>' . $date . '-' . $message->auteur . ' :</span>
-						<br>
-						<span> ' . $message->texte . ' </span>
-					</p>
-				';
+		if(isset($dataListeItem [0])){
+			$listeMessage = $dataListeItem [0]->liste->messages;
+		
+			foreach ( $listeMessage as $message ) {
+				$date = date_format ( $message->created_at, 'd:m:Y à H:i' );
+				$retour .= '
+			    		<p>
+							<span>' . $date . '-' . $message->auteur . ' :</span>
+							<br>
+							<span> ' . $message->texte . ' </span>
+						</p>
+					';
+			}
 		}
 		
 		// formulaire d'ajout de message

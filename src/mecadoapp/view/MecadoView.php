@@ -3,33 +3,33 @@
 namespace mecadoapp\view;
 
 class MecadoView extends \mf\view\AbstractView {
-  
-    /* Constructeur 
-    *
-    * Appelle le constructeur de la classe \mf\view\AbstractView
-    */
-
-    public function __construct( $data ){
-        parent::__construct($data);
-    }
-
-    /* MÃ©thode renderHeader
-     *
-     *  Retourne le fragment HTML de l'entÃ©te (unique pour toutes les vues)
-     */
-
-    private function renderHeader(){
-        return '
-            <div id="accueil"><a href="'.$this->app_root.'/main.php"><img src="'.$this->app_root.'/src/design/css/images/banniere.png"/></a></div>';
-    }
-    
-    /* Méthode renderFooter
-     *
-     * Retourne  le fragment HTML du bas de la page (unique pour toutes les vues)
-     */
-
-    private function renderFooter(){
-        return '    <footer>
+	
+	/*
+	 * Constructeur
+	 *
+	 * Appelle le constructeur de la classe \mf\view\AbstractView
+	 */
+	public function __construct($data) {
+		parent::__construct ( $data );
+	}
+	
+	/*
+	 * MÃ©thode renderHeader
+	 *
+	 * Retourne le fragment HTML de l'entÃ©te (unique pour toutes les vues)
+	 */
+	private function renderHeader() {
+		return '
+            <div id="accueil"><a href="' . $this->app_root . '/main.php"><img src="' . $this->app_root . '/src/design/css/images/banniere.png"/></a></div>';
+	}
+	
+	/*
+	 * Méthode renderFooter
+	 *
+	 * Retourne le fragment HTML du bas de la page (unique pour toutes les vues)
+	 */
+	private function renderFooter() {
+		return '    <footer>
             <div>
                 <ul>
                     <li>Partenaire</li>
@@ -43,40 +43,33 @@ class MecadoView extends \mf\view\AbstractView {
                 </ul>
             </div>
         </footer>';
-    }
-
-    private function renderMenu(){
-
-        $racine =  $this->app_root;
-
-        $v = new \mecadoapp\auth\MecadoAuthentification();
-        if($v->logged_in == true)
-        {
-            $retour = <<<EOT
+	}
+	private function renderMenu() {
+		$racine = $this->app_root;
+		
+		$v = new \mecadoapp\auth\MecadoAuthentification ();
+		if ($v->logged_in == true) {
+			$retour = <<<EOT
                 <nav>
                     <a href="${racine}/main.php/listes/">Listes</a>
                     <a href="${racine}/main.php/logout/">Deconnexion</a>
                 </nav>
 
 EOT;
-        }
-        else
-        {
-            $retour = <<<EOT
+		} else {
+			$retour = <<<EOT
                 <nav>
                     <a href="${racine}/main.php/login/">Connexion</a>
                     <a href="${racine}/main.php/signup/">Inscription</a>
                 </nav>
 
 EOT;
-        }
-
-        return $retour;
-    }
-    
-    private function renderHome(){  
-
-        $retour = <<<EOT
+		}
+		
+		return $retour;
+	}
+	private function renderHome() {
+		$retour = <<<EOT
 
 <section id="home">
             <article>
@@ -102,23 +95,19 @@ EOT;
     </section>
 
 EOT;
-        return $retour;
-
-
-    }
-
-    private function renderSignUp() {
-
-        $alert= '';
-
-        if(isset($this->data))
-            $alert = '<div class="alerte-danger">'.$this->data.'</div>';
-
-        $retour = '
+		return $retour;
+	}
+	private function renderSignUp() {
+		$alert = '';
+		
+		if (isset ( $this->data ))
+			$alert = '<div class="alerte-danger">' . $this->data . '</div>';
+		
+		$retour = '
         <section id="sign_up"> 
             <article>
-                '.$alert.'
-                <form action="'.$this->app_root.'/main.php/check_signup/" method=post>
+                ' . $alert . '
+                <form action="' . $this->app_root . '/main.php/check_signup/" method=post>
                     <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom" required>
                     <label for="prenom">Prénom</label><input type="text"  name="prenom" placeholder="Prenom" required>
                     <label for="email">Mail</label><input type="text" name="email" placeholder="Email" required>
@@ -130,21 +119,18 @@ EOT;
         </section>
 
         ';
-        return $retour;
-
-    }
-
-    private function renderLogin() {
-
-        $alert= '';
-        if(isset($this->data))
-            $alert = '<div class="alerte-danger">'.$this->data.'</div>';
-
-        $retour = '
+		return $retour;
+	}
+	private function renderLogin() {
+		$alert = '';
+		if (isset ( $this->data ))
+			$alert = '<div class="alerte-danger">' . $this->data . '</div>';
+		
+		$retour = '
         <section id="login">
             <article>  
-                '.$alert.'
-                <form action="'.$this->app_root.'/main.php/check_login/" method=post>
+                ' . $alert . '
+                <form action="' . $this->app_root . '/main.php/check_login/" method=post>
                     <label for="email">Mail</label><input type="text" name="email" placeholder="Email" required>
                     <label for="password">Mot de passe</label><input type="password" name="password" placeholder="Mot de passe" required>
                     <input type="submit" value="Connexion" />
@@ -218,140 +204,158 @@ EOT;
         </section>
 
 EOT;
-
-        return $retour;
-    }
-
-    
-    ///////////////// ITEM /////////////////////
-    
-    //retourne la liste des items
-    private function renderItem() {
-    	
-    	$retour = '';
-    	
-    	$get= new \mf\utils\HttpRequest();
-
-    	if(isset($this->data['erreur']) && $this->data['erreur'] != null){
-    		$retour = '<div class="alerte-danger">'.$this->data['erreur'].'.</div>
-    		';
+		
+		return $retour;
+	}
+	
+	// /////////////// ITEM /////////////////////
+	
+	// retourne la liste des items
+	private function renderItem() {
+		$retour = '';
+		
+		$get = new \mf\utils\HttpRequest ();
+		
+		if (isset ( $this->data ['erreur'] ) && $this->data ['erreur'] != null) {
+			$retour = '
+				<div class="alerte-danger">' . $this->data ['erreur'] . '.</div>';
+		}
+		
+		// Lien pour ajouter un Item
+		$retour .= '
+				<section id="item">
+			<a href="#" id="lienAjout">Ajouter un cadeau</a>';
+		
+		// Vue des messages
+		$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $get );
+		
+		// Vue des items
+		$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $get );
+		
+		$retour .= '
+			</section>';
+		return $retour;
+	}
+	/**
+	 * Fonction qui renvoie la vue de la liste des items
+	 *
+	 * @param retour = retour du HTML
+	 * @param dataListeItem = liste des items
+	 */
+	private function afficheListeItem($retour, $dataListeItem) {
+		$retour .= '
+				<div>';
+		
+		$destinataire = $dataListeItem [0]->liste->prenom_dest . ' ' . $dataListeItem [0]->liste->nom_dest;
+		
+		// Puis on affiche la liste des items de la liste
+		foreach ( $dataListeItem as $item ) {
 			
-    	}
-    	
-    	//Lien pour ajouter un Item
-    	$retour .= '<section id="item">
-			<a href="#" id="lienAjout">Ajouter un cadeau</a>
-				<aside>
-		';
-    	
-    	//Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
-    	$listeMessage = $this->data['listeItem'][0]->liste->messages;
-    	
-    	foreach($listeMessage as $message){
-    		$date = date_format($message->created_at, 'd:m:Y');
-    		$retour .= '
-		    		<p>
-						<span>'.$date.'-'.$message->auteur.' :</span>
-						 '.$message->texte.'
-					</p>
-				';
-    		
-    	}
-    	
-    	$id = null;
-    	if(isset($get->get['id'])){
-    		$id = $get->get['id'];
-    	}
-    	$linkformMessage = $this->script_name."/message_add/?id=".$id;
-    	
-    	//formulaire d'ajout de message
-    	$retour .= '
-					<form id="addMessage" action="'.$linkformMessage.'" method="POST">
-		    			<label for="text">Message:</label><textarea id="text" name="text" /*required*/></textarea>
-				    	<label for="name">Nom:</label><input type="text" id="nom" name="nom" /*required*/>
-						<input type="hidden" name="id_liste" id="id_liste" value="'.$id.'" required>
-				    	<input type="submit" value="Envoyer">
-		    		</form>
-				</aside>
-				<div>
-		';
-    	
-    	//Si le créateur est destinataire, on va afficher le nom/prénom du créateur, sinon on récupère les champs non et prenom dans liste
-    	$destinataire = '';
-    	
-    	if (isset($this->data['listeItem'][0]->liste->destinataire) && $this->data['listeItem'][0]->liste->destinataire = 1){
-    		$destinataire = $this->data['listeItem'][0]->liste->user->prenom.' '.$this->data['listeItem'][0]->liste->user->nom;
-    	}
-    	else{
-    		$destinataire = $this->data['listeItem'][0]->liste->prenom_dest.' '.$this->data['listeItem'][0]->liste->nom_dest;
-    	}
-    	
-    	//Puis on affiche la liste des items de la liste
-    	foreach($this->data['listeItem']as $item){
-    		
-    		$url = '#';
-    		if (isset($item->url_article) && $item->url_article != null){
-    			$url = $item->url_article;
-    		}
-    		
-    		$img = $this->app_root.'/'.'src/design/css/images/cadeauDefault.png';
-    		if (isset($item->url_image) && $item->url_image){
-    			$img = $item->url_image;
-    		}
-    		
-    		$retour .= '
+			$url = '#';
+			if (isset ( $item->url_article ) && $item->url_article != null) {
+				$url = $item->url_article;
+			}
+			
+			$img = $this->app_root . '/' . 'src/design/css/images/cadeauDefault.png';
+			if (isset ( $item->url_image ) && $item->url_image) {
+				$img = $item->url_image;
+			}
+			
+			$retour .= '
 				<article>
 					<div><a href="#"></a><a href="#"></a></div>
 					<div>
-						<a href="#"><img src="'.$img.'" alt="lien vers le site marchand" ></a>
-						<aside><h2>'.$item->nom.'</h2><p>Prix : 20€</p></aside>
+						<a href="#"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
+						<aside><h2>' . $item->nom . '</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form>
 						<label>Nom</label><input type="text"  required>
-						<label>Message pour '.$destinataire.'</label><textarea  required></textarea>
+						<label>Message pour ' . $destinataire . '</label><textarea  required></textarea>
 						<input type="submit" value="Réserver" />
 					</form>
-				</article>
-			';
-    	}
-    	
-    	$retour .= '
-				</div>
-			</section>';
-    	
-    	return $retour;
-    }
-    
-    protected function renderBody($selector=null){
-      
-        $header = $this->renderHeader();
-        $footer = $this->renderFooter();
-        $menu = $this->renderMenu();
-
-        switch ($selector) {
-            case "home":
-                $contenu = $this->renderHome();
-                break;
-            case "signUp":
-                $contenu = $this->renderSignUp();
-                break;
-            case "login":
-                $contenu = $this->renderLogin();
-                break;
-            case "listes":
-                $contenu = $this->renderListe();
-                break;
-            case "addListe":
-                $contenu = $this->renderAddListe();
-                break;
-            case "item":
-            	$contenu = $this->renderItem();
-            	break;
-        }
-
-        $racine =  $this->app_root;
-
-        $html = <<<EOT
+				</article>';
+		}
+		
+		$retour .= '
+				</div>';
+		return $retour;
+	}
+	
+	/**
+	 * Fonction qui renvoie le code HTML de la partie Message
+	 *
+	 * @param retour = retour du HTML
+	 * @param dataListeItem = liste des items
+	 * @param get = contenu du HttpRequest
+	 */
+	private function afficheMessageItem($retour, $dataListeItem, $get) {
+		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
+		$listeMessage = $dataListeItem [0]->liste->messages;
+		
+		$retour .= '
+				<aside>
+				';
+		
+		foreach ( $listeMessage as $message ) {
+			$date = date_format ( $message->created_at, 'd:m:Y' );
+			$retour .= '
+		    		<p>
+						<span>' . $date . '-' . $message->auteur . ' :</span>
+						 ' . $message->texte . '
+					</p>
+				';
+		}
+		
+		// formulaire d'ajout de message
+		$id = null;
+		if (isset ( $get->get ['id'] )) {
+			$id = $get->get ['id'];
+		}
+		$linkformMessage = $this->script_name . "/message_add/?id=" . $id;
+		
+		$retour .= '
+					<form id="addMessage" action="' . $linkformMessage . '" method="POST">
+		    			<label for="text">Message:</label><textarea id="text" name="text" required></textarea>
+				    	<label for="name">Nom:</label><input type="text" id="nom" name="nom" required>
+						<input type="hidden" name="id_liste" id="id_liste" value="' . $id . '" required>
+				    	<input type="submit" value="Envoyer">
+		    		</form>
+				</aside>
+		';
+		return $retour;
+	}
+	
+	// /////////////// FIN ITEM /////////////////////
+	
+	protected function renderBody($selector = null) {
+		$header = $this->renderHeader ();
+		$footer = $this->renderFooter ();
+		$menu = $this->renderMenu ();
+		
+		switch ($selector) {
+			case "home" :
+				$contenu = $this->renderHome ();
+				break;
+			case "signUp" :
+				$contenu = $this->renderSignUp ();
+				break;
+			case "login" :
+				$contenu = $this->renderLogin ();
+				break;
+			case "listes" :
+				$contenu = $this->renderListe ();
+				break;
+			case "addListe" :
+				$contenu = $this->renderAddListe ();
+				break;
+			case "item" :
+				$contenu = $this->renderItem ();
+				break;
+		}
+		
+		$racine = $this->app_root;
+		
+		$html = <<<EOT
 	<div id="wrapper">
             <header>
                 ${header}
@@ -363,10 +367,8 @@ EOT;
             ${footer}
 	</div>
 EOT;
-
-        return  $html;
-        
-    }
-
+		
+		return $html;
+	}
 }
 

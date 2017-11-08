@@ -47,5 +47,9 @@ class ItemController extends \mf\control\AbstractController {
     	return $vue->render('item');
     	
     }
+    public function addItem(){
+        $vue = new \mecadoapp\view\MecadoView(null);
+        $vue ->render('addItem'); 
+    }
 
 }

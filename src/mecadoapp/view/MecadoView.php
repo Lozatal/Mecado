@@ -156,7 +156,7 @@ EOT;
             $retour = $retour.'
                         <article close="'.$close.'">
                             <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
-                            <a class="disabled" href="#"></a><a class="disabled" href="#"></a><a class="disabled" href="#"></a>
+                            <a href="#"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'"></a><a href="#"></a>
                             <p>'.$value->description.'</p>
                             <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
                             <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>
@@ -170,6 +170,34 @@ EOT;
     private function renderAddListe() {
 
         $racine =  $this->app_root;
+        $req = new \mf\utils\HttpRequest();
+
+        if(isset($req->get['id']))
+        {
+            $requete = \mecadoapp\model\Liste::where('id', '=', $req->get['id']);
+            $liste = $requete->first();
+
+            $user = new \mecadoapp\auth\MecadoAuthentification();
+            $requete = \mecadoapp\model\User::where('mail', '=', $user->user_login);
+            $userreq = $requete->first();
+
+            if($liste->id_user == $userreq->id)
+            {
+            	$nom = $liste->nom;
+            	$description = $liste->description;
+            	$nom_dest = $liste->nom_dest;
+            	$prenom_dest = $liste->prenom_dest;
+            	$date_limit = $liste->date_limit;
+            }
+            else
+            {
+            	$nom = '';
+            	$description = '';
+            	$nom_dest = '';
+            	$prenom_dest = '';
+            	$date_limit = '';
+            }
+        }
 
         $retour =<<< EOT
 
@@ -177,8 +205,8 @@ EOT;
             <article>
                 <form action="${racine}/main.php/check_liste/" method="post">
                     <label for="destinataire">Etes-vous le destinataire : </label><input type="checkbox" name="destinataire" id="destinataire" value="destinataire">
-                    <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" required>
-                    <label for="description">Description</label><textarea name="description" required></textarea>  
+                    <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" value="${nom}" required>
+                    <label for="description">Description</label><textarea name="description" value="${nom}" required></textarea>  
                     <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="nom" required>
                     <label for="prenom_dest">Prénom destinataire</label><input type="text" name="prenom_dest" placeholder="prenom" required>
                     <label for="date_limit">Date limite</label><input type="date" name="date_limit" placeholder="date limite" required>
@@ -220,6 +248,27 @@ EOT;
 			</section>';
 		return $retour;
 	}
+	private function renderAddItem() {
+
+        $racine =  $this->app_root;
+
+        $retour =<<< EOT
+
+        <section id="add_item">
+            <article>
+                <form action="${racine}/main.php/check_item/" method="post">
+                    <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" required>
+                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" placeholder="URL" required>
+                    <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL" required>                 
+                    <label for="tarif">tarif</label><input type="text" name="tarif" placeholder="tarif" required>
+                    <input type="submit" value="Ajouter liste" required>
+                </form>
+            </article>
+        </section>
+EOT;
+        return $retour;
+    }
+
 	
 	/**
 	 * Fonction qui renvoie la vue de la liste des items
@@ -340,6 +389,9 @@ EOT;
 				break;
 			case "item" :
 				$contenu = $this->renderItem ();
+				break;
+			case "addItem" :
+				$contenu = $this->renderAddItem ();
 				break;
 		}
 		

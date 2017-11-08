@@ -4,7 +4,7 @@
 	flex-wrap: wrap;
 	& #lienAjout{
 		margin: auto;
-		@include bouton(black,1,#CCC414,10px);
+		@include bouton(black,1,#3D4C99,10px);
 		text-align: center;
 		@include grille(8,10%,0,8);
 		margin-top: 0.5em;
@@ -13,7 +13,6 @@
 	& article{
 		display: flex;
 		flex-wrap: wrap;
-		text-overflow: ellipsis;
 		@include grille(8,10%,0,8);
 		& p:nth-child(1){
 			@include grille(8,10%,0,8);
@@ -76,7 +75,23 @@
 		}
 	}
 	& article[close=y]{
-		background-color: grey;
+		background-color: darken(#00B0FF,20);
+		& p:nth-child(1)::before{
+			content:'Terminé - ';
+			color: orange;
+		}
+		& p:nth-child(6){
+			color: orange;
+		}
+		& a:nth-child(2){
+			@include disable();
+		}
+		& a:nth-child(3){
+			@include disable();
+		}
+		& a:nth-child(4){
+			@include disable();
+		}
 	}
 	& article:hover{
 		background-color: white;
@@ -118,14 +133,20 @@
 		}
 		& a:nth-child(2){
 			@include grille(8,10%,0,1);
+			margin-top: auto;
+			margin-bottom: auto;
 			order: 2;
 		}
 		& a:nth-child(3){
 			@include grille(8,10%,0,1);
+			margin-top: auto;
+			margin-bottom: auto;
 			order: 3;
 		}
 		& a:nth-child(4){
 			@include grille(8,10%,0,1);
+			margin-top: auto;
+			margin-bottom: auto;
 			order: 4;
 		}
 	}
@@ -145,14 +166,20 @@
 		}
 		& a:nth-child(2){
 			@include grille(8,10%,0,1);
+			margin-top: auto;
+			margin-bottom: auto;
 			order: 2;
 		}
 		& a:nth-child(3){
 			@include grille(8,10%,0,1);
+			margin-top: auto;
+			margin-bottom: auto;
 			order: 3;
 		}
 		& a:nth-child(4){
 			@include grille(8,10%,0,1);
+			margin-top: auto;
+			margin-bottom: auto;
 			order: 4;
 		}
 	}

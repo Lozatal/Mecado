@@ -378,22 +378,24 @@ EOT;
 	private function afficheMessageItem($retour, $dataListeItem, $idListe) {
 		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
 		
-		$listeMessage = $dataListeItem [0]->liste->messages;
-		
 		$retour .= '
 				<aside>
 					<h2>Messages</h2>
 				';
 		
-		foreach ( $listeMessage as $message ) {
-			$date = date_format ( $message->created_at, 'd:m:Y à H:i' );
-			$retour .= '
-		    		<p>
-						<span>' . $date . '-' . $message->auteur . ' :</span>
-						<br>
-						<span> ' . $message->texte . ' </span>
-					</p>
-				';
+		if(isset($dataListeItem [0])){
+			$listeMessage = $dataListeItem [0]->liste->messages;
+		
+			foreach ( $listeMessage as $message ) {
+				$date = date_format ( $message->created_at, 'd:m:Y à H:i' );
+				$retour .= '
+			    		<p>
+							<span>' . $date . '-' . $message->auteur . ' :</span>
+							<br>
+							<span> ' . $message->texte . ' </span>
+						</p>
+					';
+			}
 		}
 		
 		// formulaire d'ajout de message

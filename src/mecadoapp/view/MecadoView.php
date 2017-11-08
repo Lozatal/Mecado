@@ -215,7 +215,7 @@ EOT;
     	$retour = '';
     	
     	$get= new \mf\utils\HttpRequest();
-    	echo $this->data['erreur'];
+
     	if(isset($this->data['erreur']) && $this->data['erreur'] != null){
     		$retour = '<div class="alerte-danger">'.$this->data['erreur'].'.</div>
     		';
@@ -251,8 +251,8 @@ EOT;
     	//formulaire d'ajout de message
     	$retour .= '
 					<form id="addMessage" action="'.$linkformMessage.'" method="POST">
-		    			<label for="text">Message:</label><textarea id="text" name="text" required></textarea>
-				    	<label for="name">Nom:</label><input type="text" id="nom" name="nom" required>
+		    			<label for="text">Message:</label><textarea id="text" name="text" /*required*/></textarea>
+				    	<label for="name">Nom:</label><input type="text" id="nom" name="nom" /*required*/>
 						<input type="hidden" name="id_liste" id="id_liste" value="'.$id.'" required>
 				    	<input type="submit" value="Envoyer">
 		    		</form>
@@ -285,7 +285,7 @@ EOT;
     		
     		$retour .= '
 				<article>
-					<div><a href="#">Modifier</a><a href="#">Supprimer</a></div>
+					<div><a href="#"></a><a href="#"></a></div>
 					<div>
 						<a href="#"><img src="'.$img.'" alt="lien vers le site marchand" ></a>
 						<aside><h2>'.$item->nom.'</h2><p>Prix : 20€</p></aside>

@@ -708,6 +708,8 @@ footer {
     #item #lienAjout a:hover {
       color: white; }
   #item div article {
+    margin-top: auto;
+    margin-bottom: auto;
     display: flex;
     flex-wrap: wrap;
     background-color: #e6e6e6;
@@ -752,6 +754,8 @@ footer {
         margin-bottom: auto;
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
+        #item div article div:nth-child(2) aside h2 {
+          hyphens: auto; }
         #item div article div:nth-child(2) aside p {
           border: none; }
     #item div article form {

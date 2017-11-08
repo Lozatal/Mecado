@@ -181,9 +181,17 @@ EOT;
             $requete = \mecadoapp\model\User::where('mail', '=', $user->user_login);
             $userreq = $requete->first();
 
-            if($liste->user_id == $userreq->id)
+            if($liste->id_user == $userreq->id)
             {
-                echo 'test';
+            	$nom = $liste->nom;
+            }
+            else
+            {
+            	$nom = '';
+            	$description = '';
+            	$nom_dest = '';
+            	$prenom_dest = '';
+            	$date_limit = '';
             }
         }
 
@@ -193,7 +201,7 @@ EOT;
             <article>
                 <form action="${racine}/main.php/check_liste/" method="post">
                     <label for="destinataire">Etes-vous le destinataire : </label><input type="checkbox" name="destinataire" id="destinataire" value="destinataire">
-                    <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" required>
+                    <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" value="${nom}" required>
                     <label for="description">Description</label><textarea name="description" required></textarea>  
                     <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="nom" required>
                     <label for="prenom_dest">Prénom destinataire</label><input type="text" name="prenom_dest" placeholder="prenom" required>

@@ -334,7 +334,7 @@ EOT;
         $racine =  $this->app_root;
 
         $html = <<<EOT
-	<div id="wrappper">
+	<div id="wrapper">
             <header>
                 ${header}
                 ${menu}

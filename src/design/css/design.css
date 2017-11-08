@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -614,7 +615,7 @@ header {
     padding: 0.5em;
     color: black;
     box-sizing: border-box;
-    background-color: #CCC414;
+    background-color: #3D4C99;
     text-decoration: none;
     text-align: center;
     margin-left: 2.2222222222%;
@@ -623,7 +624,7 @@ header {
     margin-bottom: 0.5em; }
     #liste #lienAjout:hover {
       cursor: pointer;
-      background-color: #eae229; }
+      background-color: #5061b9; }
     #liste #lienAjout a {
       text-decoration: none;
       color: black; }
@@ -632,7 +633,6 @@ header {
   #liste article {
     display: flex;
     flex-wrap: wrap;
-    text-overflow: ellipsis;
     margin-left: 2.2222222222%;
     width: 95.5555555556%; }
     #liste article p:nth-child(1) {
@@ -694,7 +694,12 @@ header {
       margin-bottom: auto;
       order: 7; }
   #liste article[close=y] {
-    background-color: grey; }
+    background-color: #006a99; }
+    #liste article[close=y] p:nth-child(1)::before {
+      content: 'Terminé - ';
+      color: orange; }
+    #liste article[close=y] p:nth-child(6) {
+      color: orange; }
   #liste article:hover {
     background-color: white; }
 

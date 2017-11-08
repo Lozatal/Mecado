@@ -282,6 +282,7 @@ EOT;
 		$listeMessage = $dataListeItem [0]->liste->messages;
 		
 		$retour .= '
+				<div id="imgMenu"></div>
 				<aside>
 				';
 		

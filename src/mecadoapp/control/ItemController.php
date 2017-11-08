@@ -27,6 +27,16 @@ class ItemController extends \mf\control\AbstractController {
     	$resultat['listeItem'] = null;
     	
     	if(isset($get['id'])){
+    		
+    		$util = new \mecadoapp\auth\MecadoAuthentification();
+    		/*
+    		if (is_null($util->user_login))
+    			echo 1;  
+    			if ($util->user_login == null)
+    				echo 2; 
+    				if (!isset($util->user_login))
+    					echo 3; 
+    		*/S
     		$listeItem = item::where('item.id_liste', '=', $get['id'])
     		->get();
     	}

@@ -202,7 +202,8 @@ li {
 
 .disable {
   opacity: 0.6;
-  text-decoration: line-through; }
+  text-decoration: line-through;
+  cursor: default; }
 
 .active {
   opacity: 1;
@@ -954,7 +955,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   font-size: 8pt;
-  background-color: #87CEEB; }
+  background-color: #2988B2; }
 
 header {
   margin: auto;

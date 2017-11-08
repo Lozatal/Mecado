@@ -643,74 +643,56 @@ header {
       font-weight: bold;
       margin-top: auto;
       margin-bottom: auto;
-      order: 3; }
+      order: 4; }
       #liste article p:nth-child(1) a {
         color: black;
         text-decoration: none; }
     #liste article a:nth-child(2) {
-      margin-top: auto;
-      margin-bottom: auto;
-      margin-left: 2.2222222222%;
-      width: 46.6666666667%;
-      border-radius: 10px;
-      font-size: 1rem;
-      padding: 0.25em;
-      color: black;
-      box-sizing: border-box;
-      background-color: #679F5A;
-      text-decoration: none;
-      text-align: center;
+      margin-left: 26.6666666667%;
+      width: 10%;
+      background-image: url("images/url.png");
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
       order: 1; }
-      #liste article a:nth-child(2):hover {
-        cursor: pointer;
-        background-color: #84b379; }
-      #liste article a:nth-child(2) a {
-        text-decoration: none;
-        color: black; }
-      #liste article a:nth-child(2) a:hover {
-        color: #1a1a1a; }
     #liste article a:nth-child(3) {
+      margin-left: 51.1111111111%;
+      width: 10%;
+      background-image: url("images/modifier.png");
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      order: 2; }
+    #liste article a:nth-child(4) {
       margin-top: auto;
       margin-bottom: auto;
-      margin-left: 2.2222222222%;
-      width: 46.6666666667%;
-      border-radius: 10px;
-      font-size: 1rem;
-      padding: 0.25em;
-      color: black;
-      box-sizing: border-box;
-      background-color: #B82010;
-      text-decoration: none;
-      text-align: center;
-      order: 2; }
-      #liste article a:nth-child(3):hover {
-        cursor: pointer;
-        background-color: #e72814; }
-      #liste article a:nth-child(3) a {
-        text-decoration: none;
-        color: black; }
-      #liste article a:nth-child(3) a:hover {
-        color: #1a1a1a; }
-    #liste article p:nth-child(4) {
+      margin-left: 75.5555555556%;
+      width: 10%;
+      background-image: url("images/supprimer.png");
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      order: 3; }
+    #liste article p:nth-child(5) {
       margin-left: 2.2222222222%;
       width: 95.5555555556%;
       padding: 1em 0 1em 0;
       margin-top: auto;
       margin-bottom: auto;
-      order: 4; }
-    #liste article p:nth-child(5) {
+      order: 5; }
+    #liste article p:nth-child(6) {
       margin-left: 2.2222222222%;
       width: 71.1111111111%;
       margin-top: auto;
       margin-bottom: auto;
-      order: 5; }
-    #liste article p:nth-child(6) {
+      order: 6; }
+    #liste article p:nth-child(7) {
       margin-left: 2.2222222222%;
       width: 22.2222222222%;
       text-align: center;
       margin-top: auto;
       margin-bottom: auto;
-      order: 6; }
+      order: 7; }
   #liste article[close=y] {
     background-color: grey; }
   #liste article:hover {
@@ -731,49 +713,13 @@ header {
     margin-bottom: auto;
     order: 1; }
   #liste article a:nth-child(2) {
-    margin-top: auto;
-    margin-bottom: auto;
     margin-left: 2.2222222222%;
     width: 22.2222222222%;
-    border-radius: 10px;
-    font-size: 1rem;
-    padding: 0.25em;
-    color: black;
-    box-sizing: border-box;
-    background-color: #679F5A;
-    text-decoration: none;
-    text-align: center;
     order: 2; }
-    #liste article a:nth-child(2):hover {
-      cursor: pointer;
-      background-color: #84b379; }
-    #liste article a:nth-child(2) a {
-      text-decoration: none;
-      color: black; }
-    #liste article a:nth-child(2) a:hover {
-      color: #1a1a1a; }
   #liste article a:nth-child(3) {
-    margin-top: auto;
-    margin-bottom: auto;
     margin-left: 2.2222222222%;
     width: 22.2222222222%;
-    border-radius: 10px;
-    font-size: 1rem;
-    padding: 0.25em;
-    color: black;
-    box-sizing: border-box;
-    background-color: #B82010;
-    text-decoration: none;
-    text-align: center;
-    order: 3; }
-    #liste article a:nth-child(3):hover {
-      cursor: pointer;
-      background-color: #e72814; }
-    #liste article a:nth-child(3) a {
-      text-decoration: none;
-      color: black; }
-    #liste article a:nth-child(3) a:hover {
-      color: #1a1a1a; } }
+    order: 3; } }
 @media screen and (min-width: 1750px) {
   #liste article {
     margin-left: 2.2222222222%;
@@ -788,49 +734,13 @@ header {
       margin-bottom: auto;
       order: 1; }
     #liste article a:nth-child(2) {
-      margin-top: auto;
-      margin-bottom: auto;
       margin-left: 2.2222222222%;
       width: 22.2222222222%;
-      border-radius: 10px;
-      font-size: 1rem;
-      padding: 0.25em;
-      color: black;
-      box-sizing: border-box;
-      background-color: #679F5A;
-      text-decoration: none;
-      text-align: center;
       order: 2; }
-      #liste article a:nth-child(2):hover {
-        cursor: pointer;
-        background-color: #84b379; }
-      #liste article a:nth-child(2) a {
-        text-decoration: none;
-        color: black; }
-      #liste article a:nth-child(2) a:hover {
-        color: #1a1a1a; }
     #liste article a:nth-child(3) {
-      margin-top: auto;
-      margin-bottom: auto;
       margin-left: 2.2222222222%;
       width: 22.2222222222%;
-      border-radius: 10px;
-      font-size: 1rem;
-      padding: 0.25em;
-      color: black;
-      box-sizing: border-box;
-      background-color: #B82010;
-      text-decoration: none;
-      text-align: center;
-      order: 3; }
-      #liste article a:nth-child(3):hover {
-        cursor: pointer;
-        background-color: #e72814; }
-      #liste article a:nth-child(3) a {
-        text-decoration: none;
-        color: black; }
-      #liste article a:nth-child(3) a:hover {
-        color: #1a1a1a; } }
+      order: 3; } }
 #add_liste {
   width: 100%;
   display: flex;

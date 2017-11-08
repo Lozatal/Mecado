@@ -76,6 +76,60 @@ class ItemController extends \mf\control\AbstractController {
         $vue ->render('addItem'); 
     }
 
+    public function checkItem(){
+
+        $user = new \mecadoapp\auth\MecadoAuthentification();
+        $requete = \mecadoapp\model\User::where('mail', '=', $user->user_login);
+        $userreq = $requete->first();
+
+        $nom = $this->request->post['nom'];
+        $description = $this->request->post['description'];
+        $destinataire = $this->request->post['destinataire'];
+        $nom_dest = $this->request->post['nom_dest'];
+        $prenom_dest = $this->request->post['prenom_dest'];
+        $date_limit = date_create($this->request->post['date_limit']);
+        
+        $v = new \mecadoapp\auth\MecadoAuthentification();
+        try {
+
+            if(isset($this->request->post['id']))
+            {
+                $requete = \mecadoapp\model\Liste::where('id', '=', $this->request->post['id']);
+                $liste = $requete->first();
+            }
+            else
+                $liste = new \mecadoapp\model\Liste();
+
+            $liste->nom = $nom;
+            $liste->description = $description;
+
+            if(!isset($liste->token))
+                $liste->token = password_hash($nom.uniqid(), PASSWORD_DEFAULT);
+
+            $liste->destinataire = $destinataire;
+
+            if($destinataire == 1)
+            {
+                $liste->nom_dest = $userreq->nom;
+                $liste->prenom_dest = $userreq->prenom;
+            }
+            else
+            {
+                $liste->nom_dest  = $nom_dest;
+                $liste->prenom_dest = $prenom_dest;           
+            }
+            $liste->date_limite = $date_limit;
+            $liste->id_user = $userreq->id;
+            $liste->save();
+            $this->listes();
+        }
+        catch(\mf\auth\exception\AuthentificationException $e)
+        {
+            $this->addListe();
+        }
+
+    }
+
     /**
      * Fonction qui va réserver un item avec les données de l'acheteur
      */

@@ -269,7 +269,7 @@ EOT;
 		// Lien pour ajouter un Item
 		$retour .= '
 			<section id="item">
-				<a href="#" id="lienAjout">Ajouter un cadeau</a>';
+				<a href="'.$this->app_root.'/main.php/add_item/?liste=" id="lienAjout">Ajouter un cadeau</a>';
 		
 		$id = null;
 		if (isset ( $get->get ['id'] )) {
@@ -289,6 +289,7 @@ EOT;
 			</section>';
 		return $retour;
 	}
+
 	private function renderAddItem() {
 
         $racine =  $this->app_root;

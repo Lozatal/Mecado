@@ -16,15 +16,18 @@
 				@include grille(8,10%,0,3);
 			}
 			& label[for=destinataire]{
-				@include grille(8,10%,0,8);
+				@include grille(8,10%,0,3);
 			}
 			& label[for=oui]{
-				@include grille(8,10%,0,2);
+				@include grille(8,10%,0,1);
 			}
 			& label[for=non]{
-				@include grille(8,10%,0,2);
+				@include grille(8,10%,0,1);
 			}
-			&input[type=radio]{
+			& input[id=oui]{
+				@include grille(8,10%,0,1);
+			}
+			& input[id=non]{
 				@include grille(8,10%,0,1);
 			}
 			& input{

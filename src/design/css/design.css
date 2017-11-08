@@ -881,14 +881,17 @@ footer {
         width: 34.4444444444%; }
       #add_cadeau article form label[for=destinataire] {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 34.4444444444%; }
       #add_cadeau article form label[for=oui] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
+        width: 10%; }
       #add_cadeau article form label[for=non] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
-      #add_cadeau article forminput[type=radio] {
+        width: 10%; }
+      #add_cadeau article form input[id=oui] {
+        margin-left: 2.2222222222%;
+        width: 10%; }
+      #add_cadeau article form input[id=non] {
         margin-left: 2.2222222222%;
         width: 10%; }
       #add_cadeau article form input {
@@ -941,14 +944,17 @@ footer {
         width: 34.4444444444%; }
       #add_liste article form label[for=destinataire] {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 34.4444444444%; }
       #add_liste article form label[for=oui] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
+        width: 10%; }
       #add_liste article form label[for=non] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
-      #add_liste article forminput[type=radio] {
+        width: 10%; }
+      #add_liste article form input[id=oui] {
+        margin-left: 2.2222222222%;
+        width: 10%; }
+      #add_liste article form input[id=non] {
         margin-left: 2.2222222222%;
         width: 10%; }
       #add_liste article form input {
@@ -1001,14 +1007,17 @@ footer {
         width: 34.4444444444%; }
       #sign_up article form label[for=destinataire] {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 34.4444444444%; }
       #sign_up article form label[for=oui] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
+        width: 10%; }
       #sign_up article form label[for=non] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
-      #sign_up article forminput[type=radio] {
+        width: 10%; }
+      #sign_up article form input[id=oui] {
+        margin-left: 2.2222222222%;
+        width: 10%; }
+      #sign_up article form input[id=non] {
         margin-left: 2.2222222222%;
         width: 10%; }
       #sign_up article form input {
@@ -1061,14 +1070,17 @@ footer {
         width: 34.4444444444%; }
       #login article form label[for=destinataire] {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 34.4444444444%; }
       #login article form label[for=oui] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
+        width: 10%; }
       #login article form label[for=non] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
-      #login article forminput[type=radio] {
+        width: 10%; }
+      #login article form input[id=oui] {
+        margin-left: 2.2222222222%;
+        width: 10%; }
+      #login article form input[id=non] {
         margin-left: 2.2222222222%;
         width: 10%; }
       #login article form input {

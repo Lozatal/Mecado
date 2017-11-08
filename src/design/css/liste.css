@@ -8,7 +8,7 @@ Error: Undefined mixin 'bouton'.
 4: 	flex-wrap: wrap;
 5: 	& #lienAjout{
 6: 		margin: auto;
-7: 		@include bouton(black,1,green,10px);
+7: 		@include bouton(black,1,#CCC414,10px);
 8: 		text-align: center;
 9: 		@include grille(8,10%,0,8);
 10: 		margin-top: 0.5em;
@@ -84,4 +84,4 @@ scss/liste.scss:7
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'bouton'.\A         on line 7 of scss/liste.scss, in `bouton'\A         from line 7 of scss/liste.scss\A \A 2: 	width: 100%;\A 3: 	display: flex;\A 4: 	flex-wrap: wrap;\A 5: 	& #lienAjout{\A 6: 		margin: auto;\A 7: 		@include bouton(black,1,green,10px);\A 8: 		text-align: center;\A 9: 		@include grille(8,10%,0,8);\A 10: 		margin-top: 0.5em;\A 11: 		margin-bottom: 0.5em;\A 12: 	}"; }
+  content: "Error: Undefined mixin 'bouton'.\A         on line 7 of scss/liste.scss, in `bouton'\A         from line 7 of scss/liste.scss\A \A 2: 	width: 100%;\A 3: 	display: flex;\A 4: 	flex-wrap: wrap;\A 5: 	& #lienAjout{\A 6: 		margin: auto;\A 7: 		@include bouton(black,1,#CCC414,10px);\A 8: 		text-align: center;\A 9: 		@include grille(8,10%,0,8);\A 10: 		margin-top: 0.5em;\A 11: 		margin-bottom: 0.5em;\A 12: 	}"; }

@@ -50,9 +50,9 @@
 		margin: auto;
 		margin-bottom: 0.5em;
 		margin-top: 0.5em;
-		@include bouton(black,1,green,10px);
+		@include bouton(black,1,#CCC414,10px);
 		text-align: center;
-		@include grille(8,10%,0,8);
+		@include grille(8,10%,1,6);
 		max-height: 2em;
 	}
 	& div article{
@@ -65,13 +65,22 @@
 			padding: 0.5em;
 			display: flex;
 			flex-wrap: wrap;
+			& a:hover{
+			
+			}
 			& a:first-child{
-				@include bouton(white,0.7,blue,10px);
-				margin: auto;
+				@include grille(8,10%,6,1);
+				background-image: url('images/modifier.png');
+				width: 20px;
+				height: 20px;
+				background-repeat: no-repeat;
 			}
 			& a:last-child{
-				@include bouton(white,0.7,red,10px);
-				margin: auto;
+				@include grille(8,10%,0,1);
+				background-image: url('images/supprimer.png');
+				width: 20px;
+				height: 20px;
+				background-repeat: no-repeat;
 			}
 		}
 		& div:nth-child(2){

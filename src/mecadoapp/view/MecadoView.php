@@ -139,44 +139,49 @@ EOT;
         </section>
 
         ';
-		
-		return $retour;
-	}
-	private function renderListe() {
-		$retour = '<section id="liste"><a id="lienAjout" href="' . $this->app_root . '/main.php/add_liste/">Ajouter une liste</a>';
-		
-		foreach ( $this->data as $key => $value ) {
-			$date = date_create ( $value->date_limite );
-			if (date ( "Y-m-d H:i:s" ) >= $value->date_limite)
-				$close = 'y';
-			else
-				$close = 'n';
-			$retour = $retour . '
-                        <article close="' . $close . '">
-                            <p><a href="' . $this->app_root . '/main.php/item/?id=' . $value->id . '">' . $value->nom . '</a></p>
-                            <a  class="disabled href="#">Modifier</a><a class="disabled href="#">Supprimer</a>
-                            <p>' . $value->description . '</p>
-                            <p>Date de l\'évènement: ' . date_format ( $date, 'Y-m-d ' ) . '</p>
-                            <p>' . $value->prenom_dest . ' ' . $value->nom_dest . '</p>
+
+        return $retour;
+    }
+
+    private function renderListe() {
+
+        $retour = '<section id="liste"><a id="lienAjout" href="'.$this->app_root.'/main.php/add_liste/">Ajouter une liste</a>';     
+
+        foreach ($this->data as $key => $value) {
+            $date = date_create($value->date_limite);
+            if(date("Y-m-d H:i:s") >= $value->date_limite)
+                $close = 'y';
+            else
+                $close = 'n';
+            $retour = $retour.'
+                        <article close="'.$close.'">
+                            <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
+                            <a class="disabled" href="#"></a><a class="disabled" href="#"></a><a class="disabled" href="#"></a>
+                            <p>'.$value->description.'</p>
+                            <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
+                            <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>
                         </article>
                         ';
-		}
-		
-		return $retour . '</section>';
-	}
-	private function renderAddListe() {
-		$retour = <<< EOT
+        }
+
+        return $retour.'</section>';
+    }
+
+    private function renderAddListe() {
+
+        $racine =  $this->app_root;
+
+        $retour =<<< EOT
 
         <section id="add_liste">
             <article>
-                <form>
+                <form action="${racine}/main.php/check_liste/" method="post">
+                    <label for="destinataire">Etes-vous le destinataire : </label><input type="checkbox" name="destinataire" id="destinataire" value="destinataire">
                     <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" required>
-                    <label for="description">Description</label><textarea name="description" required></textarea>
-                    <label for="destinataire">Destinataire</label>
-                    <input type="checkbox" id="destinataire" name="destinataire" value="destinataire" required>
-                    <label for="nomDest">Nom destinataire</label><input type="text" name="nomDest" placeholder="nom" required>
-                    <label for="prenomDest">Prénom destinataire</label><input type="text" name="prenomDest" placeholder="prenom" required>
-                    <label for="date_Limite">Date limite</label><input type="text" name="date_Limite" placeholder="date limite" required>
+                    <label for="description">Description</label><textarea name="description" required></textarea>  
+                    <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="nom" required>
+                    <label for="prenom_dest">Prénom destinataire</label><input type="text" name="prenom_dest" placeholder="prenom" required>
+                    <label for="date_limit">Date limite</label><input type="date" name="date_limit" placeholder="date limite" required>
                     <input type="submit" value="Ajouter liste" required>
                 </form>
             </article>

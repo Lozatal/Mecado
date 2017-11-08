@@ -514,15 +514,15 @@ header {
     padding: 0.5em;
     color: black;
     box-sizing: border-box;
-    background-color: green;
+    background-color: #CCC414;
     text-decoration: none;
     text-align: center;
-    margin-left: 2.2222222222%;
-    width: 95.5555555556%;
+    margin-left: 14.4444444444%;
+    width: 71.1111111111%;
     max-height: 2em; }
     #item #lienAjout:hover {
       cursor: pointer;
-      background-color: #00b300; }
+      background-color: #eae229; }
     #item #lienAjout a {
       text-decoration: none;
       color: black; }
@@ -540,39 +540,19 @@ header {
       display: flex;
       flex-wrap: wrap; }
       #item div article div:first-child a:first-child {
-        border-radius: 10px;
-        font-size: 1rem;
-        padding: 0.35em;
-        color: white;
-        box-sizing: border-box;
-        background-color: blue;
-        text-decoration: none;
-        margin: auto; }
-        #item div article div:first-child a:first-child:hover {
-          cursor: pointer;
-          background-color: #3333ff; }
-        #item div article div:first-child a:first-child a {
-          text-decoration: none;
-          color: white; }
-        #item div article div:first-child a:first-child a:hover {
-          color: white; }
+        margin-left: 75.5555555556%;
+        width: 10%;
+        background-image: url("images/modifier.png");
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat; }
       #item div article div:first-child a:last-child {
-        border-radius: 10px;
-        font-size: 1rem;
-        padding: 0.35em;
-        color: white;
-        box-sizing: border-box;
-        background-color: red;
-        text-decoration: none;
-        margin: auto; }
-        #item div article div:first-child a:last-child:hover {
-          cursor: pointer;
-          background-color: #ff3333; }
-        #item div article div:first-child a:last-child a {
-          text-decoration: none;
-          color: white; }
-        #item div article div:first-child a:last-child a:hover {
-          color: white; }
+        margin-left: 2.2222222222%;
+        width: 10%;
+        background-image: url("images/supprimer.png");
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat; }
     #item div article div:nth-child(2) {
       width: 100%;
       display: flex;
@@ -634,7 +614,7 @@ header {
     padding: 0.5em;
     color: black;
     box-sizing: border-box;
-    background-color: green;
+    background-color: #CCC414;
     text-decoration: none;
     text-align: center;
     margin-left: 2.2222222222%;
@@ -643,7 +623,7 @@ header {
     margin-bottom: 0.5em; }
     #liste #lienAjout:hover {
       cursor: pointer;
-      background-color: #00b300; }
+      background-color: #eae229; }
     #liste #lienAjout a {
       text-decoration: none;
       color: black; }
@@ -663,74 +643,56 @@ header {
       font-weight: bold;
       margin-top: auto;
       margin-bottom: auto;
-      order: 3; }
+      order: 4; }
       #liste article p:nth-child(1) a {
         color: black;
         text-decoration: none; }
     #liste article a:nth-child(2) {
-      margin-top: auto;
-      margin-bottom: auto;
-      margin-left: 2.2222222222%;
-      width: 46.6666666667%;
-      border-radius: 10px;
-      font-size: 1rem;
-      padding: 0.25em;
-      color: black;
-      box-sizing: border-box;
-      background-color: #679F5A;
-      text-decoration: none;
-      text-align: center;
+      margin-left: 38.8888888889%;
+      width: 10%;
+      background-image: url("images/url.png");
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
       order: 1; }
-      #liste article a:nth-child(2):hover {
-        cursor: pointer;
-        background-color: #84b379; }
-      #liste article a:nth-child(2) a {
-        text-decoration: none;
-        color: black; }
-      #liste article a:nth-child(2) a:hover {
-        color: #1a1a1a; }
     #liste article a:nth-child(3) {
+      margin-left: 14.4444444444%;
+      width: 10%;
+      background-image: url("images/modifier.png");
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      order: 2; }
+    #liste article a:nth-child(4) {
       margin-top: auto;
       margin-bottom: auto;
-      margin-left: 2.2222222222%;
-      width: 46.6666666667%;
-      border-radius: 10px;
-      font-size: 1rem;
-      padding: 0.25em;
-      color: black;
-      box-sizing: border-box;
-      background-color: #B82010;
-      text-decoration: none;
-      text-align: center;
-      order: 2; }
-      #liste article a:nth-child(3):hover {
-        cursor: pointer;
-        background-color: #e72814; }
-      #liste article a:nth-child(3) a {
-        text-decoration: none;
-        color: black; }
-      #liste article a:nth-child(3) a:hover {
-        color: #1a1a1a; }
-    #liste article p:nth-child(4) {
+      margin-left: 14.4444444444%;
+      width: 10%;
+      background-image: url("images/supprimer.png");
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      order: 3; }
+    #liste article p:nth-child(5) {
       margin-left: 2.2222222222%;
       width: 95.5555555556%;
       padding: 1em 0 1em 0;
       margin-top: auto;
       margin-bottom: auto;
-      order: 4; }
-    #liste article p:nth-child(5) {
+      order: 5; }
+    #liste article p:nth-child(6) {
       margin-left: 2.2222222222%;
       width: 71.1111111111%;
       margin-top: auto;
       margin-bottom: auto;
-      order: 5; }
-    #liste article p:nth-child(6) {
+      order: 6; }
+    #liste article p:nth-child(7) {
       margin-left: 2.2222222222%;
       width: 22.2222222222%;
       text-align: center;
       margin-top: auto;
       margin-bottom: auto;
-      order: 6; }
+      order: 7; }
   #liste article[close=y] {
     background-color: grey; }
   #liste article:hover {
@@ -743,7 +705,7 @@ header {
 @media screen and (min-width: 1281px) {
   #liste article p:nth-child(1) {
     margin-left: 2.2222222222%;
-    width: 46.6666666667%;
+    width: 58.8888888889%;
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
@@ -751,56 +713,24 @@ header {
     margin-bottom: auto;
     order: 1; }
   #liste article a:nth-child(2) {
-    margin-top: auto;
-    margin-bottom: auto;
     margin-left: 2.2222222222%;
-    width: 22.2222222222%;
-    border-radius: 10px;
-    font-size: 1rem;
-    padding: 0.25em;
-    color: black;
-    box-sizing: border-box;
-    background-color: #679F5A;
-    text-decoration: none;
-    text-align: center;
+    width: 10%;
     order: 2; }
-    #liste article a:nth-child(2):hover {
-      cursor: pointer;
-      background-color: #84b379; }
-    #liste article a:nth-child(2) a {
-      text-decoration: none;
-      color: black; }
-    #liste article a:nth-child(2) a:hover {
-      color: #1a1a1a; }
   #liste article a:nth-child(3) {
-    margin-top: auto;
-    margin-bottom: auto;
     margin-left: 2.2222222222%;
-    width: 22.2222222222%;
-    border-radius: 10px;
-    font-size: 1rem;
-    padding: 0.25em;
-    color: black;
-    box-sizing: border-box;
-    background-color: #B82010;
-    text-decoration: none;
-    text-align: center;
+    width: 10%;
     order: 3; }
-    #liste article a:nth-child(3):hover {
-      cursor: pointer;
-      background-color: #e72814; }
-    #liste article a:nth-child(3) a {
-      text-decoration: none;
-      color: black; }
-    #liste article a:nth-child(3) a:hover {
-      color: #1a1a1a; } }
+  #liste article a:nth-child(4) {
+    margin-left: 2.2222222222%;
+    width: 10%;
+    order: 4; } }
 @media screen and (min-width: 1750px) {
   #liste article {
     margin-left: 2.2222222222%;
     width: 22.2222222222%; }
     #liste article p:nth-child(1) {
       margin-left: 2.2222222222%;
-      width: 46.6666666667%;
+      width: 58.8888888889%;
       text-align: center;
       font-size: 1.5rem;
       font-weight: bold;
@@ -808,49 +738,17 @@ header {
       margin-bottom: auto;
       order: 1; }
     #liste article a:nth-child(2) {
-      margin-top: auto;
-      margin-bottom: auto;
       margin-left: 2.2222222222%;
-      width: 22.2222222222%;
-      border-radius: 10px;
-      font-size: 1rem;
-      padding: 0.25em;
-      color: black;
-      box-sizing: border-box;
-      background-color: #679F5A;
-      text-decoration: none;
-      text-align: center;
+      width: 10%;
       order: 2; }
-      #liste article a:nth-child(2):hover {
-        cursor: pointer;
-        background-color: #84b379; }
-      #liste article a:nth-child(2) a {
-        text-decoration: none;
-        color: black; }
-      #liste article a:nth-child(2) a:hover {
-        color: #1a1a1a; }
     #liste article a:nth-child(3) {
-      margin-top: auto;
-      margin-bottom: auto;
       margin-left: 2.2222222222%;
-      width: 22.2222222222%;
-      border-radius: 10px;
-      font-size: 1rem;
-      padding: 0.25em;
-      color: black;
-      box-sizing: border-box;
-      background-color: #B82010;
-      text-decoration: none;
-      text-align: center;
+      width: 10%;
       order: 3; }
-      #liste article a:nth-child(3):hover {
-        cursor: pointer;
-        background-color: #e72814; }
-      #liste article a:nth-child(3) a {
-        text-decoration: none;
-        color: black; }
-      #liste article a:nth-child(3) a:hover {
-        color: #1a1a1a; } }
+    #liste article a:nth-child(4) {
+      margin-left: 2.2222222222%;
+      width: 10%;
+      order: 4; } }
 #add_liste {
   width: 100%;
   display: flex;
@@ -965,9 +863,12 @@ body {
   position: relative;
   min-height: 100%;
   padding-bottom: 8em;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  width: 100%; }
 
 header {
+  margin: auto;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -1014,6 +915,9 @@ header {
         color: white; }
       header nav a a:hover {
         color: white; }
+    header nav a:nth-child(2) {
+      margin-left: 2.2222222222%;
+      width: 46.6666666667%; }
 
 section {
   display: flex;

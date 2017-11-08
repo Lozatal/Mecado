@@ -25,9 +25,12 @@ body{
 	min-height: 100%;
 	padding-bottom: 8em;
 	box-sizing: border-box;
+	width: 100%;
 }
 
 header{
+	margin:auto;
+	width: 100%;
 	@include header(8pt);
 	& #accueil{
 		display: flex;
@@ -55,6 +58,9 @@ header{
 			opacity: 0.8;
 			@include grille(8,10%,0,4);
 			text-align: center;
+		}
+		& a:nth-child(2){
+			@include grille(8,10%,0,4);
 		}
 	}
 }

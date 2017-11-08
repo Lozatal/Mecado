@@ -48,12 +48,19 @@ class ListeController extends \mf\control\AbstractController {
 
     public function checkListe(){
 
+        $user = new \mecadoapp\auth\MecadoAuthentification();
+        $requete = \mecadoapp\model\User::where('mail', '=', $user->user_login);
+        $userreq = $requete->first();
+
         $nom = $this->request->post['nom'];
         $description = $this->request->post['description'];
-        $date_limit = $this->request->post['date_limit'];
-        $destinataire = $this->request->post['destinataire'];
+        if(isset($this->request->post['destinataire']))
+            $destinataire = 1;
+        else
+            $destinataire = 0;
         $nom_dest = $this->request->post['nom_dest'];
         $prenom_dest = $this->request->post['prenom_dest'];
+        $date_limit = date_create($this->request->post['date_limit']);
         
         $v = new \mecadoapp\auth\MecadoAuthentification();
         try {
@@ -61,16 +68,18 @@ class ListeController extends \mf\control\AbstractController {
             $liste->nom = $nom;
             $liste->description = $description;
             $liste->token = '';
-            $liste->date_limit = $date_limit;
             $liste->destinataire = $destinataire;
             $liste->nom_dest  = $nom_dest;
             $liste->prenom_dest = $prenom_dest;
+            $liste->date_limite = $date_limit;
+            $liste->id_user = $userreq->id;
             $liste->save();
+            $this->listes();
         }
         catch(\mf\auth\exception\AuthentificationException $e)
         {
             $v = new \mecadoapp\view\MecadoView(null);
-            $this->signUp();
+            $this->addListe();
         }
 
     }

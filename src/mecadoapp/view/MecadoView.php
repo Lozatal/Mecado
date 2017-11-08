@@ -226,8 +226,7 @@ EOT;
                 	${hidden}
                    	<label for="destinataire">Pour un tier :</label>
                     <input type="radio" id="oui" name="destinataire" value="0" ${checkoui}><label for="oui">Oui</label>
-                   <input type="radio" id="non" name="destinataire" value="1" ${checknon}> <label for="non">Non</label>
-
+                   	<input type="radio" id="non" name="destinataire" value="1" ${checknon}> <label for="non">Non</label>
                     <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" value="${nom}" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" required>${description}</textarea>  
                     <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="Si vous n'êtes pas le destinaire" value="${nom_dest}">
@@ -302,17 +301,21 @@ EOT;
 	private function renderAddItem() {
 
         $racine =  $this->app_root;
+        $get = new \mf\utils\HttpRequest ();
+        $id = $get->get['liste'];
 
         $retour =<<< EOT
 
         <section id="add_item">
             <article>
                 <form action="${racine}/main.php/check_item/" method="post">
+                	<input type="hidden" name="id" value="${id}">
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" required>
+                    <label for="description">Description</label><textarea maxlength="500" name="description" required></textarea> 
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" placeholder="URL" required>
                     <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL" required>                 
                     <label for="tarif">tarif</label><input type="text" name="tarif" placeholder="tarif" required>
-                    <input type="submit" value="Ajouter liste" required>
+                    <input type="submit" value="Ajouter">
                 </form>
             </article>
         </section>

@@ -102,6 +102,10 @@ abstract class AbstractView {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>${title}</title>
 	    ${styles}
+        <!--[if lte IE 6]> <link rel="stylesheet" href="src/design/css/design2.css" /> <![endif]-->
+        <!--[if lte IE 8]> <link rel="stylesheet" href="src/design/css/design2.css" /> <![endif]-->
+        <!--[if lte chrome]> <link rel="stylesheet" href="src/design/css/design2.css" /> <![endif]-->
+
     </head>
 
     <body>

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,MAAM;EACL,QAAQ,EAAE,QAAQ",
+"sources": ["../scss/design2.scss"],
+"names": [],
+"file": "design2.css"
+}

@@ -54,6 +54,11 @@
 		flex-wrap: wrap;
 		@include grille(8,10%,0,8);
 	}
+	& #titre{
+		@include grille(8,10%,0,8);
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
 	& #lienAjout{
 		margin: auto;
 		margin-bottom: 0.5em;

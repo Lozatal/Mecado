@@ -837,6 +837,194 @@ footer {
   #home article:nth-child(4) {
     margin-left: 2.2222222222%;
     width: 22.2222222222%; } }
+#add_cadeau {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  #add_cadeau article {
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%;
+    display: flex;
+    flex-wrap: wrap; }
+    #add_cadeau article form {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: auto; }
+      #add_cadeau article form label {
+        width: 80%;
+        margin: auto;
+        margin-top: 1em; }
+      #add_cadeau article form input {
+        width: 80%;
+        margin: auto; }
+      #add_cadeau article form input:last-child {
+        margin-top: 1em;
+        margin-bottom: 1em; }
+      #add_cadeau article form textarea {
+        margin: auto;
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
+  @media screen and (min-width: 280px) {
+    #add_cadeau article form {
+      width: 90%; } }
+  @media screen and (min-width: 480px) {
+    #add_cadeau article form {
+      width: 80%; } }
+  @media screen and (min-width: 600px) {
+    #add_cadeau article form {
+      width: 70%; } }
+  @media screen and (min-width: 801px) {
+    #add_cadeau article form {
+      width: 60%; } }
+  @media screen and (min-width: 1025px) {
+    #add_cadeau article form {
+      width: 50%; } }
+  @media screen and (min-width: 1281px) {
+    #add_cadeau article form {
+      width: 40%; } }
+
+#add_liste {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  #add_liste article {
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%;
+    display: flex;
+    flex-wrap: wrap; }
+    #add_liste article form {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: auto; }
+      #add_liste article form label {
+        width: 80%;
+        margin: auto;
+        margin-top: 1em; }
+      #add_liste article form input {
+        width: 80%;
+        margin: auto; }
+      #add_liste article form input:last-child {
+        margin-top: 1em;
+        margin-bottom: 1em; }
+      #add_liste article form textarea {
+        margin: auto;
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
+  @media screen and (min-width: 280px) {
+    #add_liste article form {
+      width: 90%; } }
+  @media screen and (min-width: 480px) {
+    #add_liste article form {
+      width: 80%; } }
+  @media screen and (min-width: 600px) {
+    #add_liste article form {
+      width: 70%; } }
+  @media screen and (min-width: 801px) {
+    #add_liste article form {
+      width: 60%; } }
+  @media screen and (min-width: 1025px) {
+    #add_liste article form {
+      width: 50%; } }
+  @media screen and (min-width: 1281px) {
+    #add_liste article form {
+      width: 40%; } }
+
+#sign_up {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  #sign_up article {
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%;
+    display: flex;
+    flex-wrap: wrap; }
+    #sign_up article form {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: auto; }
+      #sign_up article form label {
+        width: 80%;
+        margin: auto;
+        margin-top: 1em; }
+      #sign_up article form input {
+        width: 80%;
+        margin: auto; }
+      #sign_up article form input:last-child {
+        margin-top: 1em;
+        margin-bottom: 1em; }
+      #sign_up article form textarea {
+        margin: auto;
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
+  @media screen and (min-width: 280px) {
+    #sign_up article form {
+      width: 90%; } }
+  @media screen and (min-width: 480px) {
+    #sign_up article form {
+      width: 80%; } }
+  @media screen and (min-width: 600px) {
+    #sign_up article form {
+      width: 70%; } }
+  @media screen and (min-width: 801px) {
+    #sign_up article form {
+      width: 60%; } }
+  @media screen and (min-width: 1025px) {
+    #sign_up article form {
+      width: 50%; } }
+  @media screen and (min-width: 1281px) {
+    #sign_up article form {
+      width: 40%; } }
+
+#login {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  #login article {
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%;
+    display: flex;
+    flex-wrap: wrap; }
+    #login article form {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: auto; }
+      #login article form label {
+        width: 80%;
+        margin: auto;
+        margin-top: 1em; }
+      #login article form input {
+        width: 80%;
+        margin: auto; }
+      #login article form input:last-child {
+        margin-top: 1em;
+        margin-bottom: 1em; }
+      #login article form textarea {
+        margin: auto;
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
+  @media screen and (min-width: 280px) {
+    #login article form {
+      width: 90%; } }
+  @media screen and (min-width: 480px) {
+    #login article form {
+      width: 80%; } }
+  @media screen and (min-width: 600px) {
+    #login article form {
+      width: 70%; } }
+  @media screen and (min-width: 801px) {
+    #login article form {
+      width: 60%; } }
+  @media screen and (min-width: 1025px) {
+    #login article form {
+      width: 50%; } }
+  @media screen and (min-width: 1281px) {
+    #login article form {
+      width: 40%; } }
+
 @media screen and (min-width: 280px) {
   body {
     font-size: 8pt; } }

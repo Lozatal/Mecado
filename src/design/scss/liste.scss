@@ -1,10 +1,13 @@
+@mixin liste($themeColor,$backgroundColor){
+
 #liste{
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	& #lienAjout{
 		margin: auto;
-		@include bouton(black,1,#3D4C99,10px);
+		@include bouton(white,1,lighten($themeColor,20),10px);
+		opacity: 0.9;
 		text-align: center;
 		@include grille(8,10%,0,8);
 		margin-top: 0.5em;
@@ -65,6 +68,7 @@
 			margin-top: auto;
 			margin-bottom: auto;
 			order: 6;
+			text-decoration: underline;
 		}
 		& p:nth-child(7){
 			@include grille(8,10%,0,2);
@@ -75,13 +79,12 @@
 		}
 	}
 	& article[close=y]{
-		background-color: darken(#00B0FF,20);
-		& p:nth-child(1)::before{
-			content:'Terminé - ';
-			color: orange;
+		background-color: darken($backgroundColor,20);
+		& p:nth-child(1){
+			text-decoration: line-through;
 		}
 		& p:nth-child(6){
-			color: orange;
+			color: black;
 		}
 		& a:nth-child(2){
 			@include disable();
@@ -106,6 +109,9 @@
 	#liste article{
 		@include grille(8,10%,0,4);
 	}
+	#liste #lienAjout{
+		@include grille(8,10%,1,6);
+	}
 }
 
 @media screen and (min-width: 600px){
@@ -113,7 +119,10 @@
 }
 
 @media screen and (min-width: 801px){
-
+	#liste #lienAjout{
+		@include grille(8,10%,2,4);
+		margin-right: 20%;
+	}
 }
 
 @media screen and (min-width: 1025px){
@@ -121,6 +130,10 @@
 }
 
 @media screen and (min-width: 1281px){
+	#liste #lienAjout{
+		@include grille(8,10%,3,2);
+		margin-right: 20%;
+	}
 	#liste article{
 		& p:nth-child(1){
 			@include grille(8,10%,0,5);
@@ -183,4 +196,6 @@
 			order: 4;
 		}
 	}
+}
+
 }

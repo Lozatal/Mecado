@@ -4,7 +4,7 @@ Error: Undefined mixin 'formulaire'.
         from line 2 of scss/sign_up.scss
 
 1: #sign_up{
-2: 	@include formulaire();
+2: 	@include formulaire($themeColor,$backgroundColor);
 3: }
 
 Backtrace:
@@ -65,4 +65,4 @@ scss/sign_up.scss:2
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'formulaire'.\A         on line 2 of scss/sign_up.scss, in `formulaire'\A         from line 2 of scss/sign_up.scss\A \A 1: #sign_up{\A 2: 	@include formulaire();\A 3: }"; }
+  content: "Error: Undefined mixin 'formulaire'.\A         on line 2 of scss/sign_up.scss, in `formulaire'\A         from line 2 of scss/sign_up.scss\A \A 1: #sign_up{\A 2: 	@include formulaire($themeColor,$backgroundColor);\A 3: }"; }

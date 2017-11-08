@@ -1,3 +1,5 @@
+@mixin item($themeColor,$backgroundColor){
+
 #item{
 	display: flex;
 	flex-wrap: wrap;
@@ -6,7 +8,7 @@
 		margin-bottom: auto;
 		padding: 1em 0 1em 0;
 		@include grille(8,10%,0,8);
-		background-color: #DCDCDC;
+		background-color: darken($backgroundColor,10);
 		border: 2px solid black;
 		border-radius: 5px;
 		& p{
@@ -56,8 +58,8 @@
 		margin: auto;
 		margin-bottom: 0.5em;
 		margin-top: 0.5em;
-		@include bouton(white,1,black,10px);
-		opacity: 0.8;
+		@include bouton(white,1,lighten($themeColor,20),10px);
+		opacity: 0.9;
 		text-align: center;
 		@include grille(8,10%,1,6);
 		max-height: 2em;
@@ -65,6 +67,7 @@
 	& div article{
 		display: flex;
 		flex-wrap: wrap;
+		background-color: darken($backgroundColor,10);
 		@include grille(8,10%,0,8);
 		max-height: 35em;
 		& div:first-child{
@@ -104,12 +107,21 @@
 				margin: auto;
 			}
 			& aside{
+				border: none;
+				box-sizing: border-box;
+				margin-top: auto;
+				margin-bottom: auto;
 				@include grille(8,10%,0,4);
+				& p{
+					border: none;
+				}
 			}
 		}
 		& form{
 			width:100%;
 			flex-wrap: wrap;
+			margin-top: auto;
+			margin-bottom: 0;
 			display: flex;
 			& label{
 				width: 90%;
@@ -141,7 +153,9 @@
 }
 
 @media screen and (min-width: 480px){
-
+	#item #lienAjout{
+		@include grille(8,10%,1,6);
+	}
 }
 
 @media screen and (min-width: 600px){
@@ -160,7 +174,10 @@
 }
 
 @media screen and (min-width: 801px){
-
+	#item #lienAjout{
+		@include grille(8,10%,2,4);
+		margin-right: 20%;
+	}
 }
 
 @media screen and (min-width: 1025px){
@@ -168,7 +185,10 @@
 }
 
 @media screen and (min-width: 1281px){
-	
+	#item #lienAjout{
+		@include grille(8,10%,3,2);
+		margin-right: 20%;
+	}
 }
 
 @media screen and (min-width: 1750px){
@@ -177,4 +197,6 @@
 			@include grille(8,10%,0,2);
 		}
 	}
+}
+
 }

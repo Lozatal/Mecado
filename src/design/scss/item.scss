@@ -65,7 +65,7 @@
 		max-height: 2em;
 	}
 	& div article{
-		margin-top: auto;
+		margin-top: 1em;
 		margin-bottom: auto;
 		display: flex;
 		flex-wrap: wrap;
@@ -100,7 +100,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			& a{
-				@include grille(8,10%,0,4);
+				@include grille(8,10%,0,6);
 				text-align: center;
 				display: flex;
 				flex-wrap: wrap;
@@ -113,13 +113,14 @@
 				box-sizing: border-box;
 				margin-top: auto;
 				margin-bottom: auto;
-				@include grille(8,10%,0,4);
-				& h2{
-					hyphens: auto;
-				}
+				@include grille(8,10%,0,2);
 				& p{
 					border: none;
+					font-weight: bold;
 				}
+			}
+			& h2{
+				hyphens: auto;
 			}
 		}
 		& form{

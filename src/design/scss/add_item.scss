@@ -1,0 +1,7 @@
+@mixin add_item($themeColor,$backgroundColor){
+
+#add_item{
+	@include formulaire($themeColor,$backgroundColor);
+}
+
+}

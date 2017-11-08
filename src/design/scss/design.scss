@@ -6,7 +6,7 @@
 @import 'item'; //Tous les cadeaux d'une liste
 @import 'liste'; //Toutes les listes d'un utilisateur
 @import 'add_liste'; //Formulaire ajout liste
-@import 'add_cadeau'; //Formulaire ajout cadeau
+@import 'add_item'; //Formulaire ajout cadeau
 
 $backgroundColor: white;
 $themeColor: black;
@@ -61,6 +61,7 @@ header{
 		display: flex;
 		flex-wrap: wrap;
 		width: 100%;
+		margin-top: 0;
 		& a{
 			margin-top: 0.5em;
 			@include bouton(black,1,$backgroundColor,10px);
@@ -84,7 +85,7 @@ article{
 	margin-bottom: 0.5em;
 	margin-top: 0.5em;
 	padding: 0.5em;
-	background-color: lighen($backgroundColor, 20);
+	background-color: lighten($backgroundColor,20);
 	text-align: justify;
 	border: 2px solid black;
 	box-sizing: border-box;
@@ -124,7 +125,7 @@ footer{
 @include liste($themeColor,$backgroundColor);
 @include item($themeColor,$backgroundColor);
 @include home($themeColor,$backgroundColor);
-@include add_cadeau($themeColor,$backgroundColor);
+@include add_item($themeColor,$backgroundColor);
 @include add_liste($themeColor,$backgroundColor);
 @include sign_up($themeColor,$backgroundColor);
 @include login($themeColor,$backgroundColor);

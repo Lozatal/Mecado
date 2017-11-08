@@ -95,15 +95,19 @@
 		}
 		& a:nth-child(2){
 			background-image: url('images/message.png');
+			@include grille(8,10%,2,1);
 		}
 		& a:nth-child(3){
 			@include disable();
+			display: none;
 		}
 		& a:nth-child(4){
 			@include disable();
+			display: none;
 		}
 		& a:nth-child(5){
 			@include disable();
+			@include grille(8,10%,0,1);
 		}
 	}
 	& article:hover{

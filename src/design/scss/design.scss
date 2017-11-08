@@ -6,7 +6,7 @@
 @import 'item'; //Tous les cadeaux d'une liste
 @import 'liste'; //Toutes les listes d'un utilisateur
 @import 'add_liste'; //Formulaire ajout liste
-@import 'add_cadeau'; //Formulaire ajout cadeau
+@import 'add_item'; //Formulaire ajout cadeau
 
 $backgroundColor: white;
 $themeColor: black;
@@ -125,7 +125,7 @@ footer{
 @include liste($themeColor,$backgroundColor);
 @include item($themeColor,$backgroundColor);
 @include home($themeColor,$backgroundColor);
-@include add_cadeau($themeColor,$backgroundColor);
+@include add_item($themeColor,$backgroundColor);
 @include add_liste($themeColor,$backgroundColor);
 @include sign_up($themeColor,$backgroundColor);
 @include login($themeColor,$backgroundColor);

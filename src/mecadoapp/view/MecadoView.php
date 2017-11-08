@@ -233,7 +233,11 @@ EOT;
 	
 	// /////////////// ITEM /////////////////////
 	
-	// Fonction qui retourne la liste des items et des messages
+	/**
+	 * Fonction qui retourne la liste des items et des messages
+	 * 
+	 * @retour renvoie un string contenant le HTML
+	 */
 	private function renderItem() {
 		$retour = '';
 		
@@ -246,14 +250,17 @@ EOT;
 		
 		// Lien pour ajouter un Item
 		$retour .= '
-				<section id="item">
-			<a href="#" id="lienAjout">Ajouter un cadeau</a>';
+			<section id="item">
+				<a href="#" id="lienAjout">Ajouter un cadeau</a>';
 		
-		// Vue des messages
-		$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $get );
-		
-		// Vue des items
-		$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $get );
+		if(isset($this->data ['listeItem']))
+		{
+			// Vue des messages
+			$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $get );
+			
+			// Vue des items
+			$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $get );
+		}
 		
 		$retour .= '
 			</section>';
@@ -287,7 +294,7 @@ EOT;
 	 * @param retour = retour du HTML
 	 * @param dataListeItem = liste des items
 	 * 
-	 * @retour renvoie le paramètre retour
+	 * @retour renvoie un string contenant le HTML
 	 */
 	private function afficheListeItem($retour, $dataListeItem) {
 		$retour .= '
@@ -335,14 +342,17 @@ EOT;
 	 * @param dataListeItem = liste des items
 	 * @param get = contenu du HttpRequest
 	 * 
-	 * @retour renvoie le paramètre retour
+	 * @retour renvoie un string contenant le HTML
 	 */
 	private function afficheMessageItem($retour, $dataListeItem, $get) {
 		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
+
+		
 		$listeMessage = $dataListeItem [0]->liste->messages;
 		
 		$retour .= '
 				<aside>
+					<h2>Messages</h2>
 				';
 		
 		foreach ( $listeMessage as $message ) {
@@ -350,7 +360,8 @@ EOT;
 			$retour .= '
 		    		<p>
 						<span>' . $date . '-' . $message->auteur . ' :</span>
-						 ' . $message->texte . '
+						<br>
+						<span> ' . $message->texte . ' </span>
 					</p>
 				';
 		}
@@ -371,6 +382,7 @@ EOT;
 		    		</form>
 				</aside>
 		';
+
 		return $retour;
 	}
 	

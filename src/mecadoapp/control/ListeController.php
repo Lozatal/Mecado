@@ -61,6 +61,7 @@ class ListeController extends \mf\control\AbstractController {
         
         $v = new \mecadoapp\auth\MecadoAuthentification();
         try {
+
             if(isset($this->request->post['id']))
             {
                 $requete = \mecadoapp\model\Liste::where('id', '=', $this->request->post['id']);
@@ -68,13 +69,25 @@ class ListeController extends \mf\control\AbstractController {
             }
             else
                 $liste = new \mecadoapp\model\Liste();
+
             $liste->nom = $nom;
             $liste->description = $description;
+
             if(!isset($liste->token))
-                $liste->token = password_hash($id.$nom.'mecado', PASSWORD_DEFAULT);
+                $liste->token = password_hash($nom.uniqid(), PASSWORD_DEFAULT);
+
             $liste->destinataire = $destinataire;
-            $liste->nom_dest  = $nom_dest;
-            $liste->prenom_dest = $prenom_dest;
+
+            if($destinataire == 1)
+            {
+                $liste->nom_dest = $userreq->nom;
+                $liste->prenom_dest = $userreq->prenom;
+            }
+            else
+            {
+                $liste->nom_dest  = $nom_dest;
+                $liste->prenom_dest = $prenom_dest;           
+            }
             $liste->date_limite = $date_limit;
             $liste->id_user = $userreq->id;
             $liste->save();

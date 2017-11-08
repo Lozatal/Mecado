@@ -170,7 +170,7 @@ EOT;
             $retour = $retour.'
                         <article close="'.$close.'">
                             <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
-                            <a class="disabled" href="#"></a><a class="disabled" href="#"></a><a class="disabled" href="#"></a>
+                            <a class="disabled" href="#"></a><a class="disabled" href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'"></a><a class="disabled" href="#"></a>
                             <p>'.$value->description.'</p>
                             <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
                             <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>
@@ -184,6 +184,22 @@ EOT;
     private function renderAddListe() {
 
         $racine =  $this->app_root;
+        $req = new \mf\utils\HttpRequest();
+
+        if(isset($req->get['id']))
+        {
+            $requete = \mecadoapp\model\Liste::where('id', '=', $req->get['id']);
+            $liste = $requete->first();
+
+            $user = new \mecadoapp\auth\MecadoAuthentification();
+            $requete = \mecadoapp\model\User::where('mail', '=', $user->user_login);
+            $userreq = $requete->first();
+
+            if($liste->user_id == $userreq->id)
+            {
+                echo 'test';
+            }
+        }
 
         $retour =<<< EOT
 

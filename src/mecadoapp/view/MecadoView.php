@@ -266,16 +266,16 @@ EOT;
 				<div class="alerte-danger">' . $this->data ['erreur'] . '.</div>';
 		}
 		
-		// Lien pour ajouter un Item
-		$retour .= '
-			<section id="item">
-				<a href="'.$this->app_root.'/main.php/add_item/?liste=" id="lienAjout">Ajouter un cadeau</a>';
-		
 		$id = null;
 		if (isset ( $get->get ['id'] )) {
 			$id = $get->get ['id'];
 		}
 		
+		// Lien pour ajouter un Item
+		$retour .= '
+			<section id="item">
+				<a href="'.$this->app_root.'/main.php/add_item/?liste='.$id.'" id="lienAjout">Ajouter un cadeau</a>';
+
 		if(isset($this->data ['listeItem']))
 		{
 			// Vue des messages

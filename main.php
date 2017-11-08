@@ -30,7 +30,7 @@
 	$router->addRoute('check_login',    '/check_login/',         '\mecadoapp\control\LoginController', 'checkLogin', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 	$router->addRoute('logout',    '/logout/',         '\mecadoapp\control\LoginController', 'logout', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 	$router->addRoute('listes',    '/listes/',         '\mecadoapp\control\ListeController', 'listes', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_USER);
-	$router->addRoute('check_liste',    '/check_liste/',         '\mecadoapp\control\ListeController', 'chekListe', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_USER);
+	$router->addRoute('check_liste',    '/check_liste/',         '\mecadoapp\control\ListeController', 'checkListe', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_USER);
 	$router->addRoute('add_liste',    '/add_liste/',         '\mecadoapp\control\ListeController', 'addListe', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_USER);
 	$router->addRoute('item',    '/item/',         '\mecadoapp\control\ItemController', 'viewItem', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 	$router->addRoute('message_add',    '/message_add/',         '\mecadoapp\control\MessageController', 'addMessage', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);

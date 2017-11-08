@@ -8,15 +8,17 @@
 @import 'add_liste'; //Formulaire ajout liste
 @import 'add_cadeau'; //Formulaire ajout cadeau
 
+
 html{
 	height: 100%;
 }
 
 body{
+	font-family: Georgia, Arial;
 	display: flex;
 	flex-wrap: wrap;
 	font-size: 8pt;
-	background-color: #2988B2;
+	background-color: #FFFFFF;
 	height: 100%;
 }
 
@@ -29,9 +31,12 @@ body{
 }
 
 header{
+	background-color: black;
+	opacity: 0.8;
 	margin:auto;
 	width: 100%;
 	@include header(8pt);
+	padding-bottom: 0.5em;
 	& #accueil{
 		display: flex;
 		flex-wrap: wrap;
@@ -54,7 +59,7 @@ header{
 		width: 100%;
 		& a{
 			margin-top: 0.5em;
-			@include bouton(white,1,#FF193A,10px);
+			@include bouton(black,1,#FFFFFF,10px);
 			opacity: 0.8;
 			@include grille(8,10%,0,4);
 			text-align: center;
@@ -75,7 +80,7 @@ article{
 	margin-bottom: 0.5em;
 	margin-top: 0.5em;
 	padding: 0.5em;
-	background-color: #00B0FF;
+	background-color: #DCDCDC;
 	text-align: justify;
 	border: 2px solid black;
 	box-sizing: border-box;
@@ -135,16 +140,52 @@ footer{
 	body{
 		font-size: 10pt;
 	}
+	header{
+		& #accueil{
+			width: 50%;
+		}
+		& nav{
+			width: 50%;
+			& a{
+				margin-top: auto;
+				margin-bottom: auto;
+			}	
+		}
+	}
 }
 
 @media screen and (min-width: 1025px){
 	body{
 		font-size: 11pt;
 	}
+	header{
+		& #accueil{
+			width: 60%;
+		}
+		& nav{
+			width: 40%;
+			& a{
+				margin-top: auto;
+				margin-bottom: auto;
+			}	
+		}
+	}
 }
 
 @media screen and (min-width: 1281px){
 	body{
 		font-size: 12pt;
+	}
+	header{
+		& #accueil{
+			width: 80%;
+		}
+		& nav{
+			width: 20%;
+			& a{
+				margin-top: auto;
+				margin-bottom: auto;
+			}	
+		}
 	}
 }

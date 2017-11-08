@@ -485,7 +485,7 @@ header {
     #item aside form {
       width: 80%;
       margin: auto;
-      display: flex;
+      display: none;
       flex-wrap: wrap; }
       #item aside form textarea {
         margin-left: 2.2222222222%;
@@ -501,6 +501,10 @@ header {
       #item aside form input[type=submit] {
         margin-left: 2.2222222222%;
         width: 95.5555555556%; }
+    #item aside h2:hover ~ form {
+      display: flex; }
+    #item aside form:hover {
+      display: flex; }
   #item div {
     display: flex;
     flex-wrap: wrap;
@@ -513,22 +517,23 @@ header {
     border-radius: 10px;
     font-size: 1rem;
     padding: 0.5em;
-    color: black;
+    color: white;
     box-sizing: border-box;
-    background-color: #CCC414;
+    background-color: black;
     text-decoration: none;
+    opacity: 0.8;
     text-align: center;
     margin-left: 14.4444444444%;
     width: 71.1111111111%;
     max-height: 2em; }
     #item #lienAjout:hover {
       cursor: pointer;
-      background-color: #eae229; }
+      background-color: #1a1a1a; }
     #item #lienAjout a {
       text-decoration: none;
-      color: black; }
+      color: white; }
     #item #lienAjout a:hover {
-      color: #1a1a1a; }
+      color: white; }
   #item div article {
     display: flex;
     flex-wrap: wrap;
@@ -594,6 +599,8 @@ header {
   #item aside {
     margin-left: 2.2222222222%;
     width: 22.2222222222%; }
+    #item aside form {
+      display: flex; }
   #item div {
     margin-left: 2.2222222222%;
     width: 71.1111111111%; }
@@ -882,10 +889,11 @@ html {
   height: 100%; }
 
 body {
+  font-family: Georgia, Arial;
   display: flex;
   flex-wrap: wrap;
   font-size: 8pt;
-  background-color: #2988B2;
+  background-color: #FFFFFF;
   height: 100%; }
 
 #wrapper {
@@ -896,6 +904,8 @@ body {
   width: 100%; }
 
 header {
+  background-color: black;
+  opacity: 0.8;
   margin: auto;
   width: 100%;
   margin: auto;
@@ -903,7 +913,8 @@ header {
   flex-wrap: wrap;
   font-size: 8pt;
   box-sizing: border-box;
-  width: 100%; }
+  width: 100%;
+  padding-bottom: 0.5em; }
   header img {
     margin: auto; }
   header #accueil {
@@ -928,9 +939,9 @@ header {
       border-radius: 10px;
       font-size: 1rem;
       padding: 0.5em;
-      color: white;
+      color: black;
       box-sizing: border-box;
-      background-color: #FF193A;
+      background-color: #FFFFFF;
       text-decoration: none;
       opacity: 0.8;
       margin-left: 2.2222222222%;
@@ -938,12 +949,12 @@ header {
       text-align: center; }
       header nav a:hover {
         cursor: pointer;
-        background-color: #ff4c66; }
+        background-color: white; }
       header nav a a {
         text-decoration: none;
-        color: white; }
+        color: black; }
       header nav a a:hover {
-        color: white; }
+        color: #1a1a1a; }
     header nav a:nth-child(2) {
       margin-left: 2.2222222222%;
       width: 46.6666666667%; }
@@ -956,7 +967,7 @@ article {
   margin-bottom: 0.5em;
   margin-top: 0.5em;
   padding: 0.5em;
-  background-color: #00B0FF;
+  background-color: #DCDCDC;
   text-align: justify;
   border: 2px solid black;
   box-sizing: border-box;
@@ -1000,12 +1011,36 @@ footer {
     font-size: 9pt; } }
 @media screen and (min-width: 801px) {
   body {
-    font-size: 10pt; } }
+    font-size: 10pt; }
+
+  header #accueil {
+    width: 50%; }
+  header nav {
+    width: 50%; }
+    header nav a {
+      margin-top: auto;
+      margin-bottom: auto; } }
 @media screen and (min-width: 1025px) {
   body {
-    font-size: 11pt; } }
+    font-size: 11pt; }
+
+  header #accueil {
+    width: 60%; }
+  header nav {
+    width: 40%; }
+    header nav a {
+      margin-top: auto;
+      margin-bottom: auto; } }
 @media screen and (min-width: 1281px) {
   body {
-    font-size: 12pt; } }
+    font-size: 12pt; }
+
+  header #accueil {
+    width: 80%; }
+  header nav {
+    width: 20%; }
+    header nav a {
+      margin-top: auto;
+      margin-bottom: auto; } }
 
 /*# sourceMappingURL=design.css.map */

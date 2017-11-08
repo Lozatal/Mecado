@@ -259,13 +259,18 @@ EOT;
 			<section id="item">
 				<a href="#" id="lienAjout">Ajouter un cadeau</a>';
 		
+		$id = null;
+		if (isset ( $get->get ['id'] )) {
+			$id = $get->get ['id'];
+		}
+		
 		if(isset($this->data ['listeItem']))
 		{
 			// Vue des messages
-			$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $get );
+			$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $id);
 			
 			// Vue des items
-			$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $get );
+			$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $id);
 		}
 		
 		$retour .= '
@@ -302,7 +307,7 @@ EOT;
 	 * 
 	 * @retour renvoie un string contenant le HTML
 	 */
-	private function afficheListeItem($retour, $dataListeItem) {
+    private function afficheListeItem($retour, $dataListeItem, $idListe) {
 		$retour .= '
 				<div>';
 		
@@ -321,6 +326,8 @@ EOT;
 				$img = $item->url_image;
 			}
 			
+			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
+			
 			$retour .= '
 				<article>
 					<div><a href="#"></a><a href="#"></a></div>
@@ -328,9 +335,10 @@ EOT;
 						<a href="#"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
 						<aside><h2>' . $item->nom . '</h2><p>Prix : 20€</p></aside>
 					</div>
-					<form>
-						<label>Nom</label><input type="text"  required>
-						<label>Message pour ' . $destinataire . '</label><textarea  required></textarea>
+					<form id="addMessage" action="' . $linkformReservation. '" method="POST">
+						<label>Nom</label><input name="nom" type="text"  required>
+						<label>Message pour ' . $destinataire . '</label><textarea name="message" maxlength="500" required></textarea>
+						<input type="hidden" name="id_item" value="' . $item->id. '" required>
 						<input type="submit" value="Réserver" />
 					</form>
 				</article>';
@@ -350,7 +358,7 @@ EOT;
 	 * 
 	 * @retour renvoie un string contenant le HTML
 	 */
-	private function afficheMessageItem($retour, $dataListeItem, $get) {
+	private function afficheMessageItem($retour, $dataListeItem, $idListe) {
 		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
 
 		
@@ -373,17 +381,13 @@ EOT;
 		}
 		
 		// formulaire d'ajout de message
-		$id = null;
-		if (isset ( $get->get ['id'] )) {
-			$id = $get->get ['id'];
-		}
-		$linkformMessage = $this->script_name . "/message_add/?id=" . $id;
+		$linkformMessage = $this->script_name . "/message_add/?id=" . $idListe;
 		
 		$retour .= '
 					<form id="addMessage" action="' . $linkformMessage . '" method="POST">
-		    			<label for="text">Message:</label><textarea id="text" name="text" required></textarea>
+		    			<label for="text">Message:</label><textarea id="text" name="text" maxlength="500" required></textarea>
 				    	<label for="name">Nom:</label><input type="text" id="nom" name="nom" required>
-						<input type="hidden" name="id_liste" id="id_liste" value="' . $id . '" required>
+						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '" required>
 				    	<input type="submit" value="Envoyer">
 		    		</form>
 				</aside>

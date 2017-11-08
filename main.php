@@ -36,8 +36,10 @@
 	$router->addRoute('consulte',    '/consulte/',         '\mecadoapp\control\ListeController', 'consulte', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_USER);
 	$router->addRoute('item',    '/item/',         '\mecadoapp\control\ItemController', 'viewItem', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 	$router->addRoute('add_item',    '/add_item/',         '\mecadoapp\control\ItemController', 'addItem', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
+	$router->addRoute('reserv_item',    '/reserv_item/',         '\mecadoapp\control\ItemController', 'reservItem', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 	
 	$router->addRoute('message_add',    '/message_add/',         '\mecadoapp\control\MessageController', 'addMessage', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
+
 
 	//route par d?ault si jamais l'url est fausse
 	$router->addRoute('default', 'DEFAULT_ROUTE',  '\mecadoapp\control\MecadoController', 'viewHome');

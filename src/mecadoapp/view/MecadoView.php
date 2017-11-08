@@ -164,7 +164,7 @@ EOT;
             $retour = $retour.'
                         <article close="'.$close.'">
                             <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
-                            <a href="'.$this->app_root.'/main.php/consulte/" title="Consulter messages"></a><a href="'.$this->app_root.'/main.php/listes/?url='.$value->id.'" title="Générer URL"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'" title="Modifier"></a><a href="'.$this->app_root.'/main.php/supr_liste/?id='.$value->id.'" title="Supprimer"></a>
+                            <a href="'.$this->app_root.'/main.php/consulte/?id='.$value->id.'" title="Consulter messages"></a><a href="'.$this->app_root.'/main.php/listes/?url='.$value->id.'" title="Générer URL"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'" title="Modifier"></a><a href="'.$this->app_root.'/main.php/supr_liste/?id='.$value->id.'" title="Supprimer"></a>
                             <p>'.$value->description.'</p>
                             <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
                             <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>
@@ -241,6 +241,12 @@ EOT;
 EOT;
 		
 		return $retour;
+	}
+
+
+	private function renderConsulte() {
+
+		return '';
 	}
 	
 	// /////////////// ITEM /////////////////////
@@ -424,6 +430,9 @@ EOT;
 				break;
 			case "addListe" :
 				$contenu = $this->renderAddListe ();
+				break;
+			case "consulte" :
+				$contenu = $this->renderConsulte ();
 				break;
 			case "item" :
 				$contenu = $this->renderItem ();

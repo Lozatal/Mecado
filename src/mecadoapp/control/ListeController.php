@@ -82,7 +82,6 @@ class ListeController extends \mf\control\AbstractController {
         }
         catch(\mf\auth\exception\AuthentificationException $e)
         {
-            $v = new \mecadoapp\view\MecadoView(null);
             $this->addListe();
         }
 
@@ -100,12 +99,19 @@ class ListeController extends \mf\control\AbstractController {
 
     public function consulte() {
 
-        $requete = \mecadoapp\model\Liste::where('id', '=', $this->request->get['id']);
-        $liste = $requete->first();
+        $ctrl=[];
+        $requete = \mecadoapp\model\Item::select()->where('id_liste', '=', $this->request->get['id']);
+        $lignes = $requete  ->orderByDESC('created_at', 'DESC')
+                            ->get();
 
-        $liste->delete();
+        foreach ($lignes as $v)
+        {
 
-        $this->listes();
+            $ctrl[] = $v;
+        }
+
+        $v = new \mecadoapp\view\MecadoView(null);
+        $v ->render('consulte');
     }    
 
 

@@ -82,7 +82,7 @@ $colorNavBar:rgba(0,0,0,0);
 	color: lighten($colorNavBar,50);
 }
 
-.disable{
+.disabled{
 	opacity:0.6;
 	text-decoration: line-through;
 	cursor: default;

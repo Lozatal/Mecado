@@ -1,3 +1,7 @@
+@mixin add_liste($themeColor,$backgroundColor){
+
 #add_liste{
 	@include formulaire($themeColor,$backgroundColor);
+}
+
 }

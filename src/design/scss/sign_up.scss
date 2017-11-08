@@ -1,5 +1,7 @@
+@mixin sign_up($themeColor,$backgroundColor){
+
 #sign_up{
 	@include formulaire($themeColor,$backgroundColor);
 }
 
-
+}

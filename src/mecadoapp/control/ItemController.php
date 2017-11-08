@@ -26,28 +26,30 @@ class ItemController extends \mf\control\AbstractController {
     	$resultat['erreur'] = $e;
     	$resultat['listeItem'] = null;
     	
-    	if(isset($get['id'])){
-    		
-    		$util = new \mecadoapp\auth\MecadoAuthentification();
-    		/*
-    		if (is_null($util->user_login)){
-    			echo 1;  
-    		}
-    		if ($util->user_login == null){
-    			echo 2; 
-    		}
-    		if (!isset($util->user_login)){
-    			echo 3; 
-    		}*/
-    		
-    		$listeItem = item::where('item.id_liste', '=', $get['id'])
-    		->get();
+    	try{
+	    	if(isset($get['id'])){
+	    		
+	    		$util = new \mecadoapp\auth\MecadoAuthentification();
+	    		
+	    		if (is_null($util->user_login)){
+	    			throw new \mf\auth\exception\AuthentificationException("Vous devez être identifié pour accéder à ce lien");
+	    		}
+	    		
+	    		$listeItem = item::where('item.id_liste', '=', $get['id'])
+	    		->get();
+	    	}
+	    	else{
+	    		throw new \mf\auth\exception\AuthentificationException("L'identifiant de la liste est introuvable");
+	    	}
+	    	
+	    	$resultat['listeItem']= $listeItem;
+    	}catch(\mf\auth\exception\AuthentificationException $e){
+    		$resultat['erreur'] = $e->getmessage();
     	}
-    	
-    	$resultat['listeItem']= $listeItem;
     	
     	$vue = new \mecadoapp\view\MecadoView($resultat);
     	return $vue->render('item');
+
     	
     }
     public function addItem(){

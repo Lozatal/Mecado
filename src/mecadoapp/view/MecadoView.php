@@ -222,7 +222,11 @@ EOT;
 	
 	// /////////////// ITEM /////////////////////
 	
-	// Fonction qui retourne la liste des items et des messages
+	/**
+	 * Fonction qui retourne la liste des items et des messages
+	 * 
+	 * @retour renvoie un string contenant le HTML
+	 */
 	private function renderItem() {
 		$retour = '';
 		
@@ -235,14 +239,19 @@ EOT;
 		
 		// Lien pour ajouter un Item
 		$retour .= '
-				<section id="item">
-			<a href="#" id="lienAjout">Ajouter un cadeau</a>';
+			<section id="item">
+				<a href="#" id="lienAjout">Ajouter un cadeau</a>';
+		
+		if(isset($dataListeItem [0]))
+		{
 		
 		// Vue des messages
 		$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $get );
 		
 		// Vue des items
 		$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $get );
+		
+		}
 		
 		$retour .= '
 			</section>';
@@ -328,11 +337,13 @@ EOT;
 	 */
 	private function afficheMessageItem($retour, $dataListeItem, $get) {
 		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
+
+		
 		$listeMessage = $dataListeItem [0]->liste->messages;
 		
 		$retour .= '
-				<div id="imgMenu"></div>
 				<aside>
+					<h2>Messages</h2>
 				';
 		
 		foreach ( $listeMessage as $message ) {
@@ -361,6 +372,7 @@ EOT;
 		    		</form>
 				</aside>
 		';
+
 		return $retour;
 	}
 	

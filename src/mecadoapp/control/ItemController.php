@@ -81,7 +81,7 @@ class ItemController extends \mf\control\AbstractController {
      */
     public function reservItem(){
     	try{
-    		if(!is_null($this->request->post)){
+    		if($this->request->post != null){
 
     			if(isset($this->request->post['id_item']) && $this->request->post['id_item'] != null){
     				$form=$this->request->post;

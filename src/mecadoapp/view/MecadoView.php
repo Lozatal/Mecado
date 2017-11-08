@@ -332,20 +332,24 @@ EOT;
 				$img = $item->url_image;
 			}
 			
+			$disabled = '';
+			if(isset($item->acheteurs[0])){
+				$disabled = 'disabled';
+			}
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
 			
 			$retour .= '
 				<article>
 					<div><a href="#"></a><a href="#"></a></div>
 					<div>
-						<a href="#"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
+						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
 						<aside><h2>' . $item->nom . '</h2><p>Prix : 20€</p></aside>
 					</div>
 					<form id="addMessage" action="' . $linkformReservation. '" method="POST">
-						<label>Nom</label><input name="nom" type="text"  required>
-						<label>Message pour ' . $destinataire . '</label><textarea name="message" maxlength="500" required></textarea>
+						<input name="nom" type="text" placeholder="Nom" '.$disabled.' required>
+						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" '.$disabled.' required></textarea>
 						<input type="hidden" name="id_item" value="' . $item->id. '" required>
-						<input type="submit" value="Réserver" />
+						<input type="submit" value="Réserver" '.$disabled.' />
 					</form>
 				</article>';
 		}
@@ -391,8 +395,8 @@ EOT;
 		
 		$retour .= '
 					<form id="addMessage" action="' . $linkformMessage . '" method="POST">
-		    			<label for="text">Message:</label><textarea id="text" name="text" maxlength="500" required></textarea>
-				    	<label for="name">Nom:</label><input type="text" id="nom" name="nom" required>
+				    	<label for="message_nom">Nom:</label><input type="text" id="message_nom" name="nom" required>
+		    			<label for="message_text">Message:</label><textarea id="message_text" name="text" maxlength="500" required></textarea>
 						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '" required>
 				    	<input type="submit" value="Envoyer">
 		    		</form>

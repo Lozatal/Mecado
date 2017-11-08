@@ -356,7 +356,7 @@ EOT;
 				';
 		
 		foreach ( $listeMessage as $message ) {
-			$date = date_format ( $message->created_at, 'd:m:Y à H' ).' heure(s)';
+			$date = date_format ( $message->created_at, 'd:m:Y à H:m' );
 			$retour .= '
 		    		<p>
 						<span>' . $date . '-' . $message->auteur . ' :</span>

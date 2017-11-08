@@ -100,8 +100,8 @@ EOT;
 	private function renderSignUp() {
 		$alert = '';
 		
-		if (isset ( $this->data ))
-			$alert = '<div class="alerte-danger">' . $this->data . '</div>';
+		if (isset($this->data))
+			$alert = '<div class="alerte-' . $this->data[0] . '">' . $this->data[1] . '</div>';
 		
 		$retour = '
         <section id="sign_up"> 
@@ -181,11 +181,13 @@ EOT;
         $req = new \mf\utils\HttpRequest();
 
         $hidden = '';
+        $check = '';
        	$nom = '';
         $description = '';
         $nom_dest = '';
         $prenom_dest = '';
         $date_limit = '';
+        $text = 'Ajouter';
 
         if(isset($req->get['id']))
         {
@@ -199,11 +201,14 @@ EOT;
             if($liste->id_user == $userreq->id)
             {
             	$hidden = '<input type="hidden" name="id" value="'.$req->get['id'].'">';
+            	if($liste->destinataire == 1)
+            		$check = 'checked';
             	$nom = $liste->nom;
             	$description = $liste->description;
             	$nom_dest = $liste->nom_dest;
             	$prenom_dest = $liste->prenom_dest;
             	$date_limit = $liste->date_limite;
+            	$text = 'Modifier';
             }
         }
 
@@ -213,13 +218,13 @@ EOT;
             <article>
                 <form action="${racine}/main.php/check_liste/" method="post">
                 	${hidden}
-                    <label for="destinataire">Etes-vous le destinataire : </label><input type="checkbox" name="destinataire" id="destinataire" value="destinataire">
+                    <label for="destinataire">Etes-vous le destinataire : </label><input type="checkbox" name="destinataire" id="destinataire" value="destinataire" ${check}>
                     <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" value="${nom}" required>
-                    <label for="description">Description</label><textarea name="description" required>${description}</textarea>  
+                    <label for="description">Description</label><textarea rows="5" cols="50" maxlength="500" name="description" required>${description}</textarea>  
                     <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="nom" value="${nom_dest}" required>
                     <label for="prenom_dest">Prénom destinataire</label><input type="text" name="prenom_dest" placeholder="prenom" value="${prenom_dest}" required>
                     <label for="date_limit">Date limite</label><input type="date" name="date_limit" placeholder="date limite" value="${date_limit}" required>
-                    <input type="submit" value="Ajouter liste" required>
+                    <input type="submit" value="${text}" required>
                 </form>
             </article>
         </section>

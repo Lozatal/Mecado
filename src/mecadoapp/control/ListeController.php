@@ -73,7 +73,8 @@ class ListeController extends \mf\control\AbstractController {
                 $liste = new \mecadoapp\model\Liste();
             $liste->nom = $nom;
             $liste->description = $description;
-            $liste->token = '';
+            if(!isset($liste->token))
+                $liste->token = password_hash($nom.'mecado', PASSWORD_DEFAULT);
             $liste->destinataire = $destinataire;
             $liste->nom_dest  = $nom_dest;
             $liste->prenom_dest = $prenom_dest;

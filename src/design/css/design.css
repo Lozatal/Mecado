@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -309,308 +308,121 @@ header {
   margin-top: 1em;
   margin-bottom: 1em; }
 
-#sign_up {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap; }
-  #sign_up article {
-    margin-left: 2.2222222222%;
-    width: 95.5555555556%;
-    display: flex;
-    flex-wrap: wrap; }
-    #sign_up article form {
-      display: flex;
-      flex-wrap: wrap;
-      width: 90%;
-      margin: auto; }
-      #sign_up article form label {
-        width: 80%;
-        margin: auto;
-        text-align: center;
-        margin-top: 1em; }
-      #sign_up article form input {
-        width: 80%;
-        margin: auto;
-        text-align: center; }
-      #sign_up article form input:last-child {
-        margin-top: 1em;
-        margin-bottom: 1em; }
-      #sign_up article form textarea {
-        margin: auto;
-        text-align: center;
-        margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
-  @media screen and (min-width: 280px) {
-    #sign_up article form {
-      width: 90%; } }
-  @media screen and (min-width: 480px) {
-    #sign_up article form {
-      width: 80%; } }
-  @media screen and (min-width: 600px) {
-    #sign_up article form {
-      width: 70%; } }
-  @media screen and (min-width: 801px) {
-    #sign_up article form {
-      width: 60%; } }
-  @media screen and (min-width: 1025px) {
-    #sign_up article form {
-      width: 50%; } }
-  @media screen and (min-width: 1281px) {
-    #sign_up article form {
-      width: 40%; } }
+html {
+  height: 100%; }
 
-#login {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap; }
-  #login article {
-    margin-left: 2.2222222222%;
-    width: 95.5555555556%;
-    display: flex;
-    flex-wrap: wrap; }
-    #login article form {
-      display: flex;
-      flex-wrap: wrap;
-      width: 90%;
-      margin: auto; }
-      #login article form label {
-        width: 80%;
-        margin: auto;
-        text-align: center;
-        margin-top: 1em; }
-      #login article form input {
-        width: 80%;
-        margin: auto;
-        text-align: center; }
-      #login article form input:last-child {
-        margin-top: 1em;
-        margin-bottom: 1em; }
-      #login article form textarea {
-        margin: auto;
-        text-align: center;
-        margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
-  @media screen and (min-width: 280px) {
-    #login article form {
-      width: 90%; } }
-  @media screen and (min-width: 480px) {
-    #login article form {
-      width: 80%; } }
-  @media screen and (min-width: 600px) {
-    #login article form {
-      width: 70%; } }
-  @media screen and (min-width: 801px) {
-    #login article form {
-      width: 60%; } }
-  @media screen and (min-width: 1025px) {
-    #login article form {
-      width: 50%; } }
-  @media screen and (min-width: 1281px) {
-    #login article form {
-      width: 40%; } }
-
-#home article:nth-child(1) {
-  margin-left: 2.2222222222%;
-  width: 95.5555555556%; }
-#home article:nth-child(2) {
-  margin-left: 2.2222222222%;
-  width: 95.5555555556%; }
-  #home article:nth-child(2) ul {
-    list-style-type: none; }
-    #home article:nth-child(2) ul li {
-      margin-top: 0.3em; }
-#home article:nth-child(3) {
-  margin-left: 2.2222222222%;
-  width: 95.5555555556%; }
-#home article:nth-child(4) {
-  margin-left: 2.2222222222%;
-  width: 95.5555555556%; }
-
-@media screen and (min-width: 480px) {
-  #home article:nth-child(1) {
-    margin-left: 2.2222222222%;
-    width: 46.6666666667%; }
-  #home article:nth-child(2) {
-    margin-left: 2.2222222222%;
-    width: 46.6666666667%; }
-    #home article:nth-child(2) ul {
-      list-style-type: none; }
-      #home article:nth-child(2) ul li {
-        margin-top: 0.3em; }
-  #home article:nth-child(3) {
-    margin-left: 2.2222222222%;
-    width: 46.6666666667%; }
-  #home article:nth-child(4) {
-    margin-left: 2.2222222222%;
-    width: 46.6666666667%; } }
-@media screen and (min-width: 1025px) {
-  #home article:nth-child(1) {
-    margin-left: 2.2222222222%;
-    width: 22.2222222222%; }
-  #home article:nth-child(2) {
-    margin-left: 2.2222222222%;
-    width: 22.2222222222%; }
-    #home article:nth-child(2) ul {
-      list-style-type: none; }
-      #home article:nth-child(2) ul li {
-        margin-top: 0.3em; }
-  #home article:nth-child(3) {
-    margin-left: 2.2222222222%;
-    width: 22.2222222222%; }
-  #home article:nth-child(4) {
-    margin-left: 2.2222222222%;
-    width: 22.2222222222%; } }
-#item {
+body {
+  font-family: Georgia, Arial;
   display: flex;
   flex-wrap: wrap;
-  width: 100%; }
-  #item aside {
-    margin-bottom: auto;
-    padding: 1em 0 1em 0;
-    margin-left: 2.2222222222%;
-    width: 95.5555555556%;
-    background-color: #DCDCDC;
-    border: 2px solid black;
-    border-radius: 5px; }
-    #item aside p {
-      border: 1px solid black;
-      border-radius: 5px;
-      font-size: 1em;
-      padding: 0.2em;
-      text-align: left;
-      width: 80%;
-      margin: auto;
-      margin-top: 0.2em;
-      margin-bottom: 0.2em; }
-    #item aside form {
-      width: 80%;
-      margin: auto;
-      display: none;
-      flex-wrap: wrap; }
-      #item aside form textarea {
-        margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
-      #item aside form label {
-        margin-left: 2.2222222222%;
-        width: 95.5555555556%;
-        text-align: center;
-        font-size: 1.2em; }
-      #item aside form input[type=text] {
-        margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
-      #item aside form input[type=submit] {
-        margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
-    #item aside h2:hover ~ form {
-      display: flex; }
-    #item aside form:hover {
-      display: flex; }
-  #item div {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 2.2222222222%;
-    width: 95.5555555556%; }
-  #item #lienAjout {
-    margin: auto;
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
-    border-radius: 10px;
-    font-size: 1rem;
-    padding: 0.5em;
-    color: white;
-    box-sizing: border-box;
-    background-color: black;
-    text-decoration: none;
-    opacity: 0.8;
-    text-align: center;
-    margin-left: 14.4444444444%;
-    width: 71.1111111111%;
-    max-height: 2em; }
-    #item #lienAjout:hover {
-      cursor: pointer;
-      background-color: #1a1a1a; }
-    #item #lienAjout a {
-      text-decoration: none;
-      color: white; }
-    #item #lienAjout a:hover {
-      color: white; }
-  #item div article {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 2.2222222222%;
-    width: 95.5555555556%;
-    max-height: 35em; }
-    #item div article div:first-child {
-      width: 100%;
-      padding: 0.5em;
-      display: flex;
-      flex-wrap: wrap; }
-      #item div article div:first-child a:first-child {
-        margin-left: 75.5555555556%;
-        width: 10%;
-        background-image: url("images/modifier.png");
-        width: 20px;
-        height: 20px;
-        background-repeat: no-repeat; }
-      #item div article div:first-child a:last-child {
-        margin-left: 2.2222222222%;
-        width: 10%;
-        background-image: url("images/supprimer.png");
-        width: 20px;
-        height: 20px;
-        background-repeat: no-repeat; }
-    #item div article div:nth-child(2) {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap; }
-      #item div article div:nth-child(2) a {
-        margin-left: 2.2222222222%;
-        width: 46.6666666667%;
-        text-align: center;
-        display: flex;
-        flex-wrap: wrap; }
-      #item div article div:nth-child(2) a img {
-        margin: auto; }
-      #item div article div:nth-child(2) aside {
-        margin-left: 2.2222222222%;
-        width: 46.6666666667%; }
-    #item div article form {
-      width: 100%;
-      flex-wrap: wrap;
-      display: flex; }
-      #item div article form label {
-        width: 90%;
-        margin: auto;
-        text-align: center;
-        margin-top: 1em; }
-      #item div article form input {
-        width: 80%;
-        margin: auto;
-        text-align: center; }
-      #item div article form textarea {
-        width: 80%;
-        height: 3em;
-        margin: auto; }
-      #item div article form input:last-child {
-        margin-top: 1em;
-        margin-bottom: 1em; }
+  font-size: 8pt;
+  background-color: white;
+  height: 100%; }
 
-@media screen and (min-width: 600px) {
-  #item aside {
-    margin-left: 2.2222222222%;
-    width: 22.2222222222%; }
-    #item aside form {
-      display: flex; }
-  #item div {
-    margin-left: 2.2222222222%;
-    width: 71.1111111111%; }
-    #item div article {
+#wrapper {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 8em;
+  box-sizing: border-box;
+  width: 100%; }
+
+header {
+  background-color: black;
+  opacity: 0.8;
+  margin: auto;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 8pt;
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 0.5em; }
+  header img {
+    margin: auto; }
+  header #accueil {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    opacity: 0.8; }
+    header #accueil a {
+      margin: auto;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap; }
+      header #accueil a img {
+        margin: auto;
+        border-radius: 0 0 10px 10px; }
+  header nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; }
+    header nav a {
+      margin-top: 0.5em;
+      border-radius: 10px;
+      font-size: 1rem;
+      padding: 0.5em;
+      color: black;
+      box-sizing: border-box;
+      background-color: white;
+      text-decoration: none;
+      opacity: 0.8;
       margin-left: 2.2222222222%;
-      width: 46.6666666667%; } }
-@media screen and (min-width: 1750px) {
-  #item div article {
+      width: 46.6666666667%;
+      text-align: center; }
+      header nav a:hover {
+        cursor: pointer;
+        background-color: white; }
+      header nav a a {
+        text-decoration: none;
+        color: black; }
+      header nav a a:hover {
+        color: #1a1a1a; }
+    header nav a:nth-child(2) {
+      margin-left: 2.2222222222%;
+      width: 46.6666666667%; }
+
+section {
+  display: flex;
+  flex-wrap: wrap; }
+
+article {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  padding: 0.5em;
+  background-color: lighen(white, 20);
+  text-align: justify;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 5px; }
+
+footer {
+  width: 100%;
+  height: 8em;
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 0; }
+  footer div {
     margin-left: 2.2222222222%;
-    width: 22.2222222222%; } }
+    width: 46.6666666667%;
+    display: flex;
+    flex-wrap: wrap; }
+    footer div ul {
+      list-style-type: none;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%; }
+      footer div ul li {
+        width: 100%;
+        padding: 0.5em;
+        text-align: center;
+        margin: auto; }
+
 #liste {
   width: 100%;
   display: flex;
@@ -620,10 +432,11 @@ header {
     border-radius: 10px;
     font-size: 1rem;
     padding: 0.5em;
-    color: black;
+    color: white;
     box-sizing: border-box;
-    background-color: #3D4C99;
+    background-color: #333333;
     text-decoration: none;
+    opacity: 0.9;
     text-align: center;
     margin-left: 2.2222222222%;
     width: 95.5555555556%;
@@ -631,12 +444,12 @@ header {
     margin-bottom: 0.5em; }
     #liste #lienAjout:hover {
       cursor: pointer;
-      background-color: #5061b9; }
+      background-color: #4d4d4d; }
     #liste #lienAjout a {
       text-decoration: none;
-      color: black; }
+      color: white; }
     #liste #lienAjout a:hover {
-      color: #1a1a1a; }
+      color: white; }
   #liste article {
     display: flex;
     flex-wrap: wrap;
@@ -692,7 +505,8 @@ header {
       width: 71.1111111111%;
       margin-top: auto;
       margin-bottom: auto;
-      order: 6; }
+      order: 6;
+      text-decoration: underline; }
     #liste article p:nth-child(7) {
       margin-left: 2.2222222222%;
       width: 22.2222222222%;
@@ -701,12 +515,11 @@ header {
       margin-bottom: auto;
       order: 7; }
   #liste article[close=y] {
-    background-color: #006a99; }
-    #liste article[close=y] p:nth-child(1)::before {
-      content: 'Terminé - ';
-      color: orange; }
+    background-color: #cccccc; }
+    #liste article[close=y] p:nth-child(1) {
+      text-decoration: line-through; }
     #liste article[close=y] p:nth-child(6) {
-      color: orange; }
+      color: black; }
     #liste article[close=y] a:nth-child(2) {
       opacity: 0.6;
       text-decoration: line-through;
@@ -725,8 +538,22 @@ header {
 @media screen and (min-width: 480px) {
   #liste article {
     margin-left: 2.2222222222%;
-    width: 46.6666666667%; } }
+    width: 46.6666666667%; }
+
+  #liste #lienAjout {
+    margin-left: 14.4444444444%;
+    width: 71.1111111111%; } }
+@media screen and (min-width: 801px) {
+  #liste #lienAjout {
+    margin-left: 26.6666666667%;
+    width: 46.6666666667%;
+    margin-right: 20%; } }
 @media screen and (min-width: 1281px) {
+  #liste #lienAjout {
+    margin-left: 38.8888888889%;
+    width: 22.2222222222%;
+    margin-right: 20%; }
+
   #liste article p:nth-child(1) {
     margin-left: 2.2222222222%;
     width: 58.8888888889%;
@@ -785,56 +612,231 @@ header {
       margin-top: auto;
       margin-bottom: auto;
       order: 4; } }
-#add_liste {
-  width: 100%;
+#item {
   display: flex;
-  flex-wrap: wrap; }
-  #add_liste article {
+  flex-wrap: wrap;
+  width: 100%; }
+  #item aside {
+    margin-bottom: auto;
+    padding: 1em 0 1em 0;
     margin-left: 2.2222222222%;
     width: 95.5555555556%;
+    background-color: #e6e6e6;
+    border: 2px solid black;
+    border-radius: 5px; }
+    #item aside p {
+      border: 1px solid black;
+      border-radius: 5px;
+      font-size: 1em;
+      padding: 0.2em;
+      text-align: left;
+      width: 80%;
+      margin: auto;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em; }
+    #item aside form {
+      width: 80%;
+      margin: auto;
+      display: none;
+      flex-wrap: wrap; }
+      #item aside form textarea {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
+      #item aside form label {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%;
+        text-align: center;
+        font-size: 1.2em; }
+      #item aside form input[type=text] {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
+      #item aside form input[type=submit] {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
+    #item aside h2:hover ~ form {
+      display: flex; }
+    #item aside form:hover {
+      display: flex; }
+  #item div {
     display: flex;
-    flex-wrap: wrap; }
-    #add_liste article form {
+    flex-wrap: wrap;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%; }
+  #item #lienAjout {
+    margin: auto;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.5em;
+    color: white;
+    box-sizing: border-box;
+    background-color: #333333;
+    text-decoration: none;
+    opacity: 0.9;
+    text-align: center;
+    margin-left: 14.4444444444%;
+    width: 71.1111111111%;
+    max-height: 2em; }
+    #item #lienAjout:hover {
+      cursor: pointer;
+      background-color: #4d4d4d; }
+    #item #lienAjout a {
+      text-decoration: none;
+      color: white; }
+    #item #lienAjout a:hover {
+      color: white; }
+  #item div article {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #e6e6e6;
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%;
+    max-height: 35em; }
+    #item div article div:first-child {
+      width: 100%;
+      padding: 0.5em;
       display: flex;
+      flex-wrap: wrap; }
+      #item div article div:first-child a:first-child {
+        margin-left: 75.5555555556%;
+        width: 10%;
+        background-image: url("images/modifier.png");
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat; }
+      #item div article div:first-child a:last-child {
+        margin-left: 2.2222222222%;
+        width: 10%;
+        background-image: url("images/supprimer.png");
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat; }
+    #item div article div:nth-child(2) {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap; }
+      #item div article div:nth-child(2) a {
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap; }
+      #item div article div:nth-child(2) a img {
+        margin: auto; }
+      #item div article div:nth-child(2) aside {
+        border: none;
+        box-sizing: border-box;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
+        #item div article div:nth-child(2) aside p {
+          border: none; }
+    #item div article form {
+      width: 100%;
       flex-wrap: wrap;
-      width: 90%;
-      margin: auto; }
-      #add_liste article form label {
-        width: 80%;
+      margin-top: auto;
+      margin-bottom: 0;
+      display: flex; }
+      #item div article form label {
+        width: 90%;
         margin: auto;
         text-align: center;
         margin-top: 1em; }
-      #add_liste article form input {
+      #item div article form input {
         width: 80%;
         margin: auto;
         text-align: center; }
-      #add_liste article form input:last-child {
+      #item div article form textarea {
+        width: 80%;
+        height: 3em;
+        margin: auto; }
+      #item div article form input:last-child {
         margin-top: 1em;
         margin-bottom: 1em; }
-      #add_liste article form textarea {
-        margin: auto;
-        text-align: center;
-        margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
-  @media screen and (min-width: 280px) {
-    #add_liste article form {
-      width: 90%; } }
-  @media screen and (min-width: 480px) {
-    #add_liste article form {
-      width: 80%; } }
-  @media screen and (min-width: 600px) {
-    #add_liste article form {
-      width: 70%; } }
-  @media screen and (min-width: 801px) {
-    #add_liste article form {
-      width: 60%; } }
-  @media screen and (min-width: 1025px) {
-    #add_liste article form {
-      width: 50%; } }
-  @media screen and (min-width: 1281px) {
-    #add_liste article form {
-      width: 40%; } }
 
+@media screen and (min-width: 480px) {
+  #item #lienAjout {
+    margin-left: 14.4444444444%;
+    width: 71.1111111111%; } }
+@media screen and (min-width: 600px) {
+  #item aside {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; }
+    #item aside form {
+      display: flex; }
+  #item div {
+    margin-left: 2.2222222222%;
+    width: 71.1111111111%; }
+    #item div article {
+      margin-left: 2.2222222222%;
+      width: 46.6666666667%; } }
+@media screen and (min-width: 801px) {
+  #item #lienAjout {
+    margin-left: 26.6666666667%;
+    width: 46.6666666667%;
+    margin-right: 20%; } }
+@media screen and (min-width: 1281px) {
+  #item #lienAjout {
+    margin-left: 38.8888888889%;
+    width: 22.2222222222%;
+    margin-right: 20%; } }
+@media screen and (min-width: 1750px) {
+  #item div article {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; } }
+#home article:nth-child(1) {
+  margin-left: 2.2222222222%;
+  width: 95.5555555556%; }
+#home article:nth-child(2) {
+  margin-left: 2.2222222222%;
+  width: 95.5555555556%; }
+  #home article:nth-child(2) ul {
+    list-style-type: none; }
+    #home article:nth-child(2) ul li {
+      margin-top: 0.3em; }
+#home article:nth-child(3) {
+  margin-left: 2.2222222222%;
+  width: 95.5555555556%; }
+#home article:nth-child(4) {
+  margin-left: 2.2222222222%;
+  width: 95.5555555556%; }
+
+@media screen and (min-width: 480px) {
+  #home article:nth-child(1) {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%; }
+  #home article:nth-child(2) {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%; }
+    #home article:nth-child(2) ul {
+      list-style-type: none; }
+      #home article:nth-child(2) ul li {
+        margin-top: 0.3em; }
+  #home article:nth-child(3) {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%; }
+  #home article:nth-child(4) {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%; } }
+@media screen and (min-width: 1025px) {
+  #home article:nth-child(1) {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; }
+  #home article:nth-child(2) {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; }
+    #home article:nth-child(2) ul {
+      list-style-type: none; }
+      #home article:nth-child(2) ul li {
+        margin-top: 0.3em; }
+  #home article:nth-child(3) {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; }
+  #home article:nth-child(4) {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; } }
 #add_cadeau {
   width: 100%;
   display: flex;
@@ -849,23 +851,28 @@ header {
       flex-wrap: wrap;
       width: 90%;
       margin: auto; }
+      #add_cadeau article form label:first-child {
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
       #add_cadeau article form label {
-        width: 80%;
-        margin: auto;
-        text-align: center;
-        margin-top: 1em; }
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
+      #add_cadeau article form input:first-child {
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
       #add_cadeau article form input {
-        width: 80%;
-        margin: auto;
-        text-align: center; }
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
       #add_cadeau article form input:last-child {
         margin-top: 1em;
-        margin-bottom: 1em; }
+        margin-bottom: 1em;
+        margin-left: 26.6666666667%;
+        width: 46.6666666667%; }
       #add_cadeau article form textarea {
-        margin: auto;
-        text-align: center;
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 46.6666666667%; }
   @media screen and (min-width: 280px) {
     #add_cadeau article form {
       width: 90%; } }
@@ -885,120 +892,170 @@ header {
     #add_cadeau article form {
       width: 40%; } }
 
-html {
-  height: 100%; }
-
-body {
-  font-family: Georgia, Arial;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 8pt;
-  background-color: #FFFFFF;
-  height: 100%; }
-
-#wrapper {
-  position: relative;
-  min-height: 100%;
-  padding-bottom: 8em;
-  box-sizing: border-box;
-  width: 100%; }
-
-header {
-  background-color: black;
-  opacity: 0.8;
-  margin: auto;
+#add_liste {
   width: 100%;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 8pt;
-  box-sizing: border-box;
-  width: 100%;
-  padding-bottom: 0.5em; }
-  header img {
-    margin: auto; }
-  header #accueil {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    opacity: 0.8; }
-    header #accueil a {
-      margin: auto;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap; }
-      header #accueil a img {
-        margin: auto;
-        border-radius: 0 0 10px 10px; }
-  header nav {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%; }
-    header nav a {
-      margin-top: 0.5em;
-      border-radius: 10px;
-      font-size: 1rem;
-      padding: 0.5em;
-      color: black;
-      box-sizing: border-box;
-      background-color: #FFFFFF;
-      text-decoration: none;
-      opacity: 0.8;
-      margin-left: 2.2222222222%;
-      width: 46.6666666667%;
-      text-align: center; }
-      header nav a:hover {
-        cursor: pointer;
-        background-color: white; }
-      header nav a a {
-        text-decoration: none;
-        color: black; }
-      header nav a a:hover {
-        color: #1a1a1a; }
-    header nav a:nth-child(2) {
-      margin-left: 2.2222222222%;
-      width: 46.6666666667%; }
-
-section {
   display: flex;
   flex-wrap: wrap; }
-
-article {
-  margin-bottom: 0.5em;
-  margin-top: 0.5em;
-  padding: 0.5em;
-  background-color: #DCDCDC;
-  text-align: justify;
-  border: 2px solid black;
-  box-sizing: border-box;
-  border-radius: 5px; }
-
-footer {
-  width: 100%;
-  height: 8em;
-  background-color: black;
-  opacity: 0.8;
-  color: white;
-  display: flex;
-  flex-wrap: wrap;
-  position: absolute;
-  bottom: 0; }
-  footer div {
+  #add_liste article {
     margin-left: 2.2222222222%;
-    width: 46.6666666667%;
+    width: 95.5555555556%;
     display: flex;
     flex-wrap: wrap; }
-    footer div ul {
-      list-style-type: none;
-      margin: auto;
+    #add_liste article form {
       display: flex;
       flex-wrap: wrap;
-      width: 100%; }
-      footer div ul li {
-        width: 100%;
-        padding: 0.5em;
-        text-align: center;
-        margin: auto; }
+      width: 90%;
+      margin: auto; }
+      #add_liste article form label:first-child {
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
+      #add_liste article form label {
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
+      #add_liste article form input:first-child {
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
+      #add_liste article form input {
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
+      #add_liste article form input:last-child {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 26.6666666667%;
+        width: 46.6666666667%; }
+      #add_liste article form textarea {
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
+  @media screen and (min-width: 280px) {
+    #add_liste article form {
+      width: 90%; } }
+  @media screen and (min-width: 480px) {
+    #add_liste article form {
+      width: 80%; } }
+  @media screen and (min-width: 600px) {
+    #add_liste article form {
+      width: 70%; } }
+  @media screen and (min-width: 801px) {
+    #add_liste article form {
+      width: 60%; } }
+  @media screen and (min-width: 1025px) {
+    #add_liste article form {
+      width: 50%; } }
+  @media screen and (min-width: 1281px) {
+    #add_liste article form {
+      width: 40%; } }
+
+#sign_up {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  #sign_up article {
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%;
+    display: flex;
+    flex-wrap: wrap; }
+    #sign_up article form {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: auto; }
+      #sign_up article form label:first-child {
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
+      #sign_up article form label {
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
+      #sign_up article form input:first-child {
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
+      #sign_up article form input {
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
+      #sign_up article form input:last-child {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 26.6666666667%;
+        width: 46.6666666667%; }
+      #sign_up article form textarea {
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
+  @media screen and (min-width: 280px) {
+    #sign_up article form {
+      width: 90%; } }
+  @media screen and (min-width: 480px) {
+    #sign_up article form {
+      width: 80%; } }
+  @media screen and (min-width: 600px) {
+    #sign_up article form {
+      width: 70%; } }
+  @media screen and (min-width: 801px) {
+    #sign_up article form {
+      width: 60%; } }
+  @media screen and (min-width: 1025px) {
+    #sign_up article form {
+      width: 50%; } }
+  @media screen and (min-width: 1281px) {
+    #sign_up article form {
+      width: 40%; } }
+
+#login {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  #login article {
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%;
+    display: flex;
+    flex-wrap: wrap; }
+    #login article form {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: auto; }
+      #login article form label:first-child {
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
+      #login article form label {
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
+      #login article form input:first-child {
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
+      #login article form input {
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
+      #login article form input:last-child {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 26.6666666667%;
+        width: 46.6666666667%; }
+      #login article form textarea {
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
+  @media screen and (min-width: 280px) {
+    #login article form {
+      width: 90%; } }
+  @media screen and (min-width: 480px) {
+    #login article form {
+      width: 80%; } }
+  @media screen and (min-width: 600px) {
+    #login article form {
+      width: 70%; } }
+  @media screen and (min-width: 801px) {
+    #login article form {
+      width: 60%; } }
+  @media screen and (min-width: 1025px) {
+    #login article form {
+      width: 50%; } }
+  @media screen and (min-width: 1281px) {
+    #login article form {
+      width: 40%; } }
 
 @media screen and (min-width: 280px) {
   body {

@@ -194,7 +194,7 @@ EOT;
 	
 	// /////////////// ITEM /////////////////////
 	
-	// retourne la liste des items
+	// Fonction qui retourne la liste des items et des messages
 	private function renderItem() {
 		$retour = '';
 		
@@ -220,11 +220,14 @@ EOT;
 			</section>';
 		return $retour;
 	}
+	
 	/**
 	 * Fonction qui renvoie la vue de la liste des items
 	 *
 	 * @param retour = retour du HTML
 	 * @param dataListeItem = liste des items
+	 * 
+	 * @retour renvoie le paramètre retour
 	 */
 	private function afficheListeItem($retour, $dataListeItem) {
 		$retour .= '
@@ -271,6 +274,8 @@ EOT;
 	 * @param retour = retour du HTML
 	 * @param dataListeItem = liste des items
 	 * @param get = contenu du HttpRequest
+	 * 
+	 * @retour renvoie le paramètre retour
 	 */
 	private function afficheMessageItem($retour, $dataListeItem, $get) {
 		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté

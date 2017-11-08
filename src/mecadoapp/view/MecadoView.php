@@ -212,6 +212,8 @@ EOT;
     //retourne la liste des items
     private function renderItem() {
     	
+    	$retour = '';
+    	
     	$get= new \mf\utils\HttpRequest();
     	echo $this->data['erreur'];
     	if(isset($this->data['erreur']) && $this->data['erreur'] != null){

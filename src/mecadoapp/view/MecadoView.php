@@ -164,7 +164,7 @@ EOT;
             $retour = $retour.'
                         <article close="'.$close.'">
                             <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
-                            <a href="'.$this->app_root.'/main.php/listes/?url='.$value->id.'"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'"></a><a href="#"></a>
+                            <a href="'.$this->app_root.'/main.php/listes/?url='.$value->id.'"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'"></a><a href="'.$this->app_root.'/main.php/"></a>
                             <p>'.$value->description.'</p>
                             <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
                             <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>

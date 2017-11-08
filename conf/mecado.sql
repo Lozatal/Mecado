@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 07 Novembre 2017 à 16:02
+-- Généré le :  Mer 08 Novembre 2017 à 15:54
 -- Version du serveur :  5.7.20-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `acheteur` (
   `id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
-  `prenom` varchar(50) NOT NULL,
   `participation` int(11) DEFAULT NULL,
   `message` longtext,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -90,8 +89,10 @@ CREATE TABLE `liste` (
 --
 
 INSERT INTO `liste` (`id`, `nom`, `description`, `token`, `date_limite`, `destinataire`, `nom_dest`, `prenom_dest`, `created_at`, `updated_at`, `id_user`) VALUES
-(1, 'Anniversaire Thor', 'La mort aux mort', '', '2017-11-29 23:00:00', 1, 'Luc', 'Jean', '2017-11-07 14:50:44', '2017-11-07 14:50:44', 1),
-(2, 'Anniversaire Loki', 'qzfsbyuroij<nmoheughuielsghliuhiehuhbbeslksbuebvusebvluisebvliusbeliusbevlisev', '', '2017-11-07 15:00:51', 1, 'Luc', 'Le', '2017-11-07 15:00:51', '2017-11-07 15:00:51', 1);
+(1, 'Anniversaire Thor', 'La mort aux mort', '$2y$10$1VXHXD7wBaQxve0CoEQEBeMLRv7a6G7yXF92.2Ig/mCJ0R7MvzQbq', '2017-11-29 23:00:00', 1, 'Luc', 'Jean', '2017-11-07 14:50:44', '2017-11-08 13:17:37', 1),
+(2, 'Anniversaire Loki', 'qzfsbyuroij<nmoheughuielsghliuhiehuhbbeslksbuebvusebvluisebvliusbeliusbevlisev', '$2y$10$BPYxedaanqnsxFxc2j.IhOS.r2JNjGRpHizNtb4Wg51uoq2guLWgm', '2017-11-07 15:00:51', 0, 'Luc', 'Le', '2017-11-07 15:00:51', '2017-11-08 13:17:32', 1),
+(3, 'test', 'test', '$2y$10$n6RDobMQ6dzGGvkFXz2gw.VF66mdOBRGyOS1Dwwwom4PBMe2syzra', '1980-10-09 23:00:00', 0, 'test', 'test', '2017-11-08 09:36:11', '2017-11-08 14:04:03', 1),
+(6, 'test', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at purus ut lorem egestas sagittis. Fusce sit amet nisl mauris. Cras eget dolor ut purus varius fermentum. Vestibulum placerat eros neque, sed viverra dui mollis a. Praesent nec enim a eros bibendum luctus. Maecenas vel mattis lectus, non euismod dui. Etiam scelerisque nisl ut auctor finibus. Praesent tempus mollis elit et rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum do', '$2y$10$CSnXqtlkMbg/r0O.NuxG5uxTuh8zF/lR7DrjKz1wtQX1TTq86kTUu', '2017-11-08 13:24:40', 1, 'test', 'test', '2017-11-08 13:22:54', '2017-11-08 13:24:33', 1);
 
 -- --------------------------------------------------------
 
@@ -107,6 +108,13 @@ CREATE TABLE `message` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_liste` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `message`
+--
+
+INSERT INTO `message` (`id`, `texte`, `auteur`, `created_at`, `updated_at`, `id_liste`) VALUES
+(1, 'test', 'test', '2017-11-07 17:28:44', '2017-11-07 17:28:44', 1);
 
 -- --------------------------------------------------------
 
@@ -127,7 +135,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nom`, `prenom`, `mail`, `password`) VALUES
-(1, 'test', 'test', 'test@test.fr', '$2y$10$cTiHpkpj3liY8F0mz2Gz7utTOf2DLB6xDnY9vNIjpOGF8MWe4Swbq');
+(1, 'test', 'test', 'test@test.fr', '$2y$10$cTiHpkpj3liY8F0mz2Gz7utTOf2DLB6xDnY9vNIjpOGF8MWe4Swbq'),
+(2, 'test1', 'test1', 'test1@test.fr', '$2y$10$4R5gxP897DtD7Ixti7dC3uZ0x9GocPglH92/qTJrLGP8ya5UMY6xe'),
+(3, 'test2', 'test2', 'test2@test.fr', '$2y$10$712PbUWKle6eAAvlFJBw8eAIcojVWyq1fkKnlmax5uENSo/Dd5ZYu');
 
 --
 -- Index pour les tables exportées
@@ -185,17 +195,17 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT pour la table `liste`
 --
 ALTER TABLE `liste`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Contraintes pour les tables exportées
 --

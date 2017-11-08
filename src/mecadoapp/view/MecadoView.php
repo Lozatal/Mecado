@@ -164,7 +164,7 @@ EOT;
             $retour = $retour.'
                         <article close="'.$close.'">
                             <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
-                            <a href="'.$this->app_root.'/main.php/consulte/" title="Consulter messages"></a><a href="'.$this->app_root.'/main.php/listes/?url='.$value->id.'" title="Générer URL"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'" title="Modifier"></a><a href="'.$this->app_root.'/main.php/supr_liste/?id='.$value->id.'" title="Supprimer"></a>
+                            <a href="'.$this->app_root.'/main.php/consulte/?id='.$value->id.'" title="Consulter messages"></a><a href="'.$this->app_root.'/main.php/listes/?url='.$value->id.'" title="Générer URL"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'" title="Modifier"></a><a href="'.$this->app_root.'/main.php/supr_liste/?id='.$value->id.'" title="Supprimer"></a>
                             <p>'.$value->description.'</p>
                             <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
                             <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>
@@ -242,6 +242,12 @@ EOT;
 		
 		return $retour;
 	}
+
+
+	private function renderConsulte() {
+
+		return '';
+	}
 	
 	// /////////////// ITEM /////////////////////
 	
@@ -260,16 +266,16 @@ EOT;
 				<div class="alerte-danger">' . $this->data ['erreur'] . '.</div>';
 		}
 		
-		// Lien pour ajouter un Item
-		$retour .= '
-			<section id="item">
-				<a href="#" id="lienAjout">Ajouter un cadeau</a>';
-		
 		$id = null;
 		if (isset ( $get->get ['id'] )) {
 			$id = $get->get ['id'];
 		}
 		
+		// Lien pour ajouter un Item
+		$retour .= '
+			<section id="item">
+				<a href="'.$this->app_root.'/main.php/add_item/?liste='.$id.'" id="lienAjout">Ajouter un cadeau</a>';
+
 		if(isset($this->data ['listeItem']))
 		{
 			// Vue des messages
@@ -283,6 +289,7 @@ EOT;
 			</section>';
 		return $retour;
 	}
+
 	private function renderAddItem() {
 
         $racine =  $this->app_root;
@@ -337,12 +344,15 @@ EOT;
 			$disabled = '';
 			
 			//Si un acheteur est présent, on verrouille le formulaire
+			$placeholderNom = 'Nom';
 			if(isset($item->acheteurs[0])){
 				$disabled = 'disabled';
+				$placeholderNom = 'Reservé par : '.$item->acheteurs[0]->nom;
 			}
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
 			$linkModify = "#";
 			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
+
 			
 			$retour .= '
 				<article>
@@ -353,7 +363,7 @@ EOT;
 						<h2>' . $item->nom . '</h2>
 					</div>
 					<form id="addMessage" action="' . $linkformReservation. '" method="POST">
-						<input name="nom" type="text" placeholder="Nom" '.$disabled.' required>
+						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" '.$disabled.' required></textarea>
 						<input type="hidden" name="id_item" value="' . $item->id. '" required>
 						<input type="submit" value="Réserver" '.$disabled.' />
@@ -378,22 +388,24 @@ EOT;
 	private function afficheMessageItem($retour, $dataListeItem, $idListe) {
 		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
 		
-		$listeMessage = $dataListeItem [0]->liste->messages;
-		
 		$retour .= '
 				<aside>
 					<h2>Messages</h2>
 				';
 		
-		foreach ( $listeMessage as $message ) {
-			$date = date_format ( $message->created_at, 'd:m:Y à H:i' );
-			$retour .= '
-		    		<p>
-						<span>' . $date . '-' . $message->auteur . ' :</span>
-						<br>
-						<span> ' . $message->texte . ' </span>
-					</p>
-				';
+		if(isset($dataListeItem [0])){
+			$listeMessage = $dataListeItem [0]->liste->messages;
+		
+			foreach ( $listeMessage as $message ) {
+				$date = date_format ( $message->created_at, 'd:m:Y à H:i' );
+				$retour .= '
+			    		<p>
+							<span>' . $date . '-' . $message->auteur . ' :</span>
+							<br>
+							<span> ' . $message->texte . ' </span>
+						</p>
+					';
+			}
 		}
 		
 		// formulaire d'ajout de message
@@ -434,6 +446,9 @@ EOT;
 				break;
 			case "addListe" :
 				$contenu = $this->renderAddListe ();
+				break;
+			case "consulte" :
+				$contenu = $this->renderConsulte ();
 				break;
 			case "item" :
 				$contenu = $this->renderItem ();

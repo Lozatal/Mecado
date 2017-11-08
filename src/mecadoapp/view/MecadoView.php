@@ -244,13 +244,11 @@ EOT;
 		
 		if(isset($this->data ['listeItem']))
 		{
-		
 			// Vue des messages
 			$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $get );
 			
 			// Vue des items
 			$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $get );
-		
 		}
 		
 		$retour .= '

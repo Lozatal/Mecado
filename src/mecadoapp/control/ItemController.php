@@ -3,6 +3,7 @@
 namespace mecadoapp\control;
 
 use mecadoapp\model\Item as item;
+use mecadoapp\model\liste as liste;
 
 class ItemController extends \mf\control\AbstractController {
 
@@ -35,11 +36,21 @@ class ItemController extends \mf\control\AbstractController {
 	    			throw new \mf\auth\exception\AuthentificationException("Vous devez être authentifié pour accéder à ce lien");
 	    		}
 	    		else{
+	    			$liste = liste::where('liste.id', '=', $get['id'])
+	    			->first();
 	    			
+	    			//Si la liste n'a pas été trouvé, on retourne une erreur
+	    			if(!isset($liste) || $liste->id == null){
+	    				throw new \mf\auth\exception\AuthentificationException("Cette liste n'éxiste pas");
+	    			}
+	    			
+	    			//On va rechercher si l'utilisateur en session est bien le propriétaire de la liste
+	    			if($liste->user->mail != $util->user_login){
+	    				throw new \mf\auth\exception\AuthentificationException("Vous n'êtes pas le propriétaire de cette liste");
+	    			}
+	    			
+	    			$listeItem = $liste->items;
 	    		}
-
-	    		$listeItem = item::where('item.id_liste', '=', $get['id'])
-	    		->get();
 	    	}
 	    	else{
 	    		throw new \mf\auth\exception\AuthentificationException("L'identifiant de la liste est introuvable");

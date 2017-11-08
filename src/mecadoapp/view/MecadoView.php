@@ -272,8 +272,17 @@ EOT;
 		}
 		
 		// Lien pour ajouter un Item
+		$titre = 'Titre non renseigné';
+		if(isset($this->data ['listeItem'][0]) && isset($this->data ['listeItem'][0]->Liste)){
+			$time = strtotime($this->data ['listeItem'][0]->Liste->date_limite);
+			$date = date('d-m-Y',$time);
+			//$date = date_format ( $date, 'd:m:Y' );
+			$titre = 'Titre : '.$this->data ['listeItem'][0]->Liste->nom.'. Valide jusqu\'au '.$date;
+		}
+		
 		$retour .= '
 			<section id="item">
+				<h2 id="titre">'.$titre.'</h2>
 				<a href="'.$this->app_root.'/main.php/add_item/?liste='.$id.'" id="lienAjout">Ajouter un cadeau</a>';
 
 		if(isset($this->data ['listeItem']))

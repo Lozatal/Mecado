@@ -100,8 +100,8 @@ EOT;
 	private function renderSignUp() {
 		$alert = '';
 		
-		if (isset ( $this->data ))
-			$alert = '<div class="alerte-danger">' . $this->data . '</div>';
+		if (isset($this->data))
+			$alert = '<div class="alerte-' . $this->data[0] . '">' . $this->data[1] . '</div>';
 		
 		$retour = '
         <section id="sign_up"> 
@@ -186,6 +186,7 @@ EOT;
         $nom_dest = '';
         $prenom_dest = '';
         $date_limit = '';
+        $text = 'Ajouter';
 
         if(isset($req->get['id']))
         {
@@ -204,6 +205,7 @@ EOT;
             	$nom_dest = $liste->nom_dest;
             	$prenom_dest = $liste->prenom_dest;
             	$date_limit = $liste->date_limite;
+            	$text = 'Modifier';
             }
         }
 
@@ -219,7 +221,7 @@ EOT;
                     <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="nom" value="${nom_dest}" required>
                     <label for="prenom_dest">Prénom destinataire</label><input type="text" name="prenom_dest" placeholder="prenom" value="${prenom_dest}" required>
                     <label for="date_limit">Date limite</label><input type="date" name="date_limit" placeholder="date limite" value="${date_limit}" required>
-                    <input type="submit" value="Ajouter liste" required>
+                    <input type="submit" value="${text}" required>
                 </form>
             </article>
         </section>

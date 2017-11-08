@@ -36,12 +36,16 @@ class LoginController extends \mf\control\AbstractController {
         $v = new \mecadoapp\auth\MecadoAuthentification();
         try {
             $v->createUser($nom, $prenom, $email, $pass, $pass_verify);
-            $v = new \mecadoapp\view\MecadoView(null);
-            $v ->render('home');
+            $tab[]= 'success';
+            $tab[]= 'Inscription réussie';
+            $v = new \mecadoapp\view\MecadoView($tab);
+            $v ->render('signUp');
         }
         catch(\mf\auth\exception\AuthentificationException $e)
         {
-            $v = new \mecadoapp\view\MecadoView($e->getMessage());
+            $tab[]= 'danger';
+            $tab[]= $e->getMessage();
+            $v = new \mecadoapp\view\MecadoView($tab);
             $v ->render('signUp');
         }
 

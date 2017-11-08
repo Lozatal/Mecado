@@ -540,13 +540,15 @@ header {
       display: flex;
       flex-wrap: wrap; }
       #item div article div:first-child a:first-child {
-        margin: auto;
+        margin-left: 75.5555555556%;
+        width: 10%;
         background-image: url("images/modifier.png");
         width: 20px;
         height: 20px;
         background-repeat: no-repeat; }
       #item div article div:first-child a:last-child {
-        margin: auto;
+        margin-left: 2.2222222222%;
+        width: 10%;
         background-image: url("images/supprimer.png");
         width: 20px;
         height: 20px;
@@ -944,8 +946,6 @@ body {
   min-height: 100%;
   padding-bottom: 8em;
   box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
   width: 100%; }
 
 header {

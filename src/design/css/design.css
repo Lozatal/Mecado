@@ -648,7 +648,7 @@ header {
         color: black;
         text-decoration: none; }
     #liste article a:nth-child(2) {
-      margin-left: 26.6666666667%;
+      margin-left: 38.8888888889%;
       width: 10%;
       background-image: url("images/url.png");
       width: 20px;
@@ -656,7 +656,7 @@ header {
       background-repeat: no-repeat;
       order: 1; }
     #liste article a:nth-child(3) {
-      margin-left: 51.1111111111%;
+      margin-left: 14.4444444444%;
       width: 10%;
       background-image: url("images/modifier.png");
       width: 20px;
@@ -666,7 +666,7 @@ header {
     #liste article a:nth-child(4) {
       margin-top: auto;
       margin-bottom: auto;
-      margin-left: 75.5555555556%;
+      margin-left: 14.4444444444%;
       width: 10%;
       background-image: url("images/supprimer.png");
       width: 20px;
@@ -705,7 +705,7 @@ header {
 @media screen and (min-width: 1281px) {
   #liste article p:nth-child(1) {
     margin-left: 2.2222222222%;
-    width: 46.6666666667%;
+    width: 58.8888888889%;
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
@@ -714,19 +714,23 @@ header {
     order: 1; }
   #liste article a:nth-child(2) {
     margin-left: 2.2222222222%;
-    width: 22.2222222222%;
+    width: 10%;
     order: 2; }
   #liste article a:nth-child(3) {
     margin-left: 2.2222222222%;
-    width: 22.2222222222%;
-    order: 3; } }
+    width: 10%;
+    order: 3; }
+  #liste article a:nth-child(4) {
+    margin-left: 2.2222222222%;
+    width: 10%;
+    order: 4; } }
 @media screen and (min-width: 1750px) {
   #liste article {
     margin-left: 2.2222222222%;
     width: 22.2222222222%; }
     #liste article p:nth-child(1) {
       margin-left: 2.2222222222%;
-      width: 46.6666666667%;
+      width: 58.8888888889%;
       text-align: center;
       font-size: 1.5rem;
       font-weight: bold;
@@ -735,12 +739,16 @@ header {
       order: 1; }
     #liste article a:nth-child(2) {
       margin-left: 2.2222222222%;
-      width: 22.2222222222%;
+      width: 10%;
       order: 2; }
     #liste article a:nth-child(3) {
       margin-left: 2.2222222222%;
-      width: 22.2222222222%;
-      order: 3; } }
+      width: 10%;
+      order: 3; }
+    #liste article a:nth-child(4) {
+      margin-left: 2.2222222222%;
+      width: 10%;
+      order: 4; } }
 #add_liste {
   width: 100%;
   display: flex;

@@ -33,7 +33,7 @@
 	$router->addRoute('check_liste',    '/check_liste/',         '\mecadoapp\control\ListeController', 'checkListe', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_USER);
 	$router->addRoute('supr_liste',    '/supr_liste/',         '\mecadoapp\control\ListeController', 'suprListe', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_USER);
 	$router->addRoute('add_liste',    '/add_liste/',         '\mecadoapp\control\ListeController', 'addListe', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_USER);
-	
+	$router->addRoute('consulte',    '/consulte/',         '\mecadoapp\control\ListeController', 'consulte', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_USER);
 	$router->addRoute('item',    '/item/',         '\mecadoapp\control\ItemController', 'viewItem', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 	$router->addRoute('add_item',    '/add_item/',         '\mecadoapp\control\ItemController', 'addItem', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 	$router->addRoute('reserv_item',    '/reserv_item/',         '\mecadoapp\control\ItemController', 'reservItem', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);

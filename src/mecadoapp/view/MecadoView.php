@@ -164,7 +164,7 @@ EOT;
             $retour = $retour.'
                         <article close="'.$close.'">
                             <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
-                            <a href="'.$this->app_root.'/main.php/listes/?url='.$value->id.'"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'"></a><a href="'.$this->app_root.'/main.php/supr_liste/?id='.$value->id.'"></a>
+                            <a href="'.$this->app_root.'/main.php/consulte/" title="Consulter messages"></a><a href="'.$this->app_root.'/main.php/listes/?url='.$value->id.'" title="Générer URL"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'" title="Modifier"></a><a href="'.$this->app_root.'/main.php/supr_liste/?id='.$value->id.'" title="Supprimer"></a>
                             <p>'.$value->description.'</p>
                             <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
                             <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>
@@ -188,6 +188,8 @@ EOT;
         $prenom_dest = '';
         $date_limit = '';
         $text = 'Ajouter';
+        $checknon = '';
+        $checkoui = 'checked';        
 
         if(isset($req->get['id']))
         {
@@ -202,7 +204,11 @@ EOT;
             {
             	$hidden = '<input type="hidden" name="id" value="'.$req->get['id'].'">';
             	if($liste->destinataire == 1)
-            		$check = 'checked';
+            	{
+            		$checknon = 'checked';
+            		$checkoui = '';
+
+            	}
             	$nom = $liste->nom;
             	$description = $liste->description;
             	$nom_dest = $liste->nom_dest;
@@ -218,12 +224,15 @@ EOT;
             <article>
                 <form action="${racine}/main.php/check_liste/" method="post">
                 	${hidden}
-                    <label for="destinataire">Etes-vous le destinataire : </label><input type="checkbox" name="destinataire" id="destinataire" value="destinataire" ${check}>
+                   	<label for="destinataire">Pour un tier :</label>
+                    <input type="radio" id="oui" name="destinataire" value="0" ${checkoui}><label for="oui">Oui</label>
+                   <input type="radio" id="non" name="destinataire" value="1" ${checknon}> <label for="non">Non</label>
+
                     <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" value="${nom}" required>
-                    <label for="description">Description</label><textarea rows="5" cols="50" maxlength="500" name="description" required>${description}</textarea>  
-                    <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="nom" value="${nom_dest}" required>
-                    <label for="prenom_dest">Prénom destinataire</label><input type="text" name="prenom_dest" placeholder="prenom" value="${prenom_dest}" required>
-                    <label for="date_limit">Date limite</label><input type="date" name="date_limit" placeholder="date limite" value="${date_limit}" required>
+                    <label for="description">Description</label><textarea maxlength="500" name="description" required>${description}</textarea>  
+                    <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="Si vous n'êtes pas le destinaire" value="${nom_dest}">
+                    <label for="prenom_dest">Prénom destinataire</label><input type="text" name="prenom_dest" placeholder="Si vous n'êtes pas le destinaire" value="${prenom_dest}">
+                    <label for="date_limit">Date limite</label><input type="date" name="date_limit" placeholder="jj/mm/aaaa" value="${date_limit}" required>
                     <input type="submit" value="${text}" required>
                 </form>
             </article>

@@ -463,12 +463,12 @@ footer {
       font-weight: bold;
       margin-top: auto;
       margin-bottom: auto;
-      order: 4; }
+      order: 5; }
       #liste article p:nth-child(1) a {
         color: black;
         text-decoration: none; }
     #liste article a:nth-child(2) {
-      margin-left: 38.8888888889%;
+      margin-left: 14.4444444444%;
       width: 10%;
       background-image: url("images/url.png");
       width: 20px;
@@ -478,12 +478,20 @@ footer {
     #liste article a:nth-child(3) {
       margin-left: 14.4444444444%;
       width: 10%;
-      background-image: url("images/modifier.png");
+      background-image: url("images/url.png");
       width: 20px;
       height: 20px;
       background-repeat: no-repeat;
       order: 2; }
     #liste article a:nth-child(4) {
+      margin-left: 14.4444444444%;
+      width: 10%;
+      background-image: url("images/modifier.png");
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      order: 3; }
+    #liste article a:nth-child(5) {
       margin-top: auto;
       margin-bottom: auto;
       margin-left: 14.4444444444%;
@@ -492,33 +500,33 @@ footer {
       width: 20px;
       height: 20px;
       background-repeat: no-repeat;
-      order: 3; }
-    #liste article p:nth-child(5) {
+      order: 4; }
+    #liste article p:nth-child(6) {
       margin-left: 2.2222222222%;
       width: 95.5555555556%;
       padding: 1em 0 1em 0;
       margin-top: auto;
       margin-bottom: auto;
-      order: 5; }
-    #liste article p:nth-child(6) {
+      order: 6; }
+    #liste article p:nth-child(7) {
       margin-left: 2.2222222222%;
       width: 71.1111111111%;
       margin-top: auto;
       margin-bottom: auto;
-      order: 6;
+      order: 7;
       text-decoration: underline; }
-    #liste article p:nth-child(7) {
+    #liste article p:nth-child(8) {
       margin-left: 2.2222222222%;
       width: 22.2222222222%;
       text-align: center;
       margin-top: auto;
       margin-bottom: auto;
-      order: 7; }
+      order: 8; }
   #liste article[close=y] {
     background-color: #cccccc; }
     #liste article[close=y] p:nth-child(1) {
       text-decoration: line-through; }
-    #liste article[close=y] p:nth-child(6) {
+    #liste article[close=y] p:nth-child(7) {
       color: black; }
     #liste article[close=y] a:nth-child(2) {
       opacity: 0.6;
@@ -529,6 +537,10 @@ footer {
       text-decoration: line-through;
       cursor: default; }
     #liste article[close=y] a:nth-child(4) {
+      opacity: 0.6;
+      text-decoration: line-through;
+      cursor: default; }
+    #liste article[close=y] a:nth-child(5) {
       opacity: 0.6;
       text-decoration: line-through;
       cursor: default; }
@@ -556,7 +568,7 @@ footer {
 
   #liste article p:nth-child(1) {
     margin-left: 2.2222222222%;
-    width: 58.8888888889%;
+    width: 46.6666666667%;
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
@@ -580,14 +592,20 @@ footer {
     width: 10%;
     margin-top: auto;
     margin-bottom: auto;
-    order: 4; } }
+    order: 4; }
+  #liste article a:nth-child(5) {
+    margin-left: 2.2222222222%;
+    width: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
+    order: 5; } }
 @media screen and (min-width: 1750px) {
   #liste article {
     margin-left: 2.2222222222%;
     width: 22.2222222222%; }
     #liste article p:nth-child(1) {
       margin-left: 2.2222222222%;
-      width: 58.8888888889%;
+      width: 46.6666666667%;
       text-align: center;
       font-size: 1.5rem;
       font-weight: bold;
@@ -611,7 +629,13 @@ footer {
       width: 10%;
       margin-top: auto;
       margin-bottom: auto;
-      order: 4; } }
+      order: 4; }
+    #liste article a:nth-child(5) {
+      margin-left: 2.2222222222%;
+      width: 10%;
+      margin-top: auto;
+      margin-bottom: auto;
+      order: 5; } }
 #item {
   display: flex;
   flex-wrap: wrap;
@@ -851,17 +875,22 @@ footer {
       flex-wrap: wrap;
       width: 90%;
       margin: auto; }
-      #add_cadeau article form label:first-child {
-        margin-top: 1em;
-        margin-left: 2.2222222222%;
-        width: 46.6666666667%; }
       #add_cadeau article form label {
         margin-top: 1em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
-      #add_cadeau article form input:first-child {
+      #add_cadeau article form label[for=destinataire] {
         margin-left: 2.2222222222%;
-        width: 34.4444444444%; }
+        width: 95.5555555556%; }
+      #add_cadeau article form label[for=oui] {
+        margin-left: 2.2222222222%;
+        width: 22.2222222222%; }
+      #add_cadeau article form label[for=non] {
+        margin-left: 2.2222222222%;
+        width: 22.2222222222%; }
+      #add_cadeau article forminput[type=radio] {
+        margin-left: 2.2222222222%;
+        width: 10%; }
       #add_cadeau article form input {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
@@ -906,17 +935,22 @@ footer {
       flex-wrap: wrap;
       width: 90%;
       margin: auto; }
-      #add_liste article form label:first-child {
-        margin-top: 1em;
-        margin-left: 2.2222222222%;
-        width: 46.6666666667%; }
       #add_liste article form label {
         margin-top: 1em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
-      #add_liste article form input:first-child {
+      #add_liste article form label[for=destinataire] {
         margin-left: 2.2222222222%;
-        width: 34.4444444444%; }
+        width: 95.5555555556%; }
+      #add_liste article form label[for=oui] {
+        margin-left: 2.2222222222%;
+        width: 22.2222222222%; }
+      #add_liste article form label[for=non] {
+        margin-left: 2.2222222222%;
+        width: 22.2222222222%; }
+      #add_liste article forminput[type=radio] {
+        margin-left: 2.2222222222%;
+        width: 10%; }
       #add_liste article form input {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
@@ -961,17 +995,22 @@ footer {
       flex-wrap: wrap;
       width: 90%;
       margin: auto; }
-      #sign_up article form label:first-child {
-        margin-top: 1em;
-        margin-left: 2.2222222222%;
-        width: 46.6666666667%; }
       #sign_up article form label {
         margin-top: 1em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
-      #sign_up article form input:first-child {
+      #sign_up article form label[for=destinataire] {
         margin-left: 2.2222222222%;
-        width: 34.4444444444%; }
+        width: 95.5555555556%; }
+      #sign_up article form label[for=oui] {
+        margin-left: 2.2222222222%;
+        width: 22.2222222222%; }
+      #sign_up article form label[for=non] {
+        margin-left: 2.2222222222%;
+        width: 22.2222222222%; }
+      #sign_up article forminput[type=radio] {
+        margin-left: 2.2222222222%;
+        width: 10%; }
       #sign_up article form input {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
@@ -1016,17 +1055,22 @@ footer {
       flex-wrap: wrap;
       width: 90%;
       margin: auto; }
-      #login article form label:first-child {
-        margin-top: 1em;
-        margin-left: 2.2222222222%;
-        width: 46.6666666667%; }
       #login article form label {
         margin-top: 1em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
-      #login article form input:first-child {
+      #login article form label[for=destinataire] {
         margin-left: 2.2222222222%;
-        width: 34.4444444444%; }
+        width: 95.5555555556%; }
+      #login article form label[for=oui] {
+        margin-left: 2.2222222222%;
+        width: 22.2222222222%; }
+      #login article form label[for=non] {
+        margin-left: 2.2222222222%;
+        width: 22.2222222222%; }
+      #login article forminput[type=radio] {
+        margin-left: 2.2222222222%;
+        width: 10%; }
       #login article form input {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }

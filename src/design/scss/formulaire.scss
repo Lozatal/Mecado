@@ -11,16 +11,21 @@
 			flex-wrap: wrap;
 			width: 90%;
 			margin:auto;
-			& label:first-child{
-				margin-top: 1em;
-				@include grille(8,10%,0,4);
-			}
 			& label{
 				margin-top: 1em;
 				@include grille(8,10%,0,3);
 			}
-			& input:first-child{
-				@include grille(8,10%,0,3);
+			& label[for=destinataire]{
+				@include grille(8,10%,0,8);
+			}
+			& label[for=oui]{
+				@include grille(8,10%,0,2);
+			}
+			& label[for=non]{
+				@include grille(8,10%,0,2);
+			}
+			&input[type=radio]{
+				@include grille(8,10%,0,1);
 			}
 			& input{
 				@include grille(8,10%,0,4);

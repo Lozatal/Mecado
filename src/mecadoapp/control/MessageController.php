@@ -23,7 +23,7 @@ class MessageController extends \mf\control\AbstractController {
     public function addMessage(){
     	
     	try{
-    		if(!is_null($this->request->post)){
+    		if($this->request->post != null){
 	    		if(isset($this->request->post['id_liste']) && $this->request->post['id_liste'] != null){
 		    		$form=$this->request->post;
 		    	}

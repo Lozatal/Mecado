@@ -170,7 +170,7 @@ EOT;
             $retour = $retour.'
                         <article close="'.$close.'">
                             <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
-                            <a href="#">Modifier</a><a href="#">Supprimer</a>
+                            <a  class="disabled href="#">Modifier</a><a class="disabled href="#">Supprimer</a>
                             <p>'.$value->description.'</p>
                             <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
                             <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>
@@ -189,7 +189,7 @@ EOT;
             <article>
                 <form>
                     <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" required>
-                    <label for="nom">Description</label><textarea name="nom" required></textarea>
+                    <label for="description">Description</label><textarea name="description" required></textarea>
                     <label for="destinataire">Destinataire</label>
                     <input type="checkbox" id="destinataire" name="destinataire" value="destinataire" required>
                     <label for="nomDest">Nom destinataire</label><input type="text" name="nomDest" placeholder="nom" required>

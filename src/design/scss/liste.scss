@@ -4,7 +4,7 @@
 	flex-wrap: wrap;
 	& #lienAjout{
 		margin: auto;
-		@include bouton(black,1,green,10px);
+		@include bouton(black,1,#CCC414,10px);
 		text-align: center;
 		@include grille(8,10%,0,8);
 		margin-top: 0.5em;

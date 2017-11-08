@@ -156,7 +156,7 @@ EOT;
             $retour = $retour.'
                         <article close="'.$close.'">
                             <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
-                            <a class="disabled" href="#"></a><a class="disabled" href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'"></a><a class="disabled" href="#"></a>
+                            <a href="#"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'"></a><a href="#"></a>
                             <p>'.$value->description.'</p>
                             <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
                             <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>
@@ -184,6 +184,10 @@ EOT;
             if($liste->id_user == $userreq->id)
             {
             	$nom = $liste->nom;
+            	$description = $liste->description;
+            	$nom_dest = $liste->nom_dest;
+            	$prenom_dest = $liste->prenom_dest;
+            	$date_limit = $liste->date_limit;
             }
             else
             {
@@ -202,7 +206,7 @@ EOT;
                 <form action="${racine}/main.php/check_liste/" method="post">
                     <label for="destinataire">Etes-vous le destinataire : </label><input type="checkbox" name="destinataire" id="destinataire" value="destinataire">
                     <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" value="${nom}" required>
-                    <label for="description">Description</label><textarea name="description" required></textarea>  
+                    <label for="description">Description</label><textarea name="description" value="${nom}" required></textarea>  
                     <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="nom" required>
                     <label for="prenom_dest">Prénom destinataire</label><input type="text" name="prenom_dest" placeholder="prenom" required>
                     <label for="date_limit">Date limite</label><input type="date" name="date_limit" placeholder="date limite" required>

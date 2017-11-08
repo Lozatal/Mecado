@@ -54,10 +54,7 @@ class ListeController extends \mf\control\AbstractController {
 
         $nom = $this->request->post['nom'];
         $description = $this->request->post['description'];
-        if(isset($this->request->post['destinataire']))
-            $destinataire = 1;
-        else
-            $destinataire = 0;
+        $destinataire = $this->request->post['destinataire'];
         $nom_dest = $this->request->post['nom_dest'];
         $prenom_dest = $this->request->post['prenom_dest'];
         $date_limit = date_create($this->request->post['date_limit']);
@@ -100,6 +97,16 @@ class ListeController extends \mf\control\AbstractController {
 
         $this->listes();
     }
+
+    public function consulte() {
+
+        $requete = \mecadoapp\model\Liste::where('id', '=', $this->request->get['id']);
+        $liste = $requete->first();
+
+        $liste->delete();
+
+        $this->listes();
+    }    
 
 
 }

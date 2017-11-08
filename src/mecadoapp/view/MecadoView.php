@@ -188,6 +188,8 @@ EOT;
         $prenom_dest = '';
         $date_limit = '';
         $text = 'Ajouter';
+        $checknon = '';
+        $checkoui = 'checked';        
 
         if(isset($req->get['id']))
         {
@@ -202,7 +204,11 @@ EOT;
             {
             	$hidden = '<input type="hidden" name="id" value="'.$req->get['id'].'">';
             	if($liste->destinataire == 1)
-            		$check = 'checked';
+            	{
+            		$checknon = 'checked';
+            		$checkoui = '';
+
+            	}
             	$nom = $liste->nom;
             	$description = $liste->description;
             	$nom_dest = $liste->nom_dest;
@@ -218,9 +224,9 @@ EOT;
             <article>
                 <form action="${racine}/main.php/check_liste/" method="post">
                 	${hidden}
-                   	<label>Pour un tier :</label>
-                    <input type="radio" id="oui" name="destinataire" value="1" ${check}><label for="oui">Oui</label>
-                   <input type="radio" id="non" name="destinataire" value="2" ${check}> <label for="non">Non</label>
+                   	<label for="destinataire">Pour un tier :</label>
+                    <input type="radio" id="oui" name="destinataire" value="0" ${checkoui}><label for="oui">Oui</label>
+                   <input type="radio" id="non" name="destinataire" value="1" ${checknon}> <label for="non">Non</label>
 
                     <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" value="${nom}" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" required>${description}</textarea>  

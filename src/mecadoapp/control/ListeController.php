@@ -91,8 +91,8 @@ class ListeController extends \mf\control\AbstractController {
     }
 
     public function suprListe() {
-        
-        $requete = \mecadoapp\model\Liste::where('id', '=', $this->request->post['id']);
+
+        $requete = \mecadoapp\model\Liste::where('id', '=', $this->request->get['id']);
         $liste = $requete->first();
 
         $liste->delete();

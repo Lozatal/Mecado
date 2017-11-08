@@ -104,9 +104,7 @@ abstract class AbstractView {
     </head>
 
     <body>
-        
        ${body}
-
     </body>
 </html>
 EOT;

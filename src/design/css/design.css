@@ -955,7 +955,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   font-size: 8pt;
-  background-color: #2988B2; }
+  background-color: #2988B2;
+  padding-bottom: 8em;
+  box-sizing: border-box; }
 
 header {
   margin: auto;
@@ -990,7 +992,7 @@ header {
       padding: 0.5em;
       color: white;
       box-sizing: border-box;
-      background-color: #000000;
+      background-color: #FF193A;
       text-decoration: none;
       opacity: 0.8;
       margin-left: 2.2222222222%;
@@ -998,7 +1000,7 @@ header {
       text-align: center; }
       header nav a:hover {
         cursor: pointer;
-        background-color: #1a1a1a; }
+        background-color: #ff4c66; }
       header nav a a {
         text-decoration: none;
         color: white; }
@@ -1013,7 +1015,7 @@ article {
   margin-bottom: 0.5em;
   margin-top: 0.5em;
   padding: 0.3em;
-  background-color: #DCDCDC;
+  background-color: #00B0FF;
   text-align: justify;
   border: 2px solid black;
   box-sizing: border-box;
@@ -1021,12 +1023,14 @@ article {
 
 footer {
   width: 100%;
-  height: 5em;
+  height: 8em;
   background-color: black;
   opacity: 0.8;
   color: white;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 0; }
   footer div {
     margin-left: 2.2222222222%;
     width: 46.6666666667%;

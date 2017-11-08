@@ -23,7 +23,7 @@
 		& form{
 			width: 80%;
 			margin: auto;
-			display: flex;
+			display: none;
 			flex-wrap: wrap;
 			& textarea{
 				@include grille(8,10%,0,8);
@@ -40,6 +40,12 @@
 				@include grille(8,10%,0,8);
 			}
 		}
+		& h2:hover~form{
+			display:flex;
+		}
+		& form:hover{
+			display:flex;
+		}
 	}
 	& div{
 		display: flex;
@@ -50,7 +56,8 @@
 		margin: auto;
 		margin-bottom: 0.5em;
 		margin-top: 0.5em;
-		@include bouton(black,1,#CCC414,10px);
+		@include bouton(white,1,black,10px);
+		opacity: 0.8;
 		text-align: center;
 		@include grille(8,10%,1,6);
 		max-height: 2em;
@@ -141,6 +148,7 @@
 	#item{
 		& aside{
 			@include grille(8,10%,0,2);
+			& form{display: flex;}
 		}
 		& div{
 			@include grille(8,10%,0,6);

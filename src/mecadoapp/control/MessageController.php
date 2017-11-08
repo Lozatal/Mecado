@@ -33,7 +33,7 @@ class MessageController extends \mf\control\AbstractController {
 	    	
 	    	if(isset($form) ){
 	    		$message = new message();
-	    		echo $form['nom'];
+	    		
 	    		if($form['nom'] == null){
 	    			$form['nom'] = 'non renseigné';
 	    		}

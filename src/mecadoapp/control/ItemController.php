@@ -41,7 +41,7 @@ class ItemController extends \mf\control\AbstractController {
 	    			
 	    			//Si la liste n'a pas été trouvé, on retourne une erreur
 	    			if(!isset($liste) || $liste->id == null){
-	    				throw new \mf\auth\exception\AuthentificationException("Cette liste n'éxiste pas");
+	    				throw new \mf\auth\exception\AuthentificationException("L'identifiant de la liste est introuvable");
 	    			}
 	    			
 	    			//On va rechercher si l'utilisateur en session est bien le propriétaire de la liste

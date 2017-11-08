@@ -32,7 +32,6 @@
 		}
 		& a:nth-child(2){
 			@include grille(8,10%,1,1);
-			background-image: url('images/url.png');
 			width: 20px;
 			height: 20px;
 			background-repeat: no-repeat;
@@ -95,7 +94,7 @@
 			color: black;
 		}
 		& a:nth-child(2){
-			@include disable();
+			background-image: url('images/message.png');
 		}
 		& a:nth-child(3){
 			@include disable();

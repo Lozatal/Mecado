@@ -343,7 +343,7 @@ header {
   header #accueil {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    max-width: 100%;
     opacity: 0.8; }
     header #accueil a {
       margin: auto;
@@ -351,6 +351,7 @@ header {
       display: flex;
       flex-wrap: wrap; }
       header #accueil a img {
+        max-width: 100%;
         margin: auto;
         border-radius: 0 0 10px 10px; }
   header nav {
@@ -470,7 +471,6 @@ footer {
     #liste article a:nth-child(2) {
       margin-left: 14.4444444444%;
       width: 10%;
-      background-image: url("images/url.png");
       width: 20px;
       height: 20px;
       background-repeat: no-repeat;
@@ -529,9 +529,7 @@ footer {
     #liste article[close=y] p:nth-child(7) {
       color: black; }
     #liste article[close=y] a:nth-child(2) {
-      opacity: 0.6;
-      text-decoration: line-through;
-      cursor: default; }
+      background-image: url("images/message.png"); }
     #liste article[close=y] a:nth-child(3) {
       opacity: 0.6;
       text-decoration: line-through;
@@ -711,6 +709,8 @@ footer {
     #item #lienAjout a:hover {
       color: white; }
   #item div article {
+    margin-top: auto;
+    margin-bottom: auto;
     display: flex;
     flex-wrap: wrap;
     background-color: #e6e6e6;
@@ -755,6 +755,8 @@ footer {
         margin-bottom: auto;
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
+        #item div article div:nth-child(2) aside h2 {
+          hyphens: auto; }
         #item div article div:nth-child(2) aside p {
           border: none; }
     #item div article form {
@@ -881,14 +883,17 @@ footer {
         width: 34.4444444444%; }
       #add_cadeau article form label[for=destinataire] {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 34.4444444444%; }
       #add_cadeau article form label[for=oui] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
+        width: 10%; }
       #add_cadeau article form label[for=non] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
-      #add_cadeau article forminput[type=radio] {
+        width: 10%; }
+      #add_cadeau article form input[id=oui] {
+        margin-left: 2.2222222222%;
+        width: 10%; }
+      #add_cadeau article form input[id=non] {
         margin-left: 2.2222222222%;
         width: 10%; }
       #add_cadeau article form input {
@@ -941,14 +946,17 @@ footer {
         width: 34.4444444444%; }
       #add_liste article form label[for=destinataire] {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 34.4444444444%; }
       #add_liste article form label[for=oui] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
+        width: 10%; }
       #add_liste article form label[for=non] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
-      #add_liste article forminput[type=radio] {
+        width: 10%; }
+      #add_liste article form input[id=oui] {
+        margin-left: 2.2222222222%;
+        width: 10%; }
+      #add_liste article form input[id=non] {
         margin-left: 2.2222222222%;
         width: 10%; }
       #add_liste article form input {
@@ -1001,14 +1009,17 @@ footer {
         width: 34.4444444444%; }
       #sign_up article form label[for=destinataire] {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 34.4444444444%; }
       #sign_up article form label[for=oui] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
+        width: 10%; }
       #sign_up article form label[for=non] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
-      #sign_up article forminput[type=radio] {
+        width: 10%; }
+      #sign_up article form input[id=oui] {
+        margin-left: 2.2222222222%;
+        width: 10%; }
+      #sign_up article form input[id=non] {
         margin-left: 2.2222222222%;
         width: 10%; }
       #sign_up article form input {
@@ -1061,14 +1072,17 @@ footer {
         width: 34.4444444444%; }
       #login article form label[for=destinataire] {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 34.4444444444%; }
       #login article form label[for=oui] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
+        width: 10%; }
       #login article form label[for=non] {
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
-      #login article forminput[type=radio] {
+        width: 10%; }
+      #login article form input[id=oui] {
+        margin-left: 2.2222222222%;
+        width: 10%; }
+      #login article form input[id=non] {
         margin-left: 2.2222222222%;
         width: 10%; }
       #login article form input {

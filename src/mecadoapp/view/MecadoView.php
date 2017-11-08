@@ -180,6 +180,13 @@ EOT;
         $racine =  $this->app_root;
         $req = new \mf\utils\HttpRequest();
 
+        $hidden = '';
+       	$nom = '';
+        $description = '';
+        $nom_dest = '';
+        $prenom_dest = '';
+        $date_limit = '';
+
         if(isset($req->get['id']))
         {
             $requete = \mecadoapp\model\Liste::where('id', '=', $req->get['id']);
@@ -197,15 +204,6 @@ EOT;
             	$nom_dest = $liste->nom_dest;
             	$prenom_dest = $liste->prenom_dest;
             	$date_limit = $liste->date_limite;
-            }
-            else
-            {
-            	$hidden = '';
-            	$nom = '';
-            	$description = '';
-            	$nom_dest = '';
-            	$prenom_dest = '';
-            	$date_limit = '';
             }
         }
 

@@ -24,11 +24,11 @@ class MessageController extends \mf\control\AbstractController {
     	
     	try{
 
-	    	if(isset($this->request->post['id_liste'])){
+    		if(isset($this->request->post['id_liste']) && $this->request->post['id_liste'] != null){
 	    		$form=$this->request->post;
 	    	}
 	    	else{
-	    		throw new \mf\auth\exception\AuthentificationException("L'identifiant de la liste de cadeaux est vide");
+	    		throw new \mf\auth\exception\AuthentificationException("L'identifiant de la liste de cadeaux est vide dans le formulaire du message");
 	    	}
 	    	
 	    	if(isset($form) ){

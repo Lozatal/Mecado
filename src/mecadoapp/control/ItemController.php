@@ -19,13 +19,6 @@ class ItemController extends \mf\control\AbstractController {
         parent::__construct();
     }
     
-    public function viewHome(){
-
-        $v = new \mecadoapp\view\MecadoView(null);
-        $v ->render('home');
-
-    }
-    
     //Gère l'affichage des cadeaux de la liste, le premier paramètre correspond au message d'erreur des messages
     public function viewItem($e = null){
     	$get = $this->request->get;

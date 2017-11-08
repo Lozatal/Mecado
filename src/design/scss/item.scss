@@ -1,3 +1,5 @@
+@mixin item($themeColor,$backgroundColor){
+
 #item{
 	display: flex;
 	flex-wrap: wrap;
@@ -6,7 +8,7 @@
 		margin-bottom: auto;
 		padding: 1em 0 1em 0;
 		@include grille(8,10%,0,8);
-		background-color: #DCDCDC;
+		background-color: darken($backgroundColor,20);
 		border: 2px solid black;
 		border-radius: 5px;
 		& p{
@@ -177,4 +179,6 @@
 			@include grille(8,10%,0,2);
 		}
 	}
+}
+
 }

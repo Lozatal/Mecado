@@ -145,7 +145,15 @@ EOT;
 
     private function renderListe() {
 
-        $retour = '<section id="liste"><a id="lienAjout" href="'.$this->app_root.'/main.php/add_liste/">Ajouter une liste</a>';     
+        $retour = '<section id="liste"><a id="lienAjout" href="'.$this->app_root.'/main.php/add_liste/">Ajouter une liste</a>';
+
+        $req = new \mf\utils\HttpRequest();
+        if(isset($req->get['url']))
+        {
+            $requete = \mecadoapp\model\Liste::where('id', '=', $req->get['url']);
+            $liste = $requete->first();
+        	$retour .= '<div class="alerte-success"><a href="'.$this->app_root.'/main.php/item/?token='.$liste->token.'">'.$this->app_root.'/main.php/item/?token='.$liste->token.'</a></div>';
+        }
 
         foreach ($this->data as $key => $value) {
             $date = date_create($value->date_limite);
@@ -156,7 +164,7 @@ EOT;
             $retour = $retour.'
                         <article close="'.$close.'">
                             <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
-                            <a href="#"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'"></a><a href="#"></a>
+                            <a href="'.$this->app_root.'/main.php/listes/?url='.$value->id.'"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'"></a><a href="#"></a>
                             <p>'.$value->description.'</p>
                             <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
                             <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>

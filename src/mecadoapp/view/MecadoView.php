@@ -242,14 +242,14 @@ EOT;
 			<section id="item">
 				<a href="#" id="lienAjout">Ajouter un cadeau</a>';
 		
-		if(isset($dataListeItem [0]))
+		if(isset($this->data ['listeItem']))
 		{
 		
-		// Vue des messages
-		$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $get );
-		
-		// Vue des items
-		$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $get );
+			// Vue des messages
+			$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $get );
+			
+			// Vue des items
+			$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $get );
 		
 		}
 		

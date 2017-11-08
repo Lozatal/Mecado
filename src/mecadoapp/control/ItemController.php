@@ -32,9 +32,12 @@ class ItemController extends \mf\control\AbstractController {
 	    		$util = new \mecadoapp\auth\MecadoAuthentification();
 	    		
 	    		if (is_null($util->user_login)){
-	    			throw new \mf\auth\exception\AuthentificationException("Vous devez être identifié pour accéder à ce lien");
+	    			throw new \mf\auth\exception\AuthentificationException("Vous devez être authentifié pour accéder à ce lien");
 	    		}
-	    		
+	    		else{
+	    			
+	    		}
+
 	    		$listeItem = item::where('item.id_liste', '=', $get['id'])
 	    		->get();
 	    	}

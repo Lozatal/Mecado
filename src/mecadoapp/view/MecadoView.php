@@ -317,7 +317,9 @@ EOT;
 		$retour .= '
 				<div>';
 		
-		$destinataire = $dataListeItem [0]->liste->prenom_dest . ' ' . $dataListeItem [0]->liste->nom_dest;
+		if(isset($dataListeItem [0])){
+			$destinataire = $dataListeItem [0]->liste->prenom_dest . ' ' . $dataListeItem [0]->liste->nom_dest;
+		}
 		
 		// Puis on affiche la liste des items de la liste
 		foreach ( $dataListeItem as $item ) {
@@ -347,7 +349,8 @@ EOT;
 					<div><a href="'.$linkModify.'"></a><a href="'.$linkDelete.'"></a></div>
 					<div>
 						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
-						<aside><h2>' . $item->nom . '</h2><p>Prix : 20€</p></aside>
+						<aside><p>Prix : 20€</p></aside>
+						<h2>' . $item->nom . '</h2>
 					</div>
 					<form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="Nom" '.$disabled.' required>

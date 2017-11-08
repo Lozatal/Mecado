@@ -312,8 +312,8 @@ EOT;
                 	<input type="hidden" name="id" value="${id}">
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" required></textarea> 
-                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" placeholder="URL" required>
-                    <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL" required>                 
+                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" placeholder="URL">
+                    <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL">                 
                     <label for="tarif">tarif</label><input type="text" name="tarif" placeholder="tarif" required>
                     <input type="submit" value="Ajouter">
                 </form>

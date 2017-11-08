@@ -4,6 +4,7 @@ namespace mecadoapp\control;
 
 use mecadoapp\model\Item as item;
 use mecadoapp\model\Liste as liste;
+use mecadoapp\model\Acheteur as acheteur;
 
 class ItemController extends \mf\control\AbstractController {
 
@@ -20,7 +21,11 @@ class ItemController extends \mf\control\AbstractController {
         parent::__construct();
     }
     
-    //Gère l'affichage des cadeaux de la liste, le premier paramètre correspond au message d'erreur des messages
+    /**
+     * Fonction qui va gèrer l'affichage des cadeaux de la liste, le premier paramètre correspond au message d'erreur des messages
+     * 
+     * @param e = correspond au message d'erreur des messages, vide par défaut
+     */
     public function viewItem($e = null){
     	$get = $this->request->get;
     	
@@ -69,6 +74,41 @@ class ItemController extends \mf\control\AbstractController {
     public function addItem(){
         $vue = new \mecadoapp\view\MecadoView(null);
         $vue ->render('addItem'); 
+    }
+
+    /**
+     * Fonction qui va réserver un item avec les données de l'acheteur
+     */
+    public function reservItem(){
+    	try{
+    		if(!is_null($this->request->post)){
+
+    			if(isset($this->request->post['id_item']) && $this->request->post['id_item'] != null){
+    				$form=$this->request->post;
+    			}
+    			else{
+    				throw new \mf\auth\exception\AuthentificationException("L'identifiant du cadeau est vide dans le formulaire de réservation");
+    			}
+    			
+    			//on va vérifier que l'item n'est pas déja réservé
+    			$item = item::where('id', '=', $form['id_item'])
+    			->first();
+    			if(isset($item->acheteurs[0]) && $item->acheteurs[0] != null){
+    				throw new \mf\auth\exception\AuthentificationException("Le cadeau a déjà été réservé");
+    			}
+    			
+    			$acheteur = new acheteur();
+    			$acheteur->nom = $form['nom'];
+    			$acheteur->message = $form['message'];
+    			$acheteur->id_item = $form['id_item'];
+    			$acheteur->save();
+    		}
+    		
+    		$this->viewItem();
+    		
+    	}catch(\mf\auth\exception\AuthentificationException $e){
+    		$this->viewItem($e->getmessage());
+    	}
     }
 
 }

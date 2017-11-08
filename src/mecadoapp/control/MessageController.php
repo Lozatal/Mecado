@@ -23,15 +23,13 @@ class MessageController extends \mf\control\AbstractController {
     public function addMessage(){
     	
     	try{
-
-    		if(isset($this->request->post['id_liste']) && $this->request->post['id_liste'] != null){
-	    		$form=$this->request->post;
-	    	}
-	    	else{
-	    		throw new \mf\auth\exception\AuthentificationException("L'identifiant de la liste de cadeaux est vide dans le formulaire du message");
-	    	}
-	    	
-	    	if(isset($form) ){
+    		if(!is_null($this->request->post)){
+	    		if(isset($this->request->post['id_liste']) && $this->request->post['id_liste'] != null){
+		    		$form=$this->request->post;
+		    	}
+		    	else{
+		    		throw new \mf\auth\exception\AuthentificationException("L'identifiant de la liste de cadeaux est vide dans le formulaire du message");
+		    	}
 	    		$message = new message();
 	    		
 	    		if($form['nom'] == null){
@@ -44,13 +42,10 @@ class MessageController extends \mf\control\AbstractController {
 	    		$message->texte = $form['text'];
 	    		$message->id_liste = $form['id_liste'];
 	    		$message->save();
-	    		
-	    		$controleur = new \mecadoapp\control\ItemController();
-	    		$controleur->viewItem();
-	    	}
-	    	else{
-	    		throw new \mf\auth\exception\AuthentificationException("Le formulaire est vide");
-	    	}
+    		}
+    		
+    		$controleur = new \mecadoapp\control\ItemController();
+    		$controleur->viewItem();
     	
     	} catch (\mf\auth\exception\AuthentificationException $e) {
 	    	

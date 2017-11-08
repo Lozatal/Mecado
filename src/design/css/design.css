@@ -357,7 +357,8 @@ header {
   header nav {
     display: flex;
     flex-wrap: wrap;
-    width: 100%; }
+    width: 100%;
+    margin-top: 0; }
     header nav a {
       margin-top: 0.5em;
       border-radius: 10px;
@@ -391,7 +392,7 @@ article {
   margin-bottom: 0.5em;
   margin-top: 0.5em;
   padding: 0.5em;
-  background-color: lighen(white, 20);
+  background-color: white;
   text-align: justify;
   border: 2px solid black;
   box-sizing: border-box;
@@ -709,7 +710,7 @@ footer {
     #item #lienAjout a:hover {
       color: white; }
   #item div article {
-    margin-top: auto;
+    margin-top: 1em;
     margin-bottom: auto;
     display: flex;
     flex-wrap: wrap;
@@ -742,7 +743,7 @@ footer {
       flex-wrap: wrap; }
       #item div article div:nth-child(2) a {
         margin-left: 2.2222222222%;
-        width: 46.6666666667%;
+        width: 71.1111111111%;
         text-align: center;
         display: flex;
         flex-wrap: wrap; }
@@ -754,11 +755,12 @@ footer {
         margin-top: auto;
         margin-bottom: auto;
         margin-left: 2.2222222222%;
-        width: 46.6666666667%; }
-        #item div article div:nth-child(2) aside h2 {
-          hyphens: auto; }
+        width: 22.2222222222%; }
         #item div article div:nth-child(2) aside p {
-          border: none; }
+          border: none;
+          font-weight: bold; }
+      #item div article div:nth-child(2) h2 {
+        hyphens: auto; }
     #item div article form {
       width: 100%;
       flex-wrap: wrap;
@@ -863,67 +865,67 @@ footer {
   #home article:nth-child(4) {
     margin-left: 2.2222222222%;
     width: 22.2222222222%; } }
-#add_cadeau {
+#add_item {
   width: 100%;
   display: flex;
   flex-wrap: wrap; }
-  #add_cadeau article {
+  #add_item article {
     margin-left: 2.2222222222%;
     width: 95.5555555556%;
     display: flex;
     flex-wrap: wrap; }
-    #add_cadeau article form {
+    #add_item article form {
       display: flex;
       flex-wrap: wrap;
       width: 90%;
       margin: auto; }
-      #add_cadeau article form label {
+      #add_item article form label {
         margin-top: 1em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
-      #add_cadeau article form label[for=destinataire] {
+      #add_item article form label[for=destinataire] {
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
-      #add_cadeau article form label[for=oui] {
+      #add_item article form label[for=oui] {
         margin-left: 2.2222222222%;
         width: 10%; }
-      #add_cadeau article form label[for=non] {
+      #add_item article form label[for=non] {
         margin-left: 2.2222222222%;
         width: 10%; }
-      #add_cadeau article form input[id=oui] {
+      #add_item article form input[id=oui] {
         margin-left: 2.2222222222%;
         width: 10%; }
-      #add_cadeau article form input[id=non] {
+      #add_item article form input[id=non] {
         margin-left: 2.2222222222%;
         width: 10%; }
-      #add_cadeau article form input {
+      #add_item article form input {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
-      #add_cadeau article form input:last-child {
+      #add_item article form input:last-child {
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: 26.6666666667%;
         width: 46.6666666667%; }
-      #add_cadeau article form textarea {
+      #add_item article form textarea {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
   @media screen and (min-width: 280px) {
-    #add_cadeau article form {
+    #add_item article form {
       width: 90%; } }
   @media screen and (min-width: 480px) {
-    #add_cadeau article form {
+    #add_item article form {
       width: 80%; } }
   @media screen and (min-width: 600px) {
-    #add_cadeau article form {
+    #add_item article form {
       width: 70%; } }
   @media screen and (min-width: 801px) {
-    #add_cadeau article form {
+    #add_item article form {
       width: 60%; } }
   @media screen and (min-width: 1025px) {
-    #add_cadeau article form {
+    #add_item article form {
       width: 50%; } }
   @media screen and (min-width: 1281px) {
-    #add_cadeau article form {
+    #add_item article form {
       width: 40%; } }
 
 #add_liste {

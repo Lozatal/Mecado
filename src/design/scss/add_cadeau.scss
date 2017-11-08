@@ -1,6 +1,6 @@
 @mixin add_cadeau($themeColor,$backgroundColor){
 
-#add_cadeau{
+#add_item{
 	@include formulaire($themeColor,$backgroundColor);
 }
 

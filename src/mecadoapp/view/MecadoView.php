@@ -220,6 +220,27 @@ EOT;
 			</section>';
 		return $retour;
 	}
+	private function renderAddItem() {
+
+        $racine =  $this->app_root;
+
+        $retour =<<< EOT
+
+        <section id="add_item">
+            <article>
+                <form action="${racine}/main.php/check_item/" method="post">
+                    <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" required>
+                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" placeholder="URL" required>
+                    <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL" required>                 
+                    <label for="tarif">tarif</label><input type="text" name="tarif" placeholder="tarif" required>
+                    <input type="submit" value="Ajouter liste" required>
+                </form>
+            </article>
+        </section>
+EOT;
+        return $retour;
+    }
+
 	
 	/**
 	 * Fonction qui renvoie la vue de la liste des items
@@ -339,6 +360,9 @@ EOT;
 				break;
 			case "item" :
 				$contenu = $this->renderItem ();
+				break;
+			case "addItem" :
+				$contenu = $this->renderAddItem ();
 				break;
 		}
 		

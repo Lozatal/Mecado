@@ -64,7 +64,13 @@ class ListeController extends \mf\control\AbstractController {
         
         $v = new \mecadoapp\auth\MecadoAuthentification();
         try {
-            $liste = new \mecadoapp\model\Liste();
+            if(isset($this->request->post['id']))
+            {
+                $requete = \mecadoapp\model\Liste::where('id', '=', $this->request->post['id']);
+                $liste = $requete->first();
+            }
+            else
+                $liste = new \mecadoapp\model\Liste();
             $liste->nom = $nom;
             $liste->description = $description;
             $liste->token = '';

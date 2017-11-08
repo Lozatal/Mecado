@@ -7,7 +7,7 @@
 .narbar li:hover {
   color: rgba(128, 128, 128, 0); }
 
-.disable {
+.disabled {
   opacity: 0.6;
   text-decoration: line-through;
   cursor: default; }

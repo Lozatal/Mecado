@@ -333,14 +333,18 @@ EOT;
 			}
 			
 			$disabled = '';
+			
+			//Si un acheteur est présent, on verrouille le formulaire
 			if(isset($item->acheteurs[0])){
 				$disabled = 'disabled';
 			}
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
+			$linkModify = "#";
+			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
 			
 			$retour .= '
 				<article>
-					<div><a href="#"></a><a href="#"></a></div>
+					<div><a href="'.$linkModify.'"></a><a href="'.$linkDelete.'"></a></div>
 					<div>
 						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
 						<aside><h2>' . $item->nom . '</h2><p>Prix : 20€</p></aside>
@@ -370,7 +374,6 @@ EOT;
 	 */
 	private function afficheMessageItem($retour, $dataListeItem, $idListe) {
 		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
-
 		
 		$listeMessage = $dataListeItem [0]->liste->messages;
 		

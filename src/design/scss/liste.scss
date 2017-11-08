@@ -7,6 +7,7 @@
 	& #lienAjout{
 		margin: auto;
 		@include bouton(white,1,lighten($themeColor,20),10px);
+		opacity: 0.9;
 		text-align: center;
 		@include grille(8,10%,0,8);
 		margin-top: 0.5em;
@@ -108,6 +109,9 @@
 	#liste article{
 		@include grille(8,10%,0,4);
 	}
+	#liste #lienAjout{
+		@include grille(8,10%,1,6);
+	}
 }
 
 @media screen and (min-width: 600px){
@@ -115,7 +119,10 @@
 }
 
 @media screen and (min-width: 801px){
-
+	#liste #lienAjout{
+		@include grille(8,10%,2,4);
+		margin-right: 20%;
+	}
 }
 
 @media screen and (min-width: 1025px){
@@ -123,6 +130,10 @@
 }
 
 @media screen and (min-width: 1281px){
+	#liste #lienAjout{
+		@include grille(8,10%,3,2);
+		margin-right: 20%;
+	}
 	#liste article{
 		& p:nth-child(1){
 			@include grille(8,10%,0,5);

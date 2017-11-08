@@ -122,7 +122,7 @@ footer{
 
 @include liste($themeColor,$backgroundColor);
 @include item($themeColor,$backgroundColor);
-
+@include home($themeColor,$backgroundColor);
 
 @media screen and (min-width: 280px){
 	body{

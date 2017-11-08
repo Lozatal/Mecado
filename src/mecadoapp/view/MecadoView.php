@@ -337,12 +337,15 @@ EOT;
 			$disabled = '';
 			
 			//Si un acheteur est présent, on verrouille le formulaire
+			$placeholderNom = 'Nom';
 			if(isset($item->acheteurs[0])){
 				$disabled = 'disabled';
+				$placeholderNom = 'Reservé par : '.$item->acheteurs[0]->nom;
 			}
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
 			$linkModify = "#";
 			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
+
 			
 			$retour .= '
 				<article>
@@ -353,7 +356,7 @@ EOT;
 						<h2>' . $item->nom . '</h2>
 					</div>
 					<form id="addMessage" action="' . $linkformReservation. '" method="POST">
-						<input name="nom" type="text" placeholder="Nom" '.$disabled.' required>
+						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" '.$disabled.' required></textarea>
 						<input type="hidden" name="id_item" value="' . $item->id. '" required>
 						<input type="submit" value="Réserver" '.$disabled.' />

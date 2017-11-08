@@ -3,7 +3,7 @@
 namespace mecadoapp\control;
 
 use mecadoapp\model\Item as item;
-use mecadoapp\model\liste as liste;
+use mecadoapp\model\Liste as liste;
 
 class ItemController extends \mf\control\AbstractController {
 

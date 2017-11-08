@@ -700,6 +700,18 @@ header {
       color: orange; }
     #liste article[close=y] p:nth-child(6) {
       color: orange; }
+    #liste article[close=y] a:nth-child(2) {
+      opacity: 0.6;
+      text-decoration: line-through;
+      cursor: default; }
+    #liste article[close=y] a:nth-child(3) {
+      opacity: 0.6;
+      text-decoration: line-through;
+      cursor: default; }
+    #liste article[close=y] a:nth-child(4) {
+      opacity: 0.6;
+      text-decoration: line-through;
+      cursor: default; }
   #liste article:hover {
     background-color: white; }
 
@@ -720,14 +732,20 @@ header {
   #liste article a:nth-child(2) {
     margin-left: 2.2222222222%;
     width: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
     order: 2; }
   #liste article a:nth-child(3) {
     margin-left: 2.2222222222%;
     width: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
     order: 3; }
   #liste article a:nth-child(4) {
     margin-left: 2.2222222222%;
     width: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
     order: 4; } }
 @media screen and (min-width: 1750px) {
   #liste article {
@@ -745,14 +763,20 @@ header {
     #liste article a:nth-child(2) {
       margin-left: 2.2222222222%;
       width: 10%;
+      margin-top: auto;
+      margin-bottom: auto;
       order: 2; }
     #liste article a:nth-child(3) {
       margin-left: 2.2222222222%;
       width: 10%;
+      margin-top: auto;
+      margin-bottom: auto;
       order: 3; }
     #liste article a:nth-child(4) {
       margin-left: 2.2222222222%;
       width: 10%;
+      margin-top: auto;
+      margin-bottom: auto;
       order: 4; } }
 #add_liste {
   width: 100%;

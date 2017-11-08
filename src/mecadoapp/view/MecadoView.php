@@ -145,7 +145,15 @@ EOT;
 
     private function renderListe() {
 
-        $retour = '<section id="liste"><a id="lienAjout" href="'.$this->app_root.'/main.php/add_liste/">Ajouter une liste</a>';     
+        $retour = '<section id="liste"><a id="lienAjout" href="'.$this->app_root.'/main.php/add_liste/">Ajouter une liste</a>';
+
+        $req = new \mf\utils\HttpRequest();
+        if(isset($req->get['url']))
+        {
+            $requete = \mecadoapp\model\Liste::where('id', '=', $req->get['url']);
+            $liste = $requete->first();
+        	$retour .= '<div class="alerte-success"><a href="'.$this->app_root.'/main.php/item/?token='.$liste->token.'">'.$this->app_root.'/main.php/item/?token='.$liste->token.'</a></div>';
+        }
 
         foreach ($this->data as $key => $value) {
             $date = date_create($value->date_limite);
@@ -156,7 +164,7 @@ EOT;
             $retour = $retour.'
                         <article close="'.$close.'">
                             <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
-                            <a href="#"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'"></a><a href="#"></a>
+                            <a href="'.$this->app_root.'/main.php/listes/?url='.$value->id.'"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'"></a><a href="#"></a>
                             <p>'.$value->description.'</p>
                             <p>Date de l\'évènement: '.date_format($date, 'Y-m-d ').'</p>
                             <p>'.$value->prenom_dest.' '.$value->nom_dest.'</p>
@@ -183,14 +191,16 @@ EOT;
 
             if($liste->id_user == $userreq->id)
             {
+            	$hidden = '<input type="hidden" name="id" value="'.$req->get['id'].'">';
             	$nom = $liste->nom;
             	$description = $liste->description;
             	$nom_dest = $liste->nom_dest;
             	$prenom_dest = $liste->prenom_dest;
-            	$date_limit = $liste->date_limit;
+            	$date_limit = $liste->date_limite;
             }
             else
             {
+            	$hidden = '';
             	$nom = '';
             	$description = '';
             	$nom_dest = '';
@@ -204,12 +214,13 @@ EOT;
         <section id="add_liste">
             <article>
                 <form action="${racine}/main.php/check_liste/" method="post">
+                	${hidden}
                     <label for="destinataire">Etes-vous le destinataire : </label><input type="checkbox" name="destinataire" id="destinataire" value="destinataire">
                     <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" value="${nom}" required>
-                    <label for="description">Description</label><textarea name="description" value="${nom}" required></textarea>  
-                    <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="nom" required>
-                    <label for="prenom_dest">Prénom destinataire</label><input type="text" name="prenom_dest" placeholder="prenom" required>
-                    <label for="date_limit">Date limite</label><input type="date" name="date_limit" placeholder="date limite" required>
+                    <label for="description">Description</label><textarea name="description" required>${description}</textarea>  
+                    <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="nom" value="${nom_dest}" required>
+                    <label for="prenom_dest">Prénom destinataire</label><input type="text" name="prenom_dest" placeholder="prenom" value="${prenom_dest}" required>
+                    <label for="date_limit">Date limite</label><input type="date" name="date_limit" placeholder="date limite" value="${date_limit}" required>
                     <input type="submit" value="Ajouter liste" required>
                 </form>
             </article>

@@ -1,4 +1,4 @@
-@import 'frameworkCSS';
+@import 'framework/frameworkCSS';
 @import 'formulaire'; //Formulaire générique
 @import 'sign_up'; //Inscription
 @import 'login'; //Page de loggin (no kidding)
@@ -8,11 +8,23 @@
 @import 'add_liste'; //Formulaire ajout liste
 @import 'add_cadeau'; //Formulaire ajout cadeau
 
+html{
+	height: 100%;
+}
+
 body{
 	display: flex;
 	flex-wrap: wrap;
 	font-size: 8pt;
-	background-color: #87CEEB;
+	background-color: #2988B2;
+	height: 100%;
+}
+
+#wrapper{
+	position:relative;
+	min-height: 100%;
+	padding-bottom: 8em;
+	box-sizing: border-box;
 }
 
 header{
@@ -39,7 +51,7 @@ header{
 		width: 100%;
 		& a{
 			margin-top: 0.5em;
-			@include bouton(white,1,#000000,10px);
+			@include bouton(white,1,#FF193A,10px);
 			opacity: 0.8;
 			@include grille(8,10%,0,4);
 			text-align: center;
@@ -56,8 +68,8 @@ section{
 article{
 	margin-bottom: 0.5em;
 	margin-top: 0.5em;
-	padding: 0.3em;
-	background-color: #DCDCDC;
+	padding: 0.5em;
+	background-color: #00B0FF;
 	text-align: justify;
 	border: 2px solid black;
 	box-sizing: border-box;
@@ -66,12 +78,14 @@ article{
 
 footer{
 	width: 100%;
-	height: 5em;
+	height: 8em;
 	background-color: black;
 	opacity: 0.8;
 	color: white;
 	display: flex;
 	flex-wrap: wrap;
+	position: absolute;
+	bottom:0;
 	& div{
 		@include grille(8,10%,0,4);
 		display: flex;

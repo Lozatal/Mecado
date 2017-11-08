@@ -851,20 +851,28 @@ footer {
       flex-wrap: wrap;
       width: 90%;
       margin: auto; }
+      #add_cadeau article form label:first-child {
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
       #add_cadeau article form label {
-        width: 80%;
-        margin: auto;
-        margin-top: 1em; }
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
+      #add_cadeau article form input:first-child {
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
       #add_cadeau article form input {
-        width: 80%;
-        margin: auto; }
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
       #add_cadeau article form input:last-child {
         margin-top: 1em;
-        margin-bottom: 1em; }
+        margin-bottom: 1em;
+        margin-left: 26.6666666667%;
+        width: 46.6666666667%; }
       #add_cadeau article form textarea {
-        margin: auto;
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 46.6666666667%; }
   @media screen and (min-width: 280px) {
     #add_cadeau article form {
       width: 90%; } }
@@ -898,20 +906,28 @@ footer {
       flex-wrap: wrap;
       width: 90%;
       margin: auto; }
+      #add_liste article form label:first-child {
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
       #add_liste article form label {
-        width: 80%;
-        margin: auto;
-        margin-top: 1em; }
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
+      #add_liste article form input:first-child {
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
       #add_liste article form input {
-        width: 80%;
-        margin: auto; }
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
       #add_liste article form input:last-child {
         margin-top: 1em;
-        margin-bottom: 1em; }
+        margin-bottom: 1em;
+        margin-left: 26.6666666667%;
+        width: 46.6666666667%; }
       #add_liste article form textarea {
-        margin: auto;
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 46.6666666667%; }
   @media screen and (min-width: 280px) {
     #add_liste article form {
       width: 90%; } }
@@ -945,20 +961,28 @@ footer {
       flex-wrap: wrap;
       width: 90%;
       margin: auto; }
+      #sign_up article form label:first-child {
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
       #sign_up article form label {
-        width: 80%;
-        margin: auto;
-        margin-top: 1em; }
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
+      #sign_up article form input:first-child {
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
       #sign_up article form input {
-        width: 80%;
-        margin: auto; }
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
       #sign_up article form input:last-child {
         margin-top: 1em;
-        margin-bottom: 1em; }
+        margin-bottom: 1em;
+        margin-left: 26.6666666667%;
+        width: 46.6666666667%; }
       #sign_up article form textarea {
-        margin: auto;
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 46.6666666667%; }
   @media screen and (min-width: 280px) {
     #sign_up article form {
       width: 90%; } }
@@ -992,20 +1016,28 @@ footer {
       flex-wrap: wrap;
       width: 90%;
       margin: auto; }
+      #login article form label:first-child {
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
       #login article form label {
-        width: 80%;
-        margin: auto;
-        margin-top: 1em; }
+        margin-top: 1em;
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
+      #login article form input:first-child {
+        margin-left: 2.2222222222%;
+        width: 34.4444444444%; }
       #login article form input {
-        width: 80%;
-        margin: auto; }
+        margin-left: 2.2222222222%;
+        width: 46.6666666667%; }
       #login article form input:last-child {
         margin-top: 1em;
-        margin-bottom: 1em; }
+        margin-bottom: 1em;
+        margin-left: 26.6666666667%;
+        width: 46.6666666667%; }
       #login article form textarea {
-        margin: auto;
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 46.6666666667%; }
   @media screen and (min-width: 280px) {
     #login article form {
       width: 90%; } }

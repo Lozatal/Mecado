@@ -365,23 +365,26 @@ EOT;
 				$reserved = 'taken';
 				$placeholderNom = 'Reservé par : '.$item->acheteurs[0]->nom;
 			}
+			
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
-			//Si l'utilisateur est le créateur, on affiche les boutons
-			$linkModify = $this->script_name . "/view_update_item/?id=". $idListe ."&item_id=" . $item->id;
-			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
 			
 			$lienSup='';
 			$lienMod='';
-			$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">
+			if(!$token){//Vrai si on viens pas par le token, donc l'utilisateur est le créateur
+				//Si l'utilisateur est le créateur, on affiche les boutons
+				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
+				$linkModify = $this->script_name . "/view_update_item/?id=". $idListe ."&item_id=" . $item->id;
+				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
+				$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
+				$form='';
+			}
+			else{
+				$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" '.$disabled.' required></textarea>
 						<input type="hidden" name="id_item" value="' . $item->id. '" required>
 						<input type="submit" value="Réserver" '.$disabled.' />
 					</form>';
-			if(!$token){//Vrai si on viens pas par le token, donc l'utilisateur est le créateur
-				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
-				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
-				$form='';
 			}
 			
 			//On récupère le lien de la liste des images de l'item
@@ -455,7 +458,10 @@ EOT;
 		
 		return $retour;
 	}
-
+	
+	/**
+	 * Fonction qui renvoie la vue avec le formulaire d'ajout d'item
+	 */
 	private function renderAddItem() {
 		
 		$retour='';
@@ -499,12 +505,15 @@ EOT;
         return $retour;
     }
     
+    /**
+     * Fonction qui renvoie la vue avec le formulaire de modification d'item
+     */
     private function renderUpdateItem() {
-    	
-    	$item = $this->data['item'];
     	
     	$retour='';
     	$racine =  $this->app_root;
+    	
+    	$item = $this->data['item'];
     	$id = $item->id_liste;
     	$id_item= $item->id;
     	$nom= $item->nom;

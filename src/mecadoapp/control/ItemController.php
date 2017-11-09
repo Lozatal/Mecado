@@ -33,6 +33,7 @@ class ItemController extends \mf\control\AbstractController {
     	$resultat['erreur'] = $e;
     	$resultat['listeItem'] = null;
 		$resultat['idListe'] = null;
+		$resultat['idListeToken'] = null;
 		$resultat['token'] = false;
 		$resultat['liste'] = null;
     	$id=null;
@@ -43,6 +44,7 @@ class ItemController extends \mf\control\AbstractController {
 				$obj = liste::select('id')->where('liste.token', '=', $get['token'])->first();
 				$id=$obj->id;
 				$resultat['token']=true;
+				$resultat['idListeToken'] = $get['token'];
 			}
 			$resultat['idListe']=$id;
 	    	if($id!=null){

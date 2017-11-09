@@ -360,7 +360,7 @@ EOT;
                     <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" placeholder="URL">
                     <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL">                 
-                    <label for="tarif">tarif</label><input type="text" name="tarif" placeholder="tarif" type="number" required>
+                    <label for="tarif">tarif</label><input type="number" name="tarif" placeholder="tarif" required>
                     <input type="submit" value="Ajouter" ${disabled}>
                 </form>
             </article>

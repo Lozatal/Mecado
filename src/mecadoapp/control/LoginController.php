@@ -67,7 +67,7 @@ class LoginController extends \mf\control\AbstractController {
         try {
             $v->login($email, $password);
             $v = new \mecadoapp\view\MecadoView(null);
-            $v ->render('home');
+            $v ->render('liste');
         }
         catch(\mf\auth\exception\AuthentificationException $e)
         {

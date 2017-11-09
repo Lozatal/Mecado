@@ -31,23 +31,24 @@ class ItemController extends \mf\control\AbstractController {
     	
     	$resultat['erreur'] = $e;
     	$resultat['listeItem'] = null;
-	$resultat['idListe'] = null;
-	$resultat['token'] = false;
+		$resultat['idListe'] = null;
+		$resultat['token'] = false;
+		$resultat['liste'] = null;
     	$id=null;
     	try{
-		if(isset($get['id'])){
-			$id=$get['id'];
-		}elseif(isset($get['token'])){
-			$obj = liste::select('id')->where('liste.token', '=', $get['token'])->first();
-			$id=$obj->id;
-			$resultat['token']=true;
-		}
-		$resultat['idListe']=$id;
+			if(isset($get['id'])){
+				$id=$get['id'];
+			}elseif(isset($get['token'])){
+				$obj = liste::select('id')->where('liste.token', '=', $get['token'])->first();
+				$id=$obj->id;
+				$resultat['token']=true;
+			}
+			$resultat['idListe']=$id;
 	    	if($id!=null){
 	    		
 	    		$util = new \mecadoapp\auth\MecadoAuthentification();
 	    		
-	    		if (is_null($util->user_login)){
+	    		if (is_null($util->user_login || $resultat['token'])){
 	    			throw new \mf\auth\exception\AuthentificationException("Vous devez être authentifié pour accéder à ce lien");
 	    		}
 	    		else{
@@ -59,7 +60,7 @@ class ItemController extends \mf\control\AbstractController {
 	    			}
 	    			
 	    			//On va rechercher si l'utilisateur en session est bien le propriétaire de la liste
-	    			if($liste->user->mail != $util->user_login){
+	    			if(!$resultat['token'] && $liste->user->mail != $util->user_login){
 	    				throw new \mf\auth\exception\AuthentificationException("Vous n'êtes pas le propriétaire de cette liste");
 	    			}
 	    			
@@ -71,6 +72,7 @@ class ItemController extends \mf\control\AbstractController {
 	    	}
 	    	
 	    	$resultat['listeItem']= $listeItem;
+	    	$resultat['liste'] = $liste;
     	}catch(\mf\auth\exception\AuthentificationException $e){
     		$resultat['erreur'] = $e->getmessage();
     	}
@@ -120,7 +122,6 @@ class ItemController extends \mf\control\AbstractController {
         		$nom = $this->request->post['nom'];
         		$description = $this->request->post['description'];
         		$url_article = $this->request->post['url_article'];
-        		$url_image = $this->request->post['url_image'];
         		$tarif = $this->request->post['tarif'];
         		
 	            //On va vérifier que la liste éxiste bien
@@ -145,7 +146,6 @@ class ItemController extends \mf\control\AbstractController {
 	            $item->nom = $nom;
 	            $item->description = $description;
 	            $item->url_article = $url_article;
-	            $item->url_image = $url_image;
 	            $item->tarif = $tarif;
 	            $item->id_liste = $id_liste;
 	            $item->save();
@@ -223,7 +223,6 @@ class ItemController extends \mf\control\AbstractController {
     			$nom = $this->request->post['nom'];
     			$description = $this->request->post['description'];
     			$url_article = $this->request->post['url_article'];
-    			$url_image = $this->request->post['url_image'];
     			$tarif = $this->request->post['tarif'];
     			
 	    		// on vérifie que l'item est présent
@@ -263,7 +262,6 @@ class ItemController extends \mf\control\AbstractController {
 	    		$item->nom = $nom;
 	    		$item->description = $description;
 	    		$item->url_article = $url_article;
-	    		$item->url_image = $url_image;
 	    		$item->tarif = $tarif;
 	    		$item->save();
     		}

@@ -401,7 +401,7 @@ EOT;
 			}
 			else
 			{
-				$form = 'Réservé';
+				$form = '<p>Réservé</p>';
 			}
 			
 			//On récupère le lien de la liste des images de l'item
@@ -534,6 +534,7 @@ EOT;
     	$url_article= $item->url_article;
     	$url_image= $item->url_image;
     	$tarif= $item->tarif;
+    	$cagnote= $item->cagnote;
     	
     	//c'est le message d'erreur, donc si présent, on affiche un message d'erreur
     	if (isset ( $this->data['erreur'] ) && $this->data['erreur']!= null) {
@@ -555,6 +556,9 @@ EOT;
                     <label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
                     <label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
+                    <label for="cagnote">Cagnote</label>
+                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1">
+                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" checked>
                     <input type="submit" value="Modifier">
                 </form>
             </article>

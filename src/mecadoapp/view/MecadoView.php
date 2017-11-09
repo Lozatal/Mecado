@@ -363,31 +363,18 @@ EOT;
 				$url = $item->url_article;
 			}
 			
-			//image par défault
-			$imgPrincipale = $this->app_root . '/' . 'src/design/css/images/cadeauDefault.png';
-			
-			//On va récupérer l'image principale ou la première
-			if(isset($item->images)){
-				
-				$number = 0;
-				foreach($item->images as $image){
-					//Dans le cas ou il n'y a pas d'iamge principale, je prends la première par défault, sinon c'est la principale
-					if($number == 0 || $image->principale){
-						$imgPrincipale = $image->url;
-					}
-					$number++;
-				}
+			$img = $this->app_root . '/' . 'src/design/css/images/cadeauDefault.png';
+			if (isset ( $item->url_image ) && $item->url_image) {
+				$img = $item->url_image;
 			}
 			
 			$disabled = '';
 			$reserved = 'free';
 			
 			//Si un acheteur est présent, on verrouille le formulaire
-			$placeholderNom = 'Nom';
 			if(isset($item->acheteurs[0])){
 				$disabled = 'disabled';
 				$reserved = 'taken';
-				$placeholderNom = 'Reservé par : '.$item->acheteurs[0]->nom;
 			}
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
 			//Si l'utilisateur est le créateur, on affiche les boutons
@@ -402,13 +389,17 @@ EOT;
 				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
 				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
 			}
-			elseif($disabled == null){
+			elseif($disabled == null and $item->cagnote == 0){
 				$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">
-						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>
-						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" '.$disabled.' required></textarea>
+						<input name="nom" type="text" placeholder="Nom" required>
+						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
 						<input type="hidden" name="id_item" value="' . $item->id. '" required>
-						<input type="submit" value="Réserver" '.$disabled.' />
+						<input type="submit" value="Réserver" >
 					</form>';
+			}
+			elseif($item->cagnote == 1)
+			{
+
 			}
 			else
 			{
@@ -424,7 +415,7 @@ EOT;
 				<article reserved="'.$reserved.'">
 					<div>'.$lienImage.$lienMod.$lienSup.'</div>
 					<div>
-						<a href="'.$url.'"><img src="' . $imgPrincipale. '" alt="lien vers le site marchand" ></a>
+						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
 						<aside><p>' . $item->tarif . '€</p></aside>
 						<h2>' . $item->nom . '</h2>
 						<p>' . $item->description . '</p>

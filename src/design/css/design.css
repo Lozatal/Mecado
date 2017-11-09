@@ -720,6 +720,8 @@ footer {
       color: white; }
     #item #lienAjout a:hover {
       color: white; }
+  #item div article[reserved=taken] {
+    background-color: #cccccc; }
   #item div article {
     margin-top: 1em;
     margin-bottom: auto;
@@ -772,6 +774,8 @@ footer {
           font-weight: bold; }
       #item div article div:nth-child(2) h2 {
         hyphens: auto; }
+      #item div article div:nth-child(2) p {
+        text-align: left; }
     #item div article form {
       width: 100%;
       flex-wrap: wrap;

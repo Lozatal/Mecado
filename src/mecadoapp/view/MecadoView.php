@@ -354,11 +354,13 @@ EOT;
 			}
 			
 			$disabled = '';
+			$reserved = 'free';
 			
 			//Si un acheteur est présent, on verrouille le formulaire
 			$placeholderNom = 'Nom';
 			if(isset($item->acheteurs[0])){
 				$disabled = 'disabled';
+				$reserved = 'taken';
 				$placeholderNom = 'Reservé par : '.$item->acheteurs[0]->nom;
 			}
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
@@ -367,7 +369,7 @@ EOT;
 
 			
 			$retour .= '
-				<article>
+				<article reserved="'.$reserved.'">
 					<div><a href="'.$linkModify.'"></a><a href="'.$linkDelete.'"></a></div>
 					<div>
 						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>

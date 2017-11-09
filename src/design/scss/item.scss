@@ -211,6 +211,18 @@
 				margin-bottom: 1em;
 			}
 		}
+		& ul{
+			width: 100%;
+			& li{
+				width: 80%;
+				box-sizing: border-box;
+				font-weight: normal;
+				text-align: left;
+				font-size: 1em;
+				margin: auto;
+				padding: 0.2em;
+			}
+		}
 	}
 }
 

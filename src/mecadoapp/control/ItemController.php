@@ -295,12 +295,14 @@ class ItemController extends \mf\control\AbstractController {
     			//on va vérifier que l'item n'est pas déja réservé
     			$item = item::where('id', '=', $form['id_item'])
     			->first();
-    			if(isset($item->acheteurs[0]) && $item->acheteurs[0] != null){
+    			if(isset($item->acheteurs[0]) && $item->acheteurs[0] != null && $item->cagnote == 0){
     				throw new \mf\auth\exception\AuthentificationException("Le cadeau a déjà été réservé");
     			}
     			
     			$acheteur = new acheteur();
     			$acheteur->nom = $form['nom'];
+                if(isset($form['participation']))
+                    $acheteur->participation = $form['participation'];
     			$acheteur->message = $form['message'];
     			$acheteur->id_item = $form['id_item'];
     			$acheteur->save();

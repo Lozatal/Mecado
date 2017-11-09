@@ -865,6 +865,16 @@ footer {
       #item div article form input:last-child {
         margin-top: 1em;
         margin-bottom: 1em; }
+    #item div article ul {
+      width: 100%; }
+      #item div article ul li {
+        width: 80%;
+        box-sizing: border-box;
+        font-weight: normal;
+        text-align: left;
+        font-size: 1em;
+        margin: auto;
+        padding: 0.2em; }
 
 @media screen and (min-width: 480px) {
   #item #lienAjout {

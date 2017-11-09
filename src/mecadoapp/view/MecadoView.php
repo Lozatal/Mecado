@@ -425,6 +425,18 @@ EOT;
 			$lienSup='';
 			$lienMod='';
 
+			$tarif = $item->tarif;
+			if($item->cagnote == 1)
+			{
+				$totaltarif = 0;
+				foreach ($item->acheteurs()->get() as $key => $value) {
+					$totaltarif = $totaltarif + $value->participation;
+				}
+				$tarif = $totaltarif.'/'.$item->tarif;
+				if($totaltarif>=$item->tarif)
+					$reserved = 'taken';
+			}
+
 			$form='';
 			if(!$token){//Vrai si on viens par le token, donc l'utilisateur n'est pas le créateur
 				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
@@ -438,11 +450,12 @@ EOT;
 						<input type="submit" value="Réserver" >
 					</form>';
 			}
-			elseif($item->cagnote == 1)
+			elseif($item->cagnote == 1 and $totaltarif<$item->tarif)
 			{
 				$reserved = 'cagnote';
 				$form='<p>Cagnote : </p><form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="Nom" required>
+						<input name="participation" type="number" step=0.01 required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
 						<input type="hidden" name="id_item" value="' . $item->id. '" required>
 						<input type="submit" value="Réserver" >
@@ -450,22 +463,18 @@ EOT;
 			}
 			else
 			{
-				$form = '<p>Réservé</p>';
+				$form = '<p>Réservé par :</p><ul>';
+				$acheteur = $item->acheteurs()->get();
+				$listeacheteurs = '';
+				foreach ($acheteur as $key => $value) {
+					$listeacheteurs .= '<li>'.$value->nom.'</li>';
+				}
+				$form .= $listeacheteurs.'</ul>';
 			}
 			
 			//On récupère le lien de la liste des images de l'item
 			$linkImage = "#";
 			$lienImage='<a href="'.$linkImage.'" title="Voir toute les images"></a>';
-			
-			$tarif = $item->tarif;
-			if($item->cagnote == 1)
-			{
-				$totaltarif = 0;
-				foreach ($item->acheteurs()->get() as $key => $value) {
-					$totaltarif = $totaltarif + $value->participation;
-				}
-				$tarif = $totaltarif.'/'.$item->tarif;
-			}
 
 			$retour .= '
 				<article reserved="'.$reserved.'">

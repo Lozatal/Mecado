@@ -93,10 +93,6 @@ abstract class AbstractView {
          *  Noter l'utilisation des variables ${title} ${style} et ${body}
          * 
          */
-	$chrome=strpos($_SERVER["HTTP_USER_AGENT"], 'Chrome') ? true : false;
-	if ($chrome) {
-	$styles .= '<link rel="stylesheet" href="/Mecado/src/design/css/design2.css">';
-	}
                 
         $html = <<<EOT
 <!DOCTYPE html>

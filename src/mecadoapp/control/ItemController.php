@@ -120,7 +120,6 @@ class ItemController extends \mf\control\AbstractController {
         		$nom = $this->request->post['nom'];
         		$description = $this->request->post['description'];
         		$url_article = $this->request->post['url_article'];
-        		$url_image = $this->request->post['url_image'];
         		$tarif = $this->request->post['tarif'];
         		
 	            //On va vérifier que la liste éxiste bien
@@ -145,7 +144,6 @@ class ItemController extends \mf\control\AbstractController {
 	            $item->nom = $nom;
 	            $item->description = $description;
 	            $item->url_article = $url_article;
-	            $item->url_image = $url_image;
 	            $item->tarif = $tarif;
 	            $item->id_liste = $id_liste;
 	            $item->save();
@@ -223,7 +221,6 @@ class ItemController extends \mf\control\AbstractController {
     			$nom = $this->request->post['nom'];
     			$description = $this->request->post['description'];
     			$url_article = $this->request->post['url_article'];
-    			$url_image = $this->request->post['url_image'];
     			$tarif = $this->request->post['tarif'];
     			
 	    		// on vérifie que l'item est présent
@@ -263,7 +260,6 @@ class ItemController extends \mf\control\AbstractController {
 	    		$item->nom = $nom;
 	    		$item->description = $description;
 	    		$item->url_article = $url_article;
-	    		$item->url_image = $url_image;
 	    		$item->tarif = $tarif;
 	    		$item->save();
     		}

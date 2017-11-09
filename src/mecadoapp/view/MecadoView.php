@@ -372,10 +372,10 @@ EOT;
 			$lienMod='';
 			if(!$token){//Vrai si on viens pas par le token, donc l'utilisateur est le créateur
 				//Si l'utilisateur est le créateur, on affiche les boutons
-				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
 				$linkModify = $this->script_name . "/view_update_item/?id=". $idListe ."&item_id=" . $item->id;
-				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
+				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
 				$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
+				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
 				$form='';
 			}
 			else{
@@ -494,8 +494,7 @@ EOT;
                 	<input type="hidden" name="id_liste" value="${id}">
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
-                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" type="url" placeholder="URL">
-                    <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL">                 
+                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" type="url" placeholder="URL">              
                     <label for="tarif">tarif</label><input type="number" name="tarif" placeholder="tarif" step=0.01 required>
                     <input type="submit" value="Ajouter" ${disabled}>
                 </form>
@@ -541,7 +540,6 @@ EOT;
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" value="${nom}" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
-                    <label for="url_image">Ajouter une image</label><input type="text" name="url_image" value="${url_image}" placeholder="URL">
                     <label for="tarif">tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
                     <input type="submit" value="Modifier">
                 </form>

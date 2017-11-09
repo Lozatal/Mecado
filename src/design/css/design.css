@@ -360,6 +360,12 @@ header {
     width: 100%;
     margin-top: 0; }
     header nav a {
+      -webkit-transition-property: background-color;
+      -webkit-transition-duration: 1s;
+      -moz-transition-property: background-color;
+      -moz-transition-duration: 1s;
+      transition-property: background-color;
+      transition-duration: 1s;
       margin-top: 0.5em;
       border-radius: 10px;
       font-size: 1rem;
@@ -380,6 +386,8 @@ header {
         color: black; }
       header nav a a:hover {
         color: #1a1a1a; }
+    header nav a:hover {
+      background-color: #cccccc; }
     header nav a:nth-child(2) {
       margin-left: 2.2222222222%;
       width: 46.6666666667%; }
@@ -431,12 +439,18 @@ footer {
   flex-wrap: wrap; }
   #liste #lienAjout {
     margin: auto;
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: background-color;
+    -moz-transition-duration: 1s;
+    transition-property: background-color;
+    transition-duration: 1s;
     border-radius: 10px;
     font-size: 1rem;
     padding: 0.5em;
     color: white;
     box-sizing: border-box;
-    background-color: #333333;
+    background-color: #262626;
     text-decoration: none;
     opacity: 0.9;
     text-align: center;
@@ -446,13 +460,19 @@ footer {
     margin-bottom: 0.5em; }
     #liste #lienAjout:hover {
       cursor: pointer;
-      background-color: #4d4d4d; }
+      background-color: #404040; }
     #liste #lienAjout a {
       text-decoration: none;
       color: white; }
     #liste #lienAjout a:hover {
       color: white; }
   #liste article {
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: background-color;
+    -moz-transition-duration: 1s;
+    transition-property: background-color;
+    transition-duration: 1s;
     display: flex;
     flex-wrap: wrap;
     margin-left: 2.2222222222%;
@@ -523,7 +543,10 @@ footer {
       margin-top: auto;
       margin-bottom: auto;
       order: 8; }
+  #liste article[close=n] {
+    border-color: green; }
   #liste article[close=y] {
+    border-color: red;
     background-color: #cccccc; }
     #liste article[close=y] p:nth-child(1) {
       text-decoration: line-through; }
@@ -550,7 +573,7 @@ footer {
       margin-left: 2.2222222222%;
       width: 10%; }
   #liste article:hover {
-    background-color: white; }
+    background-color: #999999; }
 
 @media screen and (min-width: 480px) {
   #liste article {
@@ -653,20 +676,25 @@ footer {
     background-color: #e6e6e6;
     border: 2px solid black;
     border-radius: 5px; }
+    #item aside div {
+      display: none;
+      box-sizing: border-box;
+      width: 100%; }
+    #item aside p:nth-child(2n) {
+      color: #4d4d4d; }
     #item aside p {
-      border: 1px solid black;
-      border-radius: 5px;
+      box-sizing: border-box;
       font-size: 1em;
       padding: 0.2em;
       text-align: left;
-      width: 80%;
+      width: 100%;
       margin: auto;
       margin-top: 0.2em;
       margin-bottom: 0.2em; }
     #item aside form {
       width: 80%;
       margin: auto;
-      display: none;
+      display: flex;
       flex-wrap: wrap; }
       #item aside form textarea {
         margin-left: 2.2222222222%;
@@ -682,10 +710,10 @@ footer {
       #item aside form input[type=submit] {
         margin-left: 2.2222222222%;
         width: 95.5555555556%; }
-    #item aside h2:hover ~ form {
-      display: flex; }
-    #item aside form:hover {
-      display: flex; }
+    #item aside h2:hover ~ div {
+      display: block; }
+    #item aside div:hover {
+      display: block; }
   #item div {
     display: flex;
     flex-wrap: wrap;
@@ -697,6 +725,12 @@ footer {
     margin-top: 0.5em;
     margin-bottom: 0.5em; }
   #item #lienAjout {
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: background-color;
+    -moz-transition-duration: 1s;
+    transition-property: background-color;
+    transition-duration: 1s;
     margin: auto;
     margin-bottom: 0.5em;
     margin-top: 0.5em;
@@ -721,8 +755,19 @@ footer {
     #item #lienAjout a:hover {
       color: white; }
   #item div article[reserved=taken] {
-    background-color: #cccccc; }
+    background-color: #cccccc;
+    border-color: red; }
+  #item div article[reserved=free] {
+    border-color: green; }
+  #item div article:hover {
+    background-color: #b3b3b3; }
   #item div article {
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: background-color;
+    -moz-transition-duration: 1s;
+    transition-property: background-color;
+    transition-duration: 1s;
     margin-top: 1em;
     margin-bottom: auto;
     display: flex;
@@ -807,8 +852,8 @@ footer {
   #item aside {
     margin-left: 2.2222222222%;
     width: 22.2222222222%; }
-    #item aside form {
-      display: flex; }
+    #item aside div {
+      display: block; }
   #item div {
     margin-left: 2.2222222222%;
     width: 71.1111111111%; }

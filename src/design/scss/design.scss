@@ -63,11 +63,20 @@ header{
 		width: 100%;
 		margin-top: 0;
 		& a{
+			-webkit-transition-property: background-color;
+			-webkit-transition-duration: 1s;
+			-moz-transition-property: background-color;
+			-moz-transition-duration: 1s;
+			transition-property: background-color;
+			transition-duration: 1s;
 			margin-top: 0.5em;
 			@include bouton(black,1,$backgroundColor,10px);
 			opacity: 0.8;
 			@include grille(8,10%,0,4);
 			text-align: center;
+		}
+		& a:hover{
+			background-color: darken($backgroundColor,20);
 		}
 		& a:nth-child(2){
 			@include grille(8,10%,0,4);

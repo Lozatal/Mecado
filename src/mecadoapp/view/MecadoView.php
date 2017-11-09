@@ -406,17 +406,17 @@ EOT;
 		$retour .= '
 				<aside>
 					<h2>Messages</h2>
+					<div>
 				';
 		
 		if(isset($dataListeItem [0])){
 			$listeMessage = $dataListeItem [0]->liste->messages;
 		
 			foreach ( $listeMessage as $message ) {
-				$date = date_format ( $message->created_at, 'd:m:Y à H:i' );
+				$date = date_format ( $message->created_at, 'd/m/y-H:i' );
 				$retour .= '
 			    		<p>
 							<span>' . $date . '-' . $message->auteur . ' :</span>
-							<br>
 							<span> ' . $message->texte . ' </span>
 						</p>
 					';
@@ -426,13 +426,14 @@ EOT;
 		// formulaire d'ajout de message
 		$linkformMessage = $this->script_name . "/message_add/?id=" . $idListe;
 		
-		$retour .= '
+		$retour .= '		
 					<form id="addMessage" action="' . $linkformMessage . '" method="POST">
 				    	<label for="message_nom">Nom:</label><input type="text" id="message_nom" name="nom" required>
 		    			<label for="message_text">Message:</label><textarea id="message_text" name="text" maxlength="500" required></textarea>
 						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '" required>
 				    	<input type="submit" value="Envoyer">
 		    		</form>
+				</div>
 				</aside>
 		';
 

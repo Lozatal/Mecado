@@ -123,7 +123,7 @@ class ListeController extends \mf\control\AbstractController {
             $ctrl[] = $v;
         }
 
-        $v = new \mecadoapp\view\MecadoView(null);
+        $v = new \mecadoapp\view\MecadoView($ctrl);
         $v ->render('consulte');
     }    
 

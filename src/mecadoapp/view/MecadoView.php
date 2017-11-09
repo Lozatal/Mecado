@@ -245,7 +245,34 @@ EOT;
 
 	private function renderConsulte() {
 
-		return '';
+		$retour = '<section id="consulte">';
+
+		foreach ($this->data as $key => $value) {
+
+        	$requete = \mecadoapp\model\Acheteur::where('id_item', '=', $value->id);
+        	$acheteurobj = $requete->first();
+
+			$nom = $value->nom;
+			$description = $value->description;
+			$url = $value->url_article;
+			$img = $value->url_image;
+			$tarif = $value->tarif;
+			$acheteur = $acheteurobj['nom'];
+
+			$retour .='
+
+				<article>
+					<div>
+						<h2>' . $nom . '</h2>
+						<p>' . $description . '</p>
+						<p>'.$acheteur.'</p>
+					</div>
+				</article>
+				';
+		
+		}		
+
+		return $retour.'</section>';
 	}
 	
 	// /////////////// ITEM /////////////////////
@@ -387,7 +414,7 @@ EOT;
 					<div>'.$lienImage.$lienMod.$lienSup.'</div>
 					<div>
 						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
-						<aside><p>Prix : 20€</p></aside>
+						<aside><p>' . $item->tarif . '</p></aside>
 						<h2>' . $item->nom . '</h2>
 						<p>' . $item->description . '</p>
 					</div>

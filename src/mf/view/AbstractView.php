@@ -1,9 +1,6 @@
 <?php
-
 namespace mf\view;
-
 abstract class AbstractView {
-
     static protected $style_sheets = ['src/design/css/design.css']; /* un tableau de fichiers style */
     static protected $app_title    = "Mecado"; /* un titre de document */
     
@@ -29,7 +26,6 @@ abstract class AbstractView {
         
         $this->script_name  = $http->script_name;
         $this->app_root     = $http->root;
-
         $this->data         = $data;
     }
     
@@ -37,12 +33,10 @@ abstract class AbstractView {
     static public function setStyleSheet(array $list_of_files){
         self::$style_sheets = $list_of_files;
     }
-
     /* pour stocker le titre du document HTML */
     static public function setAppTitle($title){
         self::$app_title = $title;
     }
-
     /* La methode renderBody 
      * 
      * Cette mÃ©thode retourne le contenu HTML de la balise body autrement dit 
@@ -56,8 +50,6 @@ abstract class AbstractView {
     
     abstract protected function renderBody($selector=null);
     
-
-
     /* la mÃ©thodes render
      * 
      * cette mÃ©thode gÃ©nÃ¨re le code HTML d'une page complÃ¨te depuis le doctype 
@@ -78,25 +70,18 @@ abstract class AbstractView {
     public function render($selector){
         /* le titre du document */
         $title = self::$app_title;
-
         /* les feuilles de style */
         $styles = '';
         foreach ( self::$style_sheets as $file )
             $styles .= '<link rel="stylesheet" href="'.$this->app_root.'/'.$file.'"> ';
-
         /* on appele la methode renderBody de la sous classe */
         $body = $this->renderBody($selector);
         
-
         /* construire la structure de la page 
          * 
          *  Noter l'utilisation des variables ${title} ${style} et ${body}
          * 
          */
-	$chrome=strpos($_SERVER["HTTP_USER_AGENT"], 'Chrome') ? true : false;
-	if ($chrome) {
-	echo '<link rel="stylesheet" href="src/design/css/design2.css" type="text/css">';
-	}
                 
         $html = <<<EOT
 <!DOCTYPE html>
@@ -105,19 +90,13 @@ abstract class AbstractView {
         <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>${title}</title>
-	    ${styles}
-        <!--[if lte IE 6]> <link rel="stylesheet" href="src/design/css/design2.css" /> <![endif]-->
-        <!--[if lte IE 8]> <link rel="stylesheet" href="src/design/css/design2.css" /> <![endif]-->
-        <!--[if lte chrome]> <link rel="stylesheet" href="src/design/css/design2.css" /> <![endif]-->
-
+	${styles}
     </head>
-
     <body>
        ${body}
     </body>
 </html>
 EOT;
-
         /* Affichage de la page 
          *
          * C'est la seule instruction echo dans toute l'application 

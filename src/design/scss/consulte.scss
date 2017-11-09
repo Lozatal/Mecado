@@ -1,93 +1,13 @@
-@mixin item($themeColor,$backgroundColor){
+@mixin consulte($themeColor,$backgroundColor){
 
-#item{
+#consulte{
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-	& aside{
-		margin-bottom: auto;
-		padding: 1em 0 1em 0;
-		@include grille(8,10%,0,8);
-		background-color: darken($backgroundColor,10);
-		border: 2px solid black;
-		border-radius: 5px;
-		& div{
-			display:none;
-			box-sizing: border-box;
-			width: 100%;
-		}
-		& p:nth-child(2n){
-			color: lighten(black,30);
-		}
-		& p{
-			box-sizing: border-box;
-			font-size: 1em;
-			padding: 0.2em;
-			text-align: left;
-			width: 100%;
-			margin: auto;
-			margin-top: 0.2em;
-			margin-bottom: 0.2em;
-		}
-		& form{
-			width: 80%;
-			margin: auto;
-			display: flex;
-			flex-wrap: wrap;
-			& textarea{
-				@include grille(8,10%,0,8);
-			}
-			& label{
-				@include grille(8,10%,0,8);
-				text-align: center;
-				font-size: 1.2em;
-			}
-			& input[type=text]{
-				@include grille(8,10%,0,8);
-			}
-			& input[type=submit]{
-				@include grille(8,10%,0,8);
-			}
-		}
-		& h2:hover~div{
-			display:block;
-		}
-		& div:hover{
-			display:block;
-		}
-	}
 	& div{
 		display: flex;
 		flex-wrap: wrap;
 		@include grille(8,10%,0,8);
-	}
-	& #titre{
-		@include grille(8,10%,0,8);
-		margin-top: 0.5em;
-		margin-bottom: 0.5em;
-	}
-	& #lienAjout{
-		-webkit-transition-property: background-color;
-		-webkit-transition-duration: 1s;
-		-moz-transition-property: background-color;
-		-moz-transition-duration: 1s;
-		transition-property: background-color;
-		transition-duration: 1s;
-		margin: auto;
-		margin-bottom: 0.5em;
-		margin-top: 0.5em;
-		@include bouton(white,1,lighten($themeColor,20),10px);
-		opacity: 0.9;
-		text-align: center;
-		@include grille(8,10%,1,6);
-		max-height: 2em;
-	}
-	& div article[reserved=taken]{
-		background-color: darken($backgroundColor,20);
-		border-color: red;
-	}
-	& div article[reserved=free]{
-		border-color: green;
 	}
 	& div article:hover{
 		background-color: lighten($themeColor,70);

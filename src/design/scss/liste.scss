@@ -6,7 +6,13 @@
 	flex-wrap: wrap;
 	& #lienAjout{
 		margin: auto;
-		@include bouton(white,1,lighten($themeColor,20),10px);
+		-webkit-transition-property: background-color;
+		-webkit-transition-duration: 1s;
+		-moz-transition-property: background-color;
+		-moz-transition-duration: 1s;
+		transition-property: background-color;
+		transition-duration: 1s;
+		@include bouton(white,1,lighten($themeColor,15),10px);
 		opacity: 0.9;
 		text-align: center;
 		@include grille(8,10%,0,8);
@@ -14,6 +20,12 @@
 		margin-bottom: 0.5em;
 	}
 	& article{
+		-webkit-transition-property: background-color;
+		-webkit-transition-duration: 1s;
+		-moz-transition-property: background-color;
+		-moz-transition-duration: 1s;
+		transition-property: background-color;
+		transition-duration: 1s;
 		display: flex;
 		flex-wrap: wrap;
 		@include grille(8,10%,0,8);
@@ -85,7 +97,11 @@
 			order: 8;
 		}
 	}
+	& article[close=n]{
+		border-color: green;
+	}
 	& article[close=y]{
+		border-color: red;
 		background-color: darken($backgroundColor,20);
 		& p:nth-child(1){
 			text-decoration: line-through;
@@ -111,7 +127,7 @@
 		}
 	}
 	& article:hover{
-		background-color: white;
+		background-color: lighten($themeColor,60);
 	}
 }
 

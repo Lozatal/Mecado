@@ -245,7 +245,34 @@ EOT;
 
 	private function renderConsulte() {
 
-		return '';
+		$retour = '<section id="consulte">';
+
+		foreach ($this->data as $key => $value) {
+
+        	$requete = \mecadoapp\model\Acheteur::where('id_item', '=', $value->id);
+        	$acheteurobj = $requete->first();
+
+			$nom = $value->nom;
+			$description = $value->description;
+			$url = $value->url_article;
+			$img = $value->url_image;
+			$tarif = $value->tarif;
+			$acheteur = $acheteurobj['nom'];
+
+			$retour .='
+
+				<article>
+					<div>
+						<h2>' . $nom . '</h2>
+						<p>' . $description . '</p>
+						<p>'.$acheteur.'</p>
+					</div>
+				</article>
+				';
+		
+		}		
+
+		return $retour.'</section>';
 	}
 	
 	// /////////////// ITEM /////////////////////
@@ -415,11 +442,13 @@ EOT;
 			}
 			
 			$disabled = '';
+			$reserved = 'free';
 			
 			//Si un acheteur est présent, on verrouille le formulaire
 			$placeholderNom = 'Nom';
 			if(isset($item->acheteurs[0])){
 				$disabled = 'disabled';
+				$reserved = 'taken';
 				$placeholderNom = 'Reservé par : '.$item->acheteurs[0]->nom;
 			}
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
@@ -428,12 +457,13 @@ EOT;
 
 			
 			$retour .= '
-				<article>
+				<article reserved="'.$reserved.'">
 					<div><a href="'.$linkModify.'"></a><a href="'.$linkDelete.'"></a></div>
 					<div>
 						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
-						<aside><p>Prix : 20€</p></aside>
+						<aside><p>' . $item->tarif . '</p></aside>
 						<h2>' . $item->nom . '</h2>
+						<p>' . $item->description . '</p>
 					</div>
 					<form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>
@@ -464,17 +494,17 @@ EOT;
 		$retour .= '
 				<aside>
 					<h2>Messages</h2>
+					<div>
 				';
 		
 		if(isset($dataListeItem [0])){
 			$listeMessage = $dataListeItem [0]->liste->messages;
 		
 			foreach ( $listeMessage as $message ) {
-				$date = date_format ( $message->created_at, 'd:m:Y à H:i' );
+				$date = date_format ( $message->created_at, 'd/m/y-H:i' );
 				$retour .= '
 			    		<p>
 							<span>' . $date . '-' . $message->auteur . ' :</span>
-							<br>
 							<span> ' . $message->texte . ' </span>
 						</p>
 					';
@@ -484,13 +514,14 @@ EOT;
 		// formulaire d'ajout de message
 		$linkformMessage = $this->script_name . "/message_add/?id=" . $idListe;
 		
-		$retour .= '
+		$retour .= '		
 					<form id="addMessage" action="' . $linkformMessage . '" method="POST">
 				    	<label for="message_nom">Nom:</label><input type="text" id="message_nom" name="nom" required>
 		    			<label for="message_text">Message:</label><textarea id="message_text" name="text" maxlength="500" required></textarea>
 						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '" required>
 				    	<input type="submit" value="Envoyer">
 		    		</form>
+				</div>
 				</aside>
 		';
 

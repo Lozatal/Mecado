@@ -26,7 +26,7 @@ body{
 }
 
 #wrapper{
-	position:relative;
+	position:absolute;
 	min-height: 100%;
 	padding-bottom: 8em;
 	box-sizing: border-box;
@@ -100,7 +100,6 @@ footer{
 	color: white;
 	display: flex;
 	flex-wrap: wrap;
-	position: -webkit-absolute;
 	position: absolute;
 	bottom:0;
 	& div{

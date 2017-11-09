@@ -95,7 +95,7 @@ abstract class AbstractView {
          */
 	$chrome=strpos($_SERVER["HTTP_USER_AGENT"], 'Chrome') ? true : false;
 	if ($chrome) {
-	echo '<link rel="stylesheet" href="src/design/css/design2.css" type="text/css">';
+	$styles .= '<link rel="stylesheet" href="/Mecado/src/design/css/design2.css">';
 	}
                 
         $html = <<<EOT
@@ -105,11 +105,7 @@ abstract class AbstractView {
         <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>${title}</title>
-	    ${styles}
-        <!--[if lte IE 6]> <link rel="stylesheet" href="src/design/css/design2.css" /> <![endif]-->
-        <!--[if lte IE 8]> <link rel="stylesheet" href="src/design/css/design2.css" /> <![endif]-->
-        <!--[if lte chrome]> <link rel="stylesheet" href="src/design/css/design2.css" /> <![endif]-->
-
+	${styles}
     </head>
 
     <body>

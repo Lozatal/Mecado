@@ -270,7 +270,7 @@ EOT;
 				</article>
 				';
 		
-		}		
+		}	
 
 		return $retour.'</section>';
 	}
@@ -494,9 +494,9 @@ EOT;
                 	<input type="hidden" name="id_liste" value="${id}">
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
-                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" placeholder="URL">
+                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" type="url" placeholder="URL">
                     <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL">                 
-                    <label for="tarif">tarif</label><input type="number" name="tarif" placeholder="tarif" required>
+                    <label for="tarif">tarif</label><input type="number" name="tarif" placeholder="tarif" step=0.01 required>
                     <input type="submit" value="Ajouter" ${disabled}>
                 </form>
             </article>

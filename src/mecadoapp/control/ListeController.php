@@ -57,7 +57,7 @@ class ListeController extends \mf\control\AbstractController {
         $destinataire = $this->request->post['destinataire'];
         $nom_dest = $this->request->post['nom_dest'];
         $prenom_dest = $this->request->post['prenom_dest'];
-        $date_limit = date_create($this->request->post['date_limit']);
+        $date_limit = \DateTime::createFromFormat('d/m/Y', $this->request->post['date_limit']);
         
         $v = new \mecadoapp\auth\MecadoAuthentification();
         try {

@@ -375,6 +375,7 @@ EOT;
 						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
 						<aside><p>Prix : 20€</p></aside>
 						<h2>' . $item->nom . '</h2>
+						<p>' . $item->description . '</p>
 					</div>
 					<form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>

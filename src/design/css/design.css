@@ -1222,13 +1222,24 @@ footer {
       width: 95.5555555556%; }
     #consulte article p:nth-child(3) {
       margin-left: 2.2222222222%;
-      width: 95.5555555556%; }
+      width: 95.5555555556%;
+      font-weight: bold;
+      font-size: 1.3em;
+      text-align: right; }
     #consulte article p:nth-child(4) {
       margin-left: 2.2222222222%;
       width: 95.5555555556%; }
   #consulte article:hover {
     background-color: #b3b3b3; }
 
+@media screen and (min-width: 480px) {
+  #consulte article {
+    margin-left: 2.2222222222%;
+    width: 46.6666666667%; } }
+@media screen and (min-width: 1025px) {
+  #consulte article {
+    margin-left: 2.2222222222%;
+    width: 22.2222222222%; } }
 @media screen and (min-width: 280px) {
   body {
     font-size: 8pt; } }

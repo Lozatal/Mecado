@@ -585,6 +585,15 @@ EOT;
     	$url_image= $item->url_image;
     	$tarif= $item->tarif;
     	$cagnote= $item->cagnote;
+
+    	$checkedoui = '';
+    	$checkednon = 'checked';
+
+    	if($cagnote == 1)
+    	{
+    		$checkedoui = 'checked';
+    		$checkednon = '';
+    	}
     	
     	//c'est le message d'erreur, donc si présent, on affiche un message d'erreur
     	if (isset ( $this->data['erreur'] ) && $this->data['erreur']!= null) {
@@ -607,8 +616,8 @@ EOT;
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
                     <label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
                     <label for="cagnote">Cagnote</label>
-                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1">
-                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" checked>
+                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1" ${checkedoui}>
+                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" ${checkednon}>
                     <input type="submit" value="Modifier">
                 </form>
             </article>

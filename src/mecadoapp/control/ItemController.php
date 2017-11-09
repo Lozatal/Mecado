@@ -36,6 +36,7 @@ class ItemController extends \mf\control\AbstractController {
 		$resultat['idListeToken'] = null;
 		$resultat['token'] = false;
 		$resultat['liste'] = null;
+
     	$id=null;
     	try{
 			if(isset($get['id'])){
@@ -121,40 +122,40 @@ class ItemController extends \mf\control\AbstractController {
         	//Si il n'y a pas de formulaire, on redirige vers la liste des items
         	if($this->request->post != null){
         		
-        		//On récupère les valeurs
-        		$id_liste = $this->request->post['id_liste'];
-        		$nom = $this->request->post['nom'];
-        		$description = $this->request->post['description'];
-        		$url_article = $this->request->post['url_article'];
-        		$tarif = $this->request->post['tarif'];
-                $cagnote = $this->request->post['cagnote'];
-        		
-	            //On va vérifier que la liste éxiste bien
-	            $liste = liste::where('id', '=', $id_liste)
-	            ->first();
-	            
-	            if(!isset($liste) || $liste->id == null){
-	            	throw new \mf\auth\exception\AuthentificationException("Le cadeau n'a pas pu être enregistrée à cette liste car l'identifiant de la liste n'a pas été retrouvée");
-	            }
-	            
-	            //Puis on vérifie que les champs sont bien renseignés
-	            if (!isset($nom) || $nom == null){
-	            	throw new \mf\auth\exception\AuthentificationException("Le cadeau doit être renseigné");
-	            }
-	            if (!is_int((int)$tarif)){
-	            	throw new \mf\auth\exception\AuthentificationException("Le tarif doit être un nombre");
-	            }
-	            
-	            //Pas d'erreur, on va créer l'objet item
-	            $item = new item();
-	            
-	            $item->nom = $nom;
-	            $item->description = $description;
-	            $item->url_article = $url_article;
-	            $item->tarif = $tarif;
-	            $item->id_liste = $id_liste;
-                $item->cagnote = $cagnote;
-	            $item->save();
+			//On récupère les valeurs
+			$id_liste = $this->request->post['id_liste'];
+			$nom = $this->request->post['nom'];
+			$description = $this->request->post['description'];
+			$url_article = $this->request->post['url_article'];
+			$tarif = $this->request->post['tarif'];
+			$cagnote = $this->request->post['cagnote'];
+
+			//On va vérifier que la liste éxiste bien
+			$liste = liste::where('id', '=', $id_liste)
+			->first();
+
+			if(!isset($liste) || $liste->id == null){
+			throw new \mf\auth\exception\AuthentificationException("Le cadeau n'a pas pu être enregistrée à cette liste car l'identifiant de la liste n'a pas été retrouvée");
+			}
+
+			//Puis on vérifie que les champs sont bien renseignés
+			if (!isset($nom) || $nom == null){
+			throw new \mf\auth\exception\AuthentificationException("Le cadeau doit être renseigné");
+			}
+			if (!is_int((int)$tarif)){
+			throw new \mf\auth\exception\AuthentificationException("Le tarif doit être un nombre");
+			}
+
+			//Pas d'erreur, on va créer l'objet item
+			$item = new item();
+
+			$item->nom = $nom;
+			$item->description = $description;
+			$item->url_article = $url_article;
+			$item->tarif = $tarif;
+			$item->id_liste = $id_liste;
+			$item->cagnote = $cagnote;
+			$item->save();
         	}
             
             $this->viewItem();
@@ -214,9 +215,6 @@ class ItemController extends \mf\control\AbstractController {
      * Fonction qui va mettre à jour un item éxistant
      */
     public function updateItem(){
-    	
-
-    	
     	$v = new \mecadoapp\auth\MecadoAuthentification();
     	try {
     		

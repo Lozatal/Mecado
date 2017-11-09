@@ -85,6 +85,9 @@
 		@include grille(8,10%,1,6);
 		max-height: 2em;
 	}
+	& div article[reserved=cagnote]{
+		border-color: orange;
+	}
 	& div article[reserved=taken]{
 		background-color: darken($backgroundColor,20);
 		border-color: red;

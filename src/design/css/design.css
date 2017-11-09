@@ -756,6 +756,8 @@ footer {
       color: white; }
     #item #lienAjout a:hover {
       color: white; }
+  #item div article[reserved=cagnote] {
+    border-color: orange; }
   #item div article[reserved=taken] {
     background-color: #cccccc;
     border-color: red; }

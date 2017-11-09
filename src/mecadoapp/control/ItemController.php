@@ -126,7 +126,7 @@ class ItemController extends \mf\control\AbstractController {
 			$description = $this->request->post['description'];
 			$url_article = $this->request->post['url_article'];
 			$tarif = $this->request->post['tarif'];
-			$cagnote = $this->request->post['cagnote'];
+			$cagnotte = $this->request->post['cagnotte'];
 
 			//On va vérifier que la liste éxiste bien
 			$liste = liste::where('id', '=', $id_liste)
@@ -152,7 +152,7 @@ class ItemController extends \mf\control\AbstractController {
 			$item->url_article = $url_article;
 			$item->tarif = $tarif;
 			$item->id_liste = $id_liste;
-			$item->cagnote = $cagnote;
+			$item->cagnotte = $cagnotte;
 			$item->save();
         	}
             
@@ -295,7 +295,7 @@ class ItemController extends \mf\control\AbstractController {
     			//on va vérifier que l'item n'est pas déja réservé
     			$item = item::where('id', '=', $form['id_item'])
     			->first();
-    			if(isset($item->acheteurs[0]) && $item->acheteurs[0] != null && $item->cagnote == 0){
+    			if(isset($item->acheteurs[0]) && $item->acheteurs[0] != null && $item->cagnotte == 0){
     				throw new \mf\auth\exception\AuthentificationException("Le cadeau a déjà été réservé");
     			}
     			

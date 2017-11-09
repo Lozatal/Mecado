@@ -72,6 +72,7 @@ EOT;
 		$liste=$this->data['liste'];
 		$user=$this->data['user'];
 		$item=$this->data['item'];
+		$racine = $this->app_root;
 		$retour = <<<EOT
 
 <section id="home">
@@ -97,7 +98,7 @@ Tu n'as pas su me soutenir<br>
 Tu n'as pas su me retenir</span></p>
             </article>
 		<article>
-		<img src="/Mecado/src/design/css/images/presentation.png" >
+		<img src="${racine}/src/design/css/images/presentation.png" >
             </article>
             <article>
                 <ul>
@@ -437,7 +438,7 @@ EOT;
 			$lienMod='';
 
 			$tarif = $item->tarif;
-			if($item->cagnote == 1)
+			if($item->cagnotte == 1)
 			{
 				$totaltarif = 0;
 				foreach ($item->acheteurs()->get() as $key => $value) {
@@ -453,7 +454,7 @@ EOT;
 				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
 				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
 			}
-			elseif($disabled == null and $item->cagnote == 0){
+			elseif($disabled == null and $item->cagnotte == 0){
 				$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="Nom" required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
@@ -461,10 +462,10 @@ EOT;
 						<input type="submit" value="Réserver" >
 					</form>';
 			}
-			elseif($item->cagnote == 1 and $totaltarif<$item->tarif)
+			elseif($item->cagnotte == 1 and $totaltarif<$item->tarif)
 			{
-				$reserved = 'cagnote';
-				$form='<p>Cagnote : </p><form id="addMessage" action="' . $linkformReservation. '" method="POST">
+				$reserved = 'cagnotte';
+				$form='<p>cagnotte : </p><form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="Nom" required>
 						<input name="participation" type="number" step=0.01 required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
@@ -595,9 +596,9 @@ EOT;
                     <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" type="url" placeholder="URL">              
                     <label for="tarif">Tarif</label><input type="number" name="tarif" placeholder="tarif" step=0.01 required>
-                    <label for="cagnote">Cagnote</label>
-                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1">
-                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" checked>
+                    <label for="cagnotte">cagnotte</label>
+                    	<label for="oui">Oui</label><input type="radio" name="cagnotte" id="oui" value="1">
+                    	<label for="non">Non</label><input type="radio" name="cagnotte" id="non" value="0" checked>
                     <input type="submit" value="Ajouter" ${disabled}>
                 </form>
             </article>
@@ -619,12 +620,12 @@ EOT;
     	$url_article= $item->url_article;
     	$url_image= $item->url_image;
     	$tarif= $item->tarif;
-    	$cagnote= $item->cagnote;
+    	$cagnotte= $item->cagnotte;
 
     	$checkedoui = '';
     	$checkednon = 'checked';
 
-    	if($cagnote == 1)
+    	if($cagnotte == 1)
     	{
     		$checkedoui = 'checked';
     		$checkednon = '';
@@ -650,9 +651,9 @@ EOT;
                     <label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
                     <label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
-                    <label for="cagnote">Cagnote</label>
-                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1" ${checkedoui}>
-                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" ${checkednon}>
+                    <label for="cagnotte">cagnotte</label>
+                    	<label for="oui">Oui</label><input type="radio" name="cagnotte" id="oui" value="1" ${checkedoui}>
+                    	<label for="non">Non</label><input type="radio" name="cagnotte" id="non" value="0" ${checkednon}>
                     <input type="submit" value="Modifier">
                 </form>
             </article>

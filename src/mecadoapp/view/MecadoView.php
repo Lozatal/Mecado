@@ -232,10 +232,15 @@ EOT;
             }
         }
 
+        $alert = '';
+		if (isset ( $this->data ))
+			$alert = '<div class="alerte-danger">' . $this->data . '</div>';
+
         $retour =<<< EOT
 
         <section id="add_liste">
             <article>
+            	${alert}
                 <form action="${racine}/main.php/check_liste/" method="post">
                 	${hidden}
                    	<label for="destinataire">Pour un tier :</label>

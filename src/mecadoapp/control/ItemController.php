@@ -31,23 +31,23 @@ class ItemController extends \mf\control\AbstractController {
     	
     	$resultat['erreur'] = $e;
     	$resultat['listeItem'] = null;
-	$resultat['idListe'] = null;
-	$resultat['token'] = false;
+		$resultat['idListe'] = null;
+		$resultat['token'] = false;
     	$id=null;
     	try{
-		if(isset($get['id'])){
-			$id=$get['id'];
-		}elseif(isset($get['token'])){
-			$obj = liste::select('id')->where('liste.token', '=', $get['token'])->first();
-			$id=$obj->id;
-			$resultat['token']=true;
-		}
-		$resultat['idListe']=$id;
+			if(isset($get['id'])){
+				$id=$get['id'];
+			}elseif(isset($get['token'])){
+				$obj = liste::select('id')->where('liste.token', '=', $get['token'])->first();
+				$id=$obj->id;
+				$resultat['token']=true;
+			}
+			$resultat['idListe']=$id;
 	    	if($id!=null){
 	    		
 	    		$util = new \mecadoapp\auth\MecadoAuthentification();
 	    		
-	    		if (is_null($util->user_login)){
+	    		if (is_null($util->user_login || $resultat['token'])){
 	    			throw new \mf\auth\exception\AuthentificationException("Vous devez être authentifié pour accéder à ce lien");
 	    		}
 	    		else{
@@ -59,7 +59,7 @@ class ItemController extends \mf\control\AbstractController {
 	    			}
 	    			
 	    			//On va rechercher si l'utilisateur en session est bien le propriétaire de la liste
-	    			if($liste->user->mail != $util->user_login){
+	    			if(!$resultat['token'] && $liste->user->mail != $util->user_login){
 	    				throw new \mf\auth\exception\AuthentificationException("Vous n'êtes pas le propriétaire de cette liste");
 	    			}
 	    			

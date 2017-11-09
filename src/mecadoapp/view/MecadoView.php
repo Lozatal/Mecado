@@ -363,9 +363,20 @@ EOT;
 				$url = $item->url_article;
 			}
 			
-			$img = $this->app_root . '/' . 'src/design/css/images/cadeauDefault.png';
-			if (isset ( $item->url_image ) && $item->url_image) {
-				$img = $item->url_image;
+			//image par défault
+			$imgPrincipale = $this->app_root . '/' . 'src/design/css/images/cadeauDefault.png';
+			
+			//On va récupérer l'image principale ou la première
+			if(isset($item->images)){
+				
+				$number = 0;
+				foreach($item->images as $image){
+					//Dans le cas ou il n'y a pas d'iamge principale, je prends la première par défault, sinon c'est la principale
+					if($number == 0 || $image->principale){
+						$imgPrincipale = $image->url;
+					}
+					$number++;
+				}
 			}
 			
 			$disabled = '';
@@ -428,8 +439,8 @@ EOT;
 				<article reserved="'.$reserved.'">
 					<div>'.$lienImage.$lienMod.$lienSup.'</div>
 					<div>
-						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
-						<aside><p>' . $tarif . '€</p></aside>
+						<a href="'.$url.'"><img src="' . $imgPrincipale. '" alt="lien vers le site marchand" ></a>
+						<aside><p>' . $item->tarif . '€</p></aside>
 						<h2>' . $item->nom . '</h2>
 						<p>' . $item->description . '</p>
 					</div>

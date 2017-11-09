@@ -232,10 +232,15 @@ EOT;
             }
         }
 
+        $alert = '';
+		if (isset ( $this->data ))
+			$alert = '<div class="alerte-danger">' . $this->data . '</div>';
+
         $retour =<<< EOT
 
         <section id="add_liste">
             <article>
+            	${alert}
                 <form action="${racine}/main.php/check_liste/" method="post">
                 	${hidden}
                    	<label for="destinataire">Pour un tier :</label>
@@ -290,15 +295,28 @@ EOT;
 	//////////////// IMAGE ITEM /////////////////
 
  	private function renderImage() {
+
+		$image1=$this->data['images'][0];
+		$idItem=$image1->id_item;
+		$item = \mecadoapp\model\Item::where('id_liste','=',$idItem)->first();
+		$idListe = $item->id_liste;
+
+		$linkformAddImage = $this->script_name . "/add_image/?id_item=" . $idItem;
+		$linkformRetour = $this->script_name . "/item/?id=".$idListe;
+
 		$retour = '<section id="image">
-				<a href="#">Ajouter une image</a>
-				<a href="#">Retour vers la liste</a>';
+				<a href="'.$linkformAddImage.'">Ajouter une image</a>
+				<a href="'.$linkformRetour.'">Retour vers la liste</a>';
 		foreach ($this->data['images'] as $image) {
 			$url=$image->url;
+			$id=$image->id;
+
+			$linkformEnregistrer = $this->script_name . "/principale_image/?id_image=".$id."&id=".$idItem;
+			$linkformSupprimer = $this->script_name . "/delete_image/?id_image=".$id."&id=".$idItem;
 			$retour .='
 				<article>
-					<a href="#" title="Enregistrer en image principale"></a>
-					<a href="#" title="Supprimer image"></a>
+					<a href="'.$linkformEnregistrer.'" title="Enregistrer en image principale">rec</a>
+					<a href="'.$linkformSupprimer.'" title="Supprimer image">sup</a>
 					<img src="'.$url.'">
 				</article>
 				';

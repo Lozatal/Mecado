@@ -57,10 +57,29 @@ class ListeController extends \mf\control\AbstractController {
         $destinataire = $this->request->post['destinataire'];
         $nom_dest = $this->request->post['nom_dest'];
         $prenom_dest = $this->request->post['prenom_dest'];
-        $date_limit = \DateTime::createFromFormat('d/m/Y', $this->request->post['date_limit']);
-        
+        $date_limit = $this->request->post['date_limit'];
+
         $v = new \mecadoapp\auth\MecadoAuthentification();
         try {
+
+            if (!isset($nom) || $nom == null){
+                throw new \mf\auth\exception\AuthentificationException("Le nom doit être renseigné");
+            }
+
+            if (!isset($description) || $description == null){
+                throw new \mf\auth\exception\AuthentificationException("La description doit être renseigné");
+            }
+
+            if (!isset($date_limit) || $date_limit == null){
+                throw new \mf\auth\exception\AuthentificationException("Une date limite doit être renseigné");
+            }
+
+            $match='^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$^';
+            if(!preg_match($match,$date_limit)){
+                throw new \mf\auth\exception\AuthentificationException("Le format de date n'est pas bon");
+            }
+
+            $date_limit = \DateTime::createFromFormat('d/m/Y', $date_limit);
 
             if(isset($this->request->post['id']))
             {
@@ -95,7 +114,8 @@ class ListeController extends \mf\control\AbstractController {
         }
         catch(\mf\auth\exception\AuthentificationException $e)
         {
-            $this->addListe();
+            $v = new \mecadoapp\view\MecadoView($e->getMessage());
+            $v ->render('addListe');   
         }
 
     }

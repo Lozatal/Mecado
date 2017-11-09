@@ -289,25 +289,21 @@ EOT;
 	}
 	//////////////// IMAGE ITEM /////////////////
 
-    private function renderImage() {
-    	/*
-    	$retour='';
-	$retour.='<section id="image">';
-	$retour.='<a href="">Retour vers la liste</a>'
-	$retour=$this->afficheListeImage ($retour, $this->data ['listeImageItem']);
-	$retour.='</section>';
-    	return $retour;*/
-	}
-
-
-    private function afficheListeImage($retour, $dataListeImageItem) {/*
-    	foreach($dataListeImageItem as $image){
-	    	$retour.='
-		    <article>
-	    		<img src="'.$image.'">
-		    </article>';
-	}
-    	return $retour;*/
+ 	private function renderImage() {
+		$retour = '<section id="image">
+				<a href="#">Ajouter une image</a>
+				<a href="#">Retour vers la liste</a>';
+		foreach ($this->data['images'] as $image) {
+			$url=$image->url;
+			$retour .='
+				<article>
+					<a href="#" title="Enregistrer en image principale"></a>
+					<a href="#" title="Supprimer image"></a>
+					<img src="'.$url.'">
+				</article>
+				';
+		}	
+		return $retour.'</section>';
 	}
 	
 	////////////////// ITEM /////////////////////

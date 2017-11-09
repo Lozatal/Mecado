@@ -36,36 +36,28 @@ class ImageController extends \mf\control\AbstractController {
 
 	public function deleteImage(){
 	    	$get = $this->request->get;
-	    	try{
-	    		if(isset($get['id'])){
-	    			if(isset($get['item_id'])){
-	    				
-	    				//D'abord on récupère l'image
-	    				$image=image::where('image.id', '=', $get['id'])->first();
-	    				
-	    				if(!isset($image)){
-	    					throw new \mf\auth\exception\AuthentificationException("L'identifiant de l'image est introuvable, peux-être a t'il déjà été supprimé");
-	    				}else{
-	    					$image->delete();
-	    				}
-	    				
-	    				$this->viewImage();
-	    				
-	    			}
-	    			else{
-	    				throw new \mf\auth\exception\AuthentificationException("L'identifiant du cadeau est introuvable");
-	    			}
-	    		}
-	    		else{
-	    			throw new \mf\auth\exception\AuthentificationException("L'identifiant de la liste est introuvable");
-	    		}
-	    	}
-	    	catch(\mf\auth\exception\AuthentificationException $e){
-	    		$this->viewImage($e->getmessage());
-	    	}
+    		if(isset($get['id_image'])){
+			$image=image::where('id', '=', $get['id_image'])->first();
+			$image->delete();
+		}
+		$this->viewImage();
 	}
 
 	public function principaleImage(){
-
+	    	$get = $this->request->get;
+    		if(isset($get['id_image']) && isset($get['id'])){
+			$listeImage=image::where('id_item', '=', $get['id'])->get();
+			foreach($listeImage as $image){
+				if($image->id==$get['id_image']){
+					$image->principale=1;
+					$image->save();
+				}else{
+					$image->principale=0;
+					$image->save();
+				}
+			}
+			
+		}
+		$this->viewImage();
 	}
 }

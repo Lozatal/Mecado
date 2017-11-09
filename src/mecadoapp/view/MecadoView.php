@@ -258,15 +258,15 @@ EOT;
 			$img = $value->url_image;
 			$tarif = $value->tarif;
 			$acheteur = $acheteurobj['nom'];
+			$message = $acheteurobj['message'];
 
 			$retour .='
 
 				<article>
-					<div>
-						<h2>' . $nom . '</h2>
-						<p>' . $description . '</p>
-						<p>'.$acheteur.'</p>
-					</div>
+					<h2>' . $nom . '</h2>
+					<p>' . $description . '</p>
+					<p>'.$acheteur.'</p>
+					<p>'.$message.'</p>
 				</article>
 				';
 		
@@ -305,7 +305,7 @@ EOT;
 		}
 		$ajout='';
 		if(!$token){
-			$ajout='<a href="'.$this->app_root.'/main.php/add_item/?liste='.$id.'" id="lienAjout">Ajouter un cadeau</a>';
+			$ajout='<a href="'.$this->app_root.'/main.php/view_add_item/?id='.$id.'" id="lienAjout">Ajouter un cadeau</a>';
 		}
 		$retour .= '
 			<section id="item">
@@ -323,6 +323,136 @@ EOT;
 		
 		$retour .= '
 			</section>';
+		return $retour;
+	}
+	
+	/**
+	 * Fonction qui renvoie la vue de la liste des items
+	 *
+	 * @param retour = retour du HTML
+	 * @param dataListeItem = liste des items
+	 *
+	 * @retour renvoie un string contenant le HTML
+	 */
+	private function afficheListeItem($retour, $dataListeItem, $idListe, $token) {
+		$retour .= '
+				<div>';
+		
+		if(isset($dataListeItem [0])){
+			$destinataire = $dataListeItem [0]->liste->prenom_dest . ' ' . $dataListeItem [0]->liste->nom_dest;
+		}
+		
+		// Puis on affiche la liste des items de la liste
+		foreach ( $dataListeItem as $item ) {
+			
+			$url = '#';
+			if (isset ( $item->url_article ) && $item->url_article != null) {
+				$url = $item->url_article;
+			}
+			
+			$img = $this->app_root . '/' . 'src/design/css/images/cadeauDefault.png';
+			if (isset ( $item->url_image ) && $item->url_image) {
+				$img = $item->url_image;
+			}
+			
+			$disabled = '';
+			$reserved = 'free';
+			
+			//Si un acheteur est présent, on verrouille le formulaire
+			$placeholderNom = 'Nom';
+			if(isset($item->acheteurs[0])){
+				$disabled = 'disabled';
+				$reserved = 'taken';
+				$placeholderNom = 'Reservé par : '.$item->acheteurs[0]->nom;
+			}
+			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
+			//Si l'utilisateur est le créateur, on affiche les boutons
+			$linkModify = $this->script_name . "/view_update_item/?id=". $idListe ."&item_id=" . $item->id;
+			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
+			
+			$lienSup='';
+			$lienMod='';
+			$form='';
+			if(!$token){//Vrai si on viens par le token, donc l'utilisateur n'est pas le créateur
+				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
+				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
+				$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">
+						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>
+						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" '.$disabled.' required></textarea>
+						<input type="hidden" name="id_item" value="' . $item->id. '" required>
+						<input type="submit" value="Réserver" '.$disabled.' />
+					</form>';
+			}
+			
+			//On récupère le lien de la liste des images de l'item
+			$linkImage = "#";
+			$lienImage='<a href="'.$linkImage.'" title="Voir toute les images"></a>';
+			
+			
+			$retour .= '
+				<article reserved="'.$reserved.'">
+					<div>'.$lienImage.$lienMod.$lienSup.'</div>
+					<div>
+						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
+						<aside><p>' . $item->tarif . '€</p></aside>
+						<h2>' . $item->nom . '</h2>
+						<p>' . $item->description . '</p>
+					</div>
+					'.$form.'
+				</article>';
+		}
+		
+		$retour .= '
+				</div>';
+		return $retour;
+	}
+	
+	/**
+	 * Fonction qui renvoie le code HTML de la partie Message
+	 *
+	 * @param retour = retour du HTML
+	 * @param dataListeItem = liste des items
+	 * @param get = contenu du HttpRequest
+	 *
+	 * @retour renvoie un string contenant le HTML
+	 */
+	private function afficheMessageItem($retour, $dataListeItem, $idListe) {
+		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
+		
+		$retour .= '
+				<aside id="message">
+					<h2>Messages</h2>
+					<div>
+				';
+		
+		if(isset($dataListeItem [0])){
+			$listeMessage = $dataListeItem [0]->liste->messages;
+			
+			foreach ( $listeMessage as $message ) {
+				$date = date_format ( $message->created_at, 'd/m/y-H:i' );
+				$retour .= '
+			    		<p>
+							<span>' . $date . '-<b>' . $message->auteur . '</b> :</span>
+							<span> ' . $message->texte . ' </span>
+						</p>
+					';
+			}
+		}
+		
+		// formulaire d'ajout de message
+		$linkformMessage = $this->script_name . "/message_add/?id=" . $idListe;
+		
+		$retour .= '
+					<form id="addMessage" action="' . $linkformMessage . '" method="POST">
+				    	<label for="message_nom">Nom:</label><input type="text" id="message_nom" name="nom" required>
+		    			<label for="message_text">Message:</label><textarea id="message_text" name="text" maxlength="500" required></textarea>
+						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '" required>
+				    	<input type="submit" value="Envoyer">
+		    		</form>
+				</div>
+				</aside>
+		';
+		
 		return $retour;
 	}
 
@@ -360,7 +490,7 @@ EOT;
                     <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" placeholder="URL">
                     <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL">                 
-                    <label for="tarif">tarif</label><input type="text" name="tarif" placeholder="tarif" type="number" required>
+                    <label for="tarif">tarif</label><input type="number" name="tarif" placeholder="tarif" required>
                     <input type="submit" value="Ajouter" ${disabled}>
                 </form>
             </article>
@@ -404,143 +534,12 @@ EOT;
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
                     <label for="url_image">Ajouter une image</label><input type="text" name="url_image" value="${url_image}" placeholder="URL">
                     <label for="tarif">tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
-                    <input type="submit" value="Ajouter">
+                    <input type="submit" value="Modifier">
                 </form>
             </article>
         </section>
 EOT;
     	return $retour;
-}
-
-	
-	/**
-	 * Fonction qui renvoie la vue de la liste des items
-	 *
-	 * @param retour = retour du HTML
-	 * @param dataListeItem = liste des items
-	 * 
-	 * @retour renvoie un string contenant le HTML
-	 */
-    private function afficheListeItem($retour, $dataListeItem, $idListe, $token) {
-		$retour .= '
-				<div>';
-		
-		if(isset($dataListeItem [0])){
-			$destinataire = $dataListeItem [0]->liste->prenom_dest . ' ' . $dataListeItem [0]->liste->nom_dest;
-		}
-		
-		// Puis on affiche la liste des items de la liste
-		foreach ( $dataListeItem as $item ) {
-			
-			$url = '#';
-			if (isset ( $item->url_article ) && $item->url_article != null) {
-				$url = $item->url_article;
-			}
-			
-			$img = $this->app_root . '/' . 'src/design/css/images/cadeauDefault.png';
-			if (isset ( $item->url_image ) && $item->url_image) {
-				$img = $item->url_image;
-			}
-			
-			$disabled = '';
-			$reserved = 'free';
-			
-			//Si un acheteur est présent, on verrouille le formulaire
-			$placeholderNom = 'Nom';
-			if(isset($item->acheteurs[0])){
-				$disabled = 'disabled';
-				$reserved = 'taken';
-				$placeholderNom = 'Reservé par : '.$item->acheteurs[0]->nom;
-			}
-			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
-			//Si l'utilisateur est le créateur, on affiche les boutons
-			$linkModify = $this->script_name . "/view_update_item/?id=". $idListe ."&item_id=" . $item->id;
-			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
-
-			$lienSup='';
-			$lienMod='';
-			$form='';
-			if(!$token){//Vrai si on viens par le token, donc l'utilisateur n'est pas le créateur
-				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
-				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
-				$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">
-						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>
-						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" '.$disabled.' required></textarea>
-						<input type="hidden" name="id_item" value="' . $item->id. '" required>
-						<input type="submit" value="Réserver" '.$disabled.' />
-					</form>';
-			}
-
-			//On récupère le lien de la liste des images de l'item
-			$linkImage = "#";
-			$lienImage='<a href="'.$linkImage.'" title="Voir toute les images"></a>';
-
-			
-			$retour .= '
-				<article reserved="'.$reserved.'">
-					<div>'.$lienImage.$lienMod.$lienSup.'</div>
-					<div>
-						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
-						<aside><p>' . $item->tarif . '</p></aside>
-						<h2>' . $item->nom . '</h2>
-						<p>' . $item->description . '</p>
-					</div>
-					'.$form.'
-				</article>';
-		}
-		
-		$retour .= '
-				</div>';
-		return $retour;
-	}
-	
-	/**
-	 * Fonction qui renvoie le code HTML de la partie Message
-	 *
-	 * @param retour = retour du HTML
-	 * @param dataListeItem = liste des items
-	 * @param get = contenu du HttpRequest
-	 * 
-	 * @retour renvoie un string contenant le HTML
-	 */
-	private function afficheMessageItem($retour, $dataListeItem, $idListe) {
-		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
-		
-		$retour .= '
-				<aside id="message">
-					<h2>Messages</h2>
-					<div>
-				';
-		
-		if(isset($dataListeItem [0])){
-			$listeMessage = $dataListeItem [0]->liste->messages;
-		
-			foreach ( $listeMessage as $message ) {
-				$date = date_format ( $message->created_at, 'd/m/y-H:i' );
-				$retour .= '
-			    		<p>
-							<span>' . $date . '-<b>' . $message->auteur . '</b> :</span>
-							<span> ' . $message->texte . ' </span>
-						</p>
-					';
-			}
-		}
-		
-		// formulaire d'ajout de message
-		$linkformMessage = $this->script_name . "/message_add/?id=" . $idListe;
-		
-		$retour .= '		
-					<form id="addMessage" action="' . $linkformMessage . '" method="POST">
-				    	<label for="message_nom">Nom:</label><input type="text" id="message_nom" name="nom" required>
-		    			<label for="message_text">Message:</label><textarea id="message_text" name="text" maxlength="500" required></textarea>
-						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '" required>
-				    	<input type="submit" value="Envoyer">
-		    		</form>
-				</div>
-				</aside>
-		';
-
-		return $retour;
 	}
 	
 	// /////////////// FIN ITEM /////////////////////

@@ -4,110 +4,40 @@
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-	& div{
+	box-sizing: border-box;
+	& article{
 		display: flex;
 		flex-wrap: wrap;
-		@include grille(8,10%,0,8);
-	}
-	& div article:hover{
-		background-color: lighten($themeColor,70);
-	}
-	& div article{
+		width: 100%;
+		box-sizing: border-box;
 		-webkit-transition-property: background-color;
 		-webkit-transition-duration: 1s;
 		-moz-transition-property: background-color;
 		-moz-transition-duration: 1s;
 		transition-property: background-color;
 		transition-duration: 1s;
-		margin-top: 1em;
-		margin-bottom: auto;
-		display: flex;
-		flex-wrap: wrap;
 		background-color: darken($backgroundColor,10);
 		@include grille(8,10%,0,8);
-		max-height: 35em;
-		& div:first-child{
-			width: 100%;
+		& h2{
+			@include grille(8,10%,0,8);
+			box-sizing: border-box;
+		}
+		& p{
 			padding: 0.5em;
-			display: flex;
-			flex-wrap: wrap;
-			& a:hover{
-			
-			}
-			& a:first-child{
-				@include grille(8,10%,6,1);
-				background-image: url('images/modifier.png');
-				width: 20px;
-				height: 20px;
-				background-repeat: no-repeat;
-			}
-			& a:last-child{
-				@include grille(8,10%,0,1);
-				background-image: url('images/supprimer.png');
-				width: 20px;
-				height: 20px;
-				background-repeat: no-repeat;
-			}
+			box-sizing: border-box;
 		}
-		& div:nth-child(2){
-			width: 100%;
-			display: flex;
-			flex-wrap: wrap;
-			& a{
-				@include grille(8,10%,0,6);
-				text-align: center;
-				display: flex;
-				flex-wrap: wrap;
-			}
-			& a img{
-				margin: auto;
-			}
-			& aside{
-				border: none;
-				box-sizing: border-box;
-				margin-top: auto;
-				margin-bottom: auto;
-				@include grille(8,10%,0,2);
-				& p{
-					border: none;
-					font-weight: bold;
-				}
-			}
-			& h2{
-				hyphens: auto;
-			}
-			& p{
-				text-align: left;
-			}
+		& p:nth-child(2){
+			@include grille(8,10%,0,8);
 		}
-		& form{
-			width:100%;
-			flex-wrap: wrap;
-			margin-top: auto;
-			margin-bottom: 0;
-			display: flex;
-			& label{
-				width: 90%;
-				margin: auto;
-				text-align: center;
-				margin-top: 1em;
-			}
-			& input{
-				width: 80%;
-				margin: auto;
-				text-align: center;
-		
-			}
-			& textarea{
-				width: 80%;
-				height: 3em;
-				margin: auto;
-			}
-			& input:last-child{
-				margin-top: 1em;
-				margin-bottom: 1em;
-			}
+		& p:nth-child(3){
+			@include grille(8,10%,0,8);
 		}
+		& p:nth-child(4){
+			@include grille(8,10%,0,8);
+		}
+	}
+	& article:hover{
+		background-color: lighten($themeColor,70);
 	}
 }
 
@@ -116,31 +46,15 @@
 }
 
 @media screen and (min-width: 480px){
-	#item #lienAjout{
-		@include grille(8,10%,1,6);
-	}
+
 }
 
 @media screen and (min-width: 600px){
-	#item{
-		& aside{
-			@include grille(8,10%,0,2);
-			& div{display: block;}
-		}
-		& div{
-			@include grille(8,10%,0,6);
-			& article{
-			@include grille(8,10%,0,4);
-			}
-		}
-	}
+
 }
 
 @media screen and (min-width: 801px){
-	#item #lienAjout{
-		@include grille(8,10%,2,4);
-		margin-right: 20%;
-	}
+
 }
 
 @media screen and (min-width: 1025px){
@@ -148,18 +62,11 @@
 }
 
 @media screen and (min-width: 1281px){
-	#item #lienAjout{
-		@include grille(8,10%,3,2);
-		margin-right: 20%;
-	}
+
 }
 
 @media screen and (min-width: 1750px){
-	#item{
-		& div article{
-			@include grille(8,10%,0,2);
-		}
-	}
+
 }
 
 }

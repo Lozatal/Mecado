@@ -109,40 +109,48 @@ class ItemController extends \mf\control\AbstractController {
      */
     public function addItem(){
 
-    	$id_liste = $this->request->post['id_liste'];
-        $nom = $this->request->post['nom'];
-        $description = $this->request->post['description'];
-        $url_article = $this->request->post['url_article'];
-        $url_image = $this->request->post['url_image'];
-        $tarif = $this->request->post['tarif'];
-        
-        $v = new \mecadoapp\auth\MecadoAuthentification();
-        try {
 
-            $item = new item();
+        try {
+        	
+        	//Si il n'y a pas de formulaire, on redirige vers la liste des items
+        	if($this->request->post != null){
+        		
+        		//On récupère les valeurs
+        		$id_liste = $this->request->post['id_liste'];
+        		$nom = $this->request->post['nom'];
+        		$description = $this->request->post['description'];
+        		$url_article = $this->request->post['url_article'];
+        		$url_image = $this->request->post['url_image'];
+        		$tarif = $this->request->post['tarif'];
+        		
+	            //On va vérifier que la liste éxiste bien
+	            $liste = liste::where('id', '=', $id_liste)
+	            ->first();
+	            
+	            if(!isset($liste) || $liste->id == null){
+	            	throw new \mf\auth\exception\AuthentificationException("Le cadeau n'a pas pu être enregistrée à cette liste car l'identifiant de la liste n'a pas été retrouvée");
+	            }
+	            
+	            //Puis on vérifie que les champs sont bien renseignés
+	            if (!isset($nom) || $nom == null){
+	            	throw new \mf\auth\exception\AuthentificationException("Le cadeau doit être renseigné");
+	            }
+	            if (!is_int((int)$tarif)){
+	            	throw new \mf\auth\exception\AuthentificationException("Le tarif doit être un nombre");
+	            }
+	            
+	            //Pas d'erreur, on va créer l'objet item
+	            $item = new item();
+	            
+	            $item->nom = $nom;
+	            $item->description = $description;
+	            $item->url_article = $url_article;
+	            $item->url_image = $url_image;
+	            $item->tarif = $tarif;
+	            $item->id_liste = $id_liste;
+	            $item->save();
+        	}
             
-            //On va vérifier que la liste éxiste bien
-            $liste = liste::where('id', '=', $id_liste)
-            ->first();
-            
-            if(!isset($liste) || $liste->id == null){
-            	throw new \mf\auth\exception\AuthentificationException("Le cadeau n'a pas pu être enregistrée à cette liste car l'identifiant de la liste n'a pas été retrouvée");
-            }
-            
-            if (!isset($nom) || $nom == null){
-            	throw new \mf\auth\exception\AuthentificationException("Le cadeau doit être renseigné");
-            }
-            if (!is_int((int)$tarif)){
-            	throw new \mf\auth\exception\AuthentificationException("Le tarif doit être un nombre");
-            }
-            
-            $item->nom = $nom;
-            $item->description = $description;
-            $item->url_article = $url_article;
-            $item->url_image = $url_image;
-            $item->tarif = $tarif;
-            $item->id_liste = $id_liste;
-            $item->save();
             $this->viewItem();
         }
         catch(\mf\auth\exception\AuthentificationException $e)
@@ -186,6 +194,7 @@ class ItemController extends \mf\control\AbstractController {
     		
     		$vue = new \mecadoapp\view\MecadoView($resultat);
     		$vue ->render('updateItem');
+
     		
     	}catch(\mf\auth\exception\AuthentificationException $e){
     		$resultat['erreur'] = $e;
@@ -200,57 +209,65 @@ class ItemController extends \mf\control\AbstractController {
      */
     public function updateItem(){
     	
-    	
-    	$id_item = $this->request->post['id_item'];
-    	$id_liste = $this->request->post['id_liste'];
-    	$nom = $this->request->post['nom'];
-    	$description = $this->request->post['description'];
-    	$url_article = $this->request->post['url_article'];
-    	$url_image = $this->request->post['url_image'];
-    	$tarif = $this->request->post['tarif'];
+
     	
     	$v = new \mecadoapp\auth\MecadoAuthentification();
     	try {
-    		// on vérifie que l'item est présent
-    		if(!isset($id_item) || $id_item == null)
-    		{
-    			throw new \mf\auth\exception\AuthentificationException("L'identifiant du cadeau n'est pas renseigné");
+    		
+    		//Si il n'y a pas de formulaire, on redirige vers la liste des items
+    		if($this->request->post != null){
+    			
+    			//On récupère les valeurs
+    			$id_item = $this->request->post['id_item'];
+    			$id_liste = $this->request->post['id_liste'];
+    			$nom = $this->request->post['nom'];
+    			$description = $this->request->post['description'];
+    			$url_article = $this->request->post['url_article'];
+    			$url_image = $this->request->post['url_image'];
+    			$tarif = $this->request->post['tarif'];
+    			
+	    		// on vérifie que l'item est présent
+	    		if(!isset($id_item) || $id_item == null)
+	    		{
+	    			throw new \mf\auth\exception\AuthentificationException("L'identifiant du cadeau n'est pas renseigné");
+	    		}
+	    		
+	    		//On récupère l'item
+	    		$item= item::where('id', '=', $id_item)
+	    		->first();
+	    		
+	    		if(!isset($item) || $item->id == null){
+	    			throw new \mf\auth\exception\AuthentificationException("Le cadeau n'a pas été retrouvé en base de données, peux-être a t'il déja été supprimé");
+	    		}
+	    		
+	    		//On va vérifier que la liste éxiste bien
+	    		$liste = liste::where('id', '=', $id_liste)
+	    		->first();
+	    		
+	    		if(!isset($liste) || $liste->id == null){
+	    			throw new \mf\auth\exception\AuthentificationException("La liste n'a pas été retrouvée en base de données, peux-être a t'elle déja été supprimée");
+	    		}
+	    		
+	    		//On vérifie que la liste et l'item sont bien liés ensemble
+	    		if($liste->id != $item->id_liste){
+	    			throw new \mf\auth\exception\AuthentificationException("Le cadeau que vous voulez modifier n'est pas relié à cette liste");
+	    		}
+	    		
+	    		if (!isset($nom) || $nom == null){
+	    			throw new \mf\auth\exception\AuthentificationException("Le cadeau doit être renseigné");
+	    		}
+	    		if (!is_int((int)$tarif)){
+	    			throw new \mf\auth\exception\AuthentificationException("Le tarif doit être un nombre");
+	    		}
+	    		
+	    		$item->nom = $nom;
+	    		$item->description = $description;
+	    		$item->url_article = $url_article;
+	    		$item->url_image = $url_image;
+	    		$item->tarif = $tarif;
+	    		$item->save();
     		}
     		
-    		//On récupère l'item
-    		$item= item::where('id', '=', $id_item)
-    		->first();
-    		
-    		if(!isset($item) || $item->id == null){
-    			throw new \mf\auth\exception\AuthentificationException("Le cadeau n'a pas été retrouvé en base de données, peux-être a t'il déja été supprimé");
-    		}
-    		
-    		//On va vérifier que la liste éxiste bien
-    		$liste = liste::where('id', '=', $id_liste)
-    		->first();
-    		
-    		if(!isset($liste) || $liste->id == null){
-    			throw new \mf\auth\exception\AuthentificationException("La liste n'a pas été retrouvée en base de données, peux-être a t'elle déja été supprimée");
-    		}
-    		
-    		//On vérifie que la liste et l'item sont bien liés ensemble
-    		if($liste->id != $item->id_liste){
-    			throw new \mf\auth\exception\AuthentificationException("Le cadeau que vous voulez modifier n'est pas relié à cette liste");
-    		}
-    		
-    		if (!isset($nom) || $nom == null){
-    			throw new \mf\auth\exception\AuthentificationException("Le cadeau doit être renseigné");
-    		}
-    		if (!is_int((int)$tarif)){
-    			throw new \mf\auth\exception\AuthentificationException("Le tarif doit être un nombre");
-    		}
-    		
-    		$item->nom = $nom;
-    		$item->description = $description;
-    		$item->url_article = $url_article;
-    		$item->url_image = $url_image;
-    		$item->tarif = $tarif;
-    		$item->save();
     		$this->viewItem();
     	}
     	catch(\mf\auth\exception\AuthentificationException $e)

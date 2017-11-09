@@ -258,15 +258,15 @@ EOT;
 			$img = $value->url_image;
 			$tarif = $value->tarif;
 			$acheteur = $acheteurobj['nom'];
+			$message = $acheteurobj['message'];
 
 			$retour .='
 
 				<article>
-					<div>
-						<h2>' . $nom . '</h2>
-						<p>' . $description . '</p>
-						<p>'.$acheteur.'</p>
-					</div>
+					<h2>' . $nom . '</h2>
+					<p>' . $description . '</p>
+					<p>'.$acheteur.'</p>
+					<p>'.$message.'</p>
 				</article>
 				';
 		

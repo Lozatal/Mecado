@@ -828,8 +828,12 @@ footer {
           border: none;
           font-weight: bold; }
       #item div article div:nth-child(2) h2 {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%;
         hyphens: auto; }
       #item div article div:nth-child(2) p {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%;
         text-align: left; }
     #item div article form {
       width: 100%;
@@ -1190,127 +1194,41 @@ footer {
 #consulte {
   display: flex;
   flex-wrap: wrap;
-  width: 100%; }
-  #consulte div {
+  width: 100%;
+  box-sizing: border-box; }
+  #consulte article {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 2.2222222222%;
-    width: 95.5555555556%; }
-  #consulte div article:hover {
-    background-color: #b3b3b3; }
-  #consulte div article {
+    width: 100%;
+    box-sizing: border-box;
     -webkit-transition-property: background-color;
     -webkit-transition-duration: 1s;
     -moz-transition-property: background-color;
     -moz-transition-duration: 1s;
     transition-property: background-color;
     transition-duration: 1s;
-    margin-top: 1em;
-    margin-bottom: auto;
-    display: flex;
-    flex-wrap: wrap;
     background-color: #e6e6e6;
     margin-left: 2.2222222222%;
-    width: 95.5555555556%;
-    max-height: 35em; }
-    #consulte div article div:first-child {
-      width: 100%;
-      padding: 0.5em;
-      display: flex;
-      flex-wrap: wrap; }
-      #consulte div article div:first-child a:first-child {
-        margin-left: 75.5555555556%;
-        width: 10%;
-        background-image: url("images/modifier.png");
-        width: 20px;
-        height: 20px;
-        background-repeat: no-repeat; }
-      #consulte div article div:first-child a:last-child {
-        margin-left: 2.2222222222%;
-        width: 10%;
-        background-image: url("images/supprimer.png");
-        width: 20px;
-        height: 20px;
-        background-repeat: no-repeat; }
-    #consulte div article div:nth-child(2) {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap; }
-      #consulte div article div:nth-child(2) a {
-        margin-left: 2.2222222222%;
-        width: 71.1111111111%;
-        text-align: center;
-        display: flex;
-        flex-wrap: wrap; }
-      #consulte div article div:nth-child(2) a img {
-        margin: auto; }
-      #consulte div article div:nth-child(2) aside {
-        border: none;
-        box-sizing: border-box;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
-        #consulte div article div:nth-child(2) aside p {
-          border: none;
-          font-weight: bold; }
-      #consulte div article div:nth-child(2) h2 {
-        hyphens: auto; }
-      #consulte div article div:nth-child(2) p {
-        text-align: left; }
-    #consulte div article form {
-      width: 100%;
-      flex-wrap: wrap;
-      margin-top: auto;
-      margin-bottom: 0;
-      display: flex; }
-      #consulte div article form label {
-        width: 90%;
-        margin: auto;
-        text-align: center;
-        margin-top: 1em; }
-      #consulte div article form input {
-        width: 80%;
-        margin: auto;
-        text-align: center; }
-      #consulte div article form textarea {
-        width: 80%;
-        height: 3em;
-        margin: auto; }
-      #consulte div article form input:last-child {
-        margin-top: 1em;
-        margin-bottom: 1em; }
-
-@media screen and (min-width: 480px) {
-  #item #lienAjout {
-    margin-left: 14.4444444444%;
-    width: 71.1111111111%; } }
-@media screen and (min-width: 600px) {
-  #item aside {
-    margin-left: 2.2222222222%;
-    width: 22.2222222222%; }
-    #item aside div {
-      display: block; }
-  #item div {
-    margin-left: 2.2222222222%;
-    width: 71.1111111111%; }
-    #item div article {
+    width: 95.5555555556%; }
+    #consulte article h2 {
       margin-left: 2.2222222222%;
-      width: 46.6666666667%; } }
-@media screen and (min-width: 801px) {
-  #item #lienAjout {
-    margin-left: 26.6666666667%;
-    width: 46.6666666667%;
-    margin-right: 20%; } }
-@media screen and (min-width: 1281px) {
-  #item #lienAjout {
-    margin-left: 38.8888888889%;
-    width: 22.2222222222%;
-    margin-right: 20%; } }
-@media screen and (min-width: 1750px) {
-  #item div article {
-    margin-left: 2.2222222222%;
-    width: 22.2222222222%; } }
+      width: 95.5555555556%;
+      box-sizing: border-box; }
+    #consulte article p {
+      padding: 0.5em;
+      box-sizing: border-box; }
+    #consulte article p:nth-child(2) {
+      margin-left: 2.2222222222%;
+      width: 95.5555555556%; }
+    #consulte article p:nth-child(3) {
+      margin-left: 2.2222222222%;
+      width: 95.5555555556%; }
+    #consulte article p:nth-child(4) {
+      margin-left: 2.2222222222%;
+      width: 95.5555555556%; }
+  #consulte article:hover {
+    background-color: #b3b3b3; }
+
 @media screen and (min-width: 280px) {
   body {
     font-size: 8pt; } }

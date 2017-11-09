@@ -165,9 +165,11 @@
 				}
 			}
 			& h2{
+				@include grille(8,10%,0,8);
 				hyphens: auto;
 			}
 			& p{
+				@include grille(8,10%,0,8);
 				text-align: left;
 			}
 		}

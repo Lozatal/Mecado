@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 09 Novembre 2017 à 13:30
+-- Généré le :  Jeu 09 Novembre 2017 à 14:08
 -- Version du serveur :  5.7.20-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 
@@ -52,6 +52,7 @@ INSERT INTO `acheteur` (`id`, `nom`, `participation`, `message`, `created_at`, `
 CREATE TABLE `Image` (
   `id` int(11) NOT NULL,
   `url` varchar(255) NOT NULL,
+  `principale` tinyint(1) NOT NULL DEFAULT '0',
   `id_item` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -116,7 +117,8 @@ INSERT INTO `liste` (`id`, `nom`, `description`, `token`, `date_limite`, `destin
 (8, 'test', 'qzf', '$2y$10$wIYAYALqHAnzg0oqlE4F.O8pfkCR8B5Y262HXnjI/b//dZqidoe1u', '1980-10-09 23:00:00', 1, '', '', '2017-11-08 15:59:08', '2017-11-08 15:59:08', 1),
 (9, 'test', 'qzf', '$2y$10$hC1N8jLL9C.LUdJOKDyrAe81n7Dv8WEZSJXIfuorj29fMSlvSI0YW', '1980-10-09 23:00:00', 1, '', '', '2017-11-08 16:03:37', '2017-11-08 16:03:37', 1),
 (10, 'ezfzf', 'zfzf', '$2y$10$HK0OF9zkXIps96C95l2qJ.rnCc9aR2ba9xE9s6EgUqOc/eVw5EDBi', '1980-10-09 23:00:00', 1, '', '', '2017-11-08 16:03:52', '2017-11-08 16:03:52', 1),
-(11, 'qzfqzf', 'qzfqzf', '$2y$10$QyekX693LNZs70GFD6Tcs.t3.jHKBpHd5doyq6sAyDYpfrLS6LwAu', '1980-10-09 23:00:00', 1, 'test', 'test', '2017-11-08 16:04:55', '2017-11-08 16:04:55', 1);
+(11, 'qzfqzf', 'qzfqzf', '$2y$10$QyekX693LNZs70GFD6Tcs.t3.jHKBpHd5doyq6sAyDYpfrLS6LwAu', '1980-10-09 23:00:00', 1, 'test', 'test', '2017-11-08 16:04:55', '2017-11-08 16:04:55', 1),
+(12, 'testdate', 'qzfzqf', '$2y$10$M7RW8FZrGt4ozijUzpCgBeXZ3W7/pDVec80XOTfsB/QRSWSfFErFS', '2019-12-15 12:50:09', 1, 'test', 'test', '2017-11-09 12:50:09', '2017-11-09 12:50:09', 1);
 
 -- --------------------------------------------------------
 
@@ -230,7 +232,7 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT pour la table `liste`
 --
 ALTER TABLE `liste`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT pour la table `message`
 --

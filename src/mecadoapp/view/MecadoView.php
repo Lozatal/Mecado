@@ -371,16 +371,23 @@ EOT;
 			
 			$lienSup='';
 			$lienMod='';
+
 			$form='';
 			if(!$token){//Vrai si on viens par le token, donc l'utilisateur n'est pas le créateur
 				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
 				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
+			}
+			elseif($disabled == null){
 				$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" '.$disabled.' required></textarea>
 						<input type="hidden" name="id_item" value="' . $item->id. '" required>
 						<input type="submit" value="Réserver" '.$disabled.' />
 					</form>';
+			}
+			else
+			{
+				$form = 'Réservé';
 			}
 			
 			//On récupère le lien de la liste des images de l'item
@@ -487,8 +494,7 @@ EOT;
                 	<input type="hidden" name="id_liste" value="${id}">
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
-                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" type="url" placeholder="URL">
-                    <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL">                 
+                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" type="url" placeholder="URL">              
                     <label for="tarif">tarif</label><input type="number" name="tarif" placeholder="tarif" step=0.01 required>
                     <input type="submit" value="Ajouter" ${disabled}>
                 </form>
@@ -531,7 +537,6 @@ EOT;
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" value="${nom}" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
-                    <label for="url_image">Ajouter une image</label><input type="text" name="url_image" value="${url_image}" placeholder="URL">
                     <label for="tarif">tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
                     <input type="submit" value="Modifier">
                 </form>

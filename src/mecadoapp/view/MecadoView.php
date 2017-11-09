@@ -410,6 +410,7 @@ EOT;
 			}
 			elseif($item->cagnote == 1)
 			{
+				$reserved = 'cagnote';
 				$form='<p>Cagnote : </p><form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="Nom" required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
@@ -429,10 +430,11 @@ EOT;
 			$tarif = $item->tarif;
 			if($item->cagnote == 1)
 			{
-				$tarif = '0/'.$item->tarif;
-				foreach ($item->acheteur as $key => $value) {
-					# code...
+				$totaltarif = 0;
+				foreach ($item->acheteurs()->get() as $key => $value) {
+					$totaltarif = $totaltarif + $value->participation;
 				}
+				$tarif = $totaltarif.'/'.$item->tarif;
 			}
 
 			$retour .= '
@@ -440,7 +442,7 @@ EOT;
 					<div>'.$lienImage.$lienMod.$lienSup.'</div>
 					<div>
 						<a href="'.$url.'"><img src="' . $imgPrincipale. '" alt="lien vers le site marchand" ></a>
-						<aside><p>' . $item->tarif . '€</p></aside>
+						<aside><p>' . $tarif . '€</p></aside>
 						<h2>' . $item->nom . '</h2>
 						<p>' . $item->description . '</p>
 					</div>

@@ -4,7 +4,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-	& aside{
+	& #message{
 		margin-bottom: auto;
 		padding: 1em 0 1em 0;
 		@include grille(8,10%,0,8);
@@ -28,6 +28,9 @@
 			margin: auto;
 			margin-top: 0.2em;
 			margin-bottom: 0.2em;
+			& b{
+				font-weight: bold;
+			}
 		}
 		& form{
 			width: 80%;
@@ -115,13 +118,20 @@
 			
 			}
 			& a:first-child{
-				@include grille(8,10%,6,1);
+				@include grille(8,10%,0,1);
+				background-image: url('images/images.png');
+				width: 20px;
+				height: 20px;
+				background-repeat: no-repeat;
+			}
+			& a:nth-child(2){
+				@include grille(8,10%,5,1);
 				background-image: url('images/modifier.png');
 				width: 20px;
 				height: 20px;
 				background-repeat: no-repeat;
 			}
-			& a:last-child{
+			& a:nth-child(3){
 				@include grille(8,10%,0,1);
 				background-image: url('images/supprimer.png');
 				width: 20px;
@@ -134,7 +144,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			& a{
-				@include grille(8,10%,0,6);
+				@include grille(8,10%,0,5);
 				text-align: center;
 				display: flex;
 				flex-wrap: wrap;
@@ -147,8 +157,9 @@
 				box-sizing: border-box;
 				margin-top: auto;
 				margin-bottom: auto;
-				@include grille(8,10%,0,2);
+				@include grille(8,10%,0,3);
 				& p{
+					text-align: center;
 					border: none;
 					font-weight: bold;
 				}
@@ -203,7 +214,7 @@
 
 @media screen and (min-width: 600px){
 	#item{
-		& aside{
+		& #message{
 			@include grille(8,10%,0,2);
 			& div{display: block;}
 		}

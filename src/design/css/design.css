@@ -668,7 +668,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   width: 100%; }
-  #item aside {
+  #item #message {
     margin-bottom: auto;
     padding: 1em 0 1em 0;
     margin-left: 2.2222222222%;
@@ -676,13 +676,13 @@ footer {
     background-color: #e6e6e6;
     border: 2px solid black;
     border-radius: 5px; }
-    #item aside div {
+    #item #message div {
       display: none;
       box-sizing: border-box;
       width: 100%; }
-    #item aside p:nth-child(2n) {
+    #item #message p:nth-child(2n) {
       color: #4d4d4d; }
-    #item aside p {
+    #item #message p {
       box-sizing: border-box;
       font-size: 1em;
       padding: 0.2em;
@@ -691,28 +691,30 @@ footer {
       margin: auto;
       margin-top: 0.2em;
       margin-bottom: 0.2em; }
-    #item aside form {
+      #item #message p b {
+        font-weight: bold; }
+    #item #message form {
       width: 80%;
       margin: auto;
       display: flex;
       flex-wrap: wrap; }
-      #item aside form textarea {
+      #item #message form textarea {
         margin-left: 2.2222222222%;
         width: 95.5555555556%; }
-      #item aside form label {
+      #item #message form label {
         margin-left: 2.2222222222%;
         width: 95.5555555556%;
         text-align: center;
         font-size: 1.2em; }
-      #item aside form input[type=text] {
+      #item #message form input[type=text] {
         margin-left: 2.2222222222%;
         width: 95.5555555556%; }
-      #item aside form input[type=submit] {
+      #item #message form input[type=submit] {
         margin-left: 2.2222222222%;
         width: 95.5555555556%; }
-    #item aside h2:hover ~ div {
+    #item #message h2:hover ~ div {
       display: block; }
-    #item aside div:hover {
+    #item #message div:hover {
       display: block; }
   #item div {
     display: flex;
@@ -782,13 +784,20 @@ footer {
       display: flex;
       flex-wrap: wrap; }
       #item div article div:first-child a:first-child {
-        margin-left: 75.5555555556%;
+        margin-left: 2.2222222222%;
+        width: 10%;
+        background-image: url("images/images.png");
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat; }
+      #item div article div:first-child a:nth-child(2) {
+        margin-left: 63.3333333333%;
         width: 10%;
         background-image: url("images/modifier.png");
         width: 20px;
         height: 20px;
         background-repeat: no-repeat; }
-      #item div article div:first-child a:last-child {
+      #item div article div:first-child a:nth-child(3) {
         margin-left: 2.2222222222%;
         width: 10%;
         background-image: url("images/supprimer.png");
@@ -801,7 +810,7 @@ footer {
       flex-wrap: wrap; }
       #item div article div:nth-child(2) a {
         margin-left: 2.2222222222%;
-        width: 71.1111111111%;
+        width: 58.8888888889%;
         text-align: center;
         display: flex;
         flex-wrap: wrap; }
@@ -813,8 +822,9 @@ footer {
         margin-top: auto;
         margin-bottom: auto;
         margin-left: 2.2222222222%;
-        width: 22.2222222222%; }
+        width: 34.4444444444%; }
         #item div article div:nth-child(2) aside p {
+          text-align: center;
           border: none;
           font-weight: bold; }
       #item div article div:nth-child(2) h2 {
@@ -849,10 +859,10 @@ footer {
     margin-left: 14.4444444444%;
     width: 71.1111111111%; } }
 @media screen and (min-width: 600px) {
-  #item aside {
+  #item #message {
     margin-left: 2.2222222222%;
     width: 22.2222222222%; }
-    #item aside div {
+    #item #message div {
       display: block; }
   #item div {
     margin-left: 2.2222222222%;

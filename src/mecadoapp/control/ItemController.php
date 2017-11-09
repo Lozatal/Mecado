@@ -31,9 +31,19 @@ class ItemController extends \mf\control\AbstractController {
     	
     	$resultat['erreur'] = $e;
     	$resultat['listeItem'] = null;
-    	
+	$resultat['idListe'] = null;
+	$resultat['token'] = false;
+    	$id=null;
     	try{
-	    	if(isset($get['id'])){
+		if(isset($get['id'])){
+			$id=$get['id'];
+		}elseif(isset($get['token'])){
+			$obj = liste::select('id')->where('liste.token', '=', $get['token'])->first();
+			$id=$obj->id;
+			$resultat['token']=true;
+		}
+		$resultat['idListe']=$id;
+	    	if($id!=null){
 	    		
 	    		$util = new \mecadoapp\auth\MecadoAuthentification();
 	    		
@@ -41,9 +51,8 @@ class ItemController extends \mf\control\AbstractController {
 	    			throw new \mf\auth\exception\AuthentificationException("Vous devez être authentifié pour accéder à ce lien");
 	    		}
 	    		else{
-	    			$liste = liste::where('liste.id', '=', $get['id'])
+	    			$liste = liste::where('liste.id', '=', $id)
 	    			->first();
-	    			
 	    			//Si la liste n'a pas été trouvé, on retourne une erreur
 	    			if(!isset($liste) || $liste->id == null){
 	    				throw new \mf\auth\exception\AuthentificationException("L'identifiant de la liste est introuvable");

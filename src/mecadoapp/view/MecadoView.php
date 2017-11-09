@@ -265,10 +265,8 @@ EOT;
 				<div class="alerte-danger">' . $this->data ['erreur'] . '.</div>';
 		}
 		
-		$id = null;
-		if (isset ( $get->get ['id'] )) {
-			$id = $get->get ['id'];
-		}
+		$id = $this->data['idListe'];
+		$token = $this->data['token'];
 		
 		// Lien pour ajouter un Item
 		$titre = 'Titre non renseigné';
@@ -278,11 +276,14 @@ EOT;
 			//$date = date_format ( $date, 'd:m:Y' );
 			$titre = 'Titre : '.$this->data ['listeItem'][0]->Liste->nom.'. Valide jusqu\'au '.$date;
 		}
-		
+		$ajout='';
+		if(!$token){
+			$ajout='<a href="'.$this->app_root.'/main.php/add_item/?liste='.$id.'" id="lienAjout">Ajouter un cadeau</a>';
+		}
 		$retour .= '
 			<section id="item">
 				<h2 id="titre">'.$titre.'</h2>
-				<a href="'.$this->app_root.'/main.php/add_item/?liste='.$id.'" id="lienAjout">Ajouter un cadeau</a>';
+				'.$ajout;
 
 		if(isset($this->data ['listeItem']))
 		{
@@ -290,7 +291,7 @@ EOT;
 			$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $id);
 			
 			// Vue des items
-			$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $id);
+			$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $id,$token);
 		}
 		
 		$retour .= '
@@ -332,7 +333,7 @@ EOT;
 	 * 
 	 * @retour renvoie un string contenant le HTML
 	 */
-    private function afficheListeItem($retour, $dataListeItem, $idListe) {
+    private function afficheListeItem($retour, $dataListeItem, $idListe, $token) {
 		$retour .= '
 				<div>';
 		
@@ -364,13 +365,26 @@ EOT;
 				$placeholderNom = 'Reservé par : '.$item->acheteurs[0]->nom;
 			}
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
+
+			//Si l'utilisateur est le créateur, on affiche les boutons
 			$linkModify = "#";
 			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
+
+			$lienSup='';
+			$lienMod='';
+			if(!$token){//Vrai si on viens par le token, donc l'utilisateur n'est pas le créateur
+				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
+				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
+			}
+
+			//On récupère le lien de la liste des images de l'item
+			$linkImage = "#";
+			$lienImage='<a href="'.$linkImage.'" title="Voir toute les images"></a>';
 
 			
 			$retour .= '
 				<article reserved="'.$reserved.'">
-					<div><a href="'.$linkModify.'"></a><a href="'.$linkDelete.'"></a></div>
+					<div>'.$lienImage.$lienMod.$lienSup.'</div>
 					<div>
 						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
 						<aside><p>Prix : 20€</p></aside>
@@ -404,7 +418,7 @@ EOT;
 		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
 		
 		$retour .= '
-				<aside>
+				<aside id="message">
 					<h2>Messages</h2>
 					<div>
 				';
@@ -416,7 +430,7 @@ EOT;
 				$date = date_format ( $message->created_at, 'd/m/y-H:i' );
 				$retour .= '
 			    		<p>
-							<span>' . $date . '-' . $message->auteur . ' :</span>
+							<span>' . $date . '-<b>' . $message->auteur . '</b> :</span>
 							<span> ' . $message->texte . ' </span>
 						</p>
 					';

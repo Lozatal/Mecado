@@ -888,22 +888,42 @@ footer {
   #item div article {
     margin-left: 2.2222222222%;
     width: 22.2222222222%; } }
-#home article:nth-child(1) {
-  margin-left: 2.2222222222%;
-  width: 95.5555555556%; }
-#home article:nth-child(2) {
-  margin-left: 2.2222222222%;
-  width: 95.5555555556%; }
-  #home article:nth-child(2) ul {
-    list-style-type: none; }
-    #home article:nth-child(2) ul li {
-      margin-top: 0.3em; }
-#home article:nth-child(3) {
-  margin-left: 2.2222222222%;
-  width: 95.5555555556%; }
-#home article:nth-child(4) {
-  margin-left: 2.2222222222%;
-  width: 95.5555555556%; }
+#home {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box; }
+  #home article {
+    background-color: #e6e6e6; }
+  #home article:nth-child(1) {
+    margin-left: 2.2222222222%;
+    width: 58.8888888889%;
+    order: 3; }
+    #home article:nth-child(1) span {
+      margin-top: 2em;
+      display: block;
+      margin: auto;
+      text-align: center; }
+  #home article:nth-child(2) {
+    margin-left: 2.2222222222%;
+    width: 34.4444444444%;
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    order: 2;
+    background-color: white; }
+    #home article:nth-child(2) img {
+      margin: auto;
+      border-radius: 10px; }
+  #home article:nth-child(3) {
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%;
+    order: 1; }
+    #home article:nth-child(3) ul {
+      list-style-type: none; }
+      #home article:nth-child(3) ul li {
+        text-align: center;
+        margin-top: 0.3em; }
 
 @media screen and (min-width: 480px) {
   #home article:nth-child(1) {
@@ -918,27 +938,21 @@ footer {
         margin-top: 0.3em; }
   #home article:nth-child(3) {
     margin-left: 2.2222222222%;
-    width: 46.6666666667%; }
-  #home article:nth-child(4) {
-    margin-left: 2.2222222222%;
-    width: 46.6666666667%; } }
+    width: 95.5555555556%; } }
 @media screen and (min-width: 1025px) {
   #home article:nth-child(1) {
     margin-left: 2.2222222222%;
-    width: 22.2222222222%; }
+    width: 71.1111111111%; }
   #home article:nth-child(2) {
     margin-left: 2.2222222222%;
     width: 22.2222222222%; }
-    #home article:nth-child(2) ul {
-      list-style-type: none; }
-      #home article:nth-child(2) ul li {
-        margin-top: 0.3em; }
   #home article:nth-child(3) {
     margin-left: 2.2222222222%;
-    width: 22.2222222222%; }
-  #home article:nth-child(4) {
-    margin-left: 2.2222222222%;
-    width: 22.2222222222%; } }
+    width: 95.5555555556%; }
+    #home article:nth-child(3) ul {
+      list-style-type: none; }
+      #home article:nth-child(3) ul li {
+        margin-top: 0.3em; } }
 #add_item {
   width: 100%;
   display: flex;

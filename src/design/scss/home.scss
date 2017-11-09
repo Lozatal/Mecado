@@ -1,27 +1,47 @@
 @mixin home($themeColor,$backgroundColor){
 
 #home{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	box-sizing: border-box;
+	& article{
+		background-color: darken($backgroundColor,10);
+	}
 	& article:nth-child(1){
-	@include grille(8,10%,0,8);
+		@include grille(8,10%,0,5);
+		order:3;
+		& span{
+			margin-top: 2em;
+			display: block;
+			margin: auto;
+			text-align: center;
+		}
 	}
 
 	& article:nth-child(2){
-		@include grille(8,10%,0,8);
-	
-		& ul{
-			list-style-type: none;
-			& li{
-				margin-top: 0.3em;
-			}
+		@include grille(8,10%,0,3);
+		display: flex;
+		flex-wrap: wrap;
+		border: none;
+		order:2;
+		background-color: $backgroundColor;
+		& img{
+			margin: auto;
+			border-radius: 10px;
 		}
 	}
 
 	& article:nth-child(3){
 		@include grille(8,10%,0,8);
-	}
-
-	& article:nth-child(4){
-		@include grille(8,10%,0,8);
+		order:1;
+		& ul{
+			list-style-type: none;
+			& li{
+				text-align: center;
+				margin-top: 0.3em;
+			}
+		}
 	}	
 }
 
@@ -47,12 +67,8 @@
 		}
 
 		& article:nth-child(3){
-			@include grille(8,10%,0,4);
+			@include grille(8,10%,0,8);
 		}
-
-		& article:nth-child(4){
-			@include grille(8,10%,0,4);
-		}	
 	}
 }
 
@@ -67,26 +83,21 @@
 @media screen and (min-width: 1025px){
 	#home{
 		& article:nth-child(1){
-		@include grille(8,10%,0,2);
+			@include grille(8,10%,0,6);
 		}
 
 		& article:nth-child(2){
 			@include grille(8,10%,0,2);
-	
+		}
+
+		& article:nth-child(3){
+			@include grille(8,10%,0,8);
 			& ul{
 				list-style-type: none;
 				& li{
 					margin-top: 0.3em;
 				}
 			}
-		}
-
-		& article:nth-child(3){
-			@include grille(8,10%,0,2);
-		}
-
-		& article:nth-child(4){
-			@include grille(8,10%,0,2);
 		}	
 	}
 }

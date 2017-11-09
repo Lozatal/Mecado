@@ -372,9 +372,16 @@ EOT;
 			
 			$lienSup='';
 			$lienMod='';
+			$form='';
 			if(!$token){//Vrai si on viens par le token, donc l'utilisateur n'est pas le créateur
 				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
 				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
+				$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">
+						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>
+						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" '.$disabled.' required></textarea>
+						<input type="hidden" name="id_item" value="' . $item->id. '" required>
+						<input type="submit" value="Réserver" '.$disabled.' />
+					</form>';
 			}
 			
 			//On récupère le lien de la liste des images de l'item
@@ -391,12 +398,7 @@ EOT;
 						<h2>' . $item->nom . '</h2>
 						<p>' . $item->description . '</p>
 					</div>
-					<form id="addMessage" action="' . $linkformReservation. '" method="POST">
-						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>
-						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" '.$disabled.' required></textarea>
-						<input type="hidden" name="id_item" value="' . $item->id. '" required>
-						<input type="submit" value="Réserver" '.$disabled.' />
-					</form>
+					'.$form.'
 				</article>';
 		}
 		

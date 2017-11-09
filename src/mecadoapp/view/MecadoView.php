@@ -312,8 +312,8 @@ EOT;
                 	<input type="hidden" name="id" value="${id}">
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" required></textarea> 
-                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" placeholder="URL" required>
-                    <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL" required>                 
+                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" placeholder="URL">
+                    <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL">                 
                     <label for="tarif">tarif</label><input type="text" name="tarif" placeholder="tarif" required>
                     <input type="submit" value="Ajouter">
                 </form>
@@ -354,11 +354,13 @@ EOT;
 			}
 			
 			$disabled = '';
+			$reserved = 'free';
 			
 			//Si un acheteur est présent, on verrouille le formulaire
 			$placeholderNom = 'Nom';
 			if(isset($item->acheteurs[0])){
 				$disabled = 'disabled';
+				$reserved = 'taken';
 				$placeholderNom = 'Reservé par : '.$item->acheteurs[0]->nom;
 			}
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
@@ -367,12 +369,13 @@ EOT;
 
 			
 			$retour .= '
-				<article>
+				<article reserved="'.$reserved.'">
 					<div><a href="'.$linkModify.'"></a><a href="'.$linkDelete.'"></a></div>
 					<div>
 						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
 						<aside><p>Prix : 20€</p></aside>
 						<h2>' . $item->nom . '</h2>
+						<p>' . $item->description . '</p>
 					</div>
 					<form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>
@@ -403,17 +406,17 @@ EOT;
 		$retour .= '
 				<aside>
 					<h2>Messages</h2>
+					<div>
 				';
 		
 		if(isset($dataListeItem [0])){
 			$listeMessage = $dataListeItem [0]->liste->messages;
 		
 			foreach ( $listeMessage as $message ) {
-				$date = date_format ( $message->created_at, 'd:m:Y à H:i' );
+				$date = date_format ( $message->created_at, 'd/m/y-H:i' );
 				$retour .= '
 			    		<p>
 							<span>' . $date . '-' . $message->auteur . ' :</span>
-							<br>
 							<span> ' . $message->texte . ' </span>
 						</p>
 					';
@@ -423,13 +426,14 @@ EOT;
 		// formulaire d'ajout de message
 		$linkformMessage = $this->script_name . "/message_add/?id=" . $idListe;
 		
-		$retour .= '
+		$retour .= '		
 					<form id="addMessage" action="' . $linkformMessage . '" method="POST">
 				    	<label for="message_nom">Nom:</label><input type="text" id="message_nom" name="nom" required>
 		    			<label for="message_text">Message:</label><textarea id="message_text" name="text" maxlength="500" required></textarea>
 						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '" required>
 				    	<input type="submit" value="Envoyer">
 		    		</form>
+				</div>
 				</aside>
 		';
 

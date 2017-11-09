@@ -11,13 +11,20 @@
 		background-color: darken($backgroundColor,10);
 		border: 2px solid black;
 		border-radius: 5px;
+		& div{
+			display:none;
+			box-sizing: border-box;
+			width: 100%;
+		}
+		& p:nth-child(2n){
+			color: lighten(black,30);
+		}
 		& p{
-			border: 1px solid black;
-			border-radius: 5px;
+			box-sizing: border-box;
 			font-size: 1em;
 			padding: 0.2em;
 			text-align: left;
-			width: 80%;
+			width: 100%;
 			margin: auto;
 			margin-top: 0.2em;
 			margin-bottom: 0.2em;
@@ -25,7 +32,7 @@
 		& form{
 			width: 80%;
 			margin: auto;
-			display: none;
+			display: flex;
 			flex-wrap: wrap;
 			& textarea{
 				@include grille(8,10%,0,8);
@@ -42,11 +49,11 @@
 				@include grille(8,10%,0,8);
 			}
 		}
-		& h2:hover~form{
-			display:flex;
+		& h2:hover~div{
+			display:block;
 		}
-		& form:hover{
-			display:flex;
+		& div:hover{
+			display:block;
 		}
 	}
 	& div{
@@ -60,6 +67,12 @@
 		margin-bottom: 0.5em;
 	}
 	& #lienAjout{
+		-webkit-transition-property: background-color;
+		-webkit-transition-duration: 1s;
+		-moz-transition-property: background-color;
+		-moz-transition-duration: 1s;
+		transition-property: background-color;
+		transition-duration: 1s;
 		margin: auto;
 		margin-bottom: 0.5em;
 		margin-top: 0.5em;
@@ -69,7 +82,23 @@
 		@include grille(8,10%,1,6);
 		max-height: 2em;
 	}
+	& div article[reserved=taken]{
+		background-color: darken($backgroundColor,20);
+		border-color: red;
+	}
+	& div article[reserved=free]{
+		border-color: green;
+	}
+	& div article:hover{
+		background-color: lighten($themeColor,70);
+	}
 	& div article{
+		-webkit-transition-property: background-color;
+		-webkit-transition-duration: 1s;
+		-moz-transition-property: background-color;
+		-moz-transition-duration: 1s;
+		transition-property: background-color;
+		transition-duration: 1s;
 		margin-top: 1em;
 		margin-bottom: auto;
 		display: flex;
@@ -127,6 +156,9 @@
 			& h2{
 				hyphens: auto;
 			}
+			& p{
+				text-align: left;
+			}
 		}
 		& form{
 			width:100%;
@@ -173,7 +205,7 @@
 	#item{
 		& aside{
 			@include grille(8,10%,0,2);
-			& form{display: flex;}
+			& div{display: block;}
 		}
 		& div{
 			@include grille(8,10%,0,6);

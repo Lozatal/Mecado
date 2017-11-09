@@ -297,11 +297,11 @@ EOT;
 		
 		// Lien pour ajouter un Item
 		$titre = 'Titre non renseigné';
-		if(isset($this->data ['listeItem'][0]) && isset($this->data ['listeItem'][0]->Liste)){
-			$time = strtotime($this->data ['listeItem'][0]->Liste->date_limite);
+		if(isset($this->data ['liste'])){
+			$time = strtotime($this->data ['liste']->date_limite);
 			$date = date('d-m-Y',$time);
 			//$date = date_format ( $date, 'd:m:Y' );
-			$titre = 'Titre : '.$this->data ['listeItem'][0]->Liste->nom.'. Valide jusqu\'au '.$date;
+			$titre = 'Titre : '.$this->data ['liste']->nom.'. Valide jusqu\'au '.$date;
 		}
 		$ajout='';
 		if(!$token){

@@ -31,6 +31,9 @@
 		}
 		& p:nth-child(3){
 			@include grille(8,10%,0,8);
+			font-weight: bold;
+			font-size: 1.3em;
+			text-align: right;
 		}
 		& p:nth-child(4){
 			@include grille(8,10%,0,8);
@@ -46,7 +49,9 @@
 }
 
 @media screen and (min-width: 480px){
-
+ 	#consulte article{
+		@include grille(8,10%,0,4);
+	}
 }
 
 @media screen and (min-width: 600px){
@@ -58,7 +63,9 @@
 }
 
 @media screen and (min-width: 1025px){
-
+ 	#consulte article{
+		@include grille(8,10%,0,2);
+	}
 }
 
 @media screen and (min-width: 1281px){

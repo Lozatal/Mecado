@@ -65,7 +65,8 @@ class ItemController extends \mf\control\AbstractController {
 	    				throw new \mf\auth\exception\AuthentificationException("Vous n'êtes pas le propriétaire de cette liste");
 	    			}
 	    			
-	    			$listeItem = $liste->items;
+	    			//voir pour trier les items sans faire de requête
+	    			$listeItem = $liste->items()->orderBy('created_at', 'DESC')->get();
 	    		}
 	    	}
 	    	else{

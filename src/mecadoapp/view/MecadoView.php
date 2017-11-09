@@ -295,18 +295,16 @@ EOT;
 	//////////////// IMAGE ITEM /////////////////
 
  	private function renderImage() {
-
-		$image1=$this->data['images'][0];
-		$idItem=$image1->id_item;
-		$item = \mecadoapp\model\Item::where('id_liste','=',$idItem)->first();
-		$idListe = $item->id_liste;
-
+		$idListe = $this->data['idListe'];
+		$idItem = $this->data['get']['id'];
 		$linkformAddImage = $this->script_name . "/add_image/?id_item=" . $idItem;
+		$lienAdd='<a href="'.$linkformAddImage.'">Ajouter une image</a>';
 		$linkformRetour = $this->script_name . "/item/?id=".$idListe;
+		$lienRetour='<a href="'.$linkformRetour.'">Retour vers la liste</a>';
 
 		$retour = '<section id="image">
-				<a href="'.$linkformAddImage.'">Ajouter une image</a>
-				<a href="'.$linkformRetour.'">Retour vers la liste</a>';
+				'.$lienAdd.'
+				'.$lienRetour;
 		foreach ($this->data['images'] as $image) {
 			$url=$image->url;
 			$id=$image->id;
@@ -432,8 +430,8 @@ EOT;
 			
 			$linkformReservation = $this->script_name . "/reserv_item/?token=" . $idListe;
 			//Si l'utilisateur est le créateur, on affiche les boutons
-			$linkModify = $this->script_name . "/view_update_item/?". $idListe ."&item_id=" . $item->id;
-			$linkDelete = $this->script_name . "/delete_item/?". $idListe ."&item_id=" . $item->id;
+			$linkModify = $this->script_name . "/view_update_item/?id=". $idListe ."&item_id=" . $item->id;
+			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
 			
 			$lienSup='';
 			$lienMod='';
@@ -467,7 +465,7 @@ EOT;
 			}
 			
 			//On récupère le lien de la liste des images de l'item
-			$linkImage = "#";
+			$linkImage = $this->script_name . "/image/?id=". $item->id;
 			$lienImage='<a href="'.$linkImage.'" title="Voir toute les images"></a>';
 			
 			$tarif = $item->tarif;

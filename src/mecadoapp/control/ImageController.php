@@ -3,6 +3,7 @@
 namespace mecadoapp\control;
 
 use mecadoapp\model\Image as image;
+use mecadoapp\model\Item as item;
 
 class ImageController extends \mf\control\AbstractController {
 
@@ -20,9 +21,10 @@ class ImageController extends \mf\control\AbstractController {
 	}
 
 	public function viewImage($e = null){
-		$get = $this->request->get;
-		if(isset($get['id'])){
-			$resultat['images']=image::where('id_item','=',$get['id'])->get();
+		$resultat['get'] = $this->request->get;
+		$resultat['idListe'] = item::where('id_liste','=',$resultat['get']['id'])->first();
+		if(isset($resultat['get']['id'])){
+			$resultat['images']=image::where('id_item','=',$resultat['get']['id'])->get();
 		}else{
 			echo "EXCEPTION";
 		}

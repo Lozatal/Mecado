@@ -3,6 +3,7 @@
 namespace mecadoapp\control;
 
 use mecadoapp\model\Message as message;
+use mecadoapp\model\Liste as liste;
 
 class MessageController extends \mf\control\AbstractController {
 
@@ -30,6 +31,14 @@ class MessageController extends \mf\control\AbstractController {
 		    	else{
 		    		throw new \mf\auth\exception\AuthentificationException("L'identifiant de la liste de cadeaux est vide dans le formulaire du message");
 		    	}
+		    	
+		    	$idListe = $this->request->post['id_liste'];
+		    	
+		    	//Si c'est un token, on va récupérer l'id de la liste
+		    	if(isset($this->request->get['token'])){
+		    		$idListe = liste::select('id')->where('liste.token', '=', $this->request->post['id_liste'])->first()->id;
+		    	}
+		    	
 	    		$message = new message();
 	    		
 	    		if($form['nom'] == null){
@@ -40,7 +49,7 @@ class MessageController extends \mf\control\AbstractController {
 	    		}
 	    		$message->auteur = $form['nom'];
 	    		$message->texte = $form['text'];
-	    		$message->id_liste = $form['id_liste'];
+	    		$message->id_liste = $idListe;
 	    		$message->save();
     		}
     		

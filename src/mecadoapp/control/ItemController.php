@@ -5,7 +5,6 @@ namespace mecadoapp\control;
 use mecadoapp\model\Item as item;
 use mecadoapp\model\Liste as liste;
 use mecadoapp\model\Acheteur as acheteur;
-use mecadoapp\model\Image as image;
 
 class ItemController extends \mf\control\AbstractController {
 
@@ -32,9 +31,11 @@ class ItemController extends \mf\control\AbstractController {
     	
     	$resultat['erreur'] = $e;
     	$resultat['listeItem'] = null;
-	$resultat['idListe'] = null;
-	$resultat['token'] = false;
-	$resultat['liste'] = null;
+		$resultat['idListe'] = null;
+		$resultat['idListeToken'] = null;
+		$resultat['token'] = false;
+		$resultat['liste'] = null;
+
     	$id=null;
     	try{
 			if(isset($get['id'])){
@@ -43,6 +44,7 @@ class ItemController extends \mf\control\AbstractController {
 				$obj = liste::select('id')->where('liste.token', '=', $get['token'])->first();
 				$id=$obj->id;
 				$resultat['token']=true;
+				$resultat['idListeToken'] = $get['token'];
 			}
 			$resultat['idListe']=$id;
 	    	if($id!=null){
@@ -65,8 +67,7 @@ class ItemController extends \mf\control\AbstractController {
 	    				throw new \mf\auth\exception\AuthentificationException("Vous n'êtes pas le propriétaire de cette liste");
 	    			}
 	    			
-	    			//voir pour trier les items sans faire de requête
-	    			$listeItem = $liste->items()->orderBy('created_at', 'DESC')->get();
+	    			$listeItem = $liste->items;
 	    		}
 	    	}
 	    	else{

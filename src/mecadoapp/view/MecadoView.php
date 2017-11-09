@@ -232,10 +232,15 @@ EOT;
             }
         }
 
+        $alert = '';
+		if (isset ( $this->data ))
+			$alert = '<div class="alerte-danger">' . $this->data . '</div>';
+
         $retour =<<< EOT
 
         <section id="add_liste">
             <article>
+            	${alert}
                 <form action="${racine}/main.php/check_liste/" method="post">
                 	${hidden}
                    	<label for="destinataire">Pour un tier :</label>
@@ -336,8 +341,14 @@ EOT;
 				<div class="alerte-danger">' . $this->data ['erreur'] . '.</div>';
 		}
 		
-		$id = $this->data['idListe'];
 		$token = $this->data['token'];
+
+		if($token){
+			$id = $this->data['idListeToken'];
+		}
+		else{
+			$id = $this->data['idListe'];
+		}
 		
 		// Lien pour ajouter un Item
 		$titre = 'Titre non renseigné';
@@ -359,7 +370,7 @@ EOT;
 		if(isset($this->data ['listeItem']))
 		{
 			// Vue des messages
-			$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $id);
+			$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $id, $token);
 			
 			// Vue des items
 			$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $id,$token);
@@ -418,10 +429,11 @@ EOT;
 				$disabled = 'disabled';
 				$reserved = 'taken';
 			}
-			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
+			
+			$linkformReservation = $this->script_name . "/reserv_item/?token=" . $idListe;
 			//Si l'utilisateur est le créateur, on affiche les boutons
-			$linkModify = $this->script_name . "/view_update_item/?id=". $idListe ."&item_id=" . $item->id;
-			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
+			$linkModify = $this->script_name . "/view_update_item/?". $idListe ."&item_id=" . $item->id;
+			$linkDelete = $this->script_name . "/delete_item/?". $idListe ."&item_id=" . $item->id;
 			
 			$lienSup='';
 			$lienMod='';
@@ -495,7 +507,7 @@ EOT;
 	 *
 	 * @retour renvoie un string contenant le HTML
 	 */
-	private function afficheMessageItem($retour, $dataListeItem, $idListe) {
+	private function afficheMessageItem($retour, $dataListeItem, $idListe, $token) {
 		// Ensuite, on gère les messages général de la liste que l'on affiche sur le côté
 		
 		$retour .= '
@@ -518,8 +530,15 @@ EOT;
 			}
 		}
 		
+		if($token){
+			$urlIdListe = 'token='.$idListe;
+		}
+		else{
+			$urlIdListe= 'id='.$idListe;
+		}
+		
 		// formulaire d'ajout de message
-		$linkformMessage = $this->script_name . "/message_add/?id=" . $idListe;
+		$linkformMessage = $this->script_name . "/message_add/?" . $urlIdListe;
 		
 		$retour .= '
 					<form id="addMessage" action="' . $linkformMessage . '" method="POST">

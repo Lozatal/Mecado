@@ -305,7 +305,7 @@ EOT;
 		}
 		$ajout='';
 		if(!$token){
-			$ajout='<a href="'.$this->app_root.'/main.php/add_item/?liste='.$id.'" id="lienAjout">Ajouter un cadeau</a>';
+			$ajout='<a href="'.$this->app_root.'/main.php/view_add_item/?id='.$id.'" id="lienAjout">Ajouter un cadeau</a>';
 		}
 		$retour .= '
 			<section id="item">
@@ -474,7 +474,7 @@ EOT;
 					<div>'.$lienImage.$lienMod.$lienSup.'</div>
 					<div>
 						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
-						<aside><p>' . $item->tarif . '</p></aside>
+						<aside><p>' . $item->tarif . '€</p></aside>
 						<h2>' . $item->nom . '</h2>
 						<p>' . $item->description . '</p>
 					</div>

@@ -428,7 +428,13 @@ EOT;
 			}
 			elseif($item->cagnote == 1)
 			{
-
+				$reserved = 'cagnote';
+				$form='<p>Cagnote : </p><form id="addMessage" action="' . $linkformReservation. '" method="POST">
+						<input name="nom" type="text" placeholder="Nom" required>
+						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
+						<input type="hidden" name="id_item" value="' . $item->id. '" required>
+						<input type="submit" value="Réserver" >
+					</form>';
 			}
 			else
 			{
@@ -439,13 +445,22 @@ EOT;
 			$linkImage = "#";
 			$lienImage='<a href="'.$linkImage.'" title="Voir toute les images"></a>';
 			
-			
+			$tarif = $item->tarif;
+			if($item->cagnote == 1)
+			{
+				$totaltarif = 0;
+				foreach ($item->acheteurs()->get() as $key => $value) {
+					$totaltarif = $totaltarif + $value->participation;
+				}
+				$tarif = $totaltarif.'/'.$item->tarif;
+			}
+
 			$retour .= '
 				<article reserved="'.$reserved.'">
 					<div>'.$lienImage.$lienMod.$lienSup.'</div>
 					<div>
 						<a href="'.$url.'"><img src="' . $imgPrincipale. '" alt="lien vers le site marchand" ></a>
-						<aside><p>' . $item->tarif . '€</p></aside>
+						<aside><p>' . $tarif . '€</p></aside>
 						<h2>' . $item->nom . '</h2>
 						<p>' . $item->description . '</p>
 					</div>
@@ -566,6 +581,15 @@ EOT;
     	$url_image= $item->url_image;
     	$tarif= $item->tarif;
     	$cagnote= $item->cagnote;
+
+    	$checkedoui = '';
+    	$checkednon = 'checked';
+
+    	if($cagnote == 1)
+    	{
+    		$checkedoui = 'checked';
+    		$checkednon = '';
+    	}
     	
     	//c'est le message d'erreur, donc si présent, on affiche un message d'erreur
     	if (isset ( $this->data['erreur'] ) && $this->data['erreur']!= null) {
@@ -588,8 +612,8 @@ EOT;
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
                     <label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
                     <label for="cagnote">Cagnote</label>
-                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1">
-                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" checked>
+                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1" ${checkedoui}>
+                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" ${checkednon}>
                     <input type="submit" value="Modifier">
                 </form>
             </article>

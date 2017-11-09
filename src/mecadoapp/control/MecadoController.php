@@ -2,10 +2,11 @@
 
 namespace mecadoapp\control;
 
+use mecadoapp\model\Item as item;
+use mecadoapp\model\Liste as liste;
+use mecadoapp\model\User as user;
 
 class MecadoController extends \mf\control\AbstractController {
-
-
     /* Constructeur :
      * 
      * Appelle le constructeur parent
@@ -19,8 +20,10 @@ class MecadoController extends \mf\control\AbstractController {
     }
     
     public function viewHome(){
-
-        $v = new \mecadoapp\view\MecadoView(null);
+	$resultat['liste'] = liste::count();
+	$resultat['item'] = item::count();
+	$resultat['user'] = user::count();
+        $v = new \mecadoapp\view\MecadoView($resultat);
         $v ->render('home');
 
     }

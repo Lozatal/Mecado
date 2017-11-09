@@ -69,28 +69,42 @@ EOT;
 		return $retour;
 	}
 	private function renderHome() {
+		$liste=$this->data['liste'];
+		$user=$this->data['user'];
+		$item=$this->data['item'];
 		$retour = <<<EOT
 
 <section id="home">
             <article>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at purus ut lorem egestas sagittis. Fusce sit amet nisl mauris. Cras eget dolor ut purus varius fermentum. Vestibulum placerat eros neque, sed viverra dui mollis a. Praesent nec enim a eros bibendum luctus. Maecenas vel mattis lectus, non euismod dui. Etiam scelerisque nisl ut auctor finibus. Praesent tempus mollis elit et rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante nisl, id fringilla nulla ultricies sit amet. Nulla molestie nisl quis dui pharetra commodo. In convallis turpis ac consequat rutrum. Donec bibendum non justo auctor malesuada. Nam et egestas nisi, quis imperdiet ex.
+<p>Bienvenue sur Mecado.net ! Le site qui vous permet de gérer vos listes de cadeaux rapidement et sur tout les supports !
+
+En vous inscrivant gratuitement, vous pouvez créer une liste et l'administrer, que vous soyez celui qui recevras les cadeaux à la fin ou non ! Et si vous faites la liste pour quelqu'un d'autre, des fonctionnalités supplémentaire sont prévue pour vous faciliter la vie !
+
+N'attendez plus, et venez découvrir tout les secrets de Mecado.net !
+<span>
+Accroche-toi, ferme les yeux, concentre-toi<br>
+Tes bijoux ne valent pas ta présence, tu ouvriras les yeux le jour où...<br>
+Accroche-toi, ferme les yeux, concentre-toi<br>
+Tes bijoux ne valent pas ta présence, tu ouvriras les yeux le jour où...<br>
+<br>
+À quoi me servent tes cadeaux ?<br>
+À quoi me servent tes cadeaux ?<br>
+Tu n'as pas su me soutenir<br>
+Tu n'as pas su me retenir<br>
+À quoi me servent tes cadeaux ?<br>
+À quoi me servent tes cadeaux ?<br>
+Tu n'as pas su me soutenir<br>
+Tu n'as pas su me retenir</span></p>
+            </article>
+		<article>
+		<img src="/Mecado/src/design/css/images/presentation.png" >
             </article>
             <article>
                 <ul>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Nombre de liste créée : ${liste}</li>
+                    <li>Quantité de cadeau : ${item}</li>
+                    <li>Nombre d'utilisateur : ${user}</li>
                 </ul>
-            </article>
-            <article>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at purus ut lorem egestas sagittis. Fusce sit amet nisl mauris. Cras eget dolor ut purus varius fermentum. Vestibulum placerat eros neque, sed viverra dui mollis a.
-            </article>
-            <article>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at purus ut lorem egestas sagittis. Fusce sit amet nisl mauris. Cras eget dolor ut purus varius fermentum. Vestibulum placerat eros neque, sed viverra dui mollis a. Praesent nec enim a eros bibendum luctus. Maecenas vel mattis lectus, non euismod dui. Etiam scelerisque nisl ut auctor finibus. Praesent tempus mollis elit et rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante nisl, id fringilla nulla ultricies sit amet. Nulla molestie nisl quis dui pharetra commodo. In convallis turpis ac consequat rutrum. Donec bibendum non justo auctor malesuada. Nam et egestas nisi, quis imperdiet ex.
-
-    Donec mollis tincidunt ullamcorper. Mauris quis odio consectetur, laoreet metus in, rutrum tellus. Integer suscipit justo non mi pharetra rhoncus. Nullam eget sollicitudin eros. Mauris dictum nisi at dignissim porta. Praesent ullamcorper viverra felis, ac ullamcorper dolor pellentesque ac. Etiam molestie magna magna, ac fermentum elit efficitur non. Fusce convallis ipsum ut erat aliquam suscipit. Fusce quis nulla ligula. Curabitur ac tortor at ex feugiat condimentum nec sed lorem. Proin diam erat, interdum vitae pretium pellentesque, eleifend eget mauris. Quisque posuere neque nibh, placerat consequat orci mattis sed. Aenean sodales, lectus ac feugiat dapibus, nulla tellus aliquam urna, vel imperdiet eros elit ac mauris. Sed sagittis felis vitae velit aliquam vestibulum. Duis libero nulla, suscipit a risus sed, sodales scelerisque urna. 
             </article>
     </section>
 

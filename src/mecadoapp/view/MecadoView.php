@@ -301,7 +301,7 @@ EOT;
 			$time = strtotime($this->data ['liste']->date_limite);
 			$date = date('d-m-Y',$time);
 			//$date = date_format ( $date, 'd:m:Y' );
-			$titre = 'Titre : '.$this->data ['liste']->nom.'. Valide jusqu\'au '.$date;
+			$titre = 'Titre : '.$this->data ['liste']->nom.'. Valide jusqu\'au '.$date.'.';
 		}
 		$ajout='';
 		if(!$token){

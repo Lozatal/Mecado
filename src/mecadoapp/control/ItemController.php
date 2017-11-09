@@ -33,6 +33,7 @@ class ItemController extends \mf\control\AbstractController {
     	$resultat['listeItem'] = null;
 		$resultat['idListe'] = null;
 		$resultat['token'] = false;
+		$resultat['liste'] = null;
     	$id=null;
     	try{
 			if(isset($get['id'])){
@@ -71,6 +72,7 @@ class ItemController extends \mf\control\AbstractController {
 	    	}
 	    	
 	    	$resultat['listeItem']= $listeItem;
+	    	$resultat['liste'] = $liste;
     	}catch(\mf\auth\exception\AuthentificationException $e){
     		$resultat['erreur'] = $e->getmessage();
     	}

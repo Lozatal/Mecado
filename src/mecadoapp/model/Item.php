@@ -15,4 +15,8 @@
 		public function acheteurs(){
 			return $this->hasMany( 'mecadoapp\model\Acheteur', 'id_item');
 		}
+		
+		public function images(){
+			return $this->hasMany( 'mecadoapp\model\Image', 'id_item');
+		}
 	}

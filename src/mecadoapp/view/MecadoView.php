@@ -327,29 +327,90 @@ EOT;
 	}
 
 	private function renderAddItem() {
-
+		
+		$retour='';
         $racine =  $this->app_root;
         $get = new \mf\utils\HttpRequest ();
-        $id = $get->get['liste'];
+        $id = '';
+        $id_item= '';
+        if(isset($get)){
+        	if(isset($get->get['id'])){
+        		$id= $get->get['id'];
+        	}
+        }
+        
+        //Le seul data possible, c'est le message d'erreur, donc si présent, on affiche un message d'erreur
+        $disabled = '';
+        if (isset ( $this->data ) && $this->data != null) {
+        	$retour = '
+				<div class="alerte-danger">' . $this->data . '.</div>';
+        	//$disabled = 'disabled';
+        }
 
-        $retour =<<< EOT
+        $idForLink = 'id='.(string)$id;
+        $linkformAddItem = $this->script_name . "/add_item/?" . $idForLink;
+
+        $retour .=<<< EOT
 
         <section id="add_item">
             <article>
-                <form action="${racine}/main.php/check_item/" method="post">
-                	<input type="hidden" name="id" value="${id}">
+            	<form action="${linkformAddItem}" method="post">
+                	<input type="hidden" name="id_liste" value="${id}">
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" required>
-                    <label for="description">Description</label><textarea maxlength="500" name="description" required></textarea> 
+                    <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" placeholder="URL">
                     <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL">                 
                     <label for="tarif">tarif</label><input type="text" name="tarif" placeholder="tarif" required>
-                    <input type="submit" value="Ajouter">
+                    <input type="submit" value="Ajouter" ${disabled}>
                 </form>
             </article>
         </section>
 EOT;
         return $retour;
     }
+    
+    private function renderUpdateItem() {
+    	
+    	$item = $this->data['item'];
+    	
+    	$retour='';
+    	$racine =  $this->app_root;
+    	$id = $item->id_liste;
+    	$id_item= $item->id;
+    	$nom= $item->nom;
+    	$description= $item->description;
+    	$url_article= $item->url_article;
+    	$url_image= $item->url_image;
+    	$tarif= $item->tarif;
+    	
+    	//c'est le message d'erreur, donc si présent, on affiche un message d'erreur
+    	if (isset ( $this->data['erreur'] ) && $this->data['erreur']!= null) {
+    		$retour = '
+				<div class="alerte-danger">' . $this->data['erreur']. '.</div>';
+    	}
+    	
+    	$idForLink = 'id='.(string)$id.'&item='.(string)$id_item;
+    	$linkformAddItem = $this->script_name . "/update_item/?" . $idForLink;
+    	
+    	$retour .=<<< EOT
+    	
+        <section id="add_item">
+            <article>
+            	<form action="${linkformAddItem}" method="post">
+            		<input type="hidden" name="id_item" value="${id_item}">
+                	<input type="hidden" name="id_liste" value="${id}">
+                    <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" value="${nom}" required>
+                    <label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
+                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
+                    <label for="url_image">Ajouter une image</label><input type="text" name="url_image" value="${url_image}" placeholder="URL">
+                    <label for="tarif">tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
+                    <input type="submit" value="Ajouter">
+                </form>
+            </article>
+        </section>
+EOT;
+    	return $retour;
+}
 
 	
 	/**
@@ -392,9 +453,8 @@ EOT;
 				$placeholderNom = 'Reservé par : '.$item->acheteurs[0]->nom;
 			}
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
-
 			//Si l'utilisateur est le créateur, on affiche les boutons
-			$linkModify = "#";
+			$linkModify = $this->script_name . "/view_update_item/?id=". $idListe ."&item_id=" . $item->id;
 			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
 
 			$lienSup='';
@@ -512,6 +572,9 @@ EOT;
 				break;
 			case "addItem" :
 				$contenu = $this->renderAddItem ();
+				break;
+			case "updateItem" :
+				$contenu = $this->renderUpdateItem ();
 				break;
 		}
 		

@@ -123,6 +123,7 @@ class ItemController extends \mf\control\AbstractController {
         		$description = $this->request->post['description'];
         		$url_article = $this->request->post['url_article'];
         		$tarif = $this->request->post['tarif'];
+                $cagnote = $this->request->post['cagnote'];
         		
 	            //On va vérifier que la liste éxiste bien
 	            $liste = liste::where('id', '=', $id_liste)
@@ -148,6 +149,7 @@ class ItemController extends \mf\control\AbstractController {
 	            $item->url_article = $url_article;
 	            $item->tarif = $tarif;
 	            $item->id_liste = $id_liste;
+                $item->cagnote = $cagnote;
 	            $item->save();
         	}
             

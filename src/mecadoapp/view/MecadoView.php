@@ -495,7 +495,10 @@ EOT;
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" type="url" placeholder="URL">              
-                    <label for="tarif">tarif</label><input type="number" name="tarif" placeholder="tarif" step=0.01 required>
+                    <label for="tarif">Tarif</label><input type="number" name="tarif" placeholder="tarif" step=0.01 required>
+                    <label for="cagnote">Cagnote</label>
+                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1">
+                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" checked>
                     <input type="submit" value="Ajouter" ${disabled}>
                 </form>
             </article>
@@ -537,7 +540,7 @@ EOT;
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" value="${nom}" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
-                    <label for="tarif">tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
+                    <label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
                     <input type="submit" value="Modifier">
                 </form>
             </article>

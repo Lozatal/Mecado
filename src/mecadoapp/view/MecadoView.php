@@ -290,24 +290,24 @@ EOT;
 	//////////////// IMAGE ITEM /////////////////
 
     private function renderImage() {
-    	
+    	/*
     	$retour='';
 	$retour.='<section id="image">';
 	$retour.='<a href="">Retour vers la liste</a>'
 	$retour=$this->afficheListeImage ($retour, $this->data ['listeImageItem']);
 	$retour.='</section>';
-    	return $retour;
+    	return $retour;*/
 	}
 
 
-    private function afficheListeImage($retour, $dataListeImageItem) {
+    private function afficheListeImage($retour, $dataListeImageItem) {/*
     	foreach($dataListeImageItem as $image){
 	    	$retour.='
 		    <article>
 	    		<img src="'.$image.'">
 		    </article>';
 	}
-    	return $retour;
+    	return $retour;*/
 	}
 	
 	////////////////// ITEM /////////////////////

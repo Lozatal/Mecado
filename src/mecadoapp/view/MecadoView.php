@@ -363,31 +363,18 @@ EOT;
 				$url = $item->url_article;
 			}
 			
-			//image par défault
-			$imgPrincipale = $this->app_root . '/' . 'src/design/css/images/cadeauDefault.png';
-			
-			//On va récupérer l'image principale ou la première
-			if(isset($item->images)){
-				
-				$number = 0;
-				foreach($item->images as $image){
-					//Dans le cas ou il n'y a pas d'iamge principale, je prends la première par défault, sinon c'est la principale
-					if($number == 0 || $image->principale){
-						$imgPrincipale = $image->url;
-					}
-					$number++;
-				}
+			$img = $this->app_root . '/' . 'src/design/css/images/cadeauDefault.png';
+			if (isset ( $item->url_image ) && $item->url_image) {
+				$img = $item->url_image;
 			}
 			
 			$disabled = '';
 			$reserved = 'free';
 			
 			//Si un acheteur est présent, on verrouille le formulaire
-			$placeholderNom = 'Nom';
 			if(isset($item->acheteurs[0])){
 				$disabled = 'disabled';
 				$reserved = 'taken';
-				$placeholderNom = 'Reservé par : '.$item->acheteurs[0]->nom;
 			}
 			$linkformReservation = $this->script_name . "/reserv_item/?id=" . $idListe;
 			//Si l'utilisateur est le créateur, on affiche les boutons
@@ -402,17 +389,21 @@ EOT;
 				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
 				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
 			}
-			elseif($disabled == null){
+			elseif($disabled == null and $item->cagnote == 0){
 				$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">
-						<input name="nom" type="text" placeholder="'.$placeholderNom.'" '.$disabled.' required>
-						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" '.$disabled.' required></textarea>
+						<input name="nom" type="text" placeholder="Nom" required>
+						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
 						<input type="hidden" name="id_item" value="' . $item->id. '" required>
-						<input type="submit" value="Réserver" '.$disabled.' />
+						<input type="submit" value="Réserver" >
 					</form>';
+			}
+			elseif($item->cagnote == 1)
+			{
+
 			}
 			else
 			{
-				$form = 'Réservé';
+				$form = '<p>Réservé</p>';
 			}
 			
 			//On récupère le lien de la liste des images de l'item
@@ -424,7 +415,7 @@ EOT;
 				<article reserved="'.$reserved.'">
 					<div>'.$lienImage.$lienMod.$lienSup.'</div>
 					<div>
-						<a href="'.$url.'"><img src="' . $imgPrincipale. '" alt="lien vers le site marchand" ></a>
+						<a href="'.$url.'"><img src="' . $img . '" alt="lien vers le site marchand" ></a>
 						<aside><p>' . $item->tarif . '€</p></aside>
 						<h2>' . $item->nom . '</h2>
 						<p>' . $item->description . '</p>
@@ -520,7 +511,10 @@ EOT;
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" type="url" placeholder="URL">              
-                    <label for="tarif">tarif</label><input type="number" name="tarif" placeholder="tarif" step=0.01 required>
+                    <label for="tarif">Tarif</label><input type="number" name="tarif" placeholder="tarif" step=0.01 required>
+                    <label for="cagnote">Cagnote</label>
+                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1">
+                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" checked>
                     <input type="submit" value="Ajouter" ${disabled}>
                 </form>
             </article>
@@ -542,6 +536,7 @@ EOT;
     	$url_article= $item->url_article;
     	$url_image= $item->url_image;
     	$tarif= $item->tarif;
+    	$cagnote= $item->cagnote;
     	
     	//c'est le message d'erreur, donc si présent, on affiche un message d'erreur
     	if (isset ( $this->data['erreur'] ) && $this->data['erreur']!= null) {
@@ -562,7 +557,10 @@ EOT;
                     <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" value="${nom}" required>
                     <label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
-                    <label for="tarif">tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
+                    <label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
+                    <label for="cagnote">Cagnote</label>
+                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1">
+                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" checked>
                     <input type="submit" value="Modifier">
                 </form>
             </article>

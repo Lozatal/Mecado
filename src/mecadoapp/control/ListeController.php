@@ -26,7 +26,7 @@ class ListeController extends \mf\control\AbstractController {
 
         $ctrl=[];
         $requete = \mecadoapp\model\Liste::select()->where('id_user', '=', $userreq->id);
-        $lignes = $requete  ->orderByDESC('created_at', 'DESC')
+        $lignes = $requete  ->orderByDESC('date_limite', 'DESC')
                             ->get();
 
         foreach ($lignes as $v)

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 09 Novembre 2017 à 14:22
+-- Généré le :  Jeu 09 Novembre 2017 à 13:30
 -- Version du serveur :  5.7.20-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 
@@ -46,26 +46,12 @@ INSERT INTO `acheteur` (`id`, `nom`, `participation`, `message`, `created_at`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `image`
---
-
-CREATE TABLE `image` (
-  `id` int(11) NOT NULL,
-  `url` varchar(255) NOT NULL,
-  `principale` tinyint(1) NOT NULL DEFAULT '0',
-  `id_item` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `Image`
 --
 
 CREATE TABLE `Image` (
   `id` int(11) NOT NULL,
   `url` varchar(255) NOT NULL,
-  `principale` tinyint(1) NOT NULL DEFAULT '0',
   `id_item` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -95,9 +81,7 @@ CREATE TABLE `item` (
 
 INSERT INTO `item` (`id`, `nom`, `description`, `url_article`, `tarif`, `groupe`, `cagnote`, `appartient_a`, `created_at`, `updated_at`, `id_liste`) VALUES
 (1, 'test', 'qzfqzf', 'url', 20, 0, 0, NULL, '2017-11-07 14:55:49', '2017-11-08 16:33:42', 1),
-(2, '4 Mariages et 1 mort', 'description zqzfqzqf', NULL, 80, 0, 0, NULL, '2017-11-07 14:58:34', '2017-11-07 14:58:34', 1),
-(3, 'test', 'test', 'ets', 20, 0, 0, NULL, '2017-11-09 13:14:45', '2017-11-09 13:14:45', 1),
-(4, 'testcagnote', 'test', 'test', 20, 0, 1, NULL, '2017-11-09 13:15:33', '2017-11-09 13:15:33', 1);
+(2, '4 Mariages et 1 mort', 'description zqzfqzqf', NULL, 80, 0, 0, NULL, '2017-11-07 14:58:34', '2017-11-07 14:58:34', 1);
 
 -- --------------------------------------------------------
 
@@ -132,8 +116,7 @@ INSERT INTO `liste` (`id`, `nom`, `description`, `token`, `date_limite`, `destin
 (8, 'test', 'qzf', '$2y$10$wIYAYALqHAnzg0oqlE4F.O8pfkCR8B5Y262HXnjI/b//dZqidoe1u', '1980-10-09 23:00:00', 1, '', '', '2017-11-08 15:59:08', '2017-11-08 15:59:08', 1),
 (9, 'test', 'qzf', '$2y$10$hC1N8jLL9C.LUdJOKDyrAe81n7Dv8WEZSJXIfuorj29fMSlvSI0YW', '1980-10-09 23:00:00', 1, '', '', '2017-11-08 16:03:37', '2017-11-08 16:03:37', 1),
 (10, 'ezfzf', 'zfzf', '$2y$10$HK0OF9zkXIps96C95l2qJ.rnCc9aR2ba9xE9s6EgUqOc/eVw5EDBi', '1980-10-09 23:00:00', 1, '', '', '2017-11-08 16:03:52', '2017-11-08 16:03:52', 1),
-(11, 'qzfqzf', 'qzfqzf', '$2y$10$QyekX693LNZs70GFD6Tcs.t3.jHKBpHd5doyq6sAyDYpfrLS6LwAu', '1980-10-09 23:00:00', 1, 'test', 'test', '2017-11-08 16:04:55', '2017-11-08 16:04:55', 1),
-(12, 'testdate', 'qzfzqf', '$2y$10$M7RW8FZrGt4ozijUzpCgBeXZ3W7/pDVec80XOTfsB/QRSWSfFErFS', '2019-12-15 12:50:09', 1, 'test', 'test', '2017-11-09 12:50:09', '2017-11-09 12:50:09', 1);
+(11, 'qzfqzf', 'qzfqzf', '$2y$10$QyekX693LNZs70GFD6Tcs.t3.jHKBpHd5doyq6sAyDYpfrLS6LwAu', '1980-10-09 23:00:00', 1, 'test', 'test', '2017-11-08 16:04:55', '2017-11-08 16:04:55', 1);
 
 -- --------------------------------------------------------
 
@@ -192,18 +175,10 @@ ALTER TABLE `acheteur`
   ADD KEY `FK_acheteur_id_item` (`id_item`);
 
 --
--- Index pour la table `image`
---
-ALTER TABLE `image`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_item` (`id_item`);
-
---
 -- Index pour la table `Image`
 --
 ALTER TABLE `Image`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_item` (`id_item`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `item`
@@ -242,11 +217,6 @@ ALTER TABLE `user`
 ALTER TABLE `acheteur`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT pour la table `image`
---
-ALTER TABLE `image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT pour la table `Image`
 --
 ALTER TABLE `Image`
@@ -255,12 +225,12 @@ ALTER TABLE `Image`
 -- AUTO_INCREMENT pour la table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `liste`
 --
 ALTER TABLE `liste`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT pour la table `message`
 --
@@ -280,12 +250,6 @@ ALTER TABLE `user`
 --
 ALTER TABLE `acheteur`
   ADD CONSTRAINT `FK_acheteur_id_item` FOREIGN KEY (`id_item`) REFERENCES `item` (`id`);
-
---
--- Contraintes pour la table `Image`
---
-ALTER TABLE `Image`
-  ADD CONSTRAINT `FK_image_id_item` FOREIGN KEY (`id_item`) REFERENCES `item` (`id`);
 
 --
 -- Contraintes pour la table `item`

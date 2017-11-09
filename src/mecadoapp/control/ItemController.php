@@ -5,6 +5,7 @@ namespace mecadoapp\control;
 use mecadoapp\model\Item as item;
 use mecadoapp\model\Liste as liste;
 use mecadoapp\model\Acheteur as acheteur;
+use mecadoapp\model\Image as image;
 
 class ItemController extends \mf\control\AbstractController {
 

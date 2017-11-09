@@ -577,6 +577,30 @@ EOT;
 EOT;
     	return $retour;
 	}
+
+    private function renderImage() {
+    	
+    	$retour .=<<< EOT
+    	
+        <section id="add_item">
+            <article>
+            	<form action="${linkformAddItem}" method="post">
+            		<input type="hidden" name="id_item" value="${id_item}">
+                	<input type="hidden" name="id_liste" value="${id}">
+                    <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" value="${nom}" required>
+                    <label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
+                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
+                    <label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
+                    <label for="cagnote">Cagnote</label>
+                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1">
+                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" checked>
+                    <input type="submit" value="Modifier">
+                </form>
+            </article>
+        </section>
+EOT;
+    	return $retour;
+	}
 	
 	// /////////////// FIN ITEM /////////////////////
 	
@@ -612,6 +636,9 @@ EOT;
 				break;
 			case "updateItem" :
 				$contenu = $this->renderUpdateItem ();
+				break;
+			case "image" :
+				$contenu = $this->renderImage ();
 				break;
 		}
 		

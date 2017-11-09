@@ -110,8 +110,8 @@ EOT;
                 <form action="' . $this->app_root . '/main.php/check_signup/" method=post>
                     <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom" required>
                     <label for="prenom">Prénom</label><input type="text"  name="prenom" placeholder="Prenom" required>
-                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email" required>
-                    <label for="password">Mot de passe</label><input type="password" name="password" required>
+                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email" min="6" required>
+                    <label for="password">Mot de passe</label><input type="password" name="password" min="6" required>
                     <label for="password_verify">Confirmation du mot de passe</label><input type="password"  name="password_verify" required>
                     <input type="submit" value="S\'inscrire" />
                 </form>
@@ -360,7 +360,7 @@ EOT;
                     <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" placeholder="URL">
                     <label for="url_image">Ajouter une image</label><input type="text" name="url_image" placeholder="URL">                 
-                    <label for="tarif">tarif</label><input type="text" name="tarif" placeholder="tarif" required>
+                    <label for="tarif">tarif</label><input type="number" name="tarif" placeholder="tarif" required>
                     <input type="submit" value="Ajouter" ${disabled}>
                 </form>
             </article>

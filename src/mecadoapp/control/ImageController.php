@@ -76,9 +76,9 @@ class ImageController extends \mf\control\AbstractController {
 	}
 
 	public function deleteImage(){
-	    	$get = $this->request->get;
+	    $get = $this->request->get;
 		try{
-	    		if(isset($get['id_image'])){
+	    	if(isset($get['id_image'])){
 				$image=image::where('id', '=', $get['id_image'])->first();
 				$image->delete();
 				$tabAlerte['message']="L'image a bien été supprimé";
@@ -95,18 +95,18 @@ class ImageController extends \mf\control\AbstractController {
 	}
 
 	public function principaleImage(){
-	    	$get = $this->request->get;
+	    $get = $this->request->get;
 		try{
-	    		if(isset($get['id_image']) && isset($get['id'])){
-				$listeImage=image::where('id_item', '=', $get['id'])->get();
-				foreach($listeImage as $image){
-					if($image->id==$get['id_image']){
-						$image->principale=1;
-						$image->save();
-					}else{
-						$image->principale=0;
-						$image->save();
-					}
+	    	if(isset($get['id_image']) && isset($get['id'])){
+					$listeImage=image::where('id_item', '=', $get['id_item'])->get();
+					foreach($listeImage as $image){
+						if($image->id==$get['id_image']){
+							$image->principale=1;
+							$image->save();
+						}else{
+							$image->principale=0;
+							$image->save();
+						}
 				}
 				$tabAlerte['message']="L'image à bien été mise en principale";
 				$tabAlerte['type']="success";

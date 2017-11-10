@@ -46,7 +46,9 @@
 			@include grille(8,10%,1,1);
 			width: 20px;
 			height: 20px;
+			background-image: url('images/message.png');
 			background-repeat: no-repeat;
+			display: none;
 			order: 1;
 		}
 		& a:nth-child(3){
@@ -110,7 +112,7 @@
 			color: black;
 		}
 		& a:nth-child(2){
-			background-image: url('images/message.png');
+			display: block;
 			@include grille(8,10%,2,1);
 		}
 		& a:nth-child(3){

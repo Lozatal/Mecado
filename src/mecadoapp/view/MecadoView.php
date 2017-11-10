@@ -325,8 +325,8 @@ EOT;
 			$linkformSupprimer = $this->script_name . "/delete_image/?id_image=".$id."&id=".$idItem;
 			$retour.='
 				<article>
-					<a href="'.$linkformEnregistrer.'" title="Enregistrer en image principale">rec</a>
-					<a href="'.$linkformSupprimer.'" title="Supprimer image">sup</a>
+					<a href="'.$linkformEnregistrer.'" title="Enregistrer en image principale">Principale</a>
+					<a href="'.$linkformSupprimer.'" title="Supprimer image"></a>
 					<img src="'.$url.'">
 				</article>
 				';

@@ -308,8 +308,7 @@ EOT;
 		}else{
 			$idListe=$this->data['idListe'];
 			$linkformRetour=$this->script_name . "/item/?id=".$idListe;
-			$linkformAddImage=$this->script_name . "/add_image/?id=" . $idItem;
-			
+			$linkformAddImage=$this->script_name . "/add_image/?id=".$idListe."&id_item=" . $idItem;
 			$form=$this->affichageAddImage($linkformAddImage,$idItem);
 		}
 		$lienRetour='<a id="lienRetour" href="'.$linkformRetour.'">Retour vers la liste</a>';
@@ -333,8 +332,8 @@ EOT;
 			$url=$image->url;
 			$id=$image->id;
 
-			$linkformEnregistrer = $this->script_name . "/principale_image/?id_image=".$id."&id=".$idItem;
-			$linkformSupprimer = $this->script_name . "/delete_image/?id_image=".$id."&id=".$idItem;
+			$linkformEnregistrer = $this->script_name . "/principale_image/?id_image=".$id."&id_item=".$idItem."&id=".$idListe;
+			$linkformSupprimer = $this->script_name . "/delete_image/?id_image=".$id."&id_item=".$idItem."&id=".$idListe;
 			if(!$token){
 				$lienEnregistrer='<a href="'.$linkformEnregistrer.'" title="Enregistrer en image principale">Image principale</a>';
 				$lienSupprimer='<a href="'.$linkformSupprimer.'" title="Supprimer image"></a>';
@@ -359,7 +358,7 @@ EOT;
 					<article>
 						<form action="'.$link.'" method="POST">
 							<label>Lien vers une image *</label><input type="text" name="url" placeholder="Lien image" required>
-							<input type="hidden" name="id_item" value="'.$id.'">
+							<input type="hidden" name="id" value="'.$id.'">
 							<input type="submit">
 						</form>
 						<p>Les champs marqués de * sont obligatoire.</p>

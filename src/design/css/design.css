@@ -826,8 +826,7 @@ footer {
         flex-wrap: wrap; }
       #item div article div:nth-child(2) a img {
         max-width: 100%;
-        margin: auto;
-        padding: 0; }
+        margin: auto; }
       #item div article div:nth-child(2) aside {
         border: none;
         box-sizing: border-box;
@@ -1469,7 +1468,8 @@ footer {
     flex-wrap: wrap;
     margin-left: 2.2222222222%;
     width: 95.5555555556%;
-    margin-top: 0.5em; }
+    margin-top: 0.5em;
+    margin-bottom: auto; }
     #image article a:nth-child(1) {
       margin-left: 2.2222222222%;
       width: 71.1111111111%;

@@ -125,8 +125,8 @@ EOT;
                 <form action="' . $this->app_root . '/main.php/check_signup/" method=post>
                     <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom" required>
                     <label for="prenom">Prénom</label><input type="text"  name="prenom" placeholder="Prenom" required>
-                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email" min="6" required>
-                    <label for="password">Mot de passe</label><input type="password" name="password" min="6" required>
+                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email" required>
+                    <label for="password">Mot de passe</label><input type="password" name="password" required>
                     <label for="password_verify">Confirmation du mot de passe</label><input type="password"  name="password_verify" required>
                     <input type="submit" value="S\'inscrire" />
                 </form>

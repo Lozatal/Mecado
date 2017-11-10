@@ -226,7 +226,7 @@ class ItemController extends \mf\control\AbstractController {
     			$description = $this->request->post['description'];
     			$url_article = $this->request->post['url_article'];
     			$tarif = $this->request->post['tarif'];
-                $item->cagnotte = $cagnotte;
+                $cagnotte = $this->request->post['cagnotte'];
     			
 	    		// on vérifie que l'item est présent
 	    		if(!isset($id_item) || $id_item == null)

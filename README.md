@@ -3,7 +3,7 @@
 mecado.net est une application en ligne pour créer, partager et gérer des listes de cadeaux.  
 L'application permet à un utilisateur de créer une liste de souhaits à l'occasion d'un événement particulier (anniversaire, fin d'année, mariage, retraite ...) et lui permet de diffuser cette liste de souhaits à un ensemble de personnes concernées. Ces personnes peuvent alors consulter cette liste et s'engager à offrir 1 item de la liste. Cet élément est alors marqué comme réservé dans cette liste.
 
-## Getting Started
+## Commencer
 
 Ces instructions vous permettront d'obtenir une copie du projet opérationnel sur votre machine locale à des fins de développement et de test. Voir déploiement pour les notes sur la façon de déployer le projet sur un système actif.
 
@@ -40,15 +40,16 @@ Configuration du fichier conf/config.ini
 * Opera *(latest 2)*
 * Safari *(latest 2)*
 
-## Built With
+## Fait avec
 
 * [Eloquent](https://laravel.com/docs/5.0/eloquent) - Framework PhP
+* [MicroFramework]() - Framework PhP
 
 ## Authors
 
 * **Baptiste Texier** - *Lancement* - [Github](https://github.com/texier54)
-* **Valentin RAGONNEAU** 
-* **Danield BENTZ**
+* **Valentin RAGONNEAU** - [Github](https://github.com/Lozatal)
+* **Danield BENTZ** - [Github](https://github.com/bentz19u)
 
 ## License
 

@@ -639,10 +639,10 @@ EOT;
             <article>
             	<form action="${linkformAddItem}" method="post">
                 	<input type="hidden" name="id_liste" value="${id}">
-                    <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" required>
-                    <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
-                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" type="url" placeholder="URL">              
-                    <label for="tarif">Tarif</label><input type="number" name="tarif" placeholder="tarif" step=0.01 required>
+                    <label for="nom">Cadeau</label><input type="text" id="nom" name="nom" placeholder="Objet" required>
+                    <label for="description">Description</label><textarea id="description" maxlength="500" name="description" ></textarea> 
+                    <label for="url_article">Lien de l'article</label><input id="url_article" name="url_article" type="url" placeholder="URL">              
+                    <label for="tarif">Tarif</label><input type="number" id="tarif" name="tarif" placeholder="tarif" step=0.01 required>
                     <p>cagnotte</p>
                     	<input type="radio" name="cagnotte" id="oui" value="1"><label for="oui">Oui</label>
                     	<input type="radio" name="cagnotte" id="non" value="0" checked><label for="non">Non</label>

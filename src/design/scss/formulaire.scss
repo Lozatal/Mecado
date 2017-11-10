@@ -43,6 +43,9 @@
 			& textarea{
 				@include grille(8,10%,0,4);
 			}
+			& #obligatoire{
+				@include grille(8,10%,0,8);
+			}
 		}
 	}
 

@@ -1022,6 +1022,9 @@ footer {
       #add_item article form textarea {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
+      #add_item article form #obligatoire {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
   @media screen and (min-width: 280px) {
     #add_item article form {
       width: 90%; } }
@@ -1087,6 +1090,9 @@ footer {
       #add_liste article form textarea {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
+      #add_liste article form #obligatoire {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
   @media screen and (min-width: 280px) {
     #add_liste article form {
       width: 90%; } }
@@ -1152,6 +1158,9 @@ footer {
       #sign_up article form textarea {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
+      #sign_up article form #obligatoire {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
   @media screen and (min-width: 280px) {
     #sign_up article form {
       width: 90%; } }
@@ -1217,6 +1226,9 @@ footer {
       #login article form textarea {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
+      #login article form #obligatoire {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
   @media screen and (min-width: 280px) {
     #login article form {
       width: 90%; } }
@@ -1337,6 +1349,9 @@ footer {
       #image article form textarea {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
+      #image article form #obligatoire {
+        margin-left: 2.2222222222%;
+        width: 95.5555555556%; }
   @media screen and (min-width: 280px) {
     #image article form {
       width: 90%; } }

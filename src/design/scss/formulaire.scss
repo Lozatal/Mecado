@@ -15,7 +15,9 @@
 				margin-top: 1em;
 				@include grille(8,10%,0,3);
 			}
-			& label[for=destinataire]{
+			& p{
+				padding-top: 0.75em;
+				padding-bottom: 0.75em;
 				@include grille(8,10%,0,3);
 			}
 			& label[for=oui]{
@@ -40,6 +42,9 @@
 			}
 			& textarea{
 				@include grille(8,10%,0,4);
+			}
+			& #obligatoire{
+				@include grille(8,10%,0,8);
 			}
 		}
 	}

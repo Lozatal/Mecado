@@ -507,7 +507,7 @@ EOT;
 				$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="Nom" required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
-						<input type="hidden" name="id_item" value="' . $item->id. '" required>
+						<input type="hidden" name="id_item" value="' . $item->id. '">
 						<input type="submit" value="Réserver">
 					</form>';
 			}
@@ -518,8 +518,8 @@ EOT;
 						<input name="nom" type="text" placeholder="Nom" required>
 						<input name="participation" type="number" step=0.01 required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
-						<input type="hidden" name="id_item" value="' . $item->id. '" required>
-						<input type="submit" value="Réserver">
+						<input type="hidden" name="id_item" value="' . $item->id. '">
+						<input type="submit" value="Réserver" >
 					</form>';
 			}
 			else
@@ -599,9 +599,15 @@ EOT;
 		
 		$retour .= '
 					<form id="addMessage" action="' . $linkformMessage . '" method="POST">
+<<<<<<< HEAD
 				    	<label for="message_nom">Nom *</label><input type="text" id="message_nom" name="nom" required>
 		    			<label for="message_text">Message *</label><textarea id="message_text" name="text" maxlength="500" required></textarea>
 						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '" required>
+=======
+				    	<label for="message_nom">Nom:</label><input type="text" id="message_nom" name="nom" required>
+		    			<label for="message_text">Message:</label><textarea id="message_text" name="text" maxlength="500" required></textarea>
+						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '">
+>>>>>>> f57e58249702214fdb94dc4cb18a14028ebb33b3
 				    	<input type="submit" value="Envoyer">
 				    	<p id="obligatoire">Les champs marqué d\'un * sont obligatoire</p>
 		    		</form>

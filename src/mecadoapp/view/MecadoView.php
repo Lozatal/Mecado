@@ -72,6 +72,7 @@ EOT;
 		$liste=$this->data['liste'];
 		$user=$this->data['user'];
 		$item=$this->data['item'];
+		$racine = $this->app_root;
 		$retour = <<<EOT
 
 <section id="home">
@@ -97,7 +98,7 @@ Tu n'as pas su me soutenir<br>
 Tu n'as pas su me retenir</span></p>
             </article>
 		<article>
-		<img src="/Mecado/src/design/css/images/presentation.png" >
+		<img src="${racine}/src/design/css/images/presentation.png" >
             </article>
             <article>
                 <ul>
@@ -295,18 +296,16 @@ EOT;
 	//////////////// IMAGE ITEM /////////////////
 
  	private function renderImage() {
-
-		$image1=$this->data['images'][0];
-		$idItem=$image1->id_item;
-		$item = \mecadoapp\model\Item::where('id_liste','=',$idItem)->first();
-		$idListe = $item->id_liste;
-
+		$idListe = $this->data['idListe'];
+		$idItem = $this->data['get']['id'];
 		$linkformAddImage = $this->script_name . "/add_image/?id_item=" . $idItem;
+		$lienAdd='<a href="'.$linkformAddImage.'">Ajouter une image</a>';
 		$linkformRetour = $this->script_name . "/item/?id=".$idListe;
+		$lienRetour='<a href="'.$linkformRetour.'">Retour vers la liste</a>';
 
 		$retour = '<section id="image">
-				<a href="'.$linkformAddImage.'">Ajouter une image</a>
-				<a href="'.$linkformRetour.'">Retour vers la liste</a>';
+				'.$lienAdd.'
+				'.$lienRetour;
 		foreach ($this->data['images'] as $image) {
 			$url=$image->url;
 			$id=$image->id;
@@ -432,18 +431,30 @@ EOT;
 			
 			$linkformReservation = $this->script_name . "/reserv_item/?token=" . $idListe;
 			//Si l'utilisateur est le créateur, on affiche les boutons
-			$linkModify = $this->script_name . "/view_update_item/?". $idListe ."&item_id=" . $item->id;
-			$linkDelete = $this->script_name . "/delete_item/?". $idListe ."&item_id=" . $item->id;
+			$linkModify = $this->script_name . "/view_update_item/?id=". $idListe ."&item_id=" . $item->id;
+			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
 			
 			$lienSup='';
 			$lienMod='';
+
+			$tarif = $item->tarif;
+			if($item->cagnotte == 1)
+			{
+				$totaltarif = 0;
+				foreach ($item->acheteurs()->get() as $key => $value) {
+					$totaltarif = $totaltarif + $value->participation;
+				}
+				$tarif = $totaltarif.'/'.$item->tarif;
+				if($totaltarif>=$item->tarif)
+					$reserved = 'taken';
+			}
 
 			$form='';
 			if(!$token){//Vrai si on viens par le token, donc l'utilisateur n'est pas le créateur
 				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
 				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
 			}
-			elseif($disabled == null and $item->cagnote == 0){
+			elseif($disabled == null and $item->cagnotte == 0){
 				$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="Nom" required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
@@ -451,11 +462,12 @@ EOT;
 						<input type="submit" value="Réserver" >
 					</form>';
 			}
-			elseif($item->cagnote == 1)
+			elseif($item->cagnotte == 1 and $totaltarif<$item->tarif)
 			{
-				$reserved = 'cagnote';
-				$form='<p>Cagnote : </p><form id="addMessage" action="' . $linkformReservation. '" method="POST">
+				$reserved = 'cagnotte';
+				$form='<p>cagnotte : </p><form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="Nom" required>
+						<input name="participation" type="number" step=0.01 required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
 						<input type="hidden" name="id_item" value="' . $item->id. '" required>
 						<input type="submit" value="Réserver" >
@@ -463,22 +475,18 @@ EOT;
 			}
 			else
 			{
-				$form = '<p>Réservé</p>';
+				$form = '<p>Réservé par :</p><ul>';
+				$acheteur = $item->acheteurs()->get();
+				$listeacheteurs = '';
+				foreach ($acheteur as $key => $value) {
+					$listeacheteurs .= '<li>'.$value->nom.'</li>';
+				}
+				$form .= $listeacheteurs.'</ul>';
 			}
 			
 			//On récupère le lien de la liste des images de l'item
-			$linkImage = "#";
+			$linkImage = $this->script_name . "/image/?id=". $item->id;
 			$lienImage='<a href="'.$linkImage.'" title="Voir toute les images"></a>';
-			
-			$tarif = $item->tarif;
-			if($item->cagnote == 1)
-			{
-				$totaltarif = 0;
-				foreach ($item->acheteurs()->get() as $key => $value) {
-					$totaltarif = $totaltarif + $value->participation;
-				}
-				$tarif = $totaltarif.'/'.$item->tarif;
-			}
 
 			$retour .= '
 				<article reserved="'.$reserved.'">
@@ -588,9 +596,9 @@ EOT;
                     <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" type="url" placeholder="URL">              
                     <label for="tarif">Tarif</label><input type="number" name="tarif" placeholder="tarif" step=0.01 required>
-                    <label for="cagnote">Cagnote</label>
-                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1">
-                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" checked>
+                    <label for="cagnotte">cagnotte</label>
+                    	<label for="oui">Oui</label><input type="radio" name="cagnotte" id="oui" value="1">
+                    	<label for="non">Non</label><input type="radio" name="cagnotte" id="non" value="0" checked>
                     <input type="submit" value="Ajouter" ${disabled}>
                 </form>
             </article>
@@ -612,12 +620,12 @@ EOT;
     	$url_article= $item->url_article;
     	$url_image= $item->url_image;
     	$tarif= $item->tarif;
-    	$cagnote= $item->cagnote;
+    	$cagnotte= $item->cagnotte;
 
     	$checkedoui = '';
     	$checkednon = 'checked';
 
-    	if($cagnote == 1)
+    	if($cagnotte == 1)
     	{
     		$checkedoui = 'checked';
     		$checkednon = '';
@@ -639,13 +647,13 @@ EOT;
             	<form action="${linkformAddItem}" method="post">
             		<input type="hidden" name="id_item" value="${id_item}">
                 	<input type="hidden" name="id_liste" value="${id}">
-                    <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" value="${nom}" required>
-                    <label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
-                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
-                    <label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
-                    <label for="cagnote">Cagnote</label>
-                    	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1" ${checkedoui}>
-                    	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" ${checkednon}>
+			<label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" value="${nom}" required>
+			<label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
+			<label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
+			<label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
+			<label for="cagnotte">cagnotte</label>
+			<label for="oui">Oui</label><input type="radio" name="cagnotte" id="oui" value="1" ${checkedoui}>
+			<label for="non">Non</label><input type="radio" name="cagnotte" id="non" value="0" ${checkednon}>
                     <input type="submit" value="Modifier">
                 </form>
             </article>

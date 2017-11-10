@@ -826,7 +826,8 @@ footer {
         flex-wrap: wrap; }
       #item div article div:nth-child(2) a img {
         max-width: 100%;
-        margin: auto; }
+        margin: auto;
+        padding: 0; }
       #item div article div:nth-child(2) aside {
         border: none;
         box-sizing: border-box;

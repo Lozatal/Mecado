@@ -317,9 +317,7 @@ EOT;
 			$form=$this->affichageAddImage($linkformAddImage,$idItem);
 		}
 		$lienRetour='<a id="lienRetour" href="'.$linkformRetour.'">Retour vers la liste</a>';
-		//Exception
-		echo $this->data ['erreur'];
-		
+		//Exception		
 		if (isset ( $this->data ['erreur'] ) && $this->data ['erreur'] != null) {
 			$erreur='
 				<div class="alerte-'.$this->data ['erreur']['type'].'">' . $this->data ['erreur']['message'] . '.</div>';
@@ -457,7 +455,6 @@ EOT;
 			
 			//On va récupérer l'image principale ou la première
 			if(isset($item->images)){
-				
 				$number = 0;
 				foreach($item->images as $image){
 					//Dans le cas ou il n'y a pas d'iamge principale, je prends la première par défault, sinon c'est la principale

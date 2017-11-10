@@ -823,6 +823,7 @@ footer {
         display: flex;
         flex-wrap: wrap; }
       #item div article div:nth-child(2) a img {
+        max-width: 100%;
         margin: auto; }
       #item div article div:nth-child(2) aside {
         border: none;
@@ -915,7 +916,7 @@ footer {
     background-color: #e6e6e6; }
   #home article:nth-child(1) {
     margin-left: 2.2222222222%;
-    width: 58.8888888889%;
+    width: 95.5555555556%;
     order: 3; }
     #home article:nth-child(1) span {
       margin-top: 2em;
@@ -924,13 +925,14 @@ footer {
       text-align: center; }
   #home article:nth-child(2) {
     margin-left: 2.2222222222%;
-    width: 34.4444444444%;
+    width: 95.5555555556%;
     display: flex;
     flex-wrap: wrap;
     border: none;
     order: 2;
     background-color: white; }
     #home article:nth-child(2) img {
+      max-width: 100%;
       margin: auto;
       border-radius: 10px; }
   #home article:nth-child(3) {

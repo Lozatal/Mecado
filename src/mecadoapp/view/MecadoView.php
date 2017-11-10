@@ -125,11 +125,11 @@ EOT;
             <article>
                 ' . $alert . '
                 <form action="' . $this->app_root . '/main.php/check_signup/" method=post>
-                    <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom" required>
-                    <label for="prenom">Prénom</label><input type="text"  name="prenom" placeholder="Prenom" required>
-                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email" required>
-                    <label for="password">Mot de passe</label><input type="password" name="password" required>
-                    <label for="password_verify">Confirmation du mot de passe</label><input type="password"  name="password_verify" required>
+                    <label for="nom">Nom</label><input type="text" id="nom" name="nom" placeholder="Nom" required>
+                    <label for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" placeholder="Prenom" required>
+                    <label for="email">Mail</label><input type="text" id="email" name="email" placeholder="Email" required>
+                    <label for="password">Mot de passe</label><input type="password" id="password" name="password" required>
+                    <label for="password_verify">Confirmation du mot de passe</label><input type="password" id="password_verify" name="password_verify" required>
                     <input type="submit" value="S\'inscrire" />
                 </form>
             </article>
@@ -249,11 +249,11 @@ EOT;
                    	<label for="destinataire">Pour un tier :</label>
                     <input type="radio" id="oui" name="destinataire" value="0" ${checkoui}><label for="oui">Oui</label>
                    	<input type="radio" id="non" name="destinataire" value="1" ${checknon}> <label for="non">Non</label>
-                    <label for="nom">Nom liste</label><input type="text" name="nom" placeholder="nom de liste" value="${nom}" required>
-                    <label for="description">Description</label><textarea maxlength="500" name="description" required>${description}</textarea>  
-                    <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="Si vous n'êtes pas le destinaire" value="${nom_dest}">
-                    <label for="prenom_dest">Prénom destinataire</label><input type="text" name="prenom_dest" placeholder="Si vous n'êtes pas le destinaire" value="${prenom_dest}">
-                    <label for="date_limit">Date limite</label><input type="text" name="date_limit" placeholder="jj/mm/aaaa" value="${date_limit}" required>
+                    <label for="nom">Nom liste</label><input type="text" id="nom" name="nom" placeholder="nom de liste" value="${nom}" required>
+                    <label for="description">Description</label><textarea maxlength="500" id="description" name="description" required>${description}</textarea>  
+                    <label for="nom_dest">Nom destinataire</label><input type="text" id="nom_dest" name="nom_dest" placeholder="Si vous n'êtes pas le destinaire" value="${nom_dest}">
+                    <label for="prenom_dest">Prénom destinataire</label><input type="text" id="prenom_dest" name="prenom_dest" placeholder="Si vous n'êtes pas le destinaire" value="${prenom_dest}">
+                    <label for="date_limit">Date limite</label><input type="text" id="date_limit" name="date_limit" placeholder="jj/mm/aaaa" value="${date_limit}" required>
                     <input type="submit" value="${text}" required>
                 </form>
             </article>
@@ -506,7 +506,7 @@ EOT;
 						<input name="nom" type="text" placeholder="Nom" required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
 						<input type="hidden" name="id_item" value="' . $item->id. '" required>
-						<input type="submit" value="Réserver" >
+						<input type="submit" value="Réserver">
 					</form>';
 			}
 			elseif($item->cagnotte == 1 and $totaltarif<$item->tarif)

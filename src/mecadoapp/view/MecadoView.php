@@ -322,7 +322,7 @@ EOT;
 		
 		if (isset ( $this->data ['erreur'] ) && $this->data ['erreur'] != null) {
 			$erreur='
-				<div class="alerte-danger">' . $this->data ['erreur'] . '.</div>';
+				<div class="alerte-'.$this->data ['erreur']['type'].'">' . $this->data ['erreur']['message'] . '.</div>';
 		}else{
 			$erreur='';
 		}

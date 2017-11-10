@@ -298,7 +298,7 @@ EOT;
  	private function renderImage() {
 		$idListe = $this->data['idListe'];
 		$idItem = $this->data['get']['id'];
-		$linkformAddImage = $this->script_name . "/add_image/?id_item=" . $idItem;
+		$linkformAddImage = $this->script_name . "/add_image/?id=" . $idItem;
 
 		$form = $this->affichageAddImage($linkformAddImage,$idItem);
 
@@ -330,10 +330,11 @@ EOT;
 				<section id="add_image">
 					<article>
 						<form action="'.$link.'" method="POST">
-							<label>Lien vers une image</label><input type="text" name="url" placeholder="Lien image" required>
+							<label>Lien vers une image *</label><input type="text" name="url" placeholder="Lien image" required>
 							<input type="hidden" name="id_item" value="'.$id.'">
 							<input type="submit">
 						</form>
+						<p>Les champs marqués de * sont obligatoire.</p>
 					</article>
 				</section>';
 	}

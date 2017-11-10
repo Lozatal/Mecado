@@ -173,11 +173,11 @@ EOT;
         foreach ($this->data as $key => $value) {
             $date = date_create($value->date_limite);
             if(date("Y-m-d H:i:s") >= $value->date_limite)
-                $close = 'y';
+                $close = 'close-y';
             else
-                $close = 'n';
+                $close = 'close-n';
             $retour = $retour.'
-                        <article close="'.$close.'">
+                        <article class="'.$close.'">
                             <p><a href="'.$this->app_root.'/main.php/item/?id='.$value->id.'">'.$value->nom.'</a></p>
                             <a href="'.$this->app_root.'/main.php/consulte/?id='.$value->id.'" title="Consulter messages"></a><a href="'.$this->app_root.'/main.php/listes/?url='.$value->id.'" title="Générer URL"></a><a href="'.$this->app_root.'/main.php/add_liste/?id='.$value->id.'" title="Modifier"></a><a href="'.$this->app_root.'/main.php/supr_liste/?id='.$value->id.'" title="Supprimer"></a>
                             <p>'.$value->description.'</p>

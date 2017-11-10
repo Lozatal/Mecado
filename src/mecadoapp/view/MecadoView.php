@@ -296,16 +296,23 @@ EOT;
 	//////////////// IMAGE ITEM /////////////////
 
  	private function renderImage() {
-		$idListe = $this->data['idListe'];
-		$idItem = $this->data['get']['id'];
-		$linkformAddImage = $this->script_name . "/add_image/?id=" . $idItem;
+		$idListe=$this->data['idListe'];
+		$idItem=$this->data['get']['id'];
 
-		$form = $this->affichageAddImage($linkformAddImage,$idItem);
-
-		$linkformRetour = $this->script_name . "/item/?id=".$idListe;
+		$linkformAddImage=$this->script_name . "/add_image/?id=" . $idItem;
+		$linkformRetour=$this->script_name . "/item/?id=".$idListe;
 		$lienRetour='<a href="'.$linkformRetour.'">Retour vers la liste</a>';
+		$form=$this->affichageAddImage($linkformAddImage,$idItem);
 
-		$retour = '<section id="image">
+		if (isset ( $this->data ['erreur'] ) && $this->data ['erreur'] != null) {
+			$erreur='
+				<div class="alerte-danger">' . $this->data ['erreur'] . '.</div>';
+		}else{
+			$erreur='';
+		}
+
+		$retour='<section id="image">
+				'.$erreur.'
 				'.$form.'
 				'.$lienRetour;
 		foreach ($this->data['images'] as $image) {
@@ -314,7 +321,7 @@ EOT;
 
 			$linkformEnregistrer = $this->script_name . "/principale_image/?id_image=".$id."&id=".$idItem;
 			$linkformSupprimer = $this->script_name . "/delete_image/?id_image=".$id."&id=".$idItem;
-			$retour .='
+			$retour.='
 				<article>
 					<a href="'.$linkformEnregistrer.'" title="Enregistrer en image principale">rec</a>
 					<a href="'.$linkformSupprimer.'" title="Supprimer image">sup</a>

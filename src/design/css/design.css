@@ -1514,7 +1514,7 @@ footer {
       margin-right: 10%; }
     #image article img:nth-child(3) {
       margin: 0 auto auto auto;
-      max-width: 100%; }
+      max-width: 50%; }
 
 @media screen and (min-width: 801px) {
   #image #add_image article form label:nth-child(1) {

@@ -443,7 +443,7 @@ EOT;
 		// Puis on affiche la liste des items de la liste
 		foreach ( $dataListeItem as $item ) {
 			
-			$url = '#';
+			$url = '';
 			if (isset ( $item->url_article ) && $item->url_article != null) {
 				$url = $item->url_article;
 			}

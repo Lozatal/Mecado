@@ -915,6 +915,7 @@ footer {
   #home article {
     background-color: #e6e6e6; }
   #home article:nth-child(1) {
+    margin-top: 0;
     margin-left: 2.2222222222%;
     width: 95.5555555556%;
     order: 3; }
@@ -926,14 +927,13 @@ footer {
   #home article:nth-child(2) {
     margin-left: 2.2222222222%;
     width: 95.5555555556%;
-    display: flex;
-    flex-wrap: wrap;
     border: none;
     order: 2;
     background-color: white; }
     #home article:nth-child(2) img {
       max-width: 100%;
       margin: auto;
+      margin-top: 0;
       border-radius: 10px; }
   #home article:nth-child(3) {
     margin-left: 2.2222222222%;

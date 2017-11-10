@@ -9,6 +9,7 @@
 		background-color: darken($backgroundColor,10);
 	}
 	& article:nth-child(1){
+		margin-top: 0;
 		@include grille(8,10%,0,8);
 		order:3;
 		& span{
@@ -21,14 +22,13 @@
 
 	& article:nth-child(2){
 		@include grille(8,10%,0,8);
-		display: flex;
-		flex-wrap: wrap;
 		border: none;
 		order:2;
 		background-color: $backgroundColor;
 		& img{
 			max-width: 100%;
 			margin: auto;
+			margin-top: 0;
 			border-radius: 10px;
 		}
 	}

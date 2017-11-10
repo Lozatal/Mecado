@@ -20,7 +20,7 @@ class MecadoView extends \mf\view\AbstractView {
 	 */
 	private function renderHeader() {
 		return '
-            <div id="accueil"><a href="' . $this->app_root . '/main.php"><img src="' . $this->app_root . '/src/design/css/images/banniere.png"/></a></div>';
+            <div id="accueil"><a href="' . $this->app_root . '/main.php"><img src="' . $this->app_root . '/src/design/css/images/banniere.png" atl=""></a></div>';
 	}
 	
 	/*
@@ -39,7 +39,7 @@ class MecadoView extends \mf\view\AbstractView {
             <div>
                 <ul>
                     <li>Publicité</li>
-                    <li>Autre truc</li>
+                    <li><a href="https://github.com/Texier54/Mecado" title="Lien du github">GitHub</a></li>
                 </ul>
             </div>
         </footer>';
@@ -98,7 +98,7 @@ Tu n'as pas su me soutenir<br>
 Tu n'as pas su me retenir</span></p>
             </article>
 		<article>
-		<img src="${racine}/src/design/css/images/presentation.png" >
+		<img src="${racine}/src/design/css/images/presentation.png" alt="">
             </article>
             <article>
                 <ul>
@@ -537,7 +537,7 @@ EOT;
 				<article reserved="'.$reserved.'">
 					<div>'.$lienImage.$lienMod.$lienSup.'</div>
 					<div>
-						<a href="'.$url.'"><img src="' . $imgPrincipale. '" alt="lien vers le site marchand" ></a>
+						<a href="'.$url.'"><img src="' . $imgPrincipale. '" alt="lien vers le site marchand"></a>
 						<aside><p>' . $tarif . '€</p></aside>
 						<h2>' . $item->nom . '</h2>
 						<p>' . $item->description . '</p>

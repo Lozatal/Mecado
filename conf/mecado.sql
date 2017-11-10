@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 09 Novembre 2017 à 13:30
+-- Généré le :  Ven 10 Novembre 2017 à 14:29
 -- Version du serveur :  5.7.20-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 
@@ -41,7 +41,12 @@ CREATE TABLE `acheteur` (
 --
 
 INSERT INTO `acheteur` (`id`, `nom`, `participation`, `message`, `created_at`, `updated_at`, `id_item`) VALUES
-(1, 'test', NULL, 'test\r\n', '2017-11-09 11:37:53', '2017-11-09 11:37:53', 2);
+(1, 'test', NULL, 'test\r\n', '2017-11-09 11:37:53', '2017-11-09 11:37:53', 2),
+(2, 'tes', NULL, 'test\r\n', '2017-11-09 14:02:45', '2017-11-09 14:02:45', 1),
+(3, 'test', 10, 'est\r\n', '2017-11-09 14:10:12', '2017-11-09 14:10:12', 4),
+(4, 'tes', 5, 'hey', '2017-11-09 16:17:55', '2017-11-09 16:17:55', 4),
+(5, 'wsvwsv', 5, 'qzfzqf', '2017-11-09 16:18:19', '2017-11-09 16:18:19', 4),
+(6, 'TestPasCo', NULL, 'Coucou', '2017-11-09 16:31:26', '2017-11-09 16:31:26', 3);
 
 -- --------------------------------------------------------
 
@@ -52,6 +57,20 @@ INSERT INTO `acheteur` (`id`, `nom`, `participation`, `message`, `created_at`, `
 CREATE TABLE `Image` (
   `id` int(11) NOT NULL,
   `url` varchar(255) NOT NULL,
+  `principale` tinyint(1) NOT NULL DEFAULT '0',
+  `id_item` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `image`
+--
+
+CREATE TABLE `image` (
+  `id` int(11) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `principale` tinyint(1) NOT NULL DEFAULT '0',
   `id_item` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -68,7 +87,7 @@ CREATE TABLE `item` (
   `url_article` varchar(255) DEFAULT NULL,
   `tarif` float NOT NULL,
   `groupe` tinyint(1) NOT NULL DEFAULT '0',
-  `cagnote` tinyint(1) NOT NULL DEFAULT '0',
+  `cagnotte` tinyint(1) NOT NULL DEFAULT '0',
   `appartient_a` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -79,9 +98,11 @@ CREATE TABLE `item` (
 -- Contenu de la table `item`
 --
 
-INSERT INTO `item` (`id`, `nom`, `description`, `url_article`, `tarif`, `groupe`, `cagnote`, `appartient_a`, `created_at`, `updated_at`, `id_liste`) VALUES
+INSERT INTO `item` (`id`, `nom`, `description`, `url_article`, `tarif`, `groupe`, `cagnotte`, `appartient_a`, `created_at`, `updated_at`, `id_liste`) VALUES
 (1, 'test', 'qzfqzf', 'url', 20, 0, 0, NULL, '2017-11-07 14:55:49', '2017-11-08 16:33:42', 1),
-(2, '4 Mariages et 1 mort', 'description zqzfqzqf', NULL, 80, 0, 0, NULL, '2017-11-07 14:58:34', '2017-11-07 14:58:34', 1);
+(2, '4 Mariages et 1 mort', 'description zqzfqzqf', NULL, 80, 0, 0, NULL, '2017-11-07 14:58:34', '2017-11-07 14:58:34', 1),
+(3, 'test', 'test', 'ets', 20, 0, 0, NULL, '2017-11-09 13:14:45', '2017-11-09 13:14:45', 1),
+(4, 'testcagnote', 'test', 'test', 20, 0, 1, NULL, '2017-11-09 13:15:33', '2017-11-09 13:15:33', 1);
 
 -- --------------------------------------------------------
 
@@ -112,11 +133,12 @@ INSERT INTO `liste` (`id`, `nom`, `description`, `token`, `date_limite`, `destin
 (2, 'Anniversaire Loki', 'qzfsbyuroij<nmoheughuielsghliuhiehuhbbeslksbuebvusebvluisebvliusbeliusbevlisev', '$2y$10$BPYxedaanqnsxFxc2j.IhOS.r2JNjGRpHizNtb4Wg51uoq2guLWgm', '2017-11-07 15:00:51', 0, 'Luc', 'Le', '2017-11-07 15:00:51', '2017-11-08 13:17:32', 1),
 (3, 'test', 'test', '$2y$10$n6RDobMQ6dzGGvkFXz2gw.VF66mdOBRGyOS1Dwwwom4PBMe2syzra', '1980-10-09 23:00:00', 0, 'test', 'test', '2017-11-08 09:36:11', '2017-11-08 14:04:03', 1),
 (6, 'test', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at purus ut lorem egestas sagittis. Fusce sit amet nisl mauris. Cras eget dolor ut purus varius fermentum. Vestibulum placerat eros neque, sed viverra dui mollis a. Praesent nec enim a eros bibendum luctus. Maecenas vel mattis lectus, non euismod dui. Etiam scelerisque nisl ut auctor finibus. Praesent tempus mollis elit et rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum do', '$2y$10$CSnXqtlkMbg/r0O.NuxG5uxTuh8zF/lR7DrjKz1wtQX1TTq86kTUu', '2017-11-08 13:24:40', 1, 'test', 'test', '2017-11-08 13:22:54', '2017-11-08 13:24:33', 1),
-(7, 'zqf', 'qzf', '$2y$10$ilNYmIb3hfHHhD8wfAiyP.sO0OxYLSFvYxAFWSulhGPazRXsZxaX6', '1980-10-09 23:00:00', 1, '', '', '2017-11-08 15:56:33', '2017-11-08 15:56:33', 1),
-(8, 'test', 'qzf', '$2y$10$wIYAYALqHAnzg0oqlE4F.O8pfkCR8B5Y262HXnjI/b//dZqidoe1u', '1980-10-09 23:00:00', 1, '', '', '2017-11-08 15:59:08', '2017-11-08 15:59:08', 1),
-(9, 'test', 'qzf', '$2y$10$hC1N8jLL9C.LUdJOKDyrAe81n7Dv8WEZSJXIfuorj29fMSlvSI0YW', '1980-10-09 23:00:00', 1, '', '', '2017-11-08 16:03:37', '2017-11-08 16:03:37', 1),
-(10, 'ezfzf', 'zfzf', '$2y$10$HK0OF9zkXIps96C95l2qJ.rnCc9aR2ba9xE9s6EgUqOc/eVw5EDBi', '1980-10-09 23:00:00', 1, '', '', '2017-11-08 16:03:52', '2017-11-08 16:03:52', 1),
-(11, 'qzfqzf', 'qzfqzf', '$2y$10$QyekX693LNZs70GFD6Tcs.t3.jHKBpHd5doyq6sAyDYpfrLS6LwAu', '1980-10-09 23:00:00', 1, 'test', 'test', '2017-11-08 16:04:55', '2017-11-08 16:04:55', 1);
+(12, 'testdate', 'qzfzqf', '$2y$10$M7RW8FZrGt4ozijUzpCgBeXZ3W7/pDVec80XOTfsB/QRSWSfFErFS', '2019-12-15 12:50:09', 1, 'test', 'test', '2017-11-09 12:50:09', '2017-11-09 12:50:09', 1),
+(13, 'test', 'zdzd', '$2y$10$Cx5miWCkDN5AF7Z0RwVgBuxUxyJgxgNsdz/cj4gvXAgwjXoGEOzx.', '2019-12-10 16:05:30', 0, '', '', '2017-11-09 16:05:30', '2017-11-09 16:05:30', 1),
+(14, 'test', 'zqdzqd', '$2y$10$eU/Veyarjf62MNqEaLLN9O.fglYwJXZIz3.wtE3KY3yJmhwR3xvfi', '2019-12-15 16:05:40', 0, '', '', '2017-11-09 16:05:40', '2017-11-09 16:05:40', 1),
+(15, 'zfq', 'qzfqzf', '$2y$10$U51K35P1JpWCXNXRry1AdevikGo9iBYNyqInpSl8u3GENGY4b9NUW', '2020-08-10 15:05:51', 0, '', '', '2017-11-09 16:05:51', '2017-11-09 16:05:51', 1),
+(16, 'zqfzqf', 'qzfzqf', '$2y$10$y8ruA7yMZ6hCLQrCl.NJz.NVcqW5EAoaycfsdvWetEqcX8RvpdrHW', '2019-12-10 16:09:28', 0, '', '', '2017-11-09 16:09:28', '2017-11-09 16:09:28', 1),
+(17, 'qzfzqf', 'qzfzqf', '$2y$10$46eqf9wgucZAfdwJL.aZ8uYYo24PunY991u1Y2UnblcZbw88Z5bAm', '1990-09-03 15:09:55', 0, '', '', '2017-11-09 16:09:55', '2017-11-09 16:09:55', 1);
 
 -- --------------------------------------------------------
 
@@ -138,7 +160,22 @@ CREATE TABLE `message` (
 --
 
 INSERT INTO `message` (`id`, `texte`, `auteur`, `created_at`, `updated_at`, `id_liste`) VALUES
-(1, 'test', 'test', '2017-11-07 17:28:44', '2017-11-07 17:28:44', 1);
+(1, 'test', 'test', '2017-11-07 17:28:44', '2017-11-07 17:28:44', 1),
+(2, 'test\r\n', 'test', '2017-11-09 14:38:03', '2017-11-09 14:38:03', 1),
+(3, 'salut', 'Salut', '2017-11-09 16:31:34', '2017-11-09 16:31:34', 1),
+(4, 'salut', 'Salut', '2017-11-09 16:40:46', '2017-11-09 16:40:46', 1),
+(5, 'salut', 'Salut', '2017-11-09 16:41:20', '2017-11-09 16:41:20', 1),
+(6, 'salut', 'Salut', '2017-11-09 16:41:43', '2017-11-09 16:41:43', 1),
+(7, 'salut', 'Salut', '2017-11-09 16:41:53', '2017-11-09 16:41:53', 1),
+(8, 'salut', 'Salut', '2017-11-09 16:42:13', '2017-11-09 16:42:13', 1),
+(9, 'salut', 'Salut', '2017-11-09 16:42:45', '2017-11-09 16:42:45', 1),
+(10, 'salut', 'Salut', '2017-11-09 16:42:47', '2017-11-09 16:42:47', 1),
+(11, 'salut', 'Salut', '2017-11-09 16:43:31', '2017-11-09 16:43:31', 1),
+(12, 'salut', 'Salut', '2017-11-09 16:43:52', '2017-11-09 16:43:52', 1),
+(13, 'salut', 'Salut', '2017-11-09 16:44:08', '2017-11-09 16:44:08', 1),
+(14, 'salut', 'Salut', '2017-11-09 16:45:15', '2017-11-09 16:45:15', 1),
+(15, 'salut', 'Salut', '2017-11-09 16:45:29', '2017-11-09 16:45:29', 1),
+(16, 'salut', 'Salut', '2017-11-09 16:45:47', '2017-11-09 16:45:47', 1);
 
 -- --------------------------------------------------------
 
@@ -178,7 +215,15 @@ ALTER TABLE `acheteur`
 -- Index pour la table `Image`
 --
 ALTER TABLE `Image`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id_item` (`id_item`);
+
+--
+-- Index pour la table `image`
+--
+ALTER TABLE `image`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id_item` (`id_item`);
 
 --
 -- Index pour la table `item`
@@ -215,27 +260,32 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `acheteur`
 --
 ALTER TABLE `acheteur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `Image`
 --
 ALTER TABLE `Image`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT pour la table `image`
+--
+ALTER TABLE `image`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT pour la table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `liste`
 --
 ALTER TABLE `liste`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT pour la table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
@@ -250,6 +300,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `acheteur`
   ADD CONSTRAINT `FK_acheteur_id_item` FOREIGN KEY (`id_item`) REFERENCES `item` (`id`);
+
+--
+-- Contraintes pour la table `Image`
+--
+ALTER TABLE `Image`
+  ADD CONSTRAINT `FK_image_id_item` FOREIGN KEY (`id_item`) REFERENCES `item` (`id`);
 
 --
 -- Contraintes pour la table `item`

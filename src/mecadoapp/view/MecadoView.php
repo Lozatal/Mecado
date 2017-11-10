@@ -317,9 +317,7 @@ EOT;
 			$form=$this->affichageAddImage($linkformAddImage,$idItem);
 		}
 		$lienRetour='<a id="lienRetour" href="'.$linkformRetour.'">Retour vers la liste</a>';
-		//Exception
-		echo $this->data ['erreur'];
-		
+		//Exception		
 		if (isset ( $this->data ['erreur'] ) && $this->data ['erreur'] != null) {
 			$erreur='
 				<div class="alerte-'.$this->data ['erreur']['type'].'">' . $this->data ['erreur']['message'] . '.</div>';

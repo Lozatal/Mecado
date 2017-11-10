@@ -125,12 +125,13 @@ EOT;
             <article>
                 ' . $alert . '
                 <form action="' . $this->app_root . '/main.php/check_signup/" method=post>
-                    <label for="nom">Nom</label><input type="text" id="nom" name="nom" placeholder="Nom" required>
-                    <label for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" placeholder="Prenom" required>
-                    <label for="email">Mail</label><input type="text" id="email" name="email" placeholder="Email" required>
-                    <label for="password">Mot de passe</label><input type="password" id="password" name="password" required>
-                    <label for="password_verify">Confirmation du mot de passe</label><input type="password" id="password_verify" name="password_verify" required>
+                    <label for="nom">Nom *</label><input type="text" id="nom" name="nom" placeholder="Nom" required>
+                    <label for="prenom">Prénom *</label><input type="text" id="prenom" name="prenom" placeholder="Prenom" required>
+                    <label for="email">Mail *</label><input type="text" id="email" name="email" placeholder="Email" required>
+                    <label for="password">Mot de passe *</label><input type="password" id="password" name="password" required>
+                    <label for="password_verify">Confirmation du mot de passe *</label><input type="password" id="password_verify" name="password_verify" required>
                     <input type="submit" value="S\'inscrire" />
+                    <p id="obligatoire">Les champs marqué d\'un * sont obligatoire</p>
                 </form>
             </article>
         </section>
@@ -249,12 +250,13 @@ EOT;
                    	<p>Pour un tier :</p>
                     <input type="radio" id="oui" name="destinataire" value="0" ${checkoui}><label for="oui">Oui</label>
                    	<input type="radio" id="non" name="destinataire" value="1" ${checknon}> <label for="non">Non</label>
-                    <label for="nom">Nom liste</label><input type="text" id="nom" name="nom" placeholder="nom de liste" value="${nom}" required>
-                    <label for="description">Description</label><textarea maxlength="500" id="description" name="description" required>${description}</textarea>  
+                    <label for="nom">Nom liste *</label><input type="text" id="nom" name="nom" placeholder="nom de liste" value="${nom}" required>
+                    <label for="description">Description *</label><textarea maxlength="500" id="description" name="description" required>${description}</textarea>  
                     <label for="nom_dest">Nom destinataire</label><input type="text" id="nom_dest" name="nom_dest" placeholder="Si vous n'êtes pas le destinaire" value="${nom_dest}">
                     <label for="prenom_dest">Prénom destinataire</label><input type="text" id="prenom_dest" name="prenom_dest" placeholder="Si vous n'êtes pas le destinaire" value="${prenom_dest}">
-                    <label for="date_limit">Date limite</label><input type="text" id="date_limit" name="date_limit" placeholder="jj/mm/aaaa" value="${date_limit}" required>
-                    <input type="submit" value="${text}" required>
+                    <label for="date_limit">Date limite *</label><input type="text" id="date_limit" name="date_limit" placeholder="jj/mm/aaaa" value="${date_limit}" required>
+                    <input type="submit" value="${text}">
+                    <p id="obligatoire">Les champs marqué d'un * sont obligatoire</p>
                 </form>
             </article>
         </section>
@@ -597,10 +599,17 @@ EOT;
 		
 		$retour .= '
 					<form id="addMessage" action="' . $linkformMessage . '" method="POST">
+<<<<<<< HEAD
+				    	<label for="message_nom">Nom *</label><input type="text" id="message_nom" name="nom" required>
+		    			<label for="message_text">Message *</label><textarea id="message_text" name="text" maxlength="500" required></textarea>
+						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '" required>
+=======
 				    	<label for="message_nom">Nom:</label><input type="text" id="message_nom" name="nom" required>
 		    			<label for="message_text">Message:</label><textarea id="message_text" name="text" maxlength="500" required></textarea>
 						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '">
+>>>>>>> f57e58249702214fdb94dc4cb18a14028ebb33b3
 				    	<input type="submit" value="Envoyer">
+				    	<p id="obligatoire">Les champs marqué d\'un * sont obligatoire</p>
 		    		</form>
 				</div>
 				</aside>
@@ -639,14 +648,15 @@ EOT;
             <article>
             	<form action="${linkformAddItem}" method="post">
                 	<input type="hidden" name="id_liste" value="${id}">
-                    <label for="nom">Cadeau</label><input type="text" id="nom" name="nom" placeholder="Objet" required>
-                    <label for="description">Description</label><textarea id="description" maxlength="500" name="description" ></textarea> 
+                    <label for="nom">Cadeau *</label><input type="text" id="nom" name="nom" placeholder="Objet" required>
+                    <label for="description">Description</label><textarea id="description" maxlength="500" name="description"></textarea> 
                     <label for="url_article">Lien de l'article</label><input id="url_article" name="url_article" type="url" placeholder="URL">              
-                    <label for="tarif">Tarif</label><input type="number" id="tarif" name="tarif" placeholder="tarif" step=0.01 required>
-                    <p>cagnotte</p>
+                    <label for="tarif">Tarif *</label><input type="number" id="tarif" name="tarif" placeholder="tarif" step=0.01 required>
+                    <p>Cagnotte *</p>
                     	<input type="radio" name="cagnotte" id="oui" value="1"><label for="oui">Oui</label>
                     	<input type="radio" name="cagnotte" id="non" value="0" checked><label for="non">Non</label>
                     <input type="submit" value="Ajouter" ${disabled}>
+                    <p id="obligatoire">Les champs marqué d'un * sont obligatoire</p>
                 </form>
             </article>
         </section>

@@ -4,6 +4,7 @@ namespace mecadoapp\control;
 
 use mecadoapp\model\Image as image;
 use mecadoapp\model\Item as item;
+use mecadoapp\model\Liste as liste;
 use \mf\auth\exception\AuthentificationException as exception;
 
 class ImageController extends \mf\control\AbstractController {
@@ -23,11 +24,24 @@ class ImageController extends \mf\control\AbstractController {
 
 	public function viewImage($e = null){
 		$resultat['erreur']=$e;
+		$resultat['idListe'] = null;
+		$resultat['idImageToken'] = null;
+		$resultat['token'] = false;
+		$get = $this->request->get;
+		$resultat['id_item'] = $get['id_item'];
+			if(isset($get['id'])){
+				$id=$get['id'];
+			}elseif(isset($get['token'])){
+				$obj = liste::select('id')->where('liste.token', '=', $get['token'])->first();
+				$id=$obj->id;
+				$resultat['token']=true;
+				$resultat['idImageToken'] = $get['token'];
+			}
+			$resultat['idListe']=$id;
 		try{
-			$resultat['get'] = $this->request->get;
-			$resultat['idListe'] = item::where('id_liste','=',$resultat['get']['id'])->first();
-			if(isset($resultat['get']['id'])){
-				$resultat['images']=image::where('id_item','=',$resultat['get']['id'])->get();
+			//$resultat['idListe'] = item::where('id_liste','=',$resultat['get']['id'])->first();
+			if(isset($resultat['id_item'])){
+				$resultat['images']=image::where('id_item','=',$resultat['id_item'])->get();
 			}else{
 				throw new exception("L'identifiant du cadeau est introuvable");
 			}

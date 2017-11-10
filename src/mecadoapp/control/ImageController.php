@@ -52,7 +52,7 @@ class ImageController extends \mf\control\AbstractController {
 		return $vue->render('image');
 	}
 
-	public function addImage(){
+	public function checkImage(){
 		try{
 			$post=$this->request->post;
 			$image = new image();

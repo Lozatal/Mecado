@@ -629,12 +629,16 @@ EOT;
         if (isset ( $this->data ) && $this->data != null) {
         	$retour = '
 				<div class="alerte-danger">' . $this->data . '.</div>';
-        	//$disabled = 'disabled';
         }
 
         $idForLink = 'id='.(string)$id;
         $linkformAddItem = $this->script_name . "/add_item/?" . $idForLink;
-
+        $linkformRetour=$this->script_name . "/item/?" . $idForLink;
+        $lienRetour='<a id="lienRetour" href="'.$linkformRetour.'">Retour vers la liste</a>';
+        
+        $retour = '
+				'.$lienRetour;
+        
         $retour .=<<< EOT
 
         <section id="add_item">
@@ -689,6 +693,11 @@ EOT;
     	
     	$idForLink = 'id='.(string)$id.'&item='.(string)$id_item;
     	$linkformAddItem = $this->script_name . "/update_item/?" . $idForLink;
+    	$linkformRetour=$this->script_name . "/item/?" . $idForLink;
+    	$lienRetour='<a id="lienRetour" href="'.$linkformRetour.'">Retour vers la liste</a>';
+    	
+    	$retour = '
+				'.$lienRetour;
     	
     	$retour .=<<< EOT
     	

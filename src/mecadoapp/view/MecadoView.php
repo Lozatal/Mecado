@@ -417,7 +417,7 @@ EOT;
 		if(isset($this->data ['listeItem']))
 		{
 			// Vue des messages
-			$retour = $this->afficheMessageItem ( $retour, $this->data ['listeItem'], $id, $token);
+			$retour = $this->afficheMessageItem ( $retour, $this->data ['liste'], $id, $token);
 			
 			// Vue des items
 			$retour = $this->afficheListeItem ( $retour, $this->data ['listeItem'], $id,$token);
@@ -575,8 +575,8 @@ EOT;
 					<div>
 				';
 		
-		if(isset($dataListeItem [0])){
-			$listeMessage = $dataListeItem [0]->liste->messages;
+		if(isset($dataListeItem) && isset($dataListeItem->messages)){
+			$listeMessage = $dataListeItem->messages;
 			
 			foreach ( $listeMessage as $message ) {
 				$date = date_format ( $message->created_at, 'd/m/y-H:i' );

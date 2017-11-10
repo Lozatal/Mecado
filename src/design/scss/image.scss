@@ -5,12 +5,15 @@
 	display:flex;
 	flex-wrap: wrap;
 	width: 100%;
+	background-color: blue;
 	& article{
 		display: flex;
 		flex-wrap: wrap;
 		@include grille(8,10%,0,8);
+		background-color:red;
 		& a:nth-child(1){
 			@include grille(8,10%,0,8);
+			background-color:blue;
 		}
 	}
 }

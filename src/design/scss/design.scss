@@ -8,6 +8,7 @@
 @import 'add_liste'; //Formulaire ajout liste
 @import 'add_item'; //Formulaire ajout cadeau
 @import 'consulte'; //Liste des messages
+@import 'image'; //Liste des images
 
 $backgroundColor: white;
 $themeColor: black;
@@ -140,6 +141,7 @@ footer{
 @include sign_up($themeColor,$backgroundColor);
 @include login($themeColor,$backgroundColor);
 @include consulte($themeColor,$backgroundColor);
+//@include image($themeColor,$backgroundColor);
 
 @media screen and (min-width: 280px){
 	body{

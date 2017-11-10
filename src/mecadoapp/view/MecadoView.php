@@ -489,11 +489,12 @@ EOT;
 			$tarif = $item->tarif;
 			if($item->cagnotte == 1)
 			{
+				$reserved='cagnotte';
 				$totaltarif = 0;
 				foreach ($item->acheteurs()->get() as $key => $value) {
 					$totaltarif = $totaltarif + $value->participation;
 				}
-				$tarif = $totaltarif.'/'.$item->tarif;
+				$tarif = $totaltarif.' / '.$item->tarif;
 				if($totaltarif>=$item->tarif)
 					$reserved = 'taken';
 			}

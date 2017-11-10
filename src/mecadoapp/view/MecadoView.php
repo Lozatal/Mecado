@@ -497,7 +497,7 @@ EOT;
 			if(!$token){//Vrai si on viens par le token, donc l'utilisateur n'est pas le créateur
 				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
 				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
-				$linkImage = $this->script_name . "/image/?id=".$item->id."&id_item=".$item->id;
+				$linkImage = $this->script_name . "/image/?id=".$idListe."&id_item=".$item->id;
 			}
 			elseif($disabled == null and $item->cagnotte == 0){
 				$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">

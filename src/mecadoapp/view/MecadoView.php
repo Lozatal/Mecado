@@ -643,7 +643,7 @@ EOT;
                     <label for="description">Description</label><textarea maxlength="500" name="description" ></textarea> 
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" type="url" placeholder="URL">              
                     <label for="tarif">Tarif</label><input type="number" name="tarif" placeholder="tarif" step=0.01 required>
-                    <label for="cagnotte">cagnotte</label>
+                    <p>cagnotte</p>
                     	<input type="radio" name="cagnotte" id="oui" value="1"><label for="oui">Oui</label>
                     	<input type="radio" name="cagnotte" id="non" value="0" checked><label for="non">Non</label>
                     <input type="submit" value="Ajouter" ${disabled}>
@@ -698,7 +698,7 @@ EOT;
 					<label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
 					<label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
 					<label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
-					<label for="cagnotte">cagnotte</label>
+					<p>cagnotte</p>
 						<input type="radio" name="cagnotte" id="oui" value="1" ${checkedoui}><label for="oui">Oui</label>
 						<input type="radio" name="cagnotte" id="non" value="0" ${checkednon}><label for="non">Non</label>
                     <input type="submit" value="Modifier">

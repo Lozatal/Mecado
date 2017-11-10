@@ -515,7 +515,7 @@ EOT;
 				$reserved = 'cagnotte';
 				$form='<p>cagnotte : </p><form id="addMessage" action="' . $linkformReservation. '" method="POST">
 						<input name="nom" type="text" placeholder="Nom" required>
-						<input name="participation" type="number" step=0.01 required>
+						<input name="participation" type="number" step=0.01 placeholder="Participation" required>
 						<textarea name="message" placeholder="Message pour ' . $destinataire . '" maxlength="500" required></textarea>
 						<input type="hidden" name="id_item" value="' . $item->id. '">
 						<input type="submit" value="Réserver" >

@@ -296,14 +296,23 @@ EOT;
 	//////////////// IMAGE ITEM /////////////////
 
  	private function renderImage() {
-		$idListe=$this->data['idListe'];
-		$idItem=$this->data['get']['id'];
-
-		$linkformAddImage=$this->script_name . "/add_image/?id=" . $idItem;
-		$linkformRetour=$this->script_name . "/item/?id=".$idListe;
-		$lienRetour='<a href="'.$linkformRetour.'">Retour vers la liste</a>';
-		$form=$this->affichageAddImage($linkformAddImage,$idItem);
+		$idItem=$this->data['id_item'];
+		$token = $this->data['token'];
 		
+		$form='';
+		//Gestion Token
+		if($token){//Vrai si on arrive par le token
+			$idListe = $this->data['idImageToken'];
+			$linkformRetour=$this->script_name . "/item/?token=".$idListe;
+		}else{
+			$idListe=$this->data['idListe'];
+			$linkformRetour=$this->script_name . "/item/?id=".$idListe;
+			$linkformAddImage=$this->script_name . "/add_image/?id=" . $idItem;
+			
+			$form=$this->affichageAddImage($linkformAddImage,$idItem);
+		}
+		$lienRetour='<a href="'.$linkformRetour.'">Retour vers la liste</a>';
+		//Exception
 		echo $this->data ['erreur'];
 		
 		if (isset ( $this->data ['erreur'] ) && $this->data ['erreur'] != null) {
@@ -313,20 +322,29 @@ EOT;
 			$erreur='';
 		}
 
+		//Ajout message erreur, du formulaire d'ajout et du lien retour
 		$retour='<section id="image">
 				'.$erreur.'
 				'.$form.'
 				'.$lienRetour;
+		//Article contenant les images
 		foreach ($this->data['images'] as $image) {
 			$url=$image->url;
 			$id=$image->id;
 
 			$linkformEnregistrer = $this->script_name . "/principale_image/?id_image=".$id."&id=".$idItem;
 			$linkformSupprimer = $this->script_name . "/delete_image/?id_image=".$id."&id=".$idItem;
+			if(!$token){
+				$lienEnregistrer='<a href="'.$linkformEnregistrer.'" title="Enregistrer en image principale">Principale</a>';
+				$lienSupprimer='<a href="'.$linkformSupprimer.'" title="Supprimer image"></a>';
+			}else{
+				$lienEnregistrer='';
+				$lienSupprimer='';
+			}
 			$retour.='
 				<article>
-					<a href="'.$linkformEnregistrer.'" title="Enregistrer en image principale">Principale</a>
-					<a href="'.$linkformSupprimer.'" title="Supprimer image"></a>
+					'.$lienEnregistrer.'
+					'.$lienSupprimer.'
 					<img src="'.$url.'">
 				</article>
 				';
@@ -458,7 +476,8 @@ EOT;
 			//Si l'utilisateur est le créateur, on affiche les boutons
 			$linkModify = $this->script_name . "/view_update_item/?id=". $idListe ."&item_id=" . $item->id;
 			$linkDelete = $this->script_name . "/delete_item/?id=". $idListe ."&item_id=" . $item->id;
-			
+			$linkImage = $this->script_name . "/image/?token=".$idListe."&id_item=".$item->id;
+
 			$lienSup='';
 			$lienMod='';
 
@@ -478,6 +497,7 @@ EOT;
 			if(!$token){//Vrai si on viens par le token, donc l'utilisateur n'est pas le créateur
 				$lienSup='<a href="'.$linkDelete.'" title="Supprimer le cadeau"></a>';
 				$lienMod='<a href="'.$linkModify.'" title="Modifier le cadeau"></a>';
+				$linkImage = $this->script_name . "/image/?id=".$item->id."&id_item=".$item->id;
 			}
 			elseif($disabled == null and $item->cagnotte == 0){
 				$form='<form id="addMessage" action="' . $linkformReservation. '" method="POST">
@@ -510,7 +530,7 @@ EOT;
 			}
 			
 			//On récupère le lien de la liste des images de l'item
-			$linkImage = $this->script_name . "/image/?id=". $item->id;
+			
 			$lienImage='<a href="'.$linkImage.'" title="Voir toute les images"></a>';
 
 			$retour .= '

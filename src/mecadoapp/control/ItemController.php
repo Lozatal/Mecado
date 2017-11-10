@@ -31,10 +31,10 @@ class ItemController extends \mf\control\AbstractController {
     	
     	$resultat['erreur'] = $e;
     	$resultat['listeItem'] = null;
-		$resultat['idListe'] = null;
-		$resultat['idListeToken'] = null;
-		$resultat['token'] = false;
-		$resultat['liste'] = null;
+	$resultat['idListe'] = null;
+	$resultat['idListeToken'] = null;
+	$resultat['token'] = false;
+	$resultat['liste'] = null;
 
     	$id=null;
     	try{

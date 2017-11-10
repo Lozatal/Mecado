@@ -636,12 +636,10 @@ EOT;
         $linkformRetour=$this->script_name . "/item/?" . $idForLink;
         $lienRetour='<a id="lienRetour" href="'.$linkformRetour.'">Retour vers la liste</a>';
         
-        $retour = '
-				'.$lienRetour;
-        
         $retour .=<<< EOT
 
         <section id="add_item">
+			${lienRetour}
             <article>
             	<form action="${linkformAddItem}" method="post">
                 	<input type="hidden" name="id_liste" value="${id}">
@@ -695,13 +693,11 @@ EOT;
     	$linkformAddItem = $this->script_name . "/update_item/?" . $idForLink;
     	$linkformRetour=$this->script_name . "/item/?" . $idForLink;
     	$lienRetour='<a id="lienRetour" href="'.$linkformRetour.'">Retour vers la liste</a>';
-    	
-    	$retour = '
-				'.$lienRetour;
-    	
+
     	$retour .=<<< EOT
     	
         <section id="add_item">
+			${lienRetour}
             <article>
             	<form action="${linkformAddItem}" method="post">
             		<input type="hidden" name="id_item" value="${id_item}">

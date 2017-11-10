@@ -128,6 +128,10 @@ footer{
 				padding: 0.5em;
 				text-align: center;
 				margin: auto;
+				& a{
+					text-decoration: none;
+					color: white;
+				}
 			}
 		}
 	}

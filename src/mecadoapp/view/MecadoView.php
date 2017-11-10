@@ -231,7 +231,8 @@ EOT;
             	$description = $liste->description;
             	$nom_dest = $liste->nom_dest;
             	$prenom_dest = $liste->prenom_dest;
-            	$date_limit = $liste->date_limite;
+            	$temp = new \DateTime($liste->date_limite);
+            	$date_limit = $temp->format('d/m/Y');
             	$text = 'Modifier';
             }
         }

@@ -38,7 +38,7 @@ class LoginController extends \mf\control\AbstractController {
 
             if(strlen($pass) <= 5)
             {
-                throw new \mf\auth\exception\AuthentificationException('Les deux mots de passe ne correspondent pas');
+                throw new \mf\auth\exception\AuthentificationException('Le mot de passe doit faire au moins 5 caractères');
             }
 
             $v->createUser($nom, $prenom, $email, $pass, $pass_verify);

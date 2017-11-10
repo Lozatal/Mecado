@@ -599,15 +599,9 @@ EOT;
 		
 		$retour .= '
 					<form id="addMessage" action="' . $linkformMessage . '" method="POST">
-<<<<<<< HEAD
 				    	<label for="message_nom">Nom *</label><input type="text" id="message_nom" name="nom" required>
 		    			<label for="message_text">Message *</label><textarea id="message_text" name="text" maxlength="500" required></textarea>
-						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '" required>
-=======
-				    	<label for="message_nom">Nom:</label><input type="text" id="message_nom" name="nom" required>
-		    			<label for="message_text">Message:</label><textarea id="message_text" name="text" maxlength="500" required></textarea>
 						<input type="hidden" name="id_liste" id="id_liste" value="' . $idListe. '">
->>>>>>> f57e58249702214fdb94dc4cb18a14028ebb33b3
 				    	<input type="submit" value="Envoyer">
 				    	<p id="obligatoire">Les champs marqué d\'un * sont obligatoire</p>
 		    		</form>

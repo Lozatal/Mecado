@@ -246,7 +246,7 @@ EOT;
             	${alert}
                 <form action="${racine}/main.php/check_liste/" method="post">
                 	${hidden}
-                   	<label for="destinataire">Pour un tier :</label>
+                   	<p>Pour un tier :</p>
                     <input type="radio" id="oui" name="destinataire" value="0" ${checkoui}><label for="oui">Oui</label>
                    	<input type="radio" id="non" name="destinataire" value="1" ${checknon}> <label for="non">Non</label>
                     <label for="nom">Nom liste</label><input type="text" id="nom" name="nom" placeholder="nom de liste" value="${nom}" required>
@@ -644,8 +644,8 @@ EOT;
                     <label for="url_article">Lien de l'article</label><input type="text" name="url_article" type="url" placeholder="URL">              
                     <label for="tarif">Tarif</label><input type="number" name="tarif" placeholder="tarif" step=0.01 required>
                     <label for="cagnotte">cagnotte</label>
-                    	<label for="oui">Oui</label><input type="radio" name="cagnotte" id="oui" value="1">
-                    	<label for="non">Non</label><input type="radio" name="cagnotte" id="non" value="0" checked>
+                    	<input type="radio" name="cagnotte" id="oui" value="1"><label for="oui">Oui</label>
+                    	<input type="radio" name="cagnotte" id="non" value="0" checked><label for="non">Non</label>
                     <input type="submit" value="Ajouter" ${disabled}>
                 </form>
             </article>
@@ -694,13 +694,13 @@ EOT;
             	<form action="${linkformAddItem}" method="post">
             		<input type="hidden" name="id_item" value="${id_item}">
                 	<input type="hidden" name="id_liste" value="${id}">
-			<label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" value="${nom}" required>
-			<label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
-			<label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
-			<label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
-			<label for="cagnotte">cagnotte</label>
-			<label for="oui">Oui</label><input type="radio" name="cagnotte" id="oui" value="1" ${checkedoui}>
-			<label for="non">Non</label><input type="radio" name="cagnotte" id="non" value="0" ${checkednon}>
+					<label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" value="${nom}" required>
+					<label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
+					<label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
+					<label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
+					<label for="cagnotte">cagnotte</label>
+						<input type="radio" name="cagnotte" id="oui" value="1" ${checkedoui}><label for="oui">Oui</label>
+						<input type="radio" name="cagnotte" id="non" value="0" ${checkednon}><label for="non">Non</label>
                     <input type="submit" value="Modifier">
                 </form>
             </article>

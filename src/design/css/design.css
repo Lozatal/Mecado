@@ -1514,7 +1514,12 @@ footer {
       text-align: center;
       margin-top: 0.3em;
       margin-right: 10%; }
-    #image article img:nth-child(3) {
+    #image article a:nth-child(3) {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto; }
+    #image article a:nth-child(3) img {
       margin: auto;
       height: 100px;
       max-width: 100%; }

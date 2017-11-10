@@ -348,7 +348,7 @@ EOT;
 				<article>
 					'.$lienEnregistrer.'
 					'.$lienSupprimer.'
-					<img src="'.$url.'" alt="">
+					<a href="'.$url.'" title="Visualiser l\'image"><img src="'.$url.'" alt=""></a>
 				</article>
 				';
 		}	

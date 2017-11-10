@@ -91,7 +91,13 @@
 			margin-top:0.3em;
 			margin-right:10%;
 		}
-		& img:nth-child(3){
+		& a:nth-child(3){
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			margin: auto;
+		}
+		& a:nth-child(3) img{
 			margin: auto;
 			height: 100px;
 			max-width: 100%;

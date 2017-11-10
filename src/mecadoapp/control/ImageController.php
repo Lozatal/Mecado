@@ -98,7 +98,7 @@ class ImageController extends \mf\control\AbstractController {
 	    $get = $this->request->get;
 		try{
 	    	if(isset($get['id_image']) && isset($get['id'])){
-					$listeImage=image::where('id_item', '=', $get['id'])->get();
+					$listeImage=image::where('id_item', '=', $get['id_item'])->get();
 					foreach($listeImage as $image){
 						if($image->id==$get['id_image']){
 							$image->principale=1;

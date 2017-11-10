@@ -63,6 +63,7 @@
 		flex-wrap: wrap;
 		@include grille(8,10%,0,8);
 		margin-top: 0.5em;
+		margin-bottom: auto;
 		& a:nth-child(1){
 			@include grille(8,10%,0,6);
 			@include bouton(white,1,lighten($themeColor,20),10px);

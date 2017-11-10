@@ -22,6 +22,7 @@ class ImageController extends \mf\control\AbstractController {
 	}
 
 	public function viewImage($e = null){
+		$resultat['erreur']=$e;
 		try{
 			$resultat['get'] = $this->request->get;
 			$resultat['idListe'] = item::where('id_liste','=',$resultat['get']['id'])->first();
@@ -51,7 +52,7 @@ class ImageController extends \mf\control\AbstractController {
 				$this->viewImage();
 			}
 		}catch(exception $e){
-			$this->viewImage($e);
+			$this->viewImage($e->getmessage());
 		}
 		
 	}
@@ -67,7 +68,7 @@ class ImageController extends \mf\control\AbstractController {
 				throw new exception("Identifiant de l'image introuvable");
 			}
 		}catch(exception $e){
-			$this->viewImage($e);
+			$this->viewImage($e->getmessage());
 		}
 	}
 
@@ -90,7 +91,7 @@ class ImageController extends \mf\control\AbstractController {
 				throw new exception("Idendifiant de l'image ou du cadeau introuvable");
 			}
 		}catch(exception $e){
-			$this->viewImage($e);
+			$this->viewImage($e->getmessage());
 		}
 	}
 }

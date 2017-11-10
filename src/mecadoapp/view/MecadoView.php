@@ -303,7 +303,9 @@ EOT;
 		$linkformRetour=$this->script_name . "/item/?id=".$idListe;
 		$lienRetour='<a href="'.$linkformRetour.'">Retour vers la liste</a>';
 		$form=$this->affichageAddImage($linkformAddImage,$idItem);
-
+		
+		echo $this->data ['erreur'];
+		
 		if (isset ( $this->data ['erreur'] ) && $this->data ['erreur'] != null) {
 			$erreur='
 				<div class="alerte-danger">' . $this->data ['erreur'] . '.</div>';

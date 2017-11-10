@@ -313,7 +313,7 @@ EOT;
 		}else{
 			$idListe=$this->data['idListe'];
 			$linkformRetour=$this->script_name . "/item/?id=".$idListe;
-			$linkformAddImage=$this->script_name . "/add_image/?id=".$idListe."&id_item=" . $idItem;
+			$linkformAddImage=$this->script_name . "/check_image/?id=".$idListe."&id_item=" . $idItem;
 			$form=$this->affichageAddImage($linkformAddImage,$idItem);
 		}
 		$lienRetour='<a id="lienRetour" href="'.$linkformRetour.'">Retour vers la liste</a>';

@@ -994,7 +994,9 @@ footer {
         margin-top: 1em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
-      #add_item article form label[for=destinataire] {
+      #add_item article form p {
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
       #add_item article form label[for=oui] {
@@ -1057,7 +1059,9 @@ footer {
         margin-top: 1em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
-      #add_liste article form label[for=destinataire] {
+      #add_liste article form p {
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
       #add_liste article form label[for=oui] {
@@ -1120,7 +1124,9 @@ footer {
         margin-top: 1em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
-      #sign_up article form label[for=destinataire] {
+      #sign_up article form p {
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
       #sign_up article form label[for=oui] {
@@ -1183,7 +1189,9 @@ footer {
         margin-top: 1em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
-      #login article form label[for=destinataire] {
+      #login article form p {
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
       #login article form label[for=oui] {
@@ -1301,7 +1309,9 @@ footer {
         margin-top: 1em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
-      #image article form label[for=destinataire] {
+      #image article form p {
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
         margin-left: 2.2222222222%;
         width: 34.4444444444%; }
       #image article form label[for=oui] {

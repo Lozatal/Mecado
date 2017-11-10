@@ -980,6 +980,36 @@ footer {
   width: 100%;
   display: flex;
   flex-wrap: wrap; }
+  #add_item #lienRetour {
+    margin-left: 38.8888888889%;
+    width: 22.2222222222%;
+    margin: auto;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.5em;
+    color: white;
+    box-sizing: border-box;
+    background-color: #333333;
+    text-decoration: none;
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: background-color;
+    -moz-transition-duration: 1s;
+    transition-property: background-color;
+    transition-duration: 1s;
+    opacity: 0.9;
+    text-align: center;
+    max-height: 2em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em; }
+    #add_item #lienRetour:hover {
+      cursor: pointer;
+      background-color: #4d4d4d; }
+    #add_item #lienRetour a {
+      text-decoration: none;
+      color: white; }
+    #add_item #lienRetour a:hover {
+      color: white; }
   #add_item article {
     margin-left: 2.2222222222%;
     width: 95.5555555556%;
@@ -1370,6 +1400,12 @@ footer {
   @media screen and (min-width: 1281px) {
     #image article form {
       width: 40%; } }
+  #image .alerte-success {
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%; }
+  #image .alerte-danger {
+    margin-left: 2.2222222222%;
+    width: 95.5555555556%; }
   #image #add_image {
     display: flex;
     flex-wrap: wrap;
@@ -1433,7 +1469,7 @@ footer {
     flex-wrap: wrap;
     margin-left: 2.2222222222%;
     width: 95.5555555556%;
-    margin-bottom: 0.5em; }
+    margin-top: 0.5em; }
     #image article a:nth-child(1) {
       margin-left: 2.2222222222%;
       width: 71.1111111111%;
@@ -1478,6 +1514,7 @@ footer {
     #image article img:nth-child(3) {
       margin: auto;
       margin-top: 0;
+      max-width: 100%;
       margin-left: 2.2222222222%;
       width: 95.5555555556%; }
 

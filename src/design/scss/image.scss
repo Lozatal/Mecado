@@ -6,6 +6,12 @@
 	display:flex;
 	flex-wrap: wrap;
 	width: 100%;
+	& .alerte-success{
+		@include grille(8,10%,0,8);
+	}
+	& .alerte-danger{
+		@include grille(8,10%,0,8);
+	}
 	& #add_image{
 		display: flex;
 		flex-wrap: wrap;

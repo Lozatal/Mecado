@@ -35,6 +35,12 @@ class LoginController extends \mf\control\AbstractController {
 
         $v = new \mecadoapp\auth\MecadoAuthentification();
         try {
+
+            if(strlen($pass) <= 5)
+            {
+                throw new \mf\auth\exception\AuthentificationException('Les deux mots de passe ne correspondent pas');
+            }
+
             $v->createUser($nom, $prenom, $email, $pass, $pass_verify);
             $tab[]= 'success';
             $tab[]= 'Inscription réussie';

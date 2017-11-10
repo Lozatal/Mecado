@@ -536,7 +536,7 @@ EOT;
 			$lienImage='<a href="'.$linkImage.'" title="Voir toute les images"></a>';
 
 			$retour .= '
-				<article reserved="'.$reserved.'">
+				<article class="'.$reserved.'">
 					<div>'.$lienImage.$lienMod.$lienSup.'</div>
 					<div>
 						<a href="'.$url.'"><img src="' . $imgPrincipale. '" alt="lien vers le site marchand"></a>

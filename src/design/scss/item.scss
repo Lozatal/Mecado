@@ -111,7 +111,6 @@
 		flex-wrap: wrap;
 		background-color: darken($backgroundColor,10);
 		@include grille(8,10%,0,8);
-		max-height: 35em;
 		& p:nth-child(3){
 			font-weight: bold;
 			text-align: center;

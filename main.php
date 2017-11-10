@@ -46,7 +46,7 @@
 	$router->addRoute('message_add','/message_add/','\mecadoapp\control\MessageController', 'addMessage', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 
 	$router->addRoute('image','/image/','\mecadoapp\control\ImageController', 'viewImage', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
-	$router->addRoute('add_image','/add_image/','\mecadoapp\control\ImageController', 'addImage', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
+	$router->addRoute('check_image','/check_image/','\mecadoapp\control\ImageController', 'checkImage', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 	$router->addRoute('delete_image','/delete_image/','\mecadoapp\control\ImageController', 'deleteImage', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 	$router->addRoute('principale_image','/principale_image/','\mecadoapp\control\ImageController', 'principaleImage', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 

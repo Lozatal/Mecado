@@ -125,8 +125,8 @@ EOT;
                 <form action="' . $this->app_root . '/main.php/check_signup/" method=post>
                     <label for="nom">Nom</label><input type="text" name="nom" placeholder="Nom" required>
                     <label for="prenom">Prénom</label><input type="text"  name="prenom" placeholder="Prenom" required>
-                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email" min="6" required>
-                    <label for="password">Mot de passe</label><input type="password" name="password" min="6" required>
+                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email" required>
+                    <label for="password">Mot de passe</label><input type="password" name="password" required>
                     <label for="password_verify">Confirmation du mot de passe</label><input type="password"  name="password_verify" required>
                     <input type="submit" value="S\'inscrire" />
                 </form>
@@ -296,16 +296,25 @@ EOT;
 	//////////////// IMAGE ITEM /////////////////
 
  	private function renderImage() {
-		$idListe = $this->data['idListe'];
-		$idItem = $this->data['get']['id'];
-		$linkformAddImage = $this->script_name . "/add_image/?id_item=" . $idItem;
+		$idListe=$this->data['idListe'];
+		$idItem=$this->data['get']['id'];
 
-		$form = $this->affichageAddImage($linkformAddImage,$idItem);
-
-		$linkformRetour = $this->script_name . "/item/?id=".$idListe;
+		$linkformAddImage=$this->script_name . "/add_image/?id=" . $idItem;
+		$linkformRetour=$this->script_name . "/item/?id=".$idListe;
 		$lienRetour='<a href="'.$linkformRetour.'">Retour vers la liste</a>';
+		$form=$this->affichageAddImage($linkformAddImage,$idItem);
+		
+		echo $this->data ['erreur'];
+		
+		if (isset ( $this->data ['erreur'] ) && $this->data ['erreur'] != null) {
+			$erreur='
+				<div class="alerte-danger">' . $this->data ['erreur'] . '.</div>';
+		}else{
+			$erreur='';
+		}
 
-		$retour = '<section id="image">
+		$retour='<section id="image">
+				'.$erreur.'
 				'.$form.'
 				'.$lienRetour;
 		foreach ($this->data['images'] as $image) {
@@ -314,7 +323,7 @@ EOT;
 
 			$linkformEnregistrer = $this->script_name . "/principale_image/?id_image=".$id."&id=".$idItem;
 			$linkformSupprimer = $this->script_name . "/delete_image/?id_image=".$id."&id=".$idItem;
-			$retour .='
+			$retour.='
 				<article>
 					<a href="'.$linkformEnregistrer.'" title="Enregistrer en image principale">Image principale</a>
 					<a href="'.$linkformSupprimer.'" title="Supprimer image"></a>
@@ -330,10 +339,11 @@ EOT;
 				<section id="add_image">
 					<article>
 						<form action="'.$link.'" method="POST">
-							<label>Lien vers une image</label><input type="text" name="url" placeholder="Lien image" required>
+							<label>Lien vers une image *</label><input type="text" name="url" placeholder="Lien image" required>
 							<input type="hidden" name="id_item" value="'.$id.'">
 							<input type="submit">
 						</form>
+						<p>Les champs marqués de * sont obligatoire.</p>
 					</article>
 				</section>';
 	}

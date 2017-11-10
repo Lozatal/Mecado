@@ -20,7 +20,7 @@ class MecadoView extends \mf\view\AbstractView {
 	 */
 	private function renderHeader() {
 		return '
-            <div id="accueil"><a href="' . $this->app_root . '/main.php"><img src="' . $this->app_root . '/src/design/css/images/banniere.png" atl=""></a></div>';
+            <div id="accueil"><a href="' . $this->app_root . '/main.php"><img src="' . $this->app_root . '/src/design/css/images/banniere.png" alt=""></a></div>';
 	}
 	
 	/*
@@ -75,30 +75,32 @@ EOT;
 		$racine = $this->app_root;
 		$retour = <<<EOT
 
-<section id="home">
+		<section id="home">
             <article>
-<p>Bienvenue sur Mecado.net ! Le site qui vous permet de gérer vos listes de cadeaux rapidement et sur tout les supports !
+				<p>Bienvenue sur Mecado.net ! Le site qui vous permet de gérer vos listes de cadeaux rapidement et sur tout les supports !
 
-En vous inscrivant gratuitement, vous pouvez créer une liste et l'administrer, que vous soyez celui qui recevras les cadeaux à la fin ou non ! Et si vous faites la liste pour quelqu'un d'autre, des fonctionnalités supplémentaire sont prévue pour vous faciliter la vie !
+					En vous inscrivant gratuitement, vous pouvez créer une liste et l'administrer, que vous soyez celui qui recevras les cadeaux à la fin ou non ! Et si vous faites la liste pour quelqu'un d'autre, des fonctionnalités supplémentaire sont prévue pour vous faciliter la vie !
 
-N'attendez plus, et venez découvrir tout les secrets de Mecado.net !
-<span>
-Accroche-toi, ferme les yeux, concentre-toi<br>
-Tes bijoux ne valent pas ta présence, tu ouvriras les yeux le jour où...<br>
-Accroche-toi, ferme les yeux, concentre-toi<br>
-Tes bijoux ne valent pas ta présence, tu ouvriras les yeux le jour où...<br>
-<br>
-À quoi me servent tes cadeaux ?<br>
-À quoi me servent tes cadeaux ?<br>
-Tu n'as pas su me soutenir<br>
-Tu n'as pas su me retenir<br>
-À quoi me servent tes cadeaux ?<br>
-À quoi me servent tes cadeaux ?<br>
-Tu n'as pas su me soutenir<br>
-Tu n'as pas su me retenir</span></p>
+					N'attendez plus, et venez découvrir tout les secrets de Mecado.net !
+					<span>
+						Accroche-toi, ferme les yeux, concentre-toi<br>
+						Tes bijoux ne valent pas ta présence, tu ouvriras les yeux le jour où...<br>
+						Accroche-toi, ferme les yeux, concentre-toi<br>
+						Tes bijoux ne valent pas ta présence, tu ouvriras les yeux le jour où...<br>
+						<br>
+						À quoi me servent tes cadeaux ?<br>
+						À quoi me servent tes cadeaux ?<br>
+						Tu n'as pas su me soutenir<br>
+						Tu n'as pas su me retenir<br>
+						À quoi me servent tes cadeaux ?<br>
+						À quoi me servent tes cadeaux ?<br>
+						Tu n'as pas su me soutenir<br>
+						Tu n'as pas su me retenir
+					</span>
+				</p>
             </article>
-		<article>
-		<img src="${racine}/src/design/css/images/presentation.png" alt="">
+			<article>
+				<img src="${racine}/src/design/css/images/presentation.png" alt="">
             </article>
             <article>
                 <ul>
@@ -107,7 +109,7 @@ Tu n'as pas su me retenir</span></p>
                     <li>Nombre d'utilisateur : ${user}</li>
                 </ul>
             </article>
-    </section>
+    	</section>
 
 EOT;
 		return $retour;
@@ -146,8 +148,8 @@ EOT;
             <article>  
                 ' . $alert . '
                 <form action="' . $this->app_root . '/main.php/check_login/" method=post>
-                    <label for="email">Mail</label><input type="text" name="email" placeholder="Email" required>
-                    <label for="password">Mot de passe</label><input type="password" name="password" placeholder="Mot de passe" required>
+                    <label for="email">Mail</label><input type="text" id="email" name="email" placeholder="Email" required>
+                    <label for="password">Mot de passe</label><input type="password" id="password" name="password" placeholder="Mot de passe" required>
                     <input type="submit" value="Connexion" />
                 </form>
             </article>
@@ -160,7 +162,7 @@ EOT;
 
     private function renderListe() {
 
-        $retour = '<section id="liste"><a id="lienAjout" href="'.$this->app_root.'/main.php/add_liste/">Ajouter une liste</a>';
+        $retour = '<section id="liste"><a id="lienAjout" href="'.$this->app_root.'/main.php/add_liste/" title="Ajouter une liste">Ajouter une liste</a>';
 
         $req = new \mf\utils\HttpRequest();
         if(isset($req->get['url']))

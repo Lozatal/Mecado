@@ -85,14 +85,14 @@
 		@include grille(8,10%,1,6);
 		max-height: 2em;
 	}
-	& div article[reserved=cagnotte]{
+	& div .cagnotte{
 		border-color: orange;
 	}
-	& div article[reserved=taken]{
+	& div .taken{
 		background-color: darken($backgroundColor,20);
 		border-color: red;
 	}
-	& div article[reserved=free]{
+	& div .free{
 		border-color: green;
 	}
 	& div article:hover{

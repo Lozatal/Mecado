@@ -432,6 +432,9 @@ footer {
         padding: 0.5em;
         text-align: center;
         margin: auto; }
+        footer div ul li a {
+          text-decoration: none;
+          color: white; }
 
 #liste {
   width: 100%;
@@ -543,30 +546,30 @@ footer {
       margin-top: auto;
       margin-bottom: auto;
       order: 8; }
-  #liste article[close=n] {
+  #liste .close-n {
     border-color: green; }
-  #liste article[close=y] {
+  #liste .close-y {
     border-color: red;
     background-color: #cccccc; }
-    #liste article[close=y] p:nth-child(1) {
+    #liste .close-y p:nth-child(1) {
       text-decoration: line-through; }
-    #liste article[close=y] p:nth-child(7) {
+    #liste .close-y p:nth-child(7) {
       color: black; }
-    #liste article[close=y] a:nth-child(2) {
+    #liste .close-y a:nth-child(2) {
       background-image: url("images/message.png");
       margin-left: 26.6666666667%;
       width: 10%; }
-    #liste article[close=y] a:nth-child(3) {
+    #liste .close-y a:nth-child(3) {
       opacity: 0.6;
       text-decoration: line-through;
       cursor: default;
       display: none; }
-    #liste article[close=y] a:nth-child(4) {
+    #liste .close-y a:nth-child(4) {
       opacity: 0.6;
       text-decoration: line-through;
       cursor: default;
       display: none; }
-    #liste article[close=y] a:nth-child(5) {
+    #liste .close-y a:nth-child(5) {
       opacity: 0.6;
       text-decoration: line-through;
       cursor: default;
@@ -756,12 +759,12 @@ footer {
       color: white; }
     #item #lienAjout a:hover {
       color: white; }
-  #item div article[reserved=cagnotte] {
+  #item div .cagnotte {
     border-color: orange; }
-  #item div article[reserved=taken] {
+  #item div .taken {
     background-color: #cccccc;
     border-color: red; }
-  #item div article[reserved=free] {
+  #item div .free {
     border-color: green; }
   #item div article:hover {
     background-color: #b3b3b3; }

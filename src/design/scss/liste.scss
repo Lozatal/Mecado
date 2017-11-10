@@ -97,10 +97,10 @@
 			order: 8;
 		}
 	}
-	& article[close=n]{
+	& .close-n{
 		border-color: green;
 	}
-	& article[close=y]{
+	& .close-y{
 		border-color: red;
 		background-color: darken($backgroundColor,20);
 		& p:nth-child(1){

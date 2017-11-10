@@ -311,7 +311,7 @@ EOT;
 			
 			$form=$this->affichageAddImage($linkformAddImage,$idItem);
 		}
-		$lienRetour='<a href="'.$linkformRetour.'">Retour vers la liste</a>';
+		$lienRetour='<a id="lienRetour" href="'.$linkformRetour.'">Retour vers la liste</a>';
 		//Exception
 		echo $this->data ['erreur'];
 		

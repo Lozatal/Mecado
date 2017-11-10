@@ -1352,7 +1352,8 @@ footer {
       #image #add_image article form {
         display: flex;
         flex-wrap: wrap;
-        margin: auto; }
+        margin: auto;
+        width: 80%; }
         #image #add_image article form label:nth-child(1) {
           margin-left: 2.2222222222%;
           width: 95.5555555556%;
@@ -1366,7 +1367,7 @@ footer {
         #image #add_image article form input:nth-child(4) {
           margin-left: 26.6666666667%;
           width: 46.6666666667%; }
-  #image a:nth-child(2) {
+  #image #lienRetour {
     margin-left: 2.2222222222%;
     width: 95.5555555556%;
     margin: auto;
@@ -1386,13 +1387,13 @@ footer {
     opacity: 0.9;
     text-align: center;
     max-height: 2em; }
-    #image a:nth-child(2):hover {
+    #image #lienRetour:hover {
       cursor: pointer;
       background-color: #4d4d4d; }
-    #image a:nth-child(2) a {
+    #image #lienRetour a {
       text-decoration: none;
       color: white; }
-    #image a:nth-child(2) a:hover {
+    #image #lienRetour a:hover {
       color: white; }
   #image article {
     display: flex;
@@ -1432,14 +1433,15 @@ footer {
         color: white; }
     #image article a:nth-child(2) {
       margin-left: 2.2222222222%;
-      width: 22.2222222222%;
+      width: 10%;
       background-image: url("images/supprimer.png");
       width: 20px;
       height: 20px;
       background-repeat: no-repeat;
       background-color: transparent;
       text-align: center;
-      margin-top: 0.3em; }
+      margin-top: 0.3em;
+      margin-right: 10%; }
     #image article img:nth-child(3) {
       margin: auto;
       margin-top: 0;
@@ -1461,12 +1463,17 @@ footer {
   #image article {
     margin-left: 2.2222222222%;
     width: 46.6666666667%; }
-    #image article div a:nth-child(1) {
-      margin-left: 2.2222222222%;
+    #image article a:nth-child(1) {
+      margin-left: 14.4444444444%;
       width: 71.1111111111%; }
-    #image article div a:nth-child(2) {
+    #image article a:nth-child(2) {
       margin-left: 2.2222222222%;
-      width: 22.2222222222%; } }
+      width: 10%;
+      margin-right: auto; }
+  #image #lienRetour {
+    margin-left: 26.6666666667%;
+    width: 46.6666666667%;
+    margin-right: 20%; } }
 @media screen and (min-width: 1281px) {
   #image #add_image article form {
     width: 100%; }
@@ -1477,20 +1484,26 @@ footer {
     #image #add_image article form input:nth-child(2) {
       margin-left: 2.2222222222%;
       width: 34.4444444444%;
-      margin-bottom: 0.5em; }
+      margin-bottom: 0.8em; }
     #image #add_image article form input:nth-child(4) {
       margin-left: 14.4444444444%;
       width: 10%;
-      margin: auto; }
+      margin: auto;
+      margin-bottom: 0.8em; }
   #image article {
     margin-left: 2.2222222222%;
-    width: 46.6666666667%; }
-    #image article div a:nth-child(1) {
-      margin-left: 2.2222222222%;
+    width: 22.2222222222%; }
+    #image article a:nth-child(1) {
+      margin-left: 14.4444444444%;
       width: 71.1111111111%; }
-    #image article div a:nth-child(2) {
+    #image article a:nth-child(2) {
       margin-left: 2.2222222222%;
-      width: 22.2222222222%; } }
+      width: 10%;
+      margin-right: auto; }
+  #image #lienRetour {
+    margin-left: 38.8888888889%;
+    width: 22.2222222222%;
+    margin-right: 20%; } }
 @media screen and (min-width: 280px) {
   body {
     font-size: 8pt; } }

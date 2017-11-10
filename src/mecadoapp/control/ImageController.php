@@ -22,8 +22,8 @@ class ImageController extends \mf\control\AbstractController {
 		parent::__construct();
 	}
 
-	public function viewImage($e = null){
-		$resultat['erreur']=$e;
+	public function viewImage($tabAlerte=null){
+		$resultat['erreur']=$tabAlerte;
 		$resultat['idListe'] = null;
 		$resultat['idImageToken'] = null;
 		$resultat['token'] = false;
@@ -62,11 +62,15 @@ class ImageController extends \mf\control\AbstractController {
 			if(!isset($idItem) || $idItem->id == null){
 				throw new exception("Identifiant du cadeau introuvable");
 			}else{
+				$tabAlerte['message']="L'image a bien été envoyé";
+				$tabAlerte['type']="success";
 				$image->save();
-				$this->viewImage();
+				$this->viewImage($tabAlerte);
 			}
 		}catch(exception $e){
-			$this->viewImage($e->getmessage());
+			$tabAlerte['message']=$e->getmessage();
+			$tabAlerte['type']="danger";
+			$this->viewImage($tabAlerte);
 		}
 		
 	}
@@ -77,12 +81,16 @@ class ImageController extends \mf\control\AbstractController {
 	    		if(isset($get['id_image'])){
 				$image=image::where('id', '=', $get['id_image'])->first();
 				$image->delete();
-				$this->viewImage();
+				$tabAlerte['message']="L'image a bien été supprimé";
+				$tabAlerte['type']="success";
+				$this->viewImage($tabAlerte);
 			}else{
 				throw new exception("Identifiant de l'image introuvable");
 			}
 		}catch(exception $e){
-			$this->viewImage($e->getmessage());
+			$tabAlerte['message']=$e->getmessage();
+			$tabAlerte['type']="danger";
+			$this->viewImage($tabAlerte);
 		}
 	}
 
@@ -100,12 +108,16 @@ class ImageController extends \mf\control\AbstractController {
 						$image->save();
 					}
 				}
-				$this->viewImage();
+				$tabAlerte['message']="L'image à bien été mise en principale";
+				$tabAlerte['type']="success";
+				$this->viewImage($tabAlerte);
 			}else{
 				throw new exception("Idendifiant de l'image ou du cadeau introuvable");
 			}
 		}catch(exception $e){
-			$this->viewImage($e->getmessage());
+			$tabAlerte['message']=$e->getmessage();
+			$tabAlerte['type']="success";
+			$this->viewImage($tabAlerte);
 		}
 	}
 }

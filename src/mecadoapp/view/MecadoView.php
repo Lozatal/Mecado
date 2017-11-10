@@ -14,7 +14,7 @@ class MecadoView extends \mf\view\AbstractView {
 	}
 	
 	/*
-	 * MÃ©thode renderHeader
+	 * Méthode renderHeader
 	 *
 	 * Retourne le fragment HTML de l'entÃ©te (unique pour toutes les vues)
 	 */

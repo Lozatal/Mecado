@@ -1,6 +1,6 @@
 <?php
 
-	//D?arrage de la session utilisateur
+	//Démarrage de la session utilisateur
 	session_start();
 	
 	//liste des requires
@@ -11,7 +11,7 @@
 	$loader = new mf\utils\ClassLoader('src');
 	$loader->register(); 
 
-	//connexion ?la base de donn?
+	//connexion à la base de donnée
 	$config = parse_ini_file('conf/config.ini');
 
 	$db = new Illuminate\Database\Capsule\Manager();
@@ -20,7 +20,7 @@
 	$db->setAsGlobal();
 	$db->bootEloquent();
 	
-	//On va d?inir la liste des routes
+	//On va définir la liste des routes
 	$router = new mf\router\Router();
 
 	$router->addRoute('home','/home/','\mecadoapp\control\MecadoController', 'viewHome', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
@@ -50,7 +50,7 @@
 	$router->addRoute('delete_image','/delete_image/','\mecadoapp\control\ImageController', 'deleteImage', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 	$router->addRoute('principale_image','/principale_image/','\mecadoapp\control\ImageController', 'principaleImage', \mecadoapp\auth\MecadoAuthentification::ACCESS_LEVEL_NONE);
 
-	//route par d?ault si jamais l'url est fausse
+	//route par défault si jamais l'url est fausse
 	$router->addRoute('default','DEFAULT_ROUTE','\mecadoapp\control\MecadoController', 'viewHome');
 
 	$router->run();

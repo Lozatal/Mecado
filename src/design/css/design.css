@@ -1014,7 +1014,7 @@ footer {
       #add_item article form input {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
-      #add_item article form input:nth-last-of-type {
+      #add_item article form input[type=submit] {
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: 26.6666666667%;
@@ -1082,7 +1082,7 @@ footer {
       #add_liste article form input {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
-      #add_liste article form input:nth-last-of-type {
+      #add_liste article form input[type=submit] {
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: 26.6666666667%;
@@ -1150,7 +1150,7 @@ footer {
       #sign_up article form input {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
-      #sign_up article form input:nth-last-of-type {
+      #sign_up article form input[type=submit] {
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: 26.6666666667%;
@@ -1218,7 +1218,7 @@ footer {
       #login article form input {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
-      #login article form input:nth-last-of-type {
+      #login article form input[type=submit] {
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: 26.6666666667%;
@@ -1341,7 +1341,7 @@ footer {
       #image article form input {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
-      #image article form input:nth-last-of-type {
+      #image article form input[type=submit] {
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: 26.6666666667%;

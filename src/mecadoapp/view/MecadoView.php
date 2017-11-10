@@ -457,7 +457,6 @@ EOT;
 			
 			//On va récupérer l'image principale ou la première
 			if(isset($item->images)){
-				
 				$number = 0;
 				foreach($item->images as $image){
 					//Dans le cas ou il n'y a pas d'iamge principale, je prends la première par défault, sinon c'est la principale

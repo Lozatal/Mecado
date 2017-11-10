@@ -39,7 +39,6 @@ Configuration du fichier conf/config.ini
 * Internet Explorer 9+
 * Opera *(latest 2)*
 * Safari *(latest 2)*
-```
 
 ## Built With
 

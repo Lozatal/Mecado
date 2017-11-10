@@ -231,7 +231,8 @@ EOT;
             	$description = $liste->description;
             	$nom_dest = $liste->nom_dest;
             	$prenom_dest = $liste->prenom_dest;
-            	$date_limit = $liste->date_limite;
+            	$temp = new \DateTime($liste->date_limite);
+            	$date_limit = $temp->format('d/m/Y');
             	$text = 'Modifier';
             }
         }
@@ -488,11 +489,12 @@ EOT;
 			$tarif = $item->tarif;
 			if($item->cagnotte == 1)
 			{
+				$reserved='cagnotte';
 				$totaltarif = 0;
 				foreach ($item->acheteurs()->get() as $key => $value) {
 					$totaltarif = $totaltarif + $value->participation;
 				}
-				$tarif = $totaltarif.'/'.$item->tarif;
+				$tarif = $totaltarif.' / '.$item->tarif;
 				if($totaltarif>=$item->tarif)
 					$reserved = 'taken';
 			}

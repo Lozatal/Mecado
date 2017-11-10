@@ -57,8 +57,8 @@ class ImageController extends \mf\control\AbstractController {
 			$post=$this->request->post;
 			$image = new image();
 			$image->url=$post['url'];
-			$image->id_item=$post['id_item'];
-			$idItem = item::where('id','=',$post['id_item'])->first();
+			$image->id_item=$post['id'];
+			$idItem = item::where('id','=',$post['id'])->first();
 			if(!isset($idItem) || $idItem->id == null){
 				throw new exception("Identifiant du cadeau introuvable");
 			}else{

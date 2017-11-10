@@ -1389,7 +1389,9 @@ footer {
     transition-duration: 1s;
     opacity: 0.9;
     text-align: center;
-    max-height: 2em; }
+    max-height: 2em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em; }
     #image #lienRetour:hover {
       cursor: pointer;
       background-color: #4d4d4d; }

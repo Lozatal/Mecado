@@ -270,25 +270,26 @@ EOT;
 		foreach ($this->data as $key => $value) {
 
         	$requete = \mecadoapp\model\Acheteur::where('id_item', '=', $value->id);
-        	$acheteurobj = $requete->first();
+        	$acheteurobj = $requete->get();
 
 			$nom = $value->nom;
 			$description = $value->description;
 			$url = $value->url_article;
 			$img = $value->url_image;
 			$tarif = $value->tarif;
-			$acheteur = $acheteurobj['nom'];
-			$message = $acheteurobj['message'];
 
 			$retour .='
 
 				<article>
 					<h2>' . $nom . '</h2>
-					<p>' . $description . '</p>
-					<p>'.$acheteur.'</p>
-					<p>'.$message.'</p>
-				</article>
-				';
+					<p>' . $description . '</p>';
+
+			foreach ($acheteurobj as $ke => $val) {
+					$retour .='<p>'.$val->nom.'</p>
+					<p>'.$val->message.'</p>';
+			}
+
+			$retour .='</article>';
 		
 		}	
 		return $retour.'</section>';

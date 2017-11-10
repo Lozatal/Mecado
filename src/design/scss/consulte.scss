@@ -29,14 +29,17 @@
 		& p:nth-child(2){
 			@include grille(8,10%,0,8);
 		}
-		& p:nth-child(3){
+		& p:nth-child(n+3){
 			@include grille(8,10%,0,8);
 			font-weight: bold;
 			font-size: 1.3em;
 			text-align: right;
 		}
-		& p:nth-child(4){
+		& p:nth-child(2n+4){
 			@include grille(8,10%,0,8);
+			text-align: left;
+			font-size: 1em;
+			font-weight: normal;
 		}
 	}
 	& article:hover{

@@ -497,7 +497,9 @@ footer {
       width: 10%;
       width: 20px;
       height: 20px;
+      background-image: url("images/message.png");
       background-repeat: no-repeat;
+      display: none;
       order: 1; }
     #liste article a:nth-child(3) {
       margin-left: 14.4444444444%;
@@ -556,7 +558,7 @@ footer {
     #liste .close-y p:nth-child(7) {
       color: black; }
     #liste .close-y a:nth-child(2) {
-      background-image: url("images/message.png");
+      display: block;
       margin-left: 26.6666666667%;
       width: 10%; }
     #liste .close-y a:nth-child(3) {

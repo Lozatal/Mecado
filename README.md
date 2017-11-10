@@ -48,8 +48,8 @@ Configuration du fichier conf/config.ini
 ## Authors
 
 * **Baptiste Texier** - *Lancement* - [Github](https://github.com/texier54)
-* **Valentin RAGONNEAU** - [Github](https://github.com/Lozatal)
-* **Danield BENTZ** - [Github](https://github.com/bentz19u)
+* **Valentin Ragonneau** - [Github](https://github.com/Lozatal)
+* **Danield Bentz** - [Github](https://github.com/bentz19u)
 
 ## License
 

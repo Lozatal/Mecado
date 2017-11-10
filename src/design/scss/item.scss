@@ -85,7 +85,7 @@
 		@include grille(8,10%,1,6);
 		max-height: 2em;
 	}
-	& div article[reserved=cagnote]{
+	& div article[reserved=cagnotte]{
 		border-color: orange;
 	}
 	& div article[reserved=taken]{
@@ -209,6 +209,18 @@
 			& input:last-child{
 				margin-top: 1em;
 				margin-bottom: 1em;
+			}
+		}
+		& ul{
+			width: 100%;
+			& li{
+				width: 80%;
+				box-sizing: border-box;
+				font-weight: normal;
+				text-align: left;
+				font-size: 1em;
+				margin: auto;
+				padding: 0.2em;
 			}
 		}
 	}

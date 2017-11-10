@@ -637,11 +637,11 @@ EOT;
             	<form action="${linkformAddItem}" method="post">
             		<input type="hidden" name="id_item" value="${id_item}">
                 	<input type="hidden" name="id_liste" value="${id}">
-                    <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" value="${nom}" required>
-                    <label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
-                    <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
-                    <label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
-                    <label for="cagnote">Cagnote</label>
+                        <label for="nom">Cadeau</label><input type="nom" name="nom" placeholder="Objet" value="${nom}" required>
+                        <label for="description">Description</label><textarea maxlength="500" name="description" value="${description}" ></textarea>
+                        <label for="url_article">Lien de l'article</label><input type="text" name="url_article" value="${url_article}" placeholder="URL">
+                        <label for="tarif">Tarif</label><input type="text" name="tarif" value="${tarif}" placeholder="tarif" required>
+                        <label for="cagnote">Cagnote</label>
                     	<label for="oui">Oui</label><input type="radio" name="cagnote" id="oui" value="1" ${checkedoui}>
                     	<label for="non">Non</label><input type="radio" name="cagnote" id="non" value="0" ${checkednon}>
                     <input type="submit" value="Modifier">

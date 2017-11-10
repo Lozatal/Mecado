@@ -62,7 +62,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		@include grille(8,10%,0,8);
-		margin-bottom: 0.5em;
+		margin-top: 0.5em;
 		& a:nth-child(1){
 			@include grille(8,10%,0,6);
 			@include bouton(white,1,lighten($themeColor,20),10px);
@@ -93,6 +93,7 @@
 		& img:nth-child(3){
 			margin:auto;
 			margin-top:0;
+			max-width: 100%;
 			@include grille(8,10%,0,8);
 		}
 	}

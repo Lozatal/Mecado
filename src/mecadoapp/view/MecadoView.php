@@ -300,7 +300,7 @@ EOT;
 		$idItem = $this->data['get']['id'];
 		$linkformAddImage = $this->script_name . "/add_image/?id_item=" . $idItem;
 
-		$form = $this->affichageAddImage($linkformAddImage);
+		$form = $this->affichageAddImage($linkformAddImage,$idItem);
 
 		$linkformRetour = $this->script_name . "/item/?id=".$idListe;
 		$lienRetour='<a href="'.$linkformRetour.'">Retour vers la liste</a>';
@@ -325,12 +325,17 @@ EOT;
 		return $retour.'</section>';
 	}
 
- 	private function affichageAddImage($link) {
+ 	private function affichageAddImage($link,$id) {
 		return $retour='
-				<form action="'.$link.'" method="POST">
-					<label>Lien vers une image</label><input type="text" placeholder="Lien image" required>
-					<input type="submit">
-				</form>';
+				<section id="add_image">
+					<article>
+						<form action="'.$link.'" method="POST">
+							<label>Lien vers une image</label><input type="text" name="url" placeholder="Lien image" required>
+							<input type="hidden" name="id_item" value="'.$id.'">
+							<input type="submit">
+						</form>
+					</article>
+				</section>';
 	}
 	
 	////////////////// ITEM /////////////////////

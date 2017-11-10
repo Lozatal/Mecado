@@ -33,7 +33,12 @@ class ImageController extends \mf\control\AbstractController {
 	}
 
 	public function addImage(){
-		
+		$post=$this->request->post;
+		$image = new image();
+		$image->url=$post['url'];
+		$image->id_item=$post['id_item'];
+		$image->save();
+		$this->viewImage();
 	}
 
 	public function deleteImage(){

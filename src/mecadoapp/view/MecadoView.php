@@ -251,7 +251,7 @@ EOT;
                     <label for="description">Description</label><textarea maxlength="500" name="description" required>${description}</textarea>  
                     <label for="nom_dest">Nom destinataire</label><input type="text" name="nom_dest" placeholder="Si vous n'êtes pas le destinaire" value="${nom_dest}">
                     <label for="prenom_dest">Prénom destinataire</label><input type="text" name="prenom_dest" placeholder="Si vous n'êtes pas le destinaire" value="${prenom_dest}">
-                    <label for="date_limit">Date limite</label><input type="date" name="date_limit" placeholder="jj/mm/aaaa" value="${date_limit}" required>
+                    <label for="date_limit">Date limite</label><input type="text" name="date_limit" placeholder="jj/mm/aaaa" value="${date_limit}" required>
                     <input type="submit" value="${text}" required>
                 </form>
             </article>

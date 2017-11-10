@@ -33,7 +33,7 @@ class ImageController extends \mf\control\AbstractController {
 	}
 
 	public function addImage(){
-
+		
 	}
 
 	public function deleteImage(){

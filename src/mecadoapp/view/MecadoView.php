@@ -299,12 +299,14 @@ EOT;
 		$idListe = $this->data['idListe'];
 		$idItem = $this->data['get']['id'];
 		$linkformAddImage = $this->script_name . "/add_image/?id_item=" . $idItem;
-		$lienAdd='<a href="'.$linkformAddImage.'">Ajouter une image</a>';
+
+		$form = affichageAddImage($linkformAddImage);
+
 		$linkformRetour = $this->script_name . "/item/?id=".$idListe;
 		$lienRetour='<a href="'.$linkformRetour.'">Retour vers la liste</a>';
 
 		$retour = '<section id="image">
-				'.$lienAdd.'
+				'.$form.'
 				'.$lienRetour;
 		foreach ($this->data['images'] as $image) {
 			$url=$image->url;
@@ -321,6 +323,14 @@ EOT;
 				';
 		}	
 		return $retour.'</section>';
+	}
+
+ 	private function affichageAddImage($link) {
+		return $retour='
+				<form action="'.$link.'" method="POST">
+					<label>Lien vers une image</label><input type="text" placeholder="Lien image" required>
+					<input type="submit">
+				</form>';
 	}
 	
 	////////////////// ITEM /////////////////////

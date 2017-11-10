@@ -2,18 +2,173 @@
 
 #image{
 
+	@include formulaire($themeColor,$backgroundColor);
 	display:flex;
 	flex-wrap: wrap;
 	width: 100%;
-	background-color: blue;
+	& #add_image{
+		display: flex;
+		flex-wrap: wrap;
+		@include grille(8,10%,0,8);
+		& article{
+			display: flex;
+			flex-wrap: wrap;
+			width:100%;
+			margin-left:0;
+			& form{
+				display: flex;
+				flex-wrap: wrap;
+				margin: auto;
+				& label:nth-child(1){
+					@include grille(8,10%,0,8);
+					margin-bottom: 0.5em;
+					text-align: center;
+				}
+				& input:nth-child(2){
+					@include grille(8,10%,0,8);
+					height:1em;
+					margin:auto;
+				}
+				& input:nth-child(4){
+					@include grille(8,10%,2,4);
+				}
+			}
+		}
+	} 
+	& a:nth-child(2){
+		@include grille(8,10%,0,8);
+		margin: auto;
+		@include bouton(white,1,lighten($themeColor,20),10px);
+		-webkit-transition-property: background-color;
+		-webkit-transition-duration: 1s;
+		-moz-transition-property: background-color;
+		-moz-transition-duration: 1s;
+		transition-property: background-color;
+		transition-duration: 1s;
+		opacity: 0.9;
+		text-align: center;
+		max-height: 2em;
+	}
 	& article{
 		display: flex;
 		flex-wrap: wrap;
 		@include grille(8,10%,0,8);
-		background-color:red;
+		margin-bottom: 0.5em;
 		& a:nth-child(1){
+			@include grille(8,10%,0,6);
+			@include bouton(white,1,lighten($themeColor,20),10px);
+			-webkit-transition-property: background-color;
+			-webkit-transition-duration: 1s;
+			-moz-transition-property: background-color;
+			-moz-transition-duration: 1s;
+			transition-property: background-color;
+			transition-duration: 1s;
+			opacity: 0.9;
+			text-align: center;
+			max-height: 2em;
+			margin:auto;
+			margin-top:0;
+			margin-bottom:0.5em;
+		}
+		& a:nth-child(2){
+			@include grille(8,10%,0,2);
+			background-image: url('images/supprimer.png');
+			width: 20px;
+			height: 20px;
+			background-repeat: no-repeat;
+			background-color:transparent;
+			text-align:center;
+			margin-top:0.3em;
+			//margin-bottom:0.5em;
+		}
+		& img:nth-child(3){
+			margin:auto;
+			margin-top:0;
 			@include grille(8,10%,0,8);
-			background-color:blue;
+		}
+	}
+	
+}
+
+@media screen and (min-width: 280px){
+
+}
+
+@media screen and (min-width: 480px){
+}
+
+@media screen and (min-width: 600px){
+
+}
+
+@media screen and (min-width: 801px){
+	#image{
+		& #add_image{
+			& article{
+				& form{
+					& label:nth-child(1){
+						@include grille(8,10%,0,3);
+						font-size:1.3em;
+					}
+					& input:nth-child(2){
+						@include grille(8,10%,0,5);
+						margin-bottom:0.5em;
+					}
+					& input:nth-child(4){
+						@include grille(8,10%,2,4);
+					}
+				}
+			}
+		}
+		& article{
+			@include grille(8,10%,0,4);
+			& div{
+				& a:nth-child(1){
+					@include grille(8,10%,0,6);
+				}
+				& a:nth-child(2){
+					@include grille(8,10%,0,2);
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1025px){
+
+}
+
+@media screen and (min-width: 1281px){
+	#image{
+		& #add_image{
+			& article{
+				& form{
+					width:100%;
+					& label:nth-child(1){
+						@include grille(8,10%,0,2);
+						font-size:1.3em;
+					}
+					& input:nth-child(2){
+						@include grille(8,10%,0,3);
+						margin-bottom:0.5em;
+					}
+					& input:nth-child(4){
+						@include grille(8,10%,1,1);
+						margin:auto;
+					}
+				}
+			}
+		}
+		& article{
+			@include grille(8,10%,0,4);
+			& div{
+				& a:nth-child(1){
+					@include grille(8,10%,0,6);
+				}
+				& a:nth-child(2){
+					@include grille(8,10%,0,2);
+				}
+			}
 		}
 	}
 }

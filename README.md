@@ -12,7 +12,7 @@ Ces instructions vous permettront d'obtenir une copie du projet opérationnel su
 Nécéssite Eloquent
 
 ```
-composer require fzaninotto/faker
+composer require Eloquent
 ```
 
 ### Installation

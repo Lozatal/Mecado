@@ -335,7 +335,7 @@ EOT;
 			$linkformEnregistrer = $this->script_name . "/principale_image/?id_image=".$id."&id=".$idItem;
 			$linkformSupprimer = $this->script_name . "/delete_image/?id_image=".$id."&id=".$idItem;
 			if(!$token){
-				$lienEnregistrer='<a href="'.$linkformEnregistrer.'" title="Enregistrer en image principale">Principale</a>';
+				$lienEnregistrer='<a href="'.$linkformEnregistrer.'" title="Enregistrer en image principale">Image principale</a>';
 				$lienSupprimer='<a href="'.$linkformSupprimer.'" title="Supprimer image"></a>';
 			}else{
 				$lienEnregistrer='';

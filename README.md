@@ -45,7 +45,7 @@ Configuration du fichier conf/config.ini
 * [Eloquent](https://laravel.com/docs/5.0/eloquent) - Framework PhP
 * [MicroFramework](https://github.com/Texier54/MicroFramework) - Framework PhP
 
-## Authors
+## Autheurs
 
 * **Baptiste Texier** - *Lancement* - [Github](https://github.com/texier54)
 * **Valentin Ragonneau** - [Github](https://github.com/Lozatal)

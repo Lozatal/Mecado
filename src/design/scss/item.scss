@@ -8,7 +8,7 @@
 		margin-bottom: auto;
 		padding: 1em 0 1em 0;
 		@include grille(8,10%,0,8);
-		background-color: darken($backgroundColor,10);
+		background-color: darken($backgroundColor,2);
 		border: 2px solid black;
 		border-radius: 5px;
 		& div{
@@ -26,8 +26,8 @@
 			text-align: left;
 			width: 90%;
 			margin: auto;
-			margin-top: 0.2em;
-			margin-bottom: 0.2em;
+			margin-top: 0.6em;
+			margin-bottom: 0.6em;
 			& b{
 				font-weight: bold;
 			}
@@ -44,12 +44,28 @@
 				@include grille(8,10%,0,8);
 				text-align: center;
 				font-size: 1.2em;
+				padding: 0.2em;
+				margin-top: 0.4em;
 			}
 			& input[type=text]{
 				@include grille(8,10%,0,8);
 			}
 			& input[type=submit]{
 				@include grille(8,10%,0,8);
+				background-color: $themeColor;
+				border-radius: 10px;
+				border: none;
+				padding: 4px;
+				margin-top: 0.8em;
+				color:white;
+
+				&:hover {
+					background-color: lighten(gray, 40);
+					cursor: pointer;
+				}
+			}
+			& #obligatoire {
+				font-size: 0.8em;
 			}
 		}
 		& h2:hover~div{
@@ -79,7 +95,7 @@
 		margin: auto;
 		margin-bottom: 0.5em;
 		margin-top: 0.5em;
-		@include bouton(white,1,lighten($themeColor,20),10px);
+		@include bouton(white,1,lighten($themeColor,2),10px);
 		opacity: 0.9;
 		text-align: center;
 		@include grille(8,10%,1,6);
@@ -89,7 +105,7 @@
 		border-color: orange;
 	}
 	& div .taken{
-		background-color: darken($backgroundColor,20);
+		background-color: darken($backgroundColor,10);
 		border-color: red;
 	}
 	& div .free{
@@ -124,7 +140,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			& a:hover{
-			
+
 			}
 			& a:first-child{
 				@include grille(8,10%,0,1);
@@ -200,7 +216,7 @@
 				width: 80%;
 				margin: auto;
 				text-align: center;
-		
+
 			}
 			& textarea{
 				width: 80%;
@@ -211,6 +227,23 @@
 				margin-top: 1em;
 				margin-bottom: 1em;
 			}
+			
+			& input[type=submit]{
+				margin-top: 1em;
+				margin-bottom: 1em;
+				@include grille(8,10%,2,4);
+				background-color: $themeColor;
+				border-radius: 10px;
+				border: none;
+				padding: 4px;
+				color:white;
+
+				&:hover {
+					background-color: lighten(gray, 40);
+					cursor: pointer;
+				}
+			}
+			
 		}
 		& ul{
 			width: 100%;

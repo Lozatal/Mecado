@@ -39,12 +39,23 @@
 				margin-top: 1em;
 				margin-bottom: 1em;
 				@include grille(8,10%,2,4);
+				background-color: $themeColor;
+				border-radius: 10px;
+				border: none;
+				padding: 4px;
+				color:white;
+
+				&:hover {
+					background-color: lighten(gray, 40);
+					cursor: pointer;
+				}
 			}
 			& textarea{
 				@include grille(8,10%,0,4);
 			}
 			& #obligatoire{
 				@include grille(8,10%,0,8);
+				font-size: 0.8em;
 			}
 		}
 	}

@@ -11,7 +11,7 @@
 	text-decoration: none;
 	&:hover{
 		cursor: pointer;
-		background-color: lighten($background,10);
+		background-color: lighten($background,4);
 	}
 	& a{
 		text-decoration: none;

@@ -396,6 +396,9 @@ section {
   display: flex;
   flex-wrap: wrap; }
 
+button {
+  background-color: red; }
+
 article {
   margin-bottom: 0.5em;
   margin-top: 0.5em;
@@ -453,7 +456,7 @@ footer {
     padding: 0.5em;
     color: white;
     box-sizing: border-box;
-    background-color: #262626;
+    background-color: #0d0d0d;
     text-decoration: none;
     opacity: 0.9;
     text-align: center;
@@ -463,7 +466,7 @@ footer {
     margin-bottom: 0.5em; }
     #liste #lienAjout:hover {
       cursor: pointer;
-      background-color: #404040; }
+      background-color: #171717; }
     #liste #lienAjout a {
       text-decoration: none;
       color: white; }
@@ -552,7 +555,7 @@ footer {
     border-color: green; }
   #liste .close-y {
     border-color: red;
-    background-color: #cccccc; }
+    background-color: #e6e6e6; }
     #liste .close-y p:nth-child(1) {
       text-decoration: line-through; }
     #liste .close-y p:nth-child(7) {
@@ -678,7 +681,7 @@ footer {
     padding: 1em 0 1em 0;
     margin-left: 2.2222222222%;
     width: 95.5555555556%;
-    background-color: #e6e6e6;
+    background-color: #fafafa;
     border: 2px solid black;
     border-radius: 5px; }
     #item #message div {
@@ -694,8 +697,8 @@ footer {
       text-align: left;
       width: 90%;
       margin: auto;
-      margin-top: 0.2em;
-      margin-bottom: 0.2em; }
+      margin-top: 0.6em;
+      margin-bottom: 0.6em; }
       #item #message p b {
         font-weight: bold; }
     #item #message form {
@@ -710,13 +713,26 @@ footer {
         margin-left: 2.2222222222%;
         width: 95.5555555556%;
         text-align: center;
-        font-size: 1.2em; }
+        font-size: 1.2em;
+        padding: 0.2em;
+        margin-top: 0.4em; }
       #item #message form input[type=text] {
         margin-left: 2.2222222222%;
         width: 95.5555555556%; }
       #item #message form input[type=submit] {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 95.5555555556%;
+        background-color: black;
+        border-radius: 10px;
+        border: none;
+        padding: 4px;
+        margin-top: 0.8em;
+        color: white; }
+        #item #message form input[type=submit]:hover {
+          background-color: #e6e6e6;
+          cursor: pointer; }
+      #item #message form #obligatoire {
+        font-size: 0.8em; }
     #item #message h2:hover ~ div {
       display: block; }
     #item #message div:hover {
@@ -746,7 +762,7 @@ footer {
     padding: 0.5em;
     color: white;
     box-sizing: border-box;
-    background-color: #333333;
+    background-color: #050505;
     text-decoration: none;
     opacity: 0.9;
     text-align: center;
@@ -755,7 +771,7 @@ footer {
     max-height: 2em; }
     #item #lienAjout:hover {
       cursor: pointer;
-      background-color: #4d4d4d; }
+      background-color: #0f0f0f; }
     #item #lienAjout a {
       text-decoration: none;
       color: white; }
@@ -764,7 +780,7 @@ footer {
   #item div .cagnotte {
     border-color: orange; }
   #item div .taken {
-    background-color: #cccccc;
+    background-color: #e6e6e6;
     border-color: red; }
   #item div .free {
     border-color: green; }
@@ -871,6 +887,19 @@ footer {
       #item div article form input:last-child {
         margin-top: 1em;
         margin-bottom: 1em; }
+      #item div article form input[type=submit] {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 26.6666666667%;
+        width: 46.6666666667%;
+        background-color: black;
+        border-radius: 10px;
+        border: none;
+        padding: 4px;
+        color: white; }
+        #item div article form input[type=submit]:hover {
+          background-color: #e6e6e6;
+          cursor: pointer; }
     #item div article ul {
       width: 100%; }
       #item div article ul li {
@@ -918,7 +947,7 @@ footer {
   width: 100%;
   box-sizing: border-box; }
   #home article {
-    background-color: #e6e6e6; }
+    background-color: #fcfcfc; }
   #home article:nth-child(1) {
     margin-top: 0;
     margin-left: 2.2222222222%;
@@ -1006,7 +1035,7 @@ footer {
     margin-bottom: 0.2em; }
     #add_item #lienRetour:hover {
       cursor: pointer;
-      background-color: #4d4d4d; }
+      background-color: #3d3d3d; }
     #add_item #lienRetour a {
       text-decoration: none;
       color: white; }
@@ -1050,13 +1079,22 @@ footer {
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: 26.6666666667%;
-        width: 46.6666666667%; }
+        width: 46.6666666667%;
+        background-color: black;
+        border-radius: 10px;
+        border: none;
+        padding: 4px;
+        color: white; }
+        #add_item article form input[type=submit]:hover {
+          background-color: #e6e6e6;
+          cursor: pointer; }
       #add_item article form textarea {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
       #add_item article form #obligatoire {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 95.5555555556%;
+        font-size: 0.8em; }
   @media screen and (min-width: 280px) {
     #add_item article form {
       width: 90%; } }
@@ -1118,13 +1156,22 @@ footer {
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: 26.6666666667%;
-        width: 46.6666666667%; }
+        width: 46.6666666667%;
+        background-color: black;
+        border-radius: 10px;
+        border: none;
+        padding: 4px;
+        color: white; }
+        #add_liste article form input[type=submit]:hover {
+          background-color: #e6e6e6;
+          cursor: pointer; }
       #add_liste article form textarea {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
       #add_liste article form #obligatoire {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 95.5555555556%;
+        font-size: 0.8em; }
   @media screen and (min-width: 280px) {
     #add_liste article form {
       width: 90%; } }
@@ -1186,13 +1233,22 @@ footer {
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: 26.6666666667%;
-        width: 46.6666666667%; }
+        width: 46.6666666667%;
+        background-color: black;
+        border-radius: 10px;
+        border: none;
+        padding: 4px;
+        color: white; }
+        #sign_up article form input[type=submit]:hover {
+          background-color: #e6e6e6;
+          cursor: pointer; }
       #sign_up article form textarea {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
       #sign_up article form #obligatoire {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 95.5555555556%;
+        font-size: 0.8em; }
   @media screen and (min-width: 280px) {
     #sign_up article form {
       width: 90%; } }
@@ -1254,13 +1310,22 @@ footer {
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: 26.6666666667%;
-        width: 46.6666666667%; }
+        width: 46.6666666667%;
+        background-color: black;
+        border-radius: 10px;
+        border: none;
+        padding: 4px;
+        color: white; }
+        #login article form input[type=submit]:hover {
+          background-color: #e6e6e6;
+          cursor: pointer; }
       #login article form textarea {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
       #login article form #obligatoire {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 95.5555555556%;
+        font-size: 0.8em; }
   @media screen and (min-width: 280px) {
     #login article form {
       width: 90%; } }
@@ -1377,13 +1442,22 @@ footer {
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: 26.6666666667%;
-        width: 46.6666666667%; }
+        width: 46.6666666667%;
+        background-color: black;
+        border-radius: 10px;
+        border: none;
+        padding: 4px;
+        color: white; }
+        #image article form input[type=submit]:hover {
+          background-color: #e6e6e6;
+          cursor: pointer; }
       #image article form textarea {
         margin-left: 2.2222222222%;
         width: 46.6666666667%; }
       #image article form #obligatoire {
         margin-left: 2.2222222222%;
-        width: 95.5555555556%; }
+        width: 95.5555555556%;
+        font-size: 0.8em; }
   @media screen and (min-width: 280px) {
     #image article form {
       width: 90%; } }
@@ -1460,7 +1534,7 @@ footer {
     margin-bottom: 0.2em; }
     #image #lienRetour:hover {
       cursor: pointer;
-      background-color: #4d4d4d; }
+      background-color: #3d3d3d; }
     #image #lienRetour a {
       text-decoration: none;
       color: white; }
@@ -1497,7 +1571,7 @@ footer {
       margin-bottom: 0.5em; }
       #image article a:nth-child(1):hover {
         cursor: pointer;
-        background-color: #4d4d4d; }
+        background-color: #3d3d3d; }
       #image article a:nth-child(1) a {
         text-decoration: none;
         color: white; }

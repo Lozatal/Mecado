@@ -91,6 +91,9 @@ section{
 	flex-wrap: wrap;
 }
 
+button {
+	background-color: red;
+}
 
 article{
 	margin-bottom: 0.5em;
@@ -178,7 +181,7 @@ footer{
 			& a{
 				margin-top: auto;
 				margin-bottom: auto;
-			}	
+			}
 		}
 	}
 }
@@ -196,7 +199,7 @@ footer{
 			& a{
 				margin-top: auto;
 				margin-bottom: auto;
-			}	
+			}
 		}
 	}
 }
@@ -214,7 +217,7 @@ footer{
 			& a{
 				margin-top: auto;
 				margin-bottom: auto;
-			}	
+			}
 		}
 	}
 }

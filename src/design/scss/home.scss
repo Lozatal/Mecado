@@ -6,7 +6,7 @@
 	width: 100%;
 	box-sizing: border-box;
 	& article{
-		background-color: darken($backgroundColor,10);
+		background-color: darken($backgroundColor,1);
 	}
 	& article:nth-child(1){
 		margin-top: 0;
@@ -43,7 +43,7 @@
 				margin-top: 0.3em;
 			}
 		}
-	}	
+	}
 }
 
 @media screen and (min-width: 280px){
@@ -58,7 +58,7 @@
 
 		& article:nth-child(2){
 			@include grille(8,10%,0,4);
-	
+
 			& ul{
 				list-style-type: none;
 				& li{
@@ -99,7 +99,7 @@
 					margin-top: 0.3em;
 				}
 			}
-		}	
+		}
 	}
 }
 
